@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#221E73">
+<meta name="theme-color" content="#2A2C31">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <title>كروت المعرفة</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lalezar&family=Cairo:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@500;600;700;800&family=Aref+Ruqaa:wght@700&display=swap" rel="stylesheet">
 <style>
 :root{
   --bg:#eceefb; --surface:#ffffff; --surface2:#f3f4fd; --text:#1b1650; --muted:#5f5c88; --line:#dadef3;
@@ -605,37 +605,432 @@ body{background:var(--NV) var(--pat);font-family:var(--font);color:#fff}
 .lin{margin-bottom:8px}
 .botnote{margin-top:12px;padding:12px 14px;border-radius:16px;background:var(--NV);border:2.5px solid #111;font-size:14px;font-weight:700;display:grid;gap:4px}
 
+/* ================= THEME v6: تصاميم 15/11 (زيتوني وفحمي) ================= */
+:root{--OL:#4B5527;--CH:#2A2C31;--GR:#3A3D44;--CR:#F4E7C9;--GD:#E3A92B;--TL:#1F6F6A;--SK:#8DB8D8;--OR:#D9773A;--PL:#7A4A6E;--NB:#1B2A4A;--LG:#B9B3A6;--DK:#4A4D55;
+  --font:"Alexandria",Tahoma,sans-serif;--disp:"Alexandria",Tahoma,sans-serif;--ruqaa:"Aref Ruqaa",serif;
+  --bg:var(--CH);--surface:var(--GR);--surface2:#33363c;--text:var(--CR);--muted:var(--LG);--line:transparent;--accent-text:var(--GD);--gold:var(--GD);--paper:var(--CR);--ink:var(--NB);--shadow:none;
+  --diam:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3E%3Cpath d='M24 6L42 24L24 42L6 24Z' fill='none' stroke='%23E3A92B' stroke-opacity='.16' stroke-width='1.3'/%3E%3C/svg%3E")}
+html{background:var(--CH)}
+body{background:var(--CH);font-family:var(--font);color:var(--CR);font-size:16px}
+#app{position:relative}
+.screen{position:relative;isolation:isolate;padding:24px 22px 22px;background:transparent}
+.screen::before{content:"";position:absolute;left:0;right:0;top:0;height:var(--oh,130px);z-index:-1;background:var(--OL) var(--diam);border-radius:0 0 44px 44px;transition:height .35s ease}
+#frame{position:fixed;top:10px;bottom:10px;left:50%;width:min(calc(100vw - 20px),500px);transform:translateX(-50%);border:1.5px solid var(--GD);border-radius:28px;opacity:.55;pointer-events:none;z-index:40}
+#s-home{--oh:500px;padding:0}#s-splash{--oh:630px}#s-play{--oh:150px}#s-results{--oh:192px}#s-settings{--oh:160px}#s-setup{--oh:160px}
+h1,h2,h3,.hdr h2,.title,.sec,.verdict,.win-title,.handoff h2,.fb-title,.deck-txt,.tb-mid,.sheet h3{font-family:var(--font);font-weight:800;color:var(--CR)}
+.hdr{gap:10px;margin-bottom:18px}
+.hdr h2{font-size:26px;order:0}
+.hdr .icon-btn{order:1}
+.icon-btn{width:44px;height:44px;border-radius:12px;border:0;box-shadow:none;background:var(--GR);color:var(--CR)}
+.icon-btn:disabled{opacity:.35}
+.btn{border:0;box-shadow:none;border-radius:14px;background:var(--GR);color:var(--CR);font-family:var(--font);font-weight:700;font-size:18px;min-height:52px}
+.btn:active{transform:scale(.98);box-shadow:none}
+.btn.big{font-size:19px;min-height:56px}
+.btn.primary,.btn.orange{background:var(--GD);color:var(--NB);box-shadow:none}
+.btn.dark{background:var(--NB);color:var(--CR);box-shadow:none}
+.btn.violet{background:var(--TL);color:#fff}
+.btn.light{background:var(--CR);color:var(--NB)}
+.btn.ghost{background:transparent;border:1.5px dashed var(--LG);color:var(--CR)}
+.btn.ghost.danger{border-color:var(--OR);color:var(--OR)}
+.btn:disabled{opacity:.45}
+.panel,.srow,.role,.drow,.turnb,.how-item,.pack,.sumbox,.handoff,.bigword,.obcard,.aurow,.lrow,.rsets,.waitnote{background:var(--GR);color:var(--CR);border:0;box-shadow:none;border-radius:14px}
+.lead,.muted,.note,.hint,.meta{color:var(--LG);font-weight:500}
+.chip{border:0;background:var(--CH);color:var(--CR);font-weight:700;border-radius:10px;padding:8px 14px}
+.chip.on{background:var(--GD);color:var(--NB)}
+.inp{border:0;border-radius:12px;background:var(--CH);color:var(--CR);font-family:var(--font)}
+.inp::placeholder{color:#7d7a72}
+.switch{border:0;background:var(--DK)}.switch.on{background:var(--GD)}
+.switch::after{border:0;top:4px;width:24px;height:24px;background:var(--CR)}
+#modal{background:rgba(20,21,24,.7)}
+.sheet{background:var(--CH);color:var(--CR);border:0;border-radius:24px 24px 0 0;box-shadow:0 -10px 30px rgba(0,0,0,.4)}
+.sheet p{color:var(--LG)}
+#toast{background:var(--CR);color:var(--NB);font-weight:700}
+.tag{background:var(--GR);border:0;color:var(--CR)}
+.pill{border:0;border-radius:8px;padding:2px 10px}
+.pill.y{background:var(--GD);color:var(--NB)}.pill.k{background:var(--CH);color:var(--GD)}.pill.w{background:var(--CR);color:var(--NB)}
+.av{background:var(--GR);color:var(--CR);border:0;box-shadow:none;font-family:var(--font)}
+.ord{background:var(--GD);color:var(--NB);border-radius:8px}
+.big{color:var(--GD);font-family:var(--font);font-weight:800}
+.qtag{border:0;border-radius:8px}
+.qtag.easy{background:var(--TL);color:#fff}.qtag.mid{background:var(--GD);color:var(--NB)}.qtag.hard{background:var(--OR);color:var(--NB)}
+.qtag.x2{background:transparent;color:var(--CR);padding:0 4px}
+.qtag.ch{background:var(--SK);color:var(--NB)}
+
+/* ---------- الافتتاحية والرئيسية ---------- */
+.olive{position:relative;border-radius:0 0 44px 44px;background:var(--OL) var(--diam);overflow:hidden}
+.hfan{position:relative;height:196px}
+.hfan .bk{position:absolute;left:50%;top:26px;width:100px;height:140px;border-radius:12px;background:var(--CH);border:2px solid var(--GD);box-shadow:0 10px 18px rgba(0,0,0,.35);display:flex;align-items:center;justify-content:center;color:var(--GD)}
+.hfan .bk svg{width:40px;height:40px}
+.hfan .b1{margin-left:-124px;transform:rotate(-16deg)}.hfan .b2{margin-left:24px;transform:rotate(14deg)}
+.hfan .fr{position:absolute;left:50%;top:4px;width:116px;height:162px;margin-left:-58px;box-sizing:border-box;border-radius:14px;background:var(--CR);border:2px solid var(--GD);box-shadow:0 14px 24px rgba(0,0,0,.4);padding:7px;transform:rotate(-3deg)}
+.hfan .fr div{height:100%;box-sizing:border-box;border:1.5px solid var(--OL);border-radius:9px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;color:var(--OL)}
+.hfan .fr b{font-family:var(--ruqaa);font-size:62px;line-height:1}
+.hfan .fr span{font-size:12px;font-weight:700}
+.rtitle{text-align:center;font-family:var(--ruqaa);font-size:48px;font-weight:700;line-height:1.2;white-space:nowrap;color:var(--CR)}
+.orn{display:flex;align-items:center;justify-content:center;gap:10px;margin-top:6px}
+.orn i{width:34px;height:2px;background:var(--GD)}.orn b{width:8px;height:8px;background:var(--GD);transform:rotate(45deg)}
+.hsub{text-align:center;font-size:15px;font-weight:500;margin-top:10px}
+#s-home .olive{height:500px;flex:none}
+#s-home .olive .in{padding:46px 22px 0}
+.hacts{flex:1;padding:16px 22px 22px;display:flex;flex-direction:column;gap:10px;justify-content:flex-end}
+.hbig{display:flex;align-items:center;gap:14px;height:60px;padding:0 16px;border-radius:14px;border:0;background:var(--GD);color:var(--NB);font-family:inherit;font-size:20px;font-weight:700;text-align:start;cursor:pointer;width:100%}
+.hbig.on2{height:56px;background:var(--TL);color:#fff}
+.hbig .t{flex:1}
+.hbig .i{width:36px;height:36px;border-radius:10px;background:rgba(255,255,255,.16);display:flex;align-items:center;justify-content:center}
+.hbig .i svg{width:20px;height:20px}
+.h3row{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.h3row button{height:84px;border-radius:14px;border:0;font-family:inherit;font-size:14px;font-weight:600;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;cursor:pointer}
+.h3row button svg{width:22px;height:22px}
+.h3row .c1{background:var(--CR);color:var(--NB)}.h3row .c2{background:var(--SK);color:var(--NB)}.h3row .c3{background:var(--GR);color:var(--CR)}
+.home-stat{color:var(--LG);font-weight:500;font-size:12px;text-align:center;margin:2px 0 0}
+#s-splash{padding:0;justify-content:space-between}
+#s-splash .olive{height:630px}
+#s-splash .in{padding:120px 22px 0}
+#s-splash .rtitle{font-size:54px;margin-top:40px}
+.load{padding:0 22px 40px;display:flex;flex-direction:column;align-items:center;gap:12px}
+.lbars{display:flex;gap:5px}.lbars i{width:16px;height:6px;border-radius:2px;background:var(--DK);animation:lb 1.4s infinite}
+.lbars i:nth-child(n+5){animation-delay:.2s}
+@keyframes lb{0%,100%{background:var(--DK)}50%{background:var(--GD)}}
+.load small{color:var(--LG);font-size:13px}
+
+/* ---------- شاشة اللعب ---------- */
+.topbar{display:flex;align-items:center;gap:10px}
+.rnd{flex:1;display:flex;align-items:baseline;gap:6px}
+.rnd small{font-size:13px;font-weight:500;color:var(--LG)}
+.rnd b{font-size:30px;font-weight:800;line-height:1}
+.rnd span{font-size:14px;font-weight:500;color:var(--LG)}
+.pstrip{display:flex;gap:6px;margin-top:12px}
+.pbox{flex:1;min-width:0;height:58px;box-sizing:border-box;border-radius:12px;background:var(--GR);color:var(--CR);padding:8px 10px;display:flex;flex-direction:column;justify-content:space-between;position:relative}
+.pbox b{font-size:12px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pbox span{font-size:12px;font-weight:500}
+.pbox.cur{flex:1.6;background:var(--GD);color:var(--NB)}
+.pbox.cur b{font-size:15px}.pbox.cur span{font-size:13px}
+.pbox.me:not(.cur){box-shadow:inset 0 0 0 2px var(--GD)}
+.pbox .ob{position:absolute;top:-5px;left:-5px;width:18px;height:18px;border-radius:5px;background:var(--OR);color:var(--NB);font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:center}
+.pstrip.slide .pbox{animation:pslide .55s cubic-bezier(.2,.8,.2,1) both}
+.pstrip.slide .pbox.cur{animation:pgrow .55s cubic-bezier(.2,.8,.2,1) both}
+@keyframes pslide{from{transform:translateX(-40px);opacity:.3}to{transform:none;opacity:1}}
+@keyframes pgrow{from{transform:translateX(-60px) scale(.85);opacity:.4}to{transform:none;opacity:1}}
+.flags{margin-top:8px}
+.stage{display:flex;flex-direction:column;gap:12px;padding-top:12px;flex:1}
+.hand{margin-top:auto;padding-top:14px}
+.dbar{display:flex;gap:8px}
+.dbar button{position:relative;flex:1;height:58px;border-radius:12px;border:0;font-family:inherit;font-size:13px;font-weight:600;display:flex;align-items:center;justify-content:center;gap:6px;cursor:pointer}
+.dbar button svg{width:18px;height:18px}
+.dbar .dp{background:var(--TL);color:#fff}.dbar .dc{background:var(--SK);color:var(--NB)}.dbar .dm{background:var(--GR);color:var(--CR)}
+.dbar button.off{opacity:.45}
+.dbar .n{position:absolute;top:-6px;left:-6px;min-width:22px;height:22px;border-radius:6px;background:var(--GD);color:var(--NB);font-size:12px;display:flex;align-items:center;justify-content:center}
+.phead{margin-top:14px}
+.phead b{display:block;font-size:30px;font-weight:800}
+.phead small{display:block;font-size:14px;color:var(--LG);margin-top:4px}
+.lvrow{display:flex;gap:8px}
+.lvb{flex:1;height:220px;border-radius:16px;border:0;box-shadow:none;background:var(--c);color:var(--NB);font-family:inherit;padding:14px 10px;display:flex;flex-direction:column;align-items:flex-start;justify-content:space-between;text-align:start;position:relative;cursor:pointer}
+.lvb.easy{color:#fff}
+.lvb .ln{font-family:var(--font);font-size:24px;font-weight:800;line-height:1.3}
+.lvb .bars{display:flex;gap:4px;margin-top:8px}.lvb .bars i{width:16px;height:6px;border-radius:2px;background:rgba(0,0,0,.18)}
+.lvb .bars i.on{background:currentColor}
+.lvb .gap{flex:1}
+.lvb .lp{display:flex;flex-direction:column;align-items:flex-start;line-height:1.35;font-size:14px;font-weight:700;gap:0}
+.lvb:disabled{filter:grayscale(.9);opacity:.4;box-shadow:none}
+.lvb .lo{position:static;transform:none;background:var(--CH);color:var(--CR);font-size:11px;border-radius:6px;padding:2px 6px;margin-top:6px}
+.lvb.pick{animation:lvflip .5s ease forwards}
+.lvrow.picked .lvb:not(.pick){animation:lvfade .3s ease forwards}
+@keyframes lvflip{0%{transform:none}50%{transform:perspective(800px) rotateY(90deg)}100%{transform:perspective(800px) rotateY(0)}}
+@keyframes lvfade{to{opacity:0;transform:scale(.9)}}
+/* السؤال */
+.qcard{border-radius:18px;background:var(--GR);padding:14px;display:flex;flex-direction:column;gap:12px}
+.qcard.flip-in{animation:flipIn .5s ease both}
+.qhead{display:flex;align-items:center;gap:8px}
+.qlv{padding:6px 12px;border-radius:8px;font-size:14px;font-weight:700}
+.qlv.easy{background:var(--TL);color:#fff}.qlv.mid{background:var(--GD);color:var(--NB)}.qlv.hard{background:var(--OR);color:var(--NB)}
+.qgain{display:flex;flex-direction:column;font-size:12px;font-weight:600;line-height:1.35}
+.qhead .sp{flex:1}
+.qsec{font-size:13px;font-weight:600}
+.qkind2{padding:4px 10px;border-radius:8px;background:var(--SK);color:var(--NB);font-size:12px;font-weight:700}
+.segs{display:flex;gap:4px}
+.segs i{flex:1;height:8px;border-radius:2px;background:var(--DK);transition:background .3s}
+.segs i.on{background:var(--GD)}
+.segs.low i.on{animation:segp .7s infinite}
+@keyframes segp{50%{opacity:.35}}
+.qtxt{font-size:21px;font-weight:700;line-height:1.5;color:var(--CR)}
+.qtxt .blank{display:inline-flex;align-items:center;justify-content:center;min-width:70px;height:36px;border-radius:10px;border:2px dashed var(--GD);color:var(--GD);margin:0 4px;vertical-align:middle;background:transparent}
+.ogrid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.ob2{min-height:76px;border-radius:14px;border:0;font-family:inherit;font-size:16px;font-weight:700;padding:10px 12px;display:flex;flex-direction:column;align-items:stretch;justify-content:space-between;text-align:start;cursor:pointer;transition:transform .25s,opacity .25s,box-shadow .25s}
+.ob2 .k{font-size:13px;opacity:.8;display:flex;justify-content:space-between;align-items:center}
+.ob2 .k svg{width:18px;height:18px;opacity:1}
+.ob2.o0{background:var(--CR);color:var(--NB)}.ob2.o1{background:var(--TL);color:#fff}.ob2.o2{background:var(--SK);color:var(--NB)}.ob2.o3{background:var(--GD);color:var(--NB)}
+.ob2:disabled{cursor:default}
+.ob2.dim,.ob2.gone{background:var(--GR);color:var(--LG);opacity:.6}
+.ob2.gone{text-decoration:line-through;opacity:.3}
+.ob2.right{background:var(--TL);color:#fff;box-shadow:0 0 0 3px var(--CR);transform:scale(1.03);opacity:1}
+.ob2.wrong{background:var(--GR);color:var(--CR);box-shadow:0 0 0 2.5px var(--OR);opacity:1}
+.ob2.wrong .k svg{color:var(--OR)}
+.ob2.picked{box-shadow:0 0 0 3px var(--CR);opacity:1}
+.res-ok{border-radius:18px;background:var(--GD);color:var(--NB);padding:16px;display:flex;align-items:center;justify-content:space-between;animation:upin .45s cubic-bezier(.2,.8,.2,1) both}
+.res-ok b{font-size:30px;font-weight:800}
+.res-ok .g{display:flex;flex-direction:column;align-items:flex-end;line-height:1.25}
+.res-ok .g span:first-child{font-size:22px;font-weight:800}.res-ok .g span:last-child{font-size:16px;font-weight:700}
+.res-ok .fr{font-size:13px;font-weight:600;margin-top:4px}
+.res-bad{border-radius:18px;background:var(--GR);padding:16px;display:flex;align-items:center;justify-content:space-between;gap:10px}
+.res-bad b{font-size:28px;font-weight:800}
+.res-bad span{font-size:13px;color:var(--LG)}
+.res-bad .ans{display:block;font-size:14px;color:var(--CR);font-weight:600;margin-top:4px}
+@keyframes upin{from{transform:translateY(40px);opacity:0}to{transform:none;opacity:1}}
+.auto{border-radius:14px;background:var(--GR);padding:12px 14px;display:flex;flex-direction:column;gap:8px}
+.auto span{font-size:14px;font-weight:700}
+.auto i{display:block;height:6px;border-radius:6px;background:var(--CH);overflow:hidden}
+.auto i b{display:block;height:100%;background:var(--CR);width:100%;transition:width .2s linear}
+.retry{border-radius:14px;background:var(--GR);padding:10px 12px;display:flex;align-items:center;gap:10px}
+.retry .ri{width:34px;height:34px;border-radius:10px;background:var(--TL);color:#fff;display:flex;align-items:center;justify-content:center}
+.retry span{flex:1;font-size:14px;font-weight:600}
+.retry .ri{flex:none}.retry .ri svg{width:18px;height:18px}
+.wtop .cr{display:flex;justify-content:center}
+#s-results{--oh:250px}
+.gbox{display:grid;gap:4px}.gtry{min-height:18px;margin:0;color:var(--OR)}
+.retry button{border:0;border-radius:10px;background:var(--TL);color:#fff;font-family:inherit;font-weight:700;font-size:13px;padding:8px 12px;cursor:pointer}
+.clues{display:grid;gap:8px}
+.clue{background:var(--CH);border:0;border-radius:12px;color:var(--CR);font-family:inherit}
+.clue b{background:var(--GD);color:var(--NB)}
+.clue.more{background:transparent;border:1.5px dashed var(--LG);color:var(--LG)}
+/* الدور على فلان */
+.waitc{border-radius:18px;background:var(--GR);padding:24px 16px;display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center}
+.waitc .wi{width:48px;height:48px;border-radius:14px;display:flex;align-items:center;justify-content:center}
+.waitc .wi svg{width:26px;height:26px}
+.waitc .wt{font-size:30px;font-weight:800;line-height:1.25}
+.waitc .ws{font-size:17px;font-weight:600;color:var(--LG)}
+.waitc .vs{display:flex;align-items:center;gap:8px;width:100%;margin-top:6px}
+.waitc .vs span{flex:1;padding:10px;border-radius:10px;font-weight:800;font-size:15px}
+.waitc .vs .a{background:var(--GD);color:var(--NB)}.waitc .vs .b{background:var(--CR);color:var(--NB)}
+.waitc .vs i{width:28px;height:28px;border-radius:8px;background:var(--SK);color:var(--NB);display:flex;align-items:center;justify-content:center}
+.dots{display:flex;gap:6px;margin-top:4px}.dots i{width:8px;height:8px;border-radius:50%;background:var(--DK);animation:dot 1.2s infinite}
+.dots i:nth-child(2){animation-delay:.2s}.dots i:nth-child(3){animation-delay:.4s}
+@keyframes dot{0%,100%{background:var(--DK)}40%{background:var(--GD)}}
+.nextme{text-align:center;color:var(--LG);font-size:13px;margin-top:auto}
+.watchbar{display:flex;align-items:center;gap:10px;padding:12px 14px;border-radius:14px;background:var(--GR);color:var(--CR);font-weight:700;font-size:16px}
+.watchbar .wb{width:30px;height:30px;border-radius:8px;background:var(--GD);color:var(--NB);display:flex;align-items:center;justify-content:center}
+.watchbar .wb svg{width:18px;height:18px}
+.watchbar small{margin-inline-start:auto;color:var(--LG);font-weight:500;font-size:12px}
+.snatchb{background:var(--PL)!important;color:var(--CR)!important}
+/* كروت القوة: اختيار المجموعة والكارت */
+.gtitle{font-size:28px;font-weight:800}
+.buyb{display:flex;align-items:center;gap:12px;min-height:72px;padding:12px 14px;border-radius:16px;border:0;box-shadow:none;background:var(--a);color:#fff;font-family:inherit;text-align:start;cursor:pointer;width:100%}
+.buyb.gd{color:var(--NB)}
+.buyb .gi{width:40px;height:40px;border-radius:12px;background:rgba(255,255,255,.16);display:flex;align-items:center;justify-content:center;flex:none}
+.buyb .gi svg{width:22px;height:22px}
+.buyb .bt b{font-family:var(--font);font-weight:800;font-size:22px}
+.buyb .bt small{font-size:12px;font-weight:600}
+.buyb .pill{background:rgba(0,0,0,.25);color:inherit}
+.buyb:disabled{background:transparent;border:1.5px dashed var(--DK);color:var(--LG);filter:none;opacity:1}
+.buyb:disabled .gi{background:var(--GR)}
+.pwbig{align-self:center;width:250px;min-height:300px;box-sizing:border-box;border-radius:18px;background:var(--a);color:#fff;padding:16px;display:flex;flex-direction:column;justify-content:space-between;animation:cflip .7s ease both}
+.pwbig.gd{color:var(--NB)}
+.pwbig .top{display:flex;justify-content:space-between;align-items:center;font-size:12px;font-weight:700}
+.pwbig .top i{width:36px;height:36px;border-radius:10px;background:rgba(0,0,0,.2);display:flex;align-items:center;justify-content:center}
+.pwbig .top i svg{width:20px;height:20px}
+.pwbig b{font-size:30px;font-weight:800;line-height:1.25}
+.pwbig small{font-size:14px;font-weight:600}
+@keyframes cflip{0%{transform:perspective(900px) rotateY(180deg);filter:brightness(.3)}100%{transform:none;filter:none}}
+.secret{border-radius:12px;background:var(--GR);color:var(--LG);font-size:13px;padding:10px 12px;text-align:center}
+.botbuy{background:var(--GR);border:0;box-shadow:none;border-radius:18px;padding:14px}
+.botbuy .bbin{background:var(--GD);color:var(--NB);border:0;border-radius:14px;padding:18px 14px;display:grid;gap:10px;text-align:center}
+.botbuy h2{font-family:var(--font);font-weight:800;font-size:26px;line-height:1.3;color:var(--NB)}
+.botbuy p{font-weight:700;color:var(--NB)}
+.botbuy .btn{background:var(--NB)!important;color:var(--CR)!important}
+/* كروتي */
+.mcrow{display:flex;align-items:center;gap:10px;padding:12px;border-radius:14px;background:var(--a);color:#fff}
+.mcrow.gd{color:var(--NB)}
+.mcrow .mi{width:38px;height:38px;border-radius:10px;background:rgba(255,255,255,.18);display:flex;align-items:center;justify-content:center;flex:none}
+.mcrow .mi svg{width:20px;height:20px}
+.mcrow .tx{flex:1;min-width:0;display:flex;flex-direction:column}
+.mcrow .tx small{font-size:11px;font-weight:600;opacity:.85}
+.mcrow .tx b{font-size:16px;font-weight:800}
+.mcrow .tx span{font-size:12px;font-weight:500}
+.mcrow button{border:0;border-radius:10px;background:rgba(0,0,0,.28);color:inherit;font-family:inherit;font-weight:700;font-size:13px;padding:8px 12px;cursor:pointer;flex:none}
+.mcrow .why{font-size:11px;max-width:100px;text-align:center;background:rgba(0,0,0,.18);border-radius:8px;padding:4px 6px;flex:none}
+/* التحدي */
+.setup{gap:12px}
+.setup-h .sname{font-family:var(--font);font-weight:800;font-size:26px}
+.chhead{display:flex;align-items:center;gap:10px;padding:12px 14px;border-radius:14px;background:var(--a,var(--SK));color:var(--NB)}
+.chhead .ci2{width:36px;height:36px;border-radius:10px;background:rgba(255,255,255,.4);display:flex;align-items:center;justify-content:center}
+.chhead .ci2 svg{width:20px;height:20px}
+.chhead small{display:block;font-size:11px;font-weight:600}
+.chhead b{font-size:20px;font-weight:800}
+.chhead.wt{color:#fff}
+.setup .sec{font-size:15px;font-weight:700;margin:4px 0 0}
+.tbtn{border:0;box-shadow:none;border-radius:12px;background:var(--GR);color:var(--CR);min-height:52px}
+.tbtn.on{background:var(--CR);color:var(--NB);border:0;box-shadow:none}
+.tbtn .pill{background:transparent;color:inherit}
+.sbtn{border:0;border-radius:12px;color:var(--NB);min-height:60px}
+.sbtn.easy-c{color:#fff}
+.sbtn b{font-family:var(--font);font-weight:800;font-size:17px}
+.sbtn.on{box-shadow:0 0 0 3px var(--CR);border:0}
+.sumbox{font-weight:700;font-size:14px}
+.tabs .tab{border:0;border-radius:10px;background:var(--GR);color:var(--CR);font-family:var(--font);font-weight:700;font-size:15px}
+.tabs .tab.on{background:var(--CR);color:var(--NB);box-shadow:none}
+.tabs .tab:disabled{opacity:.35;border:0}
+.chrow{border:0;box-shadow:none;border-radius:14px;background:var(--a);color:var(--NB)}
+.chrow.wt{color:#fff}
+.chrow b{font-family:var(--font);font-weight:800;font-size:18px}
+.chvs{display:flex;align-items:center;gap:8px}
+.chvs span{flex:1;padding:10px;border-radius:10px;text-align:center;font-weight:800;font-size:15px}
+.chvs .a{background:var(--GD);color:var(--NB)}.chvs .b{background:var(--CR);color:var(--NB)}
+.chvs i{width:30px;height:30px;border-radius:8px;background:var(--GR);color:var(--SK);display:flex;align-items:center;justify-content:center;flex:none}
+.chvs i svg{width:16px;height:16px}
+.verdict{font-size:26px}
+.drow{background:var(--GR)}
+.plus{color:#7FE0A3}.minus{color:var(--OR)}
+.winbox{border-radius:18px;background:var(--GD);color:var(--NB);padding:18px 16px;display:grid;gap:4px}
+.winbox b{font-size:32px;font-weight:800}
+.winbox span{font-size:15px;font-weight:700}
+.cdpill{background:var(--CH);color:var(--GD);border-radius:8px}
+.handoff{padding:24px 16px}
+.handoff p{color:var(--LG)}
+.step{background:var(--GD);color:var(--NB);border-radius:8px}
+.obcard{background:var(--CR);color:var(--NB);padding:16px}
+.obcard .obt{color:var(--NB);font-family:var(--font);font-weight:800;font-size:30px}
+.obcard .obby{color:var(--NB)}
+.obcard .obp{background:var(--NB);color:var(--CR);border-radius:12px}
+.obcard .obn{font-family:var(--font);font-weight:800;font-size:22px}
+.obcard .obr{color:var(--NB)}
+.obcard.brown{background:var(--GR);color:var(--CR)}
+.obcard.brown .obp{background:var(--SK);color:var(--NB)}
+.gpair div{background:var(--GR);border:0;box-shadow:none}
+.gpair b{background:var(--SK);color:var(--NB);font-family:var(--font);font-weight:800}
+.bidb{border:0;background:var(--GR);color:var(--CR);font-family:var(--font);font-weight:800;border-radius:14px}
+.bidb.on{background:var(--GD);color:var(--NB);box-shadow:none}
+.aurow b{font-family:var(--font);font-weight:800;font-size:20px}
+.aupill{border:0;border-radius:8px}
+.aupill.ok{background:var(--TL);color:#fff}.aupill.no{background:var(--CH);color:var(--LG)}
+.auwin{background:var(--GD);color:var(--NB);border:0;box-shadow:none;border-radius:18px}
+.auwin b{font-family:var(--font);font-weight:800;font-size:32px}
+.surpbig{background:var(--GD);color:var(--NB);border:0;box-shadow:none;border-radius:18px}
+.surpbig b,.surpbig span{font-family:var(--font);font-weight:800}
+.lin{background:var(--GR)}
+/* الغرفة */
+.ocard{border:0;box-shadow:none;border-radius:16px;background:var(--TL);color:#fff;align-items:flex-start;text-align:start;padding:18px}
+.ocard:first-child{background:var(--GD);color:var(--NB)}
+.ocard b{font-family:var(--font);font-weight:800;font-size:24px}
+.ocard small,.ocard:first-child small{color:inherit;font-weight:600}
+.oci{background:rgba(255,255,255,.2);border:0;color:inherit;border-radius:10px}
+.icbtn{border:0;border-radius:14px;background:var(--GR)}
+.icbtn.on{background:var(--CR);border:0;box-shadow:none}
+.ricon{border:0}
+.ricon.bot{background:var(--CR)}
+.ricon.bot svg{stroke:var(--NB)!important}
+.cdig{border:0;box-shadow:none;border-radius:14px;background:var(--CR);color:var(--NB);font-family:var(--font);font-weight:800}
+.cdig:focus{border:0;box-shadow:0 0 0 3px var(--GD)}
+.codebox{background:var(--GD);color:var(--NB);border:0;box-shadow:none;border-radius:18px}
+.cdigits span{border:0;box-shadow:none;background:var(--CR);color:var(--NB);font-family:var(--font);font-weight:800;border-radius:12px}
+.codebox .btn.dark{background:var(--NB);color:var(--CR)}
+.lrow{min-height:56px}
+.lrow.me{box-shadow:0 0 0 2px var(--GD);border:0}
+.lrow .lname{font-family:var(--font);font-weight:700;font-size:17px}
+.lslot{border:1.5px dashed var(--DK);color:var(--LG)}
+.seg{border:0;border-radius:10px;background:var(--CH);padding:2px}
+.seg button{background:transparent;color:var(--CR);border-radius:8px;min-height:36px}
+.seg button.on{background:var(--GD);color:var(--NB)}
+.botadd{border-color:var(--GD)!important;color:var(--GD)!important}
+.waitnote{color:var(--CR)}
+.notice-bar{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:12px;background:var(--CR);color:var(--NB);font-weight:700;font-size:13px;margin-top:10px;animation:upin .4s ease both}
+.notice-bar i{width:28px;height:28px;border-radius:8px;background:var(--NB);color:var(--GD);display:flex;align-items:center;justify-content:center;flex:none}
+.notice-bar i svg{width:16px;height:16px}
+/* القوايم والإعدادات */
+.mitem{display:flex;align-items:center;gap:12px;height:56px;padding:0 16px;border-radius:14px;border:0;background:var(--GR);color:var(--CR);font-family:inherit;font-size:16px;font-weight:700;text-align:start;cursor:pointer;width:100%}
+.mitem .t{flex:1}
+.mitem svg{width:20px;height:20px;color:var(--GD)}
+.mitem.out{color:var(--OR)}.mitem.out svg{color:var(--OR)}
+.sbox{border-radius:14px;background:var(--GR);padding:12px 14px;margin-bottom:10px}
+.sbox .lb{font-size:14px;font-weight:700;margin-bottom:10px}
+.sbox .chips{gap:6px}
+.how2{display:grid;gap:10px}
+.hstep{display:flex;align-items:center;gap:12px;padding:14px;border-radius:14px;background:var(--GR);font-size:14px;font-weight:600;line-height:1.6}
+.hstep b{width:30px;height:30px;border-radius:8px;display:flex;align-items:center;justify-content:center;flex:none;font-size:15px;color:var(--NB)}
+.prow{gap:8px}
+.prow .ordn{width:34px;height:34px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-weight:800;flex:none}
+.prow .inp{margin:0;background:var(--GR)}
+.botrow{border:0;border-radius:14px;background:var(--GR);padding:6px 10px}
+.botrow .botnm{font-family:var(--font);font-weight:800;font-size:17px}
+#players-body.panel{background:transparent;padding:0}
+/* الكروت */
+.ctabs{display:grid;grid-template-columns:1fr 1fr;gap:6px;background:var(--CH);padding:4px;border-radius:12px;margin-bottom:12px}
+.ctabs button{border:0;border-radius:9px;background:transparent;color:var(--CR);font-family:inherit;font-weight:700;font-size:14px;padding:9px;cursor:pointer}
+.ctabs button.on{background:var(--CR);color:var(--NB)}
+.tiles{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.tile{min-height:150px;border-radius:14px;background:var(--a);color:#fff;padding:12px;display:flex;flex-direction:column;justify-content:space-between;position:relative}
+.tile.gd{color:var(--NB)}
+.tile .tt{display:flex;justify-content:space-between;align-items:flex-start;font-size:11px;font-weight:700}
+.tile .tt i{width:34px;height:34px;border-radius:10px;background:rgba(0,0,0,.18);display:flex;align-items:center;justify-content:center}
+.tile .tt i svg{width:18px;height:18px}
+.tile b{font-size:17px;font-weight:800;line-height:1.3}
+.tile small{font-size:12px;font-weight:500;line-height:1.45;opacity:.9}
+.tile .lockt{position:absolute;inset:0;border-radius:14px;background:rgba(20,21,24,.6);display:flex;align-items:center;justify-content:center;gap:6px;color:var(--GD);font-size:12px;font-weight:700}
+.tile .lockt svg{width:16px;height:16px}
+.gsec{font-size:15px;font-weight:700;margin:14px 2px 8px;color:var(--CR)}
+/* النقاط والفايز */
+.srow{display:flex;align-items:center;gap:12px;padding:12px 14px;margin-bottom:8px;border-radius:14px}
+.srow.lead1{background:var(--GD);color:var(--NB)}
+.srow .rank{width:28px;height:28px;border-radius:8px;background:var(--CH);color:var(--CR);display:flex;align-items:center;justify-content:center;font-size:14px}
+.srow.lead1 .rank{background:rgba(0,0,0,.15);color:var(--NB)}
+.srow .nm{font-size:16px}
+.srow .sc{display:flex;flex-direction:column;align-items:flex-end;line-height:1.3}
+.srow .sc b{font-size:16px;font-weight:800}.srow .sc small{font-size:12px;font-weight:600;opacity:.8}
+.wtop{text-align:center;padding-top:6px}
+.wtop .cr svg{width:40px;height:30px;color:var(--GD)}
+.wtop b{display:block;font-size:52px;font-weight:800;line-height:1.15}
+.wtop small{font-size:14px;color:var(--CR);opacity:.85}
+.podium2{display:flex;align-items:flex-end;justify-content:center;gap:6px;margin-top:70px}
+.podium2 .pc2{flex:1;display:flex;flex-direction:column;align-items:center;gap:4px}
+.podium2 .pc2 b{font-size:13px;font-weight:700}.podium2 .pc2 small{font-size:11px;color:var(--LG)}
+.podium2 .bar2{width:100%;border-radius:10px 10px 0 0;display:flex;align-items:flex-start;justify-content:center;padding-top:8px;font-size:26px;font-weight:800;color:var(--NB);transform-origin:bottom;animation:barup .6s cubic-bezier(.2,.8,.2,1) both}
+.podium2 .p1 .bar2{height:170px;background:var(--GD);animation-delay:1s}
+.podium2 .p2 .bar2{height:120px;background:var(--SK);animation-delay:.5s}
+.podium2 .p3 .bar2{height:90px;background:var(--TL);color:#fff;animation-delay:0s}
+@keyframes barup{from{transform:scaleY(0)}to{transform:scaleY(1)}}
+.wrest{display:grid;gap:6px;margin-top:10px}
+.wr{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:12px;background:var(--GR)}
+.wr .r{width:26px;height:26px;border-radius:7px;background:var(--CH);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800}
+.wr .n{flex:1;font-weight:700}.wr small{color:var(--LG)}
+/* آخر جولة */
+.lastr{flex:1;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;gap:6px}
+.lastr small{font-size:16px;font-weight:700;color:var(--GD)}
+.lastr b{font-size:60px;font-weight:800;line-height:1.1}
+.lastr span{font-size:20px;color:var(--LG);font-weight:600}
+
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
 </style>
 </head>
 <body>
 <div id="app">
-  <section class="screen active" id="s-home">
-    <div class="home-hero">
-      <div class="fan" aria-hidden="true">
-        <div class="mini m1" data-ic="bolt"></div>
-        <div class="mini m2" data-ic="diamond"></div>
-        <div class="mini m3"><span class="qm">?</span></div>
+  <section class="screen active" id="s-splash">
+    <div class="olive"><div class="in">
+      <div class="hfan" aria-hidden="true"><div class="bk b1" data-ic="sun8"></div><div class="bk b2" data-ic="sun8"></div><div class="fr"><div><b>؟</b><span>سؤال</span></div></div></div>
+      <div class="rtitle">كروت المعرفة</div><div class="orn" aria-hidden="true"><i></i><b></b><i></i></div>
+    </div></div>
+    <div class="load"><div class="lbars" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><small>بنجهز الكروت...</small></div>
+  </section>
+
+  <section class="screen" id="s-home">
+    <div class="olive"><div class="in">
+      <div class="hfan" aria-hidden="true"><div class="bk b1" data-ic="sun8"></div><div class="bk b2" data-ic="sun8"></div><div class="fr"><div><b>؟</b><span>سؤال</span></div></div></div>
+      <h1 class="rtitle">كروت المعرفة</h1><div class="orn" aria-hidden="true"><i></i><b></b><i></i></div>
+      <p class="hsub">أسئلة وتحديات إسلامية تلعبها مع عيلتك وأصحابك</p>
+    </div></div>
+    <div class="hacts">
+      <button class="btn light" id="btn-continue" onclick="continueGame()" hidden>متابعة اللعبة المحفوظة</button>
+      <button class="btn light netbtn" id="btn-room" onclick="rejoinLast()" hidden></button>
+      <button class="hbig" onclick="newGame()"><span class="t">لعبة جديدة</span><span class="i" data-ic="play"></span></button>
+      <button class="hbig on2" onclick="show('online')"><span class="t">العب أونلاين</span><span class="i" data-ic="wifi"></span></button>
+      <div class="h3row">
+        <button class="c1" onclick="show('cards')"><span data-ic="cards"></span>الكروت</button>
+        <button class="c2" onclick="show('howto')"><span data-ic="book"></span>طريقة اللعب</button>
+        <button class="c3" onclick="show('settings')"><span data-ic="gear"></span>الإعدادات</button>
       </div>
-      <h1 class="title">كروت المعرفة</h1>
-      <p class="subtitle">أسئلة وتحديات إسلامية تلعبها مع عيلتك وأصحابك</p>
-    </div>
-    <div class="home-actions">
-      <button class="btn orange big" id="btn-continue" onclick="continueGame()" hidden>متابعة اللعبة المحفوظة</button>
-      <button class="btn primary big" onclick="newGame()">لعبة جديدة</button>
-      <button class="btn big onl" onclick="show('online')"><span data-ic="wifi"></span>العب أونلاين</button>
-      <button class="btn orange netbtn" id="btn-room" onclick="rejoinLast()" hidden></button>
-      <div class="home-row">
-        <button class="btn" onclick="show('cards')">الكروت</button>
-        <button class="btn" onclick="show('howto')">طريقة اللعب</button>
-      </div>
-      <button class="btn" onclick="show('settings')">الإعدادات</button>
       <p class="home-stat" id="home-stat"></p>
     </div>
   </section>
 
   <section class="screen" id="s-online">
-    <div class="hdr"><button class="icon-btn" onclick="show('home')" aria-label="رجوع" data-ic="back"></button><h2>العب أونلاين</h2></div>
+    <div class="hdr"><h2>العب أونلاين</h2><button class="icon-btn" onclick="show('home')" aria-label="رجوع" data-ic="back"></button></div>
     <p class="lead">كل واحد بيلعب على موبايله، من 2 لـ6 لاعبين، من غير حساب.</p>
     <div class="onlchoice">
       <button class="ocard" onclick="show('create')"><span class="oci" data-ic="plus"></span><b>إنشاء غرفة</b><small>هيطلعلك كود تبعته لأصحابك</small></button>
@@ -644,19 +1039,19 @@ body{background:var(--NV) var(--pat);font-family:var(--font);color:#fff}
   </section>
 
   <section class="screen" id="s-create">
-    <div class="hdr"><button class="icon-btn" onclick="show('online')" aria-label="رجوع" data-ic="back"></button><h2>إنشاء غرفة</h2></div>
+    <div class="hdr"><h2>إنشاء غرفة</h2><button class="icon-btn" onclick="show('online')" aria-label="رجوع" data-ic="back"></button></div>
     <div id="create-body"></div>
     <div class="foot"><p class="note">هيطلعلك كود من 4 أرقام، تبعته لأصحابك عشان يدخلوا.</p><button class="btn primary big netbtn" onclick="createRoom()">إنشاء الغرفة</button></div>
   </section>
 
   <section class="screen" id="s-join">
-    <div class="hdr"><button class="icon-btn" onclick="show('online')" aria-label="رجوع" data-ic="back"></button><h2>دخول بالكود</h2></div>
+    <div class="hdr"><h2>دخول بالكود</h2><button class="icon-btn" onclick="show('online')" aria-label="رجوع" data-ic="back"></button></div>
     <div id="join-body"></div>
     <div class="foot"><button class="btn primary big netbtn" onclick="joinRoom()">ادخل الغرفة</button></div>
   </section>
 
   <section class="screen" id="s-lobby">
-    <div class="hdr"><button class="icon-btn" onclick="confirmLeave()" aria-label="اخرج من الغرفة" data-ic="back"></button><h2>الغرفة</h2></div>
+    <div class="hdr"><h2>الغرفة</h2><button class="icon-btn" onclick="confirmLeave()" aria-label="اخرج من الغرفة" data-ic="back"></button></div>
     <div id="lobby-body"></div>
   </section>
 
@@ -667,10 +1062,10 @@ body{background:var(--NV) var(--pat);font-family:var(--font);color:#fff}
   </section>
 
   <section class="screen" id="s-players">
-    <div class="hdr"><button class="icon-btn" onclick="show('setup')" aria-label="رجوع" data-ic="back"></button><h2>اللاعبون</h2></div>
-    <p class="lead" id="players-count"></p>
+    <div class="hdr"><h2>اللاعبين</h2><button class="icon-btn" onclick="show('home')" aria-label="رجوع" data-ic="back"></button></div>
+    <p class="lead" id="players-count" hidden></p>
     <div class="panel" id="players-body"></div>
-    <div class="foot"><button class="btn primary big" onclick="startGame()">توزيع الأدوار</button></div>
+    <div class="foot"><button class="btn primary big" onclick="startGame()">ابدأ اللعبة</button></div>
   </section>
 
   <section class="screen" id="s-roles">
@@ -688,9 +1083,9 @@ body{background:var(--NV) var(--pat);font-family:var(--font);color:#fff}
   </section>
 
   <section class="screen" id="s-scores">
-    <div class="hdr"><button class="icon-btn" onclick="show('play')" aria-label="رجوع للعبة" data-ic="back"></button><h2>النقاط والنجوم</h2></div>
+    <div class="hdr"><h2>النقاط</h2><button class="icon-btn" onclick="show('play')" aria-label="رجوع للعبة" data-ic="back"></button></div>
     <div id="scores-body"></div>
-    <div class="foot"><button class="btn primary" onclick="show('play')">العودة إلى اللعب</button></div>
+    <div class="foot"><button class="btn light big" onclick="show('play')">رجوع للعبة</button></div>
   </section>
 
   <section class="screen" id="s-results">
@@ -702,27 +1097,29 @@ body{background:var(--NV) var(--pat);font-family:var(--font);color:#fff}
   </section>
 
   <section class="screen" id="s-cards">
-    <div class="hdr"><button class="icon-btn" onclick="show('home')" aria-label="رجوع" data-ic="back"></button><h2>الكروت</h2></div>
+    <div class="hdr"><h2>الكروت</h2><button class="icon-btn" onclick="show('home')" aria-label="رجوع" data-ic="back"></button></div>
     <div id="cards-body"></div>
   </section>
 
   <section class="screen" id="s-store">
-    <div class="hdr"><button class="icon-btn" onclick="show('settings')" aria-label="رجوع" data-ic="back"></button><h2>الكروت الذهبية</h2></div>
+    <div class="hdr"><h2>الكروت الذهبية</h2><button class="icon-btn" onclick="show('settings')" aria-label="رجوع" data-ic="back"></button></div>
     <div id="store-body"></div>
   </section>
 
   <section class="screen" id="s-settings">
-    <div class="hdr"><button class="icon-btn" onclick="show('home')" aria-label="رجوع" data-ic="back"></button><h2>الإعدادات</h2></div>
+    <div class="hdr"><h2>الإعدادات</h2><button class="icon-btn" onclick="settingsBack()" aria-label="رجوع" data-ic="back"></button></div>
     <div id="settings-body"></div>
+    <div class="foot"><button class="btn primary big" onclick="settingsBack();toast('الإعدادات اتحفظت')">حفظ الإعدادات</button></div>
   </section>
 
   <section class="screen" id="s-howto">
-    <div class="hdr"><button class="icon-btn" onclick="show('home')" aria-label="رجوع" data-ic="back"></button><h2>طريقة اللعب</h2></div>
-    <div class="how" id="howto-body"></div>
-    <div class="foot"><button class="btn primary" onclick="newGame()">ابدأ لعبة جديدة</button></div>
+    <div class="hdr"><h2>طريقة اللعب</h2><button class="icon-btn" onclick="show(HOW_FROM)" aria-label="رجوع" data-ic="back"></button></div>
+    <div id="howto-body"></div>
+    <div class="foot"><button class="btn primary big" onclick="show(HOW_FROM)">فهمت</button></div>
   </section>
 </div>
 
+<div id="frame" aria-hidden="true"></div>
 <div id="modal" onclick="if(event.target===this)closeModal()"><div class="sheet" id="sheet" role="dialog" aria-modal="true"></div></div>
 <div id="toast" role="status" aria-live="polite"></div>
 <canvas id="confetti"></canvas>
@@ -795,7 +1192,10 @@ const QUESTIONS = [
   {id:'h20',level:3,q:'ما الغاز الذي تمتصه النباتات من الهواء لتصنع غذاءها؟',a:['ثاني أكسيد الكربون','الأكسجين','النيتروجين','الهيدروجين']}
 ];
 
-const LEVELS = {1:{name:'سهل',cls:'easy',col:'#22A45D'},2:{name:'متوسط',cls:'mid',col:'#D99A00'},3:{name:'صعب',cls:'hard',col:'#E23A3A'}};
+const LEVELS = {1:{name:'سهل',cls:'easy',col:'#1F6F6A'},2:{name:'متوسط',cls:'mid',col:'#E3A92B'},3:{name:'صعب',cls:'hard',col:'#D9773A'}};
+/* ألوان التصميم الجديد للمجموعات: فرصة أخضر، دفاع سماوي، هجوم نبيتي، ذهبي دهبي */
+const NCOL={f:['#1F6F6A','#fff'],d:['#8DB8D8','#1B2A4A'],k:['#7A4A6E','#F4E7C9'],g:['#E3A92B','#1B2A4A']};
+const CCOL={m:['#8DB8D8','#1B2A4A'],j:['#1F6F6A','#fff'],f:['#E3A92B','#1B2A4A'],k:['#D9773A','#1B2A4A'],g:['#E3A92B','#1B2A4A']};
 /* النقاط 1/2/3 والنجوم 1/3/5 */
 const LSTARS = {1:1,2:3,3:5};
 
@@ -837,26 +1237,54 @@ const WHO = [
 ];
 /* «خمن»: الحاجات اللي بتتخمن */
 const GUESS = [
-  {t:'نبي',a:'نوح عليه السلام'},{t:'نبي',a:'يونس عليه السلام'},{t:'نبي',a:'موسى عليه السلام'},{t:'نبي',a:'يوسف عليه السلام'},{t:'نبي',a:'سليمان عليه السلام'},{t:'نبي',a:'إبراهيم عليه السلام'},
-  {t:'صحابي',a:'بلال بن رباح'},{t:'صحابي',a:'أبو بكر الصديق'},{t:'صحابي',a:'عمر بن الخطاب'},{t:'صحابي',a:'خالد بن الوليد'},{t:'صحابي',a:'سلمان الفارسي'},{t:'صحابية',a:'خديجة بنت خويلد'},
-  {t:'مكان',a:'الكعبة'},{t:'مكان',a:'جبل عرفات'},{t:'مكان',a:'غار حراء'},{t:'مكان',a:'المسجد الأقصى'},{t:'مكان',a:'بئر زمزم'},{t:'مكان',a:'المدينة المنورة'},
-  {t:'حيوان',a:'الجمل'},{t:'حيوان',a:'الحوت'},{t:'حيوان',a:'النملة'},{t:'حيوان',a:'الهدهد'},{t:'حيوان',a:'الفيل'},{t:'حيوان',a:'النحلة'},
-  {t:'حاجة',a:'المصحف'},{t:'حاجة',a:'السجادة'},{t:'حاجة',a:'السبحة'},{t:'حاجة',a:'التمر'},{t:'حاجة',a:'الهلال'},{t:'حاجة',a:'المئذنة'}
+  {t:'نبي',a:'نوح عليه السلام'},{t:'نبي',a:'يونس عليه السلام',al:'ذو النون/ذا النون/صاحب الحوت'},{t:'نبي',a:'موسى عليه السلام',al:'كليم الله'},{t:'نبي',a:'يوسف عليه السلام'},{t:'نبي',a:'سليمان عليه السلام'},{t:'نبي',a:'إبراهيم عليه السلام',al:'ابرهيم/خليل الله'},
+  {t:'صحابي',a:'بلال بن رباح',al:'بلال'},{t:'صحابي',a:'أبو بكر الصديق',al:'أبو بكر/أبوبكر/الصديق'},{t:'صحابي',a:'عمر بن الخطاب',al:'عمر/الفاروق'},{t:'صحابي',a:'خالد بن الوليد',al:'خالد/سيف الله'},{t:'صحابي',a:'سلمان الفارسي',al:'سلمان'},{t:'صحابية',a:'خديجة بنت خويلد',al:'خديجة/السيدة خديجة'},
+  {t:'مكان',a:'الكعبة',al:'الكعبة المشرفة/البيت الحرام/بيت الله'},{t:'مكان',a:'جبل عرفات',al:'عرفات/عرفة/جبل عرفة'},{t:'مكان',a:'غار حراء',al:'حراء'},{t:'مكان',a:'المسجد الأقصى',al:'الأقصى'},{t:'مكان',a:'بئر زمزم',al:'زمزم/بير زمزم'},{t:'مكان',a:'المدينة المنورة',al:'المدينة/يثرب'},
+  {t:'حيوان',a:'الجمل',al:'ناقة/بعير'},{t:'حيوان',a:'الحوت'},{t:'حيوان',a:'النملة',al:'نمل'},{t:'حيوان',a:'الهدهد'},{t:'حيوان',a:'الفيل'},{t:'حيوان',a:'النحلة',al:'نحل'},
+  {t:'حاجة',a:'المصحف',al:'القرآن/القران'},{t:'حاجة',a:'السجادة',al:'سجادة الصلاة/المصلية'},{t:'حاجة',a:'السبحة',al:'المسبحة'},{t:'حاجة',a:'التمر',al:'البلح'},{t:'حاجة',a:'الهلال'},{t:'حاجة',a:'المئذنة',al:'المأذنة/المادنة'}
 ];
 
 /* ===== «الحرف» ===== */
-const LETTERS = [
-  {t:'أنبياء يبدأ اسمهم بحرف',l:'ي',ex:'يونس، يوسف، يعقوب، يحيى'},
-  {t:'أنبياء يبدأ اسمهم بحرف',l:'أ',ex:'آدم، إبراهيم، إسماعيل، إسحاق، أيوب، إدريس، إلياس'},
-  {t:'سور (من غير «ال») تبدأ بحرف',l:'ن',ex:'النساء، النحل، النمل، النور، النجم، نوح'},
-  {t:'سور (من غير «ال») تبدأ بحرف',l:'ف',ex:'الفاتحة، الفتح، الفرقان، فاطر، الفجر، الفيل، الفلق، فصلت'},
-  {t:'سور (من غير «ال») تبدأ بحرف',l:'ق',ex:'القصص، القمر، ق، القيامة، القدر، القارعة، قريش'},
-  {t:'سور (من غير «ال») تبدأ بحرف',l:'م',ex:'مريم، محمد، المائدة، الملك، المزمل، المدثر، المسد'},
-  {t:'صحابة يبدأ اسمهم بحرف',l:'ع',ex:'عمر، عثمان، علي، عمار، عبد الرحمن بن عوف'},
-  {t:'فواكه تبدأ بحرف',l:'ت',ex:'تفاح، تين، تمر، توت'},
-  {t:'حيوانات تبدأ بحرف',l:'ف',ex:'فيل، فهد، فأر، فراشة'},
-  {t:'دول تبدأ بحرف',l:'ل',ex:'لبنان، ليبيا، لاتفيا، لوكسمبورغ'}
-];
+/* ===== «الحرف»: قوايم الأسامي اللي الكمبيوتر بيعرفها =====
+   كل موضوع فيه قايمة، والأسامي بينها «،». الاسم اللي ليه كذا كتابة بينهم «/» (وكلهم يتحسبوا اسم واحد).
+   الحرف بيتختار عشوائي من الحروف اللي ليها 4 أسامي أو أكتر في الموضوع. سهل تزوّد على أي قايمة. */
+const WORDS = {
+  prophet:{t:'أنبياء يبدأ اسمهم بحرف', w:'آدم، إدريس، نوح، هود، صالح، إبراهيم/ابرهيم، لوط، إسماعيل، إسحاق، يعقوب/إسرائيل، يوسف، أيوب، شعيب، موسى، هارون، ذو الكفل/ذا الكفل، داود/داوود، سليمان، إلياس، اليسع/أليسع، يونس/ذو النون/ذا النون، زكريا/زكرياء، يحيى، عيسى/المسيح، محمد/أحمد'},
+  surah:{t:'سور (من غير «ال») تبدأ بحرف', w:'الفاتحة، البقرة، آل عمران، النساء، المائدة، الأنعام، الأعراف، الأنفال، التوبة/براءة، يونس، هود، يوسف، الرعد، إبراهيم، الحجر، النحل، الإسراء/بني إسرائيل، الكهف، مريم، طه، الأنبياء، الحج، المؤمنون/المؤمنين، النور، الفرقان، الشعراء، النمل، القصص، العنكبوت، الروم، لقمان، السجدة، الأحزاب، سبأ، فاطر، يس/ياسين، الصافات، ص/صاد، الزمر، غافر، فصلت، الشورى، الزخرف، الدخان، الجاثية، الأحقاف، محمد، الفتح، الحجرات، ق/قاف، الذاريات، الطور، النجم، القمر، الرحمن، الواقعة، الحديد، المجادلة، الحشر، الممتحنة، الصف، الجمعة، المنافقون/المنافقين، التغابن، الطلاق، التحريم، الملك/تبارك، القلم/ن، الحاقة، المعارج، نوح، الجن، المزمل، المدثر، القيامة، الإنسان/الدهر، المرسلات، النبأ، النازعات، عبس، التكوير، الانفطار، المطففين، الانشقاق، البروج، الطارق، الأعلى، الغاشية، الفجر، البلد، الشمس، الليل، الضحى، الشرح/الانشراح، التين، العلق، القدر، البينة، الزلزلة، العاديات، القارعة، التكاثر، العصر، الهمزة، الفيل، قريش، الماعون، الكوثر، الكافرون/الكافرين، النصر، المسد/تبت، الإخلاص، الفلق، الناس'},
+  sahabi:{t:'صحابة يبدأ اسمهم بحرف', w:'أبو بكر/أبو بكر الصديق/الصديق، عمر/عمر بن الخطاب/الفاروق، عثمان/عثمان بن عفان، علي/علي بن أبي طالب، طلحة/طلحة بن عبيد الله، الزبير/الزبير بن العوام، عبد الرحمن بن عوف/عبدالرحمن بن عوف، سعد بن أبي وقاص/سعد، سعيد بن زيد، أبو عبيدة/أبو عبيدة بن الجراح، بلال/بلال بن رباح، عمار/عمار بن ياسر، ياسر، سمية، خالد/خالد بن الوليد، حمزة/حمزة بن عبد المطلب، العباس/العباس بن عبد المطلب، عبد الله بن عباس/ابن عباس، عبد الله بن عمر/ابن عمر، عبد الله بن مسعود/ابن مسعود، عبد الله بن الزبير/ابن الزبير، عبد الله بن رواحة، عبد الله بن عمرو، عمرو بن العاص، عكرمة/عكرمة بن أبي جهل، عقبة بن نافع، عقبة بن عامر، عبادة بن الصامت، عمير بن سعد، عمير بن وهب، عثمان بن مظعون، عائشة، أسماء/أسماء بنت أبي بكر، أم سلمة، أم كلثوم، أم أيمن، أم عمارة/نسيبة، أم حرام، أبو هريرة، أبو ذر/أبو ذر الغفاري، أبو الدرداء، أبو أيوب/أبو أيوب الأنصاري، أبو طلحة، أبو موسى/أبو موسى الأشعري، أبو سفيان، أبي بن كعب، أسامة/أسامة بن زيد، أنس/أنس بن مالك، الأرقم/الأرقم بن أبي الأرقم، أسعد بن زرارة، البراء/البراء بن مالك، البراء بن عازب، جعفر/جعفر بن أبي طالب، جابر/جابر بن عبد الله، جرير/جرير بن عبد الله، جليبيب، حذيفة/حذيفة بن اليمان، حسان/حسان بن ثابت، الحسن/الحسن بن علي، الحسين/الحسين بن علي، حفصة، حليمة/حليمة السعدية، حكيم بن حزام، حارثة، حنظلة، خديجة/خديجة بنت خويلد، خباب/خباب بن الأرت، خبيب/خبيب بن عدي، خولة/خولة بنت الأزور، زيد/زيد بن حارثة، زيد بن ثابت، زينب، زيد بن أرقم، سلمان/سلمان الفارسي، سهيل بن عمرو، سعد بن معاذ، سعد بن عبادة، سالم/سالم مولى أبي حذيفة، سودة، سراقة/سراقة بن مالك، سفينة، صهيب/صهيب الرومي، صفية، صفوان بن أمية، ضرار/ضرار بن الأزور، طفيل/الطفيل بن عمرو، عاصم/عاصم بن ثابت، فاطمة/فاطمة الزهراء، فضالة بن عبيد، قيس بن سعد، قتادة/قتادة بن النعمان، كعب بن مالك، كعب بن زهير، معاذ/معاذ بن جبل، مصعب/مصعب بن عمير، معاوية/معاوية بن أبي سفيان، المقداد/المقداد بن الأسود، المغيرة/المغيرة بن شعبة، ميمونة، مارية/مارية القبطية، نعيم بن مسعود، النعمان بن بشير، نسيبة بنت كعب، هند/هند بنت عتبة، هشام بن حكيم، وحشي/وحشي بن حرب، واثلة بن الأسقع، الوليد بن الوليد، يزيد بن أبي سفيان'},
+  fruit:{t:'فواكه تبدأ بحرف', w:'تفاح/تفاحة، تين/تينة، تمر/تمرة/بلح، توت، تين شوكي، تمر هندي، ترنج، برتقال/برتقالة، بطيخ/بطيخة، برقوق، بابايا، باشن فروت، بوملي، بشملة/بشمله/أكي دنيا، جوافة، جريب فروت، جوز هند، خوخ/خوخة، رمان/رمانة، ريد كرنت، زبيب، زيتون، شمام/شمّام، عنب/عنبة، عنب بري، فراولة/فراوله/توت أرضي، فاكهة التنين/دراجون فروت، فيجوا، كمثرى/كمترى، كيوي، كريز/كرز، كاكا/كاكي، كانتلوب/كنتالوب، كمكوات، ليمون/ليمونة، لارنج، ليتشي، مانجو/مانجة، موز/موزة، مشمش/مشمشة، مندرين/يوسفي/يوسفية، نبق، نارنج، نكتارين، أناناس، أفوكادو، إجاص، أكي دنيا، أترج، توت شامي، توت بري'},
+  animal:{t:'حيوانات تبدأ بحرف', w:'أسد، أرنب، أفعى، أخطبوط، أيل، أوز/أوزة/إوز/وز/وزة، ببغاء/ببغان، بطة/بط، بقرة، بغل، بومة، باندا، بطريق، برغوث، بعوضة/ناموسة، بجعة، تمساح، ثعلب، ثعبان، ثور، جمل، جاموس/جاموسة، جراد/جرادة، جرو، حمار، حصان، حوت، حمامة/حمام، حرباء، حلزون، حية، خروف، خنزير، خفاش، خنفساء، خرتيت/وحيد القرن، دب، دجاجة/فرخة، ديك، دلفين/دولفين، دودة، دبور، ذئب، ذبابة/دبانة، زرافة، زرزور، زنبور، سمكة/سمك، سنجاب، سلحفاة/سلحفاه/زلحفة، سنونو، سحلية، سرطان/كابوريا، صقر، صرصور، ضفدع، ضبع، ضب، طاووس/طاوس، طائر، عصفور، عنكبوت، عقرب، عنزة/معزة/ماعز، عجل، غزال/غزالة، غراب، غوريلا، غنم، فيل، فهد، فأر/فار، فراشة، فرس، فقمة، فلامنجو/فلامينجو، قرد، قط/قطة/بسة، قنفذ، قرش/سمك القرش، قندس، كلب، كنغر/كنجارو، كوالا، كركدن، لقلق، لاما، ليث، لبؤة، ماعز، نمر، نحلة، نملة، نسر، نعامة، نورس، هدهد، هر/هرة، هامستر، وطواط، وعل، يمامة، يربوع، يعسوب'},
+  country:{t:'دول تبدأ بحرف', w:'مصر، السعودية، الإمارات، الكويت، قطر، البحرين، عمان/سلطنة عمان، اليمن، العراق، سوريا، لبنان، الأردن، فلسطين، ليبيا، تونس، الجزائر، المغرب، موريتانيا، السودان، جنوب السودان، الصومال، جيبوتي، جزر القمر، تركيا، إيران، باكستان، أفغانستان، الهند، بنغلاديش، الصين، اليابان، كوريا، إندونيسيا، ماليزيا، تايلاند، الفلبين، فيتنام، سنغافورة، سريلانكا، نيبال، بوتان، ميانمار، كمبوديا، لاوس، منغوليا، كازاخستان، أوزبكستان، تركمانستان، طاجيكستان، قيرغيزستان، أذربيجان، أرمينيا، جورجيا، روسيا، أوكرانيا، بيلاروسيا، بولندا، ألمانيا، فرنسا، إيطاليا، إسبانيا، البرتغال، إنجلترا/بريطانيا/المملكة المتحدة، أيرلندا، هولندا، بلجيكا، لوكسمبورغ/لوكسمبورج، سويسرا، النمسا، التشيك، سلوفاكيا، المجر، رومانيا، بلغاريا، اليونان، ألبانيا، صربيا، كرواتيا، البوسنة، سلوفينيا، مقدونيا، الجبل الأسود، كوسوفو، قبرص، مالطا، الدنمارك، السويد، النرويج، فنلندا، أيسلندا، إستونيا، لاتفيا، ليتوانيا، مولدوفا، موناكو، أندورا، الفاتيكان، أمريكا/الولايات المتحدة، كندا، المكسيك، البرازيل، الأرجنتين، تشيلي، بيرو، كولومبيا، فنزويلا، الإكوادور، بوليفيا، باراغواي/باراجواي، الأوروغواي، كوبا، جامايكا، هايتي، بنما، كوستاريكا، نيكاراغوا، هندوراس، غواتيمالا، السلفادور، أستراليا، نيوزيلندا، فيجي، نيجيريا، النيجر، مالي، السنغال، غانا، غينيا، غامبيا، ساحل العاج، الكاميرون، تشاد، إثيوبيا، إريتريا، كينيا، أوغندا، تنزانيا، رواندا، بوروندي، الكونغو، الجابون/الغابون، أنغولا، زامبيا، زيمبابوي، موزمبيق، مدغشقر، ملاوي، ناميبيا، بوتسوانا، جنوب أفريقيا، ليسوتو، ليبيريا، سيراليون، توجو، بنين، بوركينا فاسو، الرأس الأخضر، سيشل، موريشيوس، المالديف، بروناي، تيمور الشرقية، بابوا غينيا الجديدة، ليختنشتاين، سان مارينو'}
+};
+
+/* المقارنة: من غير تشكيل، و«ال» و«عليه السلام» و«رضي الله عنه» مش بيفرقوا، والأخطاء الصغيرة في الحروف بتتقبل */
+function normN(w){ return String(w||'').trim().replace(/[ً-ْـ]/g,'').replace(/عليه\s*السلام|عليها\s*السلام|رضي\s*الله\s*عن(ه|ها|هم)|صلى\s*الله\s*عليه\s*وسلم/g,'')
+  .replace(/[أإآٱ]/g,'ا').replace(/ة/g,'ه').replace(/ى/g,'ي').replace(/ؤ/g,'و').replace(/ئ/g,'ي').replace(/(^|\s)ال(?=\S{2})/g,'$1').replace(/[^ء-ي0-9a-z]/gi,''); }
+function lev(a,b){ const m=a.length,n=b.length; if(!m) return n; if(!n) return m; let p=Array.from({length:n+1},(_,j)=>j);
+  for(let i=1;i<=m;i++){ const c=[i]; for(let j=1;j<=n;j++) c[j]=Math.min(p[j]+1,c[j-1]+1,p[j-1]+(a[i-1]===b[j-1]?0:1)); p=c; } return p[n]; }
+const tolFor = n => n<=2?0 : n<=5?1 : n<=8?2 : 3;
+/* الكلمة تتقبل لو قريبة من كتابة من الكتابات، ومش ناقصة حروف كتير (عشان «يوس» ما تتحسبش «يونس») */
+function near(w,x){ if(w===x) return 0; if(w.length < x.length-(x.length>=7?1:0)) return 99; const d=lev(w,x); return d<=tolFor(x.length)?d:99; }
+function candidates(word,entries){ const w=normN(word), out=[]; if(!w) return out;
+  entries.forEach((al,i)=>{ let bd=99; al.forEach(x=>{ bd=Math.min(bd,near(w,x)); }); if(bd<99) out.push([i,bd]); });
+  return out.sort((a,b)=>a[1]-b[1]); }
+function findEntry(word,entries){ const c=candidates(word,entries); return c.length?c[0][0]:-1; }
+/* لكذا اسم: بنختار لكل واحد خانة مختلفة لو ينفع */
+function assignEntries(names,entries){
+  const cs=names.map(n=>candidates(n,entries)); let best=null;
+  (function go(i,used,acc){ if(best && best.u===names.length) return; if(i===names.length){ const u=new Set(acc).size; if(!best||u>best.u) best={u,acc:acc.slice()}; return; }
+    if(!cs[i].length){ go(i+1,used,acc.concat(-1)); return; }
+    cs[i].forEach(([e])=>{ go(i+1,used,acc.concat(e)); }); })(0,null,[]);
+  return best?best.acc:names.map(()=>-1);
+}
+const wordEntries = c => WORDS[c].w.split('،').map(e=>e.split('/').map(normN).filter(Boolean));
+const firstOf = (e,l) => normL(e).startsWith(normL(l)) || String(e).trim().replace(/^[أإآ]/,'ا').startsWith(normL(l));
+/* كل موضوع وحرف ليهم 4 أسامي أو أكتر بيبقوا من اختيارات «الحرف» */
+const LETTERS = (()=>{ const out=[];
+  for(const c in WORDS){ const raw=WORDS[c].w.split('،').map(e=>e.split('/')[0].trim()), by={};
+    raw.forEach(e=>{ const f=normL(e)[0]; if(f) (by[f]=by[f]||[]).push(e); });
+    for(const l in by) if(by[l].length>=4) out.push({c,l,t:WORDS[c].t,ex:by[l].slice(0,7).join('، ')}); }
+  return out; })();
 
 /* ===== «الكلمة الناقصة» بقت طريقة سؤال ===== */
 const BLANKS = [
@@ -1009,6 +1437,15 @@ const ICON = {
   bolt:'<path d="M13.5 2L4 14h7l-1.5 8L20 10h-7z" fill="currentColor" stroke="none"/>',
   diamond:'<path d="M6 4h12l3 5-9 11L3 9z"/><path d="M3 9h18M9 4l3 16 3-16"/>',
   check:'<path d="M5 12.5l4.5 4.5L19 7"/>',
+  sun8:'<path d="M12 3l2.2 3.6L18.4 5.6 17.4 9.8 21 12l-3.6 2.2 1 4.2-4.2-1L12 21l-2.2-3.6-4.2 1 1-4.2L3 12l3.6-2.2-1-4.2 4.2 1z"/><circle cx="12" cy="12" r="3"/>',
+  play:'<path d="M16 6v12L7 12z"/>',
+  gear:'<circle cx="12" cy="12" r="3"/><path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5.3 5.3l2.1 2.1M16.6 16.6l2.1 2.1M5.3 18.7l2.1-2.1M16.6 7.4l2.1-2.1"/>',
+  book:'<path d="M4 5a2 2 0 0 1 2-2h13v15H6a2 2 0 0 0-2 2z"/><path d="M4 20a2 2 0 0 0 2 2h13v-4"/>',
+  home:'<path d="M4 11l8-7 8 7v9H4z"/><path d="M10 20v-5h4v5"/>',
+  send:'<path d="M21 3L3 10.5l7 2.5 2.5 7z"/><path d="M10 13l5-5"/>',
+  resume:'<path d="M8 5l11 7-11 7z"/>',
+  robot:'<rect x="5" y="8" width="14" height="11" rx="3"/><path d="M12 4.5V8M9.5 13h.01M14.5 13h.01M9.5 16.5h5"/>',
+  bell:'<path d="M6 16V11a6 6 0 0 1 12 0v5l2 2H4z"/><path d="M10 20a2 2 0 0 0 4 0"/>',
   wifi:'<path d="M2.5 9a14 14 0 0 1 19 0M5.5 12.5a9.5 9.5 0 0 1 13 0M8.5 16a5 5 0 0 1 7 0"/><path d="M12 19.5h.01"/>',
   share:'<circle cx="18" cy="5" r="2.5"/><circle cx="6" cy="12" r="2.5"/><circle cx="18" cy="19" r="2.5"/><path d="M8.2 10.8l7.6-4.4M8.2 13.2l7.6 4.4"/>',
   x:'<path d="M6 6l12 12M18 6L6 18"/>',
@@ -1153,7 +1590,7 @@ function cardBack(){ return `<div class="kc back"><span class="bolt">${ic('bolt'
 R.home = () => {
   $('#btn-continue').hidden = !(DB.game && !DB.game.finished && !DB.game.online);
   const rb=$('#btn-room'); rb.hidden=!DB.lastRoom || !!ROOM; if(DB.lastRoom) rb.textContent=`ارجع للغرفة ${DB.lastRoom}`;
-  $('#home-stat').textContent = `${allQ().length} سؤالًا، و${Object.keys(POWERS).length} كارت قوة، و${Object.keys(CHALLENGES).length} كارت تحدي`;
+  $('#home-stat').textContent = `${allQ().length} سؤال، و${Object.keys(POWERS).length} كارت قوة، و${Object.keys(CHALLENGES).length} كارت تحدي`;
 };
 function continueGame(){ beginTurn(); show('play'); }
 
@@ -1162,8 +1599,8 @@ let SETUP = null;
 function freshSetup(){ const s=DB.settings; return {endMode:s.endMode,rounds:s.rounds,target:s.target,timer:s.timer,cooldown:s.cooldown,startStars:s.startStars}; }
 function newGame(){
   SETUP=freshSetup();
-  if(DB.game && !DB.game.finished){ confirmModal('عندك لعبة محفوظة لسه ما خلصتش. لو بدأت لعبة جديدة هتتمسح لما تبدأ اللعب.','ابدأ لعبة جديدة',()=>show('setup')); return; }
-  show('setup');
+  if(DB.game && !DB.game.finished && !DB.game.online){ confirmModal('عندك لعبة محفوظة لسه ما خلصتش. لو بدأت لعبة جديدة هتتمسح لما تبدأ اللعب.','ابدأ لعبة جديدة',()=>toPlayers()); return; }
+  toPlayers();
 }
 function chips(fn,key,opts,val){
   return `<div class="chips">${opts.map(([v,l])=>`<button class="chip ${v===val?'on':''}" onclick="${fn}('${key}',${typeof v==='number'?v:`'${v}'`})">${l}</button>`).join('')}</div>`;
@@ -1190,13 +1627,14 @@ function toPlayers(){
   }
   show('players');
 }
+const PCOL=[['#E3A92B','#1B2A4A'],['#1F6F6A','#fff'],['#8DB8D8','#1B2A4A'],['#D9773A','#1B2A4A'],['#7A4A6E','#F4E7C9'],['#F4E7C9','#1B2A4A']];
 function botName(){ let n=1; while(PL.some(p=>p.bot && p.name==='Bot '+n)) n++; return 'Bot '+n; }
 R.players = () => {
   const bots=PL.filter(p=>p.bot).length;
   $('#players-count').textContent = `عدد اللاعبين: ${PL.length}${bots?`، منهم ${bots} Bot`:''}. هتلعبوا على الجهاز ده بالتناوب.`;
   $('#players-body').innerHTML = PL.map((p,i)=> p.bot
-    ? `<div class="prow botrow"><span class="ord">${i+1}</span><span class="botnm">${esc(p.name)}</span><span class="seg"><button class="${p.bot==='easy'?'on':''}" onclick="setBotLvl(${i},'easy')">سهل</button><button class="${p.bot==='hard'?'on':''}" onclick="setBotLvl(${i},'hard')">صعب</button></span><button class="icon-btn" onclick="removePlayer(${i})" aria-label="شيل ${esc(p.name)}">${ic('x')}</button></div>`
-    : `<div class="prow"><span class="ord">${i+1}</span><input class="inp" value="${esc(p.name)}" maxlength="14" placeholder="اسم اللاعب ${i+1}" aria-label="اسم اللاعب ${i+1}" oninput="PL[${i}].name=this.value">${PL.length>2?`<button class="icon-btn" onclick="removePlayer(${i})" aria-label="حذف اللاعب">${ic('trash')}</button>`:''}</div>`).join('')
+    ? `<div class="prow botrow"><span class="ricon bot" style="width:34px;height:34px">${ic('robot')}</span><span class="botnm">${esc(p.name)}</span><span class="seg"><button class="${p.bot==='easy'?'on':''}" onclick="setBotLvl(${i},'easy')">سهل</button><button class="${p.bot==='hard'?'on':''}" onclick="setBotLvl(${i},'hard')">صعب</button></span><button class="icon-btn" onclick="removePlayer(${i})" aria-label="شيل ${esc(p.name)}">${ic('x')}</button></div>`
+    : `<div class="prow"><span class="ordn" style="background:${PCOL[i%PCOL.length][0]};color:${PCOL[i%PCOL.length][1]}">${i+1}</span><input class="inp" value="${esc(p.name)}" maxlength="14" placeholder="اسم اللاعب ${i+1}" aria-label="اسم اللاعب ${i+1}" oninput="PL[${i}].name=this.value">${PL.length>2?`<button class="icon-btn" onclick="removePlayer(${i})" aria-label="حذف اللاعب">${ic('x')}</button>`:''}</div>`).join('')
     + `<div class="grid2"><button class="btn ghost" onclick="addPlayer()">${ic('plus')} ضيف لاعب</button><button class="btn ghost botadd" onclick="addBot()">${ic('plus')} ضيف Bot</button></div>`;
 };
 function addPlayer(){ PL.push({name:'',bot:null}); R.players(); const ins=document.querySelectorAll('#players-body input'); if(ins.length) ins[ins.length-1].focus(); }
@@ -1212,12 +1650,13 @@ function startGame(){
   if(names.some(n=>!n)) return toast('اكتب اسم كل لاعب');
   if(new Set(names).size!==names.length) return toast('مينفعش اسمين زي بعض');
   if(!PL.some(p=>!p.bot)) return toast('لازم يكون فيه لاعب واحد على الأقل مش Bot');
+  SETUP=freshSetup();
   const order = shuffle(PL.map((p,i)=>({name:names[i],bot:p.bot||null,color:COLORS[i%COLORS.length]})));
   const stamp = NOW().toString(36);
   const players = order.map((p,i)=>({id:'p'+i+stamp,name:p.name,bot:p.bot,color:p.color,points:0,stars:0,hand:[],correct:0,wrong:0,turns:0,lastCh:-999,lastLvl:null,obst:[],tgt:[],fl:{shield:false,immune:0,frozen:false,skip:false,chdouble:false}}));
   DB.game = {v:3,players,turn:0,round:1,endMode:SETUP.endMode,rounds:SETUP.rounds,target:SETUP.target,timer:SETUP.timer,cooldown:SETUP.cooldown,used:{1:[],2:[],3:[]},usedX:{},lastPower:null,pendingSwap:null,tf:{power:false,ch:false},finished:false,started:NOW()};
   DB.lastPlayers = names; DB.lastPL = PL.map((p,i)=>({name:names[i],bot:p.bot||null})); save();
-  show('roles');
+  beginTurn(); show('play');
 }
 R.roles = () => {
   const g=DB.game; if(!g) return show('home');
@@ -1266,10 +1705,14 @@ const cdPill = () => `<div class="cdpill"><span id="cd">${cdLeft()}</span> ثا�
 const clockOwner = () => !ONLINE || IS_HOST;
 function clockTick(){
   if(!DB.game || !QS && !curStep()) return;
-  if(QS && QS.limit && !QS.answered){
-    const left=timeLeft(), b=document.getElementById('tbar'), n=document.getElementById('tnum');
-    if(b){ b.style.width=Math.max(0,left/(QS.limit+QS.extra)*100)+'%'; b.classList.toggle('low',left<=5); }
+  if(QS && QS.limit && !QS.answered && !QS.autoAt){
+    const left=timeLeft(), b=document.getElementById('tsegs'), n=document.getElementById('tnum');
+    if(b){ const on=Math.ceil(Math.max(0,left)/(QS.limit+QS.extra)*10); [...b.children].forEach((x,i)=>x.classList.toggle('on',i<on)); b.classList.toggle('low',left<=5); }
     if(n) n.textContent=Math.max(0,Math.ceil(left));
+  }
+  if(autoOn()){
+    const ab=document.getElementById('autob'); if(ab) ab.style.width=autoPct()+'%';
+    if(clockOwner() && NOW()>=QS.autoAt && !$('#modal').classList.contains('open')){ QS.autoStop=1; finishTurn(); return; }
   }
   const st=curStep(), cd=document.getElementById('cd');
   if(cd && st && st.dl) cd.textContent=cdLeft();
@@ -1374,6 +1817,7 @@ function answer(i){
     p.points+=pts; p.stars+=st; p.correct++;
     T.gain={pts,st};
     if(T.friend && T.mode==='normal'){ const f=pById(T.friend); f.points+=1; T.gain.friend=f.name; }
+    if(!p.bot) QS.autoAt=NOW()+AUTO_MS;
     sfx('star');
   } else {
     p.wrong++;
@@ -1387,6 +1831,7 @@ function answer(i){
 const isFrozen = p => p.fl.frozen;
 function powerGroupPool(g){ return Object.keys(POWERS).filter(k=>isUnlocked(k) && drawGroup(k)===g); }
 function openPowerSheet(){
+  stopAuto();
   const p=cur();
   modal(`<h3>كروت القوة</h3><p>بتشتري كارت بعد ما دورك يخلص. لازم يكون معاك من النقاط والنجوم عدد المجموعة، والنجوم بس هي اللي بتتخصم. الكارت بيطلع عشوائي.</p><div class="mgrid">${['f','d','k'].map(g=>{ const G=PG[g], ok=p.points>=G.c && p.stars>=G.c;
     return `<div class="grow" style="--a:${G.b}"><span class="gn">${G.n}</span><span class="gc2">${ok?'تقدر تشتري':'محتاج '+G.c+' نقطة و'+G.c+' نجمة'}</span><span class="gp">${G.c} ${starWord(G.c)}</span></div>`; }).join('')}</div><button class="btn" style="margin-top:12px" onclick="closeModal()">رجوع</button>`);
@@ -1432,11 +1877,12 @@ function canUseNow(p,k){
   return {ok:true};
 }
 function openMyCards(pid){
+  stopAuto();
   const p=pById(pid||(ONLINE?ME_PID:cur().id)); if(!p) return; pauseQ();
   if(!p.hand.length) return modal(`<h3>كروت ${esc(p.name)}</h3><p>مفيش كروت قوة لسه. بتشتري كارت بعد ما دورك يخلص.</p><button class="btn" onclick="closeModal()">رجوع</button>`);
-  modal(`<h3>كروت ${esc(p.name)}</h3><p>محدش يبص غير ${esc(p.name)}. الكارت بيتستخدم مرة واحدة بس.</p><div class="grid2">${p.hand.map(k=>{ const c=canUseNow(p,k);
+  modal(`<h3>كروتي</h3><p>الكروت دي سرية، ومحدش شايفها غير ${esc(p.name)}. الكارت بيتستخدم مرة واحدة بس.</p><div style="display:grid;gap:8px">${p.hand.map(k=>{ const c=canUseNow(p,k), P=POWERS[k], gk=P.pack?'g':P.g, col=NCOL[gk]||NCOL.g;
     const extra = c.mirror ? ` («${POWERS[c.mirror].name}»)` : '';
-    return `<div>${powerCard(k,{fs:'8.5px',noLock:true})}${c.ok?`<button class="btn primary sm" style="width:100%;margin-top:6px" onclick="closeModal();usePower('${p.id}','${k}')">استخدم${extra}</button>`:`<p class="muted center" style="font-size:12px;margin:4px 0 0">${c.why}</p>`}</div>`; }).join('')}</div><button class="btn" style="margin-top:12px" onclick="closeModal()">رجوع</button>`);
+    return `<div class="mcrow" style="--a:${col[0]};color:${col[1]}"><span class="mi">${ic(P.icon)}</span><span class="tx"><small>${P.pack?'ذهبي':PG[P.g].n}</small><b>${P.name}</b><span>${P.desc}</span></span>${c.ok?`<button onclick="closeModal();usePower('${p.id}','${k}')">استخدم${extra}</button>`:`<span class="why">${c.why}</span>`}</div>`; }).join('')}</div><button class="btn light" style="margin-top:12px" onclick="closeModal()">رجوع</button>`);
 }
 function markPower(p){ const g=DB.game; if(!g.tf.pu) g.tf.pu=[]; if(!g.tf.pu.includes(p.id)) g.tf.pu.push(p.id); }
 const usedPower = p => !!(DB.game.tf.pu && DB.game.tf.pu.includes(p.id));
@@ -1557,6 +2003,7 @@ function chAvail(p){
 }
 let CH_TAB=null;
 function openChSheet(tab){
+  stopAuto();
   const p=cur(), a=chAvail(p); pauseQ();
   if(!a.cats.length) return modal(`<h3>كروت التحدي</h3><p>${a.why}</p><p>الشرط ${CH_MIN_PTS} نقاط، والعقبة ${OBST_MIN_PTS} نقطة. ده شرط بس، مبيتخصمش.</p><button class="btn" onclick="closeModal()">رجوع</button>`);
   const c = a.cats.includes(tab) ? tab : (a.cats.includes(CH_TAB) ? CH_TAB : a.cats[0]); CH_TAB=c;
@@ -1636,10 +2083,8 @@ const BUILD = {
   team: ch=>{ ch.steps=[qStep('all',ch.q0||pickQ(ch.L),{limit:30})]; },
   guess: ch=>{ const a=pickX('guess',GUESS); let b=pickX('guess',GUESS); if(b===a) b=pickX('guess',GUESS);
     ch.meta.items={[ch.drawer]:a,[ch.target]:b};
-    if(ONLINE){ ch.steps=[{kind:'gplay',pid:null}]; return; }
-    ch.steps=[{kind:'gsee',pid:ch.drawer,private:1},{kind:'gsee',pid:ch.target,private:1}];
-    if(DB.game.players.filter(x=>x.id!==ch.drawer && x.id!==ch.target && !x.bot).length) ch.steps.push({kind:'gjudge',pid:null});
-    ch.steps.push({kind:'gplay',pid:null}); },
+    if(ONLINE){ ch.steps=[{kind:'gplay',pid:null,tries:{}}]; return; }
+    ch.steps=[{kind:'gsee',pid:ch.drawer,private:1},{kind:'gsee',pid:ch.target,private:1},{kind:'gplay',pid:null,tries:{}}]; },
   letter: ch=>{ ch.steps=[{kind:'letter',pid:null,l:pickX('letter',LETTERS),state:'run',out:[],subs:{}}]; },
   auction: ch=>{ const qs=[ch.q0||pickQ(ch.L),pickQ(ch.L),pickQ(ch.L)]; ch.meta.bids={};
     ch.steps=[{kind:'bid',pid:ch.drawer,private:1},{kind:'bid',pid:ch.target,private:1},...qs.map(q=>qStep(ch.drawer,q,{private:1})),...qs.map(q=>qStep(ch.target,q,{private:1}))]; },
@@ -1706,8 +2151,8 @@ function stepTimeout(st){
   if(st.kind==='mem'){ if(st.state==='show'){ st.state='pick'; st.dl=NOW()+15000; save(); return renderPlay(); } chRecord({ok:false}); return chNext(); }
   if(st.kind==='order' || st.kind==='pic'){ chRecord({ok:false,stage:3}); return chNext(); }
   if(st.kind==='bid'){ if(st.bid==null) st.bid=1; return bidConfirm(); }
-  if(st.kind==='gplay') return guessWin(null);
-  if(st.kind==='letter'){ chRecord({winner:null}); st.state='timeout'; save(); return renderPlay(); }
+  if(st.kind==='gplay') return guessWin(null,true);
+  if(st.kind==='letter'){ if(st.state!=='run') return; st.state='done'; chRecord({winner:null,timeout:1}); return chNext(); }
 }
 function refuseCh(){
   const ch=T.ch, t=pById(ch.target);
@@ -1730,32 +2175,44 @@ function numSubmit(){
   const st=T.ch.steps[T.ch.idx]; chRecord({val:n,time:(NOW()-st.t0)/1000}); sfx('tap'); chNext();
 }
 /* الحرف (أونلاين بس): كل واحد يكتب 3 أسامي على موبايله، وأول واحد يخلص صح يكسب، والباقيين يأكدوا الموضوع */
-function normL(w){ w=String(w||'').trim().replace(/^ال/,'').replace(/^[أإآ]/,'ا'); return w; }
-function letterOk(names,l){ const L=normL(l); return names.length===3 && names.every(n=>n.trim() && normL(n).startsWith(L)); }
+function normL(w){ w=String(w||'').trim().replace(/[ً-ْـ]/g,'').replace(/^ال/,'').replace(/^[أإآ]/,'ا'); return w; }
+function letterOk(names,l){ return names.length===3 && names.every(n=>n.trim() && firstOf(n,l)); }
+/* الكمبيوتر بيحكم: الاسم لازم يكون من قايمة الموضوع (ولو فيه غلطة صغيرة في الحروف بيتقبل)، والتلاتة مختلفين */
+function letterCheck(names,item){
+  const all=wordEntries(item.c), raw=WORDS[item.c].w.split('،');
+  const ents=all.map((al,i)=>firstOf(raw[i].split('/')[0],item.l)||raw[i].split('/').some(x=>firstOf(x,item.l))?al:[]);
+  const idx=assignEntries(names,ents);
+  const bi=idx.findIndex(i=>i<0);
+  if(bi>=0) return {ok:false,why:`«${names[bi]}» مش من «${item.t} ${item.l}»`};
+  if(new Set(idx).size<3) return {ok:false,why:'لازم 3 أسامي مختلفين'};
+  return {ok:true};
+}
 function letterSubmit(){
-  const st=curStep(); if(!st || st.kind!=='letter') return;
+  const st=curStep(); if(!st || st.kind!=='letter' || st.state!=='run') return;
   const ins=[...document.querySelectorAll('.lin')].map(x=>x.value.trim());
   if(ins.some(x=>!x)) return toast('اكتب 3 أسامي');
   if(!letterOk(ins,st.l.l)) return toast(`كل الأسامي لازم تبدأ بحرف «${st.l.l}»`);
-  const me=ONLINE?ME_PID:cur().id; if(st.subs[me]) return;
-  st.subs[me]={names:ins,t:NOW()};
-  letterNextJudge(st); sfx('tap'); PUB_RETRY=()=>{ const s2=curStep(); if(s2 && s2.kind==='letter' && !s2.subs[me]){ s2.subs[me]={names:ins,t:NOW()}; letterNextJudge(s2); save(); renderPlay(); } }; save(); renderPlay();
-}
-function letterNextJudge(st){
-  if(st.state!=='run') return;
-  const c=Object.keys(st.subs).filter(id=>!st.out.includes(id)).sort((a,b)=>st.subs[a].t-st.subs[b].t)[0];
-  if(c){ st.state='judge'; st.by=c; st.left=Math.max(0,st.dl-NOW()); st.dl=0; }
-}
-function letterJudge(ok){
-  const ch=T.ch, st=ch.steps[ch.idx];
-  if(ok){ chRecord({winner:st.by}); sfx('ok'); return chNext(); }
-  st.out.push(st.by); sfx('bad');
-  if(st.out.length>=2 || !st.left){ chRecord({winner:null}); return chNext(); }
-  st.state='run'; st.dl=NOW()+st.left; letterNextJudge(st); save(); renderPlay();
+  const c=letterCheck(ins,st.l); if(!c.ok){ sfx('bad'); return toast(c.why+'. عدّل وجرّب تاني'); }
+  const me=ONLINE?ME_PID:cur().id;
+  const win=()=>{ const s2=curStep(); if(!s2 || s2.kind!=='letter' || s2.state!=='run') return; s2.subs[me]={names:ins,t:NOW()}; s2.state='done'; s2.dl=0; chRecord({winner:me,names:ins}); sfx('ok'); chNext(); };
+  PUB_RETRY=win; win();
 }
 function letterFinish(){ chNext(); }
 /* خمن */
-function guessWin(id){ chRecord({winner:id||null}); sfx(id?'ok':'tap'); chNext(); }
+function guessWin(id,timeout){ const st=curStep(); if(!st || st.kind!=='gplay' || st.done) return; st.done=1; st.dl=0; chRecord({winner:id||null,timeout:timeout?1:0}); sfx(id?'ok':'tap'); chNext(); }
+/* التخمين: التطبيق بيتأكد لوحده لما اللاعب يقف عن الكتابة ثانية، أو يدوس Enter */
+function guessMatch(txt,item){ return findEntry(txt,[[item.a,...String(item.al||'').split('/')].map(normN).filter(Boolean)])===0; }
+let GT={};
+function guessType(pid,el,now){ clearTimeout(GT[pid]); GT[pid]=setTimeout(()=>guessTry(pid,el.value),now?0:1100); }
+function guessTry(pid,val){
+  const st=curStep(), ch=T.ch; if(!st || st.kind!=='gplay' || st.done) return;
+  val=String(val||'').trim(); if(normN(val).length<2) return;
+  const other = pid===ch.drawer ? ch.target : ch.drawer;
+  if(guessMatch(val,ch.meta.items[other])){ PUB_RETRY=()=>guessWin(pid); return guessWin(pid); }
+  if(!st.tries) st.tries={};
+  if(st.tries[pid]===val) return;
+  st.tries[pid]=val; save(); if(ONLINE) renderPlay(); else { const n=document.getElementById('gtry-'+pid); if(n) n.textContent=`«${val}» مش صح، كمّل`; }
+}
 /* المزاد */
 function bidPick(n){ const st=T.ch.steps[T.ch.idx]; st.bid=n; sfx('tap'); renderPlay(); }
 function bidConfirm(){ const ch=T.ch, st=ch.steps[ch.idx]; if(st.bid==null) return; ch.meta.bids[st.pid]=st.bid; chRecord({bid:st.bid}); chNext(); }
@@ -1795,7 +2252,7 @@ function resolveCh(){
     case 'memory': case 'order': add(ch.drawer,R[0].ok?S:-S); break;
     case 'picture': { const r=R[0]; add(ch.drawer, r.ok ? (r.stage<3?S:1) : -S); note=`الإجابة: سورة ${ch.steps[0].p.a}`; break; }
     case 'guess': case 'letter': { const r=R.find(x=>'winner' in x)||{}; const w=r.winner, l=w?(w===ch.drawer?ch.target:ch.drawer):null;
-      if(w){ add(w,S); add(l,-S); note = ch.key==='guess' ? `${pById(w).name} خمّن صح الأول` : `${pById(w).name} قال 3 أسامي صح الأول`; } else note='تعادل، محدش كسب';
+      if(w){ add(w,S); add(l,-S); note = ch.key==='guess' ? `${pById(w).name} خمّن صح الأول` : `${pById(w).name} قال 3 أسامي صح الأول`; } else note = r.timeout ? (ch.key==='guess'?'محدش خمّن صح في الدقيقتين، فمحدش كسب ولا خسر':'الوقت خلص ومحدش كتب التلاتة صح، فمحدش كسب ولا خسر') : 'تعادل، محدش كسب';
       if(ch.key==='guess'){ const it=ch.meta.items; note+=`. مع ${pById(ch.drawer).name}: ${it[ch.drawer].a}، ومع ${pById(ch.target).name}: ${it[ch.target].a}`; }
       else note+=`. إجابات ممكنة: ${ch.steps[0].l.ex}`;
       break; }
@@ -1844,19 +2301,28 @@ const isBusy = () => (T.phase==='answer' && QS && !QS.answered) || T.phase==='ch
 function renderPlay(){
   const g=DB.game; if(!g) return show('home');
   const p=cur();
-  const label = g.endMode==='rounds' ? `الجولة ${Math.min(g.round,g.rounds)} من ${g.rounds}` : `الهدف ${g.target} نقطة`;
-  $('#play-top').innerHTML = `<span class="tbgrp"><button class="icon-btn" onclick="openMenu()" aria-label="القائمة">${ic('menu')}</button><button class="icon-btn" onclick="goBack()" aria-label="رجوع" ${canBack()?'':'disabled'}>${ic('back')}</button></span><span class="round-pill">${label}</span><button class="icon-btn" onclick="show('scores')" aria-label="النقاط والنجوم" ${isBusy()?'disabled':''}>${ic('trophy')}</button>`;
-  const others=g.players.filter(x=>x.id!==p.id);
-  $('#play-strip').innerHTML = `<div class="pbanner${p.bot?' isbot':''}${ONLINE&&p.id===ME_PID?' me':''}"><div class="who">${ONLINE&&p.id===ME_PID?'دورك يا '+esc(p.name):'دور '+esc(p.name)}</div>${p.bot?`<span class="pill w">${p.bot==='easy'?'سهل':'صعب'}</span>`:''}<span class="pill y">${p.points} ${ptsWord(p.points)}</span><span class="pill k">${p.stars} ${starWord(p.stars)}</span></div>${flagTags(p)}`
-    + `<div class="circles">${others.map(o=>`<div class="pc${ONLINE&&o.id===ME_PID?' me':''}" title="${esc(o.name)}: ${o.points} نقاط، ${o.stars} نجوم، ${o.hand.length} كروت"><span class="c">${esc(o.name)}</span><span class="badge">${o.points}</span>${o.obst&&o.obst.length?`<span class="obadge" aria-label="عليه عقبة">!</span>`:''}</div>`).join('')}</div>`;
+  const rd = g.endMode==='rounds' ? `<div class="rnd"><small>الجولة</small><b>${Math.min(g.round,g.rounds)}</b><span>من ${g.rounds}</span></div>` : `<div class="rnd"><small>الهدف</small><b>${g.target}</b><span>نقطة</span></div>`;
+  $('#play-top').innerHTML = `${rd}<button class="icon-btn" onclick="goBack()" aria-label="رجوع" ${canBack()?'':'hidden'}>${ic('back')}</button><button class="icon-btn" onclick="show('scores')" aria-label="النقاط" ${isBusy()?'disabled':''}>${ic('trophy')}</button><button class="icon-btn" onclick="openMenu()" aria-label="القائمة">${ic('menu')}</button>`;
+  const i0=g.players.indexOf(p), order=g.players.slice(i0).concat(g.players.slice(0,i0));
+  const slide = renderPlay._last!==p.id+':'+g.tc; renderPlay._last=p.id+':'+g.tc;
+  $('#play-strip').innerHTML = `<div class="pstrip${slide?' slide':''}">${order.map(o=>{ const c=o.id===p.id, me=ONLINE&&o.id===ME_PID;
+    return `<div class="pbox${c?' cur':''}${me?' me':''}" title="${esc(o.name)}: ${o.points} ${ptsWord(o.points)}، ${o.stars} ${starWord(o.stars)}"><b>${c?(me?'دورك':'دور '+esc(o.name)):esc(o.name)}</b><span>${o.points} ${ptsWord(o.points)}</span>${o.obst&&o.obst.length?'<i class="ob" aria-label="عليه عقبة">!</i>':''}</div>`; }).join('')}</div>${flagTags(p)}`;
   const f = {skip:stageSkip,obst:stageObst,draw:stageDraw,answer:stageAnswer,handq:stageHandQ,chSetup:stageChSetup,ch:stageCh,chResult:stageChResult,buy:stageBuy,bought:stageBought}[T.phase] || stageDraw;
-  let html=f(p);
-  if(ONLINE && !canAct()) html=watchView(p,html);
+  let html = (T.phase==='draw' && isLastRound()) ? stageLast(p) : f(p);
+  const watching = ONLINE && !canAct();
+  if(watching) html=watchView(p,html);
+  const keep=[...document.querySelectorAll('#play-stage input')].map((x,i)=>({k:x.className+'|'+i,v:x.value,f:x===document.activeElement,s:x.selectionStart}));
   $('#play-stage').innerHTML = html;
-  $('#play-hand').innerHTML = '';
+  if(keep.length){ const now=[...document.querySelectorAll('#play-stage input')]; now.forEach((x,i)=>{ const o=keep.find(k=>k.k===x.className+'|'+i); if(o){ if(o.v && !x.value) x.value=o.v; if(o.f){ x.focus(); try{ x.setSelectionRange(o.s,o.s); }catch(e){} } } }); }
+  const oh={draw:'228px',answer:'180px',handq:'180px',buy:'205px',bought:'205px'}[T.phase]||'150px';
+  $('#s-play').style.setProperty('--oh',oh);
+  $('#play-hand').innerHTML = (!watching && !p.bot && !(T.phase==='draw'&&isLastRound()) && (T.phase==='draw' || (T.phase==='answer' && T.mode==='normal'))) ? deckRow(p) : '';
   botSchedule();
 }
 R.play = renderPlay;
+/* شاشة «آخر جولة» قبل أول دور فيها */
+function isLastRound(){ const g=DB.game; return g && g.endMode==='rounds' && g.round===g.rounds && g.rounds>1 && g.turn===0 && !g.lastShown; }
+function stageLast(){ const g=DB.game; return `<div class="lastr pop"><small>آخر جولة</small><b>الجولة ${g.rounds}</b><span>من ${g.rounds}</span><button class="btn primary big" style="margin-top:22px;max-width:320px" onclick="DB.game.lastShown=1;save();renderPlay()">يلا</button></div>`; }
 
 /* ================== الـ Bot ================== */
 let BOT_T=null;
@@ -1955,11 +2421,10 @@ function qTitle(){ return `<div class="qtitle">سؤال<span class="qmark">؟</s
 function deckRow(p){
   if(p.bot) return '';
   const ca=chAvail(p);
-  const lk=`<span class="lk">${ic('lock')}</span>`;
-  return `<div class="decks">
-    <button class="dk p" onclick="openPowerSheet()" aria-label="كروت القوة"><span class="b"></span><span class="f"><span class="ci">${ic('diamond')}</span></span></button>
-    <button class="dk c ${ca.cats.length?'':'off'}" onclick="openChSheet()" aria-label="كروت التحدي"><span class="b"></span><span class="f"><span class="ci">${ic('bolt')}</span></span>${ca.cats.length?'':lk}</button>
-    <button class="dk mine" onclick="openMyCards()" aria-label="كروتي"><span class="f"><span class="ci">${ic('cards')}</span></span><span class="badge">${p.hand.length}</span></button>
+  return `<div class="dbar">
+    <button class="dp" onclick="openPowerSheet()">${ic('diamond')}القوة</button>
+    <button class="dc ${ca.cats.length?'':'off'}" onclick="openChSheet()">${ca.cats.length?ic('bolt'):ic('lock')}التحدي</button>
+    <button class="dm" onclick="openMyCards()">${ic('cards')}كروتي<span class="n">${p.hand.length}</span></button>
   </div>`;
 }
 function stageSkip(p){
@@ -1967,9 +2432,15 @@ function stageSkip(p){
 }
 function stageDraw(p){
   const lv=[1,2,3].map(n=>{ const L=LEVELS[n], off=p.lastLvl===n;
-    return `<button class="lvb" style="--c:${L.col}" onclick="pickLevel(${n})" ${off?'disabled':''} aria-label="${L.name}"><span class="ln">${L.name}</span><span class="ls">${'★'.repeat(n)}</span><span class="lp"><span class="pill y">${n} ${ptsWord(n)}</span><span class="pill k">${LSTARS[n]} ${starWord(LSTARS[n])}</span></span>${off?'<span class="lo">لعبته الدور اللي فات</span>':''}</button>`; }).join('');
-  return `<div class="gc q pop"><div class="qtitle">${p.bot?esc(p.name)+' بيختار':'اختار المستوى'}<span class="qmark">؟</span></div><div class="gc-paper"><div class="lvrow">${lv}</div>${deckRow(p)}</div></div>
+    return `<button class="lvb ${L.cls}" style="--c:${L.col}" onclick="pickLevelAnim(this,${n})" ${off||p.bot?'disabled':''} aria-label="${L.name}"><span class="ln">${L.name}</span><span class="bars">${[1,2,3].map(b=>`<i class="${b<=n?'on':''}"></i>`).join('')}</span><span class="gap"></span><span class="lp"><span>${n} ${ptsWord(n)}</span><span>${LSTARS[n]} ${starWord(LSTARS[n])}</span></span>${off?'<span class="lo">لعبته الدور اللي فات</span>':''}</button>`; }).join('');
+  return `<div class="phead"><b>${p.bot?esc(p.name)+' بيختار':'اختار المستوى'}</b><small>الكارت هيتقلب ويطلعلك سؤال</small></div><div class="lvrow" style="margin-top:14px">${lv}</div>
   ${isFrozen(p)?'<p class="hint">انت متجمّد في الدور ده، فمش هتقدر تستخدم كروت القوة.</p>':''}`;
+}
+function pickLevelAnim(el,n){
+  const p=cur(); if(T.phase!=='draw' || p.lastLvl===n) return pickLevel(n);
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches) return pickLevel(n);
+  el.classList.add('pick'); el.parentNode.classList.add('picked'); sfx('flip');
+  setTimeout(()=>{ if(T.phase==='draw') pickLevel(n); },480);
 }
 function stageObst(p){
   const ob=p.obst[0], C=CHALLENGES[ob.key], by=pById(ob.by), S=ob.key==='hard'?LSTARS[3]:ob.S;
@@ -2007,68 +2478,81 @@ function stageChSetup(p){
   return `<div class="setup pop">${h}</div>`;
 }
 function stageBuy(p){
-  if(p.bot) return `<div class="botbuy pop"><div class="bbin"><h2>${esc(p.name)} بيفكر يشتري كارت قوة</h2></div></div>`;
-  const last=QS&&QS.answered;
-  return `<div class="setup pop"><div class="setup-h"><span class="sname">تشتري كارت قوة؟</span></div><p class="hint">اختار المجموعة والكارت يطلع عشوائي. النجوم بتتخصم والنقاط لأ.</p>
-  ${['f','d','k'].map(g=>{ const G=PG[g], ok=canBuy(p,g);
-    return `<button class="buyb" style="--a:${G.b}" onclick="buyFrom('${g}')" ${ok?'':'disabled'}><span class="bt"><b>${G.n}</b><small>${ok?powerGroupPool(g).length+' كروت '+G.sub:'مقفول: محتاج '+G.c+' نقطة و'+G.c+' نجمة'}</small></span><span class="pill k">${G.c} ${starWord(G.c)}</span></button>`; }).join('')}
-  <button class="btn" onclick="endTurn()">لا، الدور للي بعدي</button></div>`;
+  if(p.bot) return `<div class="botbuy pop"><div class="bbin"><h2>${esc(p.name)} بيفكر يشتري كارت قوة</h2><div class="dots" aria-hidden="true"><i></i><i></i><i></i></div></div></div>`;
+  return `<div class="phead"><b>كروت القوة</b><small>معاك ${p.stars} ${starWord(p.stars)}. اختار المجموعة، والكارت يطلع عشوائي. النجوم بتتخصم والنقاط لأ.</small></div>
+  <div style="display:grid;gap:10px;margin-top:14px">${['f','d','k'].map(g=>{ const G=PG[g], ok=canBuy(p,g), c=NCOL[g];
+    return `<button class="buyb" style="--a:${c[0]};color:${ok?c[1]:''}" onclick="buyFrom('${g}')" ${ok?'':'disabled'}><span class="gi">${ok?ic(g==='f'?'clover':g==='d'?'shieldcheck':'bolt'):ic('lock')}</span><span class="bt" style="flex:1"><b>${G.n}</b><br><small>${ok?powerGroupPool(g).length+' كروت '+G.sub:'مقفول: محتاج '+G.c+' نقطة و'+G.c+' نجمة'}</small></span><span class="pill">${G.c} ${starWord(G.c)}</span></button>`; }).join('')}</div>
+  <button class="btn light big" style="margin-top:12px" onclick="endTurn()">لا، الدور للي بعدي</button>`;
 }
 function stageBought(p){
-  if(p.bot) return `<div class="botbuy pop"><div class="bbin"><h2>${esc(p.name)} اشترى كارت قوة</h2><p>من ${PG[T.g].n}. الكارت سري.</p><button class="btn primary big" onclick="endTurn()">الدور اللي بعده</button></div></div>`;
-  return `<div class="setup pop"><div class="setup-h"><span class="sname">طلع لك من ${PG[T.g].n}</span></div>${powerCard(T.k,{anim:true,noLock:true})}
-  <p class="hint">اتخصم ${PG[T.g].c} ${starWord(PG[T.g].c)}، وبقى معاك ${p.stars}. الكارت سري، فما توريهوش لحد.</p>
-  <button class="btn primary big" onclick="endTurn()">خبّي الكارت والدور للي بعدي</button></div>`;
+  if(p.bot) return `<div class="botbuy pop"><div class="bbin"><h2>${esc(p.name)} اشترى كارت قوة</h2><p>من مجموعة ${PG[T.g].n}. الكارت سري.</p><button class="btn big" onclick="endTurn()">الدور اللي بعده</button></div></div>`;
+  const P=POWERS[T.k], c=NCOL[T.g];
+  return `<div class="phead"><b>طلع لك</b><small>من مجموعة ${PG[T.g].n}</small></div>
+  <div class="pwbig${T.g==='k'?'':''}" style="--a:${c[0]};color:${c[1]};margin-top:14px"><div class="top"><span>كارت قوة · ${PG[T.g].n}</span><i>${ic(P.icon)}</i></div><div><b>${P.name}</b><br><small>${P.desc}</small></div></div>
+  <div class="secret" style="margin-top:12px">اتخصم ${PG[T.g].c} ${starWord(PG[T.g].c)}، وبقى معاك ${p.stars}. الكارت سري، فما توريهوش لحد.</div>
+  <button class="btn primary big" style="margin-top:12px" onclick="endTurn()">خبّي الكارت والدور للي بعدي</button>`;
 }
 function stageHandQ(){
   const p=pById(T.ans);
   return `<div class="handoff pop"><span class="step">${T.mode==='pass'?'تمرير السؤال':'اقتناص الفرصة'}</span>${av(p,92)}<h2>${esc(p.name)} هيجاوب</h2><p>${T.mode==='pass'?'لو جاوب صح ياخد النقاط والنجوم، ولو غلط يخسر نقطة.':'لو جاوب صح ياخد النقاط والنجوم.'}</p><button class="btn primary big" onclick="beginHandQ()">أنا جاهز</button></div>`;
 }
 function qBlock(head, showTimer, inner){
-  const timer = (showTimer && QS.limit && !QS.answered) ? `<div class="timer"><i id="tbar" style="width:${Math.max(0,timeLeft())/(QS.limit+QS.extra)*100}%"></i></div>` : '';
-  const tnum = (showTimer && QS.limit && !QS.answered) ? `<span class="tnum"><span id="tnum">${Math.ceil(Math.max(0,timeLeft()))}</span> ث</span>` : '';
-  const sp = QS.q.special==='who' ? `<div class="qkind">من أنا؟</div>` : QS.q.special==='blank' ? `<div class="qkind">الكلمة الناقصة</div>` : '';
-  let qt = `<div class="qtext">${esc(QS.q.q)}</div>`;
+  const live = showTimer && QS.limit && !QS.answered;
+  const left = Math.max(0,timeLeft()), tot = QS.limit+QS.extra;
+  const segs = live ? `<div class="segs${left<=5?' low':''}" id="tsegs">${Array.from({length:10},(_,i)=>`<i class="${i<Math.ceil(left/tot*10)?'on':''}"></i>`).join('')}</div>` : '';
+  const tnum = live ? `<span class="qsec"><span id="tnum">${Math.ceil(left)}</span> ث</span>` : '';
+  const sp = QS.q.special==='who' ? `<span class="qkind2">من أنا؟</span>` : QS.q.special==='blank' ? `<span class="qkind2">الكلمة الناقصة</span>` : '';
+  let qt = `<div class="qtxt">${esc(QS.q.q)}</div>`;
   if(QS.q.who){ const n=QS.answered?QS.q.who.length:QS.shown;
     qt = `<div class="clues">${QS.q.who.slice(0,n).map((c,i)=>`<div class="clue"><b>${i+1}</b>${esc(c)}</div>`).join('')}${n<QS.q.who.length?`<button class="clue more" onclick="whoMoreQ()"><b>${n+1}</b>دوس عشان تشوف التلميح ${n===1?'التاني':'التالت'}</button>`:''}</div>`; }
-  else if(QS.q.special==='blank'){ qt = `<div class="qtext">${esc(QS.q.q).replace('...','<span class="blank">؟</span>')}</div>`; }
-  return `<div class="gc q ${QS.flip?'flip-in':''}">${sp}<div class="ans-top"><div class="tags">${head}</div>${tnum}</div>${timer}<div class="gc-paper">${qt}${inner||''}</div></div>`;
+  else if(QS.q.special==='blank'){ qt = `<div class="qtxt">${esc(QS.q.q).replace('...','<span class="blank">؟</span>')}</div>`; }
+  return `<div class="qcard ${QS.flip?'flip-in':''}"><div class="qhead">${head}${sp}<span class="sp"></span>${tnum}</div>${segs}${qt}</div>${inner||''}`;
 }
 function optsHtml(revealNow){
-  return `<div class="opts">${QS.opts.map((o,i)=>{
-    let c=''; const gone=QS.removed.includes(i);
-    if(gone) c='gone';
-    let isOk = QS.reverse ? !o.ok : o.ok;
+  return `<div class="ogrid">${QS.opts.map((o,i)=>{
+    let c='o'+(i%4); const gone=QS.removed.includes(i);
+    if(gone) c+=' gone';
+    const isOk = QS.reverse ? !o.ok : o.ok;
     if(QS.answered){
       if(!revealNow) c += i===QS.choice?' picked':' dim';
-      else if(o.ok && !QS.reverse) c+=' correct';
-      else if(QS.reverse && i===QS.choice) c+= isOk?' correct':' wrong';
-      else if(i===QS.choice) c+=' wrong';
-      else if(QS.reverse && o.ok) c+=' dim';
+      else if(i===QS.choice) c += isOk?' right':' wrong';
+      else if(o.ok && !QS.reverse) c+=' right';
       else c+=' dim';
     }
     const txt = (QS.hidden && !QS.answered) ? '؟؟؟' : esc(o.t);
-    const mark = (QS.answered && revealNow) ? (o.ok ? ic('check','oi') : (i===QS.choice ? ic('x','oi') : '')) : '';
-    return `<button class="opt ${c}" onclick="answer(${i})" ${QS.answered||gone?'disabled':''}><span class="k">${KEYS[i]}</span><span class="t">${txt}</span>${mark}</button>`;
+    const mark = (QS.answered && revealNow) ? ((QS.reverse? (i===QS.choice&&isOk) : o.ok) ? ic('check') : (i===QS.choice ? ic('x') : '')) : '';
+    return `<button class="ob2 ${c}" onclick="answer(${i})" ${QS.answered||gone?'disabled':''}><span class="k"><span>${KEYS[i]}</span>${mark}</span><span class="t">${txt}</span></button>`;
   }).join('')}</div>`;
 }
 function stageAnswer(){
   const p=pById(T.ans), L=LEVELS[T.level], pts=T.level*(QS.double?2:1);
-  let head = `<span class="qtag ${L.cls}">${'★'.repeat(T.level)} ${L.name}</span><span class="qtag x2 stk"><span>${pts} ${ptsWord(pts)}${QS.double?' (مضاعفة)':''}</span><span>${LSTARS[T.level]} ${starWord(LSTARS[T.level])}</span></span>`;
+  let head = `<span class="qlv ${L.cls}">${L.name}</span><span class="qgain"><span>${pts} ${ptsWord(pts)}${QS.double?' (مضاعفة)':''}</span><span>${LSTARS[T.level]} ${starWord(LSTARS[T.level])}</span></span>`;
   if(T.mode!=='normal') head += `<span class="qtag ch">${esc(p.name)} بيجاوب</span>`;
   let extra='';
   if(!QS.answered){
     if(T.friend) extra += `<p class="note">استشرت ${esc(pById(T.friend).name)}: لو جاوبت صح ياخد نقطة.</p>`;
-    if(T.mode==='normal' && DB.game.players.some(x=>x.id!==p.id && !x.bot && x.hand.includes('snatch'))) extra += `<button class="btn ghost sm" style="width:100%" onclick="openSnatch()">${ic('grab')} حد عايز يقتنص السؤال؟</button>`;
-  } else {
-    if(QS.ok) extra += `<div class="fb ok pop"><div class="fb-title">${(p.bot||T.mode!=='normal')?esc(p.name)+' جاوب صح':'إجابة صحيحة!'}</div><div class="gain">+${T.gain.pts} ${ptsWord(T.gain.pts)}</div><div class="gain">+${T.gain.st} ${starWord(T.gain.st)}</div>${T.gain.friend?`<div class="why">و${esc(T.gain.friend)} خد نقطة على الاستشارة</div>`:''}</div>`;
-    else extra += `<div class="fb bad pop"><div class="fb-title">${QS.choice<0?'الوقت خلص!':'إجابة غلط'}</div>${T.lost?`<div class="why">${esc(p.name)} خسر نقطة</div>`:''}<div class="reveal">${ic('search')}<span>الإجابة الصحيحة: <b>${esc(QS.q.a[0])}</b></span></div></div>`;
-    if(T.mode!=='normal') extra += `<p class="note">دور ${esc(cur().name)} خلص.</p>`;
+    if(T.mode==='normal' && !ONLINE && DB.game.players.some(x=>x.id!==p.id && !x.bot && x.hand.includes('snatch'))) extra += `<button class="btn snatchb" onclick="openSnatch()">${ic('grab')} حد عايز يقتنص السؤال؟</button>`;
+    return qBlock(head,true, optsHtml(true)+extra);
   }
-  let fb='', after='';
-  if(QS.answered){ fb=extra; after=`<button class="btn primary big" onclick="finishTurn()">${p.bot?'الدور للي بعده':'إنهاء الدور'}</button>`; } else after=extra;
-  return qBlock(head,true, optsHtml(true)+fb+(T.mode==='normal'?deckRow(p):'')) + after;
+  const who = (p.bot||T.mode!=='normal'||(ONLINE&&p.id!==ME_PID)) ? esc(p.name)+' جاوب صح' : 'إجابة صح';
+  if(QS.ok){
+    extra += `<div class="res-ok"><div><b>${who}</b>${T.gain.friend?`<div class="fr">و${esc(T.gain.friend)} خد نقطة على الاستشارة</div>`:''}</div><div class="g"><span>+${T.gain.pts} ${ptsWord(T.gain.pts)}</span><span>+${T.gain.st} ${starWord(T.gain.st)}</span></div></div>`;
+    if(autoOn()) extra += `<div class="auto" id="autobox"><span>الدور اللي بعده خلال 3 ثواني</span><i><b id="autob" style="width:${autoPct()}%"></b></i></div>`;
+    else extra += `<button class="btn primary big" onclick="finishTurn()">${p.bot?'الدور للي بعده':'كمّل'}</button>`;
+  } else {
+    extra += `<div class="res-bad"><div><b>${QS.choice<0?'الوقت خلص':'إجابة غلط'}</b><span class="ans">الإجابة الصح: ${esc(QS.q.a[0])}</span>${T.lost?`<span>${esc(p.name)} خسر نقطة</span>`:''}</div></div>`;
+    const me=cur();
+    if(T.mode==='normal' && !p.bot && p.hand.includes('retry') && !isFrozen(p) && !usedPower(p) && (!ONLINE||p.id===ME_PID)) extra += `<div class="retry"><span class="ri">${ic('refresh')}</span><span>معاك كارت «إعادة»</span><button onclick="useRetry()">استخدمه</button></div>`;
+    extra += `<button class="btn light big" onclick="finishTurn()">الدور اللي بعده</button>`;
+  }
+  if(T.mode!=='normal') extra += `<p class="note">دور ${esc(cur().name)} خلص.</p>`;
+  return qBlock(head,true, optsHtml(true)+extra);
 }
+/* بعد الإجابة الصح الدور بيكمّل لوحده بعد 3 ثواني، إلا لو اللاعب فتح كروته أو التحدي */
+const AUTO_MS=3000;
+function autoOn(){ return T.phase==='answer' && QS && QS.answered && QS.ok && QS.autoAt && !QS.autoStop; }
+function autoPct(){ return QS&&QS.autoAt ? Math.max(0,Math.min(100,(QS.autoAt-NOW())/AUTO_MS*100)) : 0; }
+function stopAuto(){ if(T.phase==='answer' && QS && QS.answered && QS.autoAt && !QS.autoStop){ QS.autoStop=1; save(); } }
 function stageCh(){
   const ch=T.ch, st=ch.steps[ch.idx], C=CHALLENGES[ch.key];
   if(T.sub==='handoff'){
@@ -2103,16 +2587,10 @@ function stageCh(){
     case 'letter': {
       const A=pById(ch.drawer), B=pById(ch.target), me=ME_PID, part=me===A.id||me===B.id;
       const top = `<div class="bigword pop"><div style="font-size:18px;opacity:.85">${esc(st.l.t)}</div>«${esc(st.l.l)}»</div>`;
-      if(st.state==='run'){
-        let body;
-        if(part && !st.subs[me] && !st.out.includes(me)) body=`<p class="note">اكتب 3 أسامي بتبدأ بالحرف، والأسرع يكسب. الأسامي المتشابهة عادي.</p>${[1,2,3].map(i=>`<input class="inp lin" maxlength="24" placeholder="الاسم ${i}" aria-label="الاسم ${i}">`).join('')}<button class="btn primary big" onclick="letterSubmit()">خلصت</button>`;
-        else if(part) body=`<p class="note">اتبعت. مستنيين الحكم.</p>`;
-        else body=`<p class="note">${esc(A.name)} و${esc(B.name)} بيكتبوا دلوقتي.</p>`;
-        return top + cdPill() + body;
-      }
-      if(st.state==='timeout') return top + `<div class="panel"><b>إجابات ممكنة:</b> ${esc(st.l.ex)}</div><p class="note">الوقت خلص ومحدش خلص التلاتة.</p>${canAct()?'<button class="btn primary big" onclick="letterFinish()">اعرض النتيجة</button>':''}`;
-      const sb=st.subs[st.by]||{names:[]};
-      return top + `<div class="panel"><b>${esc(pById(st.by).name)} كتب:</b> ${sb.names.map(esc).join('، ')}</div><p class="note">كلهم من موضوع «${esc(st.l.t)}»؟</p>${canAct()?`<div class="grid2"><button class="btn primary" onclick="letterJudge(true)">أيوه، صح</button><button class="btn" onclick="letterJudge(false)">لأ</button></div>`:'<p class="note">مستنيين الحكم.</p>'}`;
+      let body;
+      if(part) body=`<p class="note">اكتب 3 أسامي، وأول واحد يكتبهم صح يكسب. الكمبيوتر هو اللي بيحكم.</p>${[1,2,3].map(i=>`<input class="inp lin" maxlength="24" placeholder="الاسم ${i}" aria-label="الاسم ${i}">`).join('')}<button class="btn primary big" onclick="letterSubmit()">خلصت</button>`;
+      else body=`<div class="chvs"><span class="a">${esc(A.name)}</span><i>${ic('bolt')}</i><span class="b">${esc(B.name)}</span></div><p class="note">الاتنين بيكتبوا دلوقتي، وأول واحد يكتب التلاتة صح يكسب.</p>`;
+      return top + cdPill() + body;
     }
     case 'gsee': {
       const it=ch.meta.items[st.pid], other=pById(st.pid===ch.drawer?ch.target:ch.drawer), next=ch.steps[ch.idx+1];
@@ -2120,23 +2598,17 @@ function stageCh(){
       <p class="note">${esc(other.name)} هيحاول يخمّنه، وانت جاوبه بآه أو لأ بس. وانت كمان هتخمّن اللي معاه.</p>
       <button class="btn primary big" onclick="chNext()">${next && next.kind==='gsee'?'خبّي وادّي الجهاز لـ'+esc(pById(next.pid).name):next && next.kind==='gjudge'?'خبّي وادّي الجهاز للباقيين':'خبّي'}</button>`;
     }
-    case 'gjudge': {
-      const A=pById(ch.drawer), B=pById(ch.target), it=ch.meta.items;
-      return `<div class="handoff pop" style="gap:8px"><span class="step">للباقيين بس</span><h2>${esc(A.name)} و${esc(B.name)} يديروا ضهرهم</h2></div>
-      <div class="gpair"><div><small>مع ${esc(A.name)}، و${esc(B.name)} هيخمّنه</small><b>${esc(it[A.id].a)}</b></div><div><small>مع ${esc(B.name)}، و${esc(A.name)} هيخمّنه</small><b>${esc(it[B.id].a)}</b></div></div>
-      <p class="note">انتوا الحكام: اتأكدوا إن إجابات «آه» و«لأ» صح، ودوسوا على اسم اللي يخمّن صح الأول.</p><button class="btn primary big" onclick="chNext()">شفنا، ابدأوا</button>`;
-    }
     case 'gplay': {
-      const A=pById(ch.drawer), B=pById(ch.target);
-      if(ONLINE){ const it=ch.meta.items, me=ME_PID, part=me===A.id||me===B.id, other=part?(me===A.id?B:A):null;
-        const btns = canAct() ? `<h3 class="sec">مين خمّن صح الأول؟</h3><button class="btn orange big" onclick="guessWin('${A.id}')">${esc(A.name)} خمّن صح</button><button class="btn orange big" onclick="guessWin('${B.id}')">${esc(B.name)} خمّن صح</button><button class="btn" onclick="guessWin(null)">محدش عرف: تعادل</button>` : '<p class="note">الحكام هما اللي بيدوسوا على اللي يخمّن صح الأول.</p>';
-        const head = part ? `<div class="obcard pop" style="background:#7a4a25"><div style="font-weight:800">اللي معاك، و${esc(other.name)} هيحاول يخمّنه</div><div class="obp"><div class="obn">${esc(it[me].a)}</div><div class="obd">${esc(it[me].t)}</div></div><div style="font-weight:800">اسألوا بعض بالدور، والإجابة آه أو لأ بس</div></div>`
-          : `<div class="gpair"><div><small>مع ${esc(A.name)}، و${esc(B.name)} هيخمّنه</small><b>${esc(it[A.id].a)}</b></div><div><small>مع ${esc(B.name)}، و${esc(A.name)} هيخمّنه</small><b>${esc(it[B.id].a)}</b></div></div><p class="note">انتوا الحكام: اتأكدوا إن إجابات «آه» و«لأ» صح.</p>`;
-        return head + cdPill() + btns; }
-      return `<div class="obcard pop" style="background:#7a4a25"><div class="obt" style="color:#fff;font-size:32px">${esc(A.name)} ضد ${esc(B.name)}</div><div style="font-weight:800">اسألوا بعض بالدور، والإجابة آه أو لأ بس</div></div>
-      ${cdPill()}<p class="note">الشاشة دي مفيهاش أي إجابة، فالكل يقدر يبص.</p><h3 class="sec">مين خمّن صح الأول؟</h3>
-      <button class="btn orange big" onclick="guessWin('${A.id}')">${esc(A.name)} خمّن صح</button><button class="btn orange big" onclick="guessWin('${B.id}')">${esc(B.name)} خمّن صح</button>
-      <button class="btn" onclick="guessWin(null)">محدش عرف: تعادل</button>`;
+      const A=pById(ch.drawer), B=pById(ch.target), it=ch.meta.items, tr=st.tries||{};
+      const box=(p,o)=>`<div class="gbox"><label class="lb" for="gin-${p.id}">تخمين ${esc(p.name)} (اللي مع ${esc(o.name)})</label><input class="inp gin" id="gin-${p.id}" maxlength="40" autocomplete="off" placeholder="اكتب تخمينك" oninput="guessType('${p.id}',this)" onkeydown="if(event.key==='Enter')guessType('${p.id}',this,1)"><p class="note gtry" id="gtry-${p.id}">${tr[p.id]?`«${esc(tr[p.id])}» مش صح، كمّل`:''}</p></div>`;
+      const top=`<div class="chvs"><span class="a">${esc(A.name)}</span><i>${ic('bolt')}</i><span class="b">${esc(B.name)}</span></div><div class="bigword pop" style="font-size:24px">معاكوا دقيقتين</div>${cdPill()}`;
+      const how=`<p class="note">اسألوا بعض بالدور، والإجابة آه أو لأ بس. اكتب تخمينك في أي وقت، والتطبيق بيتأكد لوحده، وأول واحد يكتب الصح يكسب.</p>`;
+      if(ONLINE){ const me=ME_PID, part=me===A.id||me===B.id;
+        if(part){ const o=me===A.id?B:A;
+          return top + `<div class="obcard pop"><div style="font-weight:800">اللي معاك، و${esc(o.name)} بيحاول يخمّنه</div><div class="obp"><div class="obn">${esc(it[me].a)}</div><div class="obd">${esc(it[me].t)}</div></div></div>` + how + box(pById(me),o); }
+        return top + `<div class="gpair"><div><small>مع ${esc(A.name)}</small><b>${esc(it[A.id].a)}</b><small>آخر تخمين لـ${esc(B.name)}: ${tr[B.id]?esc(tr[B.id]):'لسه'}</small></div><div><small>مع ${esc(B.name)}</small><b>${esc(it[B.id].a)}</b><small>آخر تخمين لـ${esc(A.name)}: ${tr[A.id]?esc(tr[A.id]):'لسه'}</small></div></div><p class="note">انتوا بتتفرجوا. ما تقولوش الإجابات!</p>`;
+      }
+      return top + how + box(A,B) + box(B,A);
     }
     case 'bid': {
       const other=pById(st.pid===ch.drawer?ch.target:ch.drawer);
@@ -2182,16 +2654,20 @@ function stageChResult(){
 }
 function openMenu(){
   const busy=isBusy();
-  if(ONLINE) return modal(`<h3>القائمة</h3><p>غرفة ${ROOM}</p><div class="mgrid">
-    <button class="btn primary" onclick="closeModal()">كمّل اللعب</button>
-    <button class="btn" onclick="closeModal();show('scores')">النقاط والنجوم</button>
-    ${IS_HOST?`<button class="btn orange" onclick="closeModal();confirmModal('اللعبة هتخلص دلوقتي عند الكل، والفايز هيتحدد بالنقاط الحالية.','إنهاء اللعبة',finish)">إنهاء اللعبة وإعلان الفايز</button>`:''}
-    <button class="btn" onclick="closeModal();confirmLeave()">اخرج من اللعبة</button></div>`);
-  modal(`<h3>القائمة</h3><div class="mgrid">
-    <button class="btn primary" onclick="closeModal()">كمّل اللعب</button>
-    ${busy?'':`<button class="btn" onclick="closeModal();show('scores')">النقاط والنجوم</button>`}
-    <button class="btn" onclick="closeModal();saveAndHome()">احفظ وارجع للرئيسية</button>
-    <button class="btn orange" onclick="closeModal();confirmModal('اللعبة هتخلص دلوقتي والفايز هيتحدد بالنقاط الحالية.','إنهاء اللعبة',finish)">إنهاء اللعبة وإعلان الفايز</button>
+  const it=(icn,t,on,cls)=>`<button class="mitem ${cls||''}" onclick="${on}"><span class="t">${t}</span>${ic(icn)}</button>`;
+  if(ONLINE) return modal(`<h3>القائمة</h3><p>غرفة ${ROOM}</p><div style="display:grid;gap:8px">
+    ${it('resume','كمّل اللعب','closeModal()')}
+    ${it('trophy','النقاط',"closeModal();show('scores')")}
+    ${it('book','طريقة اللعب',"closeModal();HOW_FROM='play';show('howto')")}
+    ${IS_HOST?it('crown','إنهاء اللعبة وإعلان الفايز',"closeModal();confirmModal('اللعبة هتخلص دلوقتي عند الكل، والفايز هيتحدد بالنقاط الحالية.','إنهاء اللعبة',finish)"):''}
+    ${it('home','اخرج من اللعبة','closeModal();confirmLeave()','out')}</div>`);
+  modal(`<h3>القائمة</h3><div style="display:grid;gap:8px">
+    ${it('resume','كمّل اللعب','closeModal()')}
+    ${busy?'':it('trophy','النقاط',"closeModal();show('scores')")}
+    ${it('book','طريقة اللعب',"closeModal();HOW_FROM='play';show('howto')")}
+    ${busy?'':it('gear','الإعدادات',"closeModal();SET_FROM='play';show('settings')")}
+    ${it('crown','إنهاء اللعبة وإعلان الفايز',"closeModal();confirmModal('اللعبة هتخلص دلوقتي والفايز هيتحدد بالنقاط الحالية.','إنهاء اللعبة',finish)")}
+    ${it('home','احفظ واخرج للرئيسية','closeModal();saveAndHome()','out')}
   </div>`);
 }
 function saveAndHome(){ stopTimer(); QS=null; save(); show('home'); toast('اللعبة اتحفظت. الدور الحالي هيبدأ من الأول.'); }
@@ -2199,8 +2675,7 @@ function saveAndHome(){ stopTimer(); QS=null; save(); show('home'); toast('ال�
 /* ================== النقاط ================== */
 R.scores = () => {
   const g=DB.game; if(!g) return show('home');
-  $('#scores-body').innerHTML = rank(g.players).map((p,i)=>`<div class="srow ${i===0?'lead1':''}"><span class="rank" style="font-family:var(--disp);color:#111">${i+1}</span><span class="av ${i===0?'':'circ-y'}" style="width:52px;height:52px;font-size:12px">${esc(p.name)}</span><div class="info"><div class="nm">${esc(p.name)}</div><div class="meta"><span class="pill k">${p.stars} ${starWord(p.stars)}</span><span>${p.correct} صح</span><span>${p.hand.length} كروت</span></div>${flagTags(p)}${g.endMode==='target'?`<div class="prog"><i style="width:${Math.min(100,p.points/g.target*100)}%"></i></div>`:''}</div><div class="big">${p.points}<small style="color:#111">${ptsWord(p.points)}</small></div></div>`).join('')
-    + `<p class="note center">${g.endMode==='rounds'?`الجولة ${Math.min(g.round,g.rounds)} من ${g.rounds}`:`أول واحد يوصل ${g.target} نقطة يكسب`}</p>`;
+  $('#scores-body').innerHTML = `<p class="lead" style="text-align:center">${g.endMode==='rounds'?`الجولة ${Math.min(g.round,g.rounds)} من ${g.rounds}`:`أول واحد يوصل ${g.target} نقطة يكسب`}</p>` + rank(g.players).map((p,i)=>`<div class="srow ${i===0?'lead1':''}"><span class="rank">${i+1}</span><div style="flex:1;min-width:0"><div class="nm">${esc(p.name)}${ONLINE&&p.id===ME_PID?' (انت)':''}</div>${flagTags(p)}${g.endMode==='target'?`<div class="prog"><i style="width:${Math.min(100,p.points/g.target*100)}%"></i></div>`:''}</div><div class="sc"><b>${p.points} ${ptsWord(p.points)}</b><small>${p.stars} ${starWord(p.stars)}</small></div></div>`).join('');
 };
 
 /* ================== النتائج ================== */
@@ -2208,32 +2683,40 @@ R.results = () => {
   const r=DB.result; if(!r) return show('home');
   const ps=r.players, top=ps[0];
   const tied=ps.filter(p=>p.points===top.points && p.stars===top.stars && p.correct===top.correct);
-  const crown=`<span class="crown"><svg viewBox="0 0 24 18" aria-hidden="true"><path d="M2 6l5 4 5-8 5 8 5-4-2 11H4z" fill="#FFD23F" stroke="#111" stroke-width="1.2"></path></svg></span>`;
   const firstName = tied.length>1 ? tied.map(p=>p.name).join(' و') : top.name;
-  const rest = ps.slice(tied.length>1?tied.length:1);
+  const pod=[ps[1],ps[0],ps[2]].map((p,j)=>{ if(!p) return '<div class="pc2"></div>'; const n=[2,1,3][j]; return `<div class="pc2 p${n}"><b>${esc(p.name)}</b><small>${p.points} ${ptsWord(p.points)}</small><div class="bar2">${n}</div></div>`; }).join('');
   $('#results-body').innerHTML = `
-    <div class="winner-name pop">${esc(firstName)}</div>
-    ${tied.length>1?'<p class="center" style="font-weight:800;margin:4px 0 0">تعادل في المركز الأول!</p>':''}
-    <div class="wpod">${crown}<span class="av circ-y" style="width:80px;height:80px;font-size:15px">${esc(tied.length>1?'تعادل':top.name)}</span><b>${top.points} ${ptsWord(top.points)}</b><div class="wbar">1</div></div>
-    <div class="wlist">${rest.length?rest.map((p,i)=>`<div class="wrow"><span class="r">${(tied.length>1?tied.length:1)+i+1}</span><span class="av circ-y" style="width:40px;height:40px;font-size:10px">${esc(p.name)}</span><span class="n">${esc(p.name)}</span><span class="pts2">${p.points}</span></div>`).join(''):(tied.map(p=>`<div class="wrow"><span class="r">1</span><span class="n">${esc(p.name)}</span><span class="pts2">${p.points}</span></div>`).join(''))}</div>`;
-  sfx('win'); setTimeout(confetti,300);
+    <div class="wtop"><span class="cr">${ic('crown')}</span><small>${tied.length>1?'تعادل في المركز الأول':'الفايز'}</small><b>${esc(firstName)}</b><small>${top.points} ${ptsWord(top.points)} و${top.stars} ${starWord(top.stars)}</small></div>
+    <div class="podium2">${pod}</div>
+    ${ps.length>3?`<div style="display:grid;gap:6px;margin-top:12px">${ps.slice(3).map((p,i)=>`<div class="wr"><span class="r">${i+4}</span><span class="n">${esc(p.name)}</span><small>${p.points} ${ptsWord(p.points)}</small></div>`).join('')}</div>`:''}`;
+  sfx('win'); setTimeout(confetti,1500);
   const on=!!r.online; document.querySelector('#s-results .foot .btn.primary').hidden=on;
   document.querySelector('#s-results .foot .btn:not(.primary)').setAttribute('onclick', on?'resetOnline();show(\'home\')':"show('home')");
 };
 function replay(){
   const r=DB.result;
-  if(r){ PL=r.players.map(p=>({name:p.name,bot:p.bot||null})); SETUP=Object.assign(freshSetup(),r.settings); } else { SETUP=null; PL=[{name:'',bot:null},{name:'',bot:null}]; }
-  show('setup');
+  if(r){ PL=r.players.map(p=>({name:p.name,bot:p.bot||null})); } else { PL=[{name:'',bot:null},{name:'',bot:null}]; }
+  show('players');
 }
 
 /* ================== معرض الكروت والمتجر ================== */
+let CTAB='p';
+function tileHtml(k,isP){
+  const X=isP?POWERS[k]:CHALLENGES[k], gold=!!X.pack, col=gold?NCOL.g:(isP?NCOL[X.g]:CCOL[X.cat]);
+  const grp=gold?'ذهبي':(isP?PG[X.g].n:CG[X.cat].n), cost=isP&&!gold?`${PG[X.g].c} ${starWord(PG[X.g].c)}`:'';
+  const locked=gold && !isUnlocked(k);
+  return `<div class="tile${gold?' gd':''}" style="--a:${col[0]};color:${col[1]}"><div class="tt"><span>${grp}${cost?'<br>'+cost:''}</span><i>${artHtml(X.icon)}</i></div><div><b>${X.name}</b><br><small>${X.desc}</small></div>${locked?`<div class="lockt">${ic('lock')} ${lockText(k)}</div>`:''}</div>`;
+}
 R.cards = () => {
-  let h='';
-  ['f','d','k'].forEach(g=>{ h+=`<h3 class="sec">${PG[g].t} (${PG[g].c} نجوم)</h3><div class="gallery">${Object.keys(POWERS).filter(k=>POWERS[k].g===g).map(k=>powerCard(k)).join('')}</div>`; });
-  h+=`<h3 class="sec">${PG.g.t}</h3><div class="gallery">${Object.keys(POWERS).filter(k=>POWERS[k].g==='g').map(k=>powerCard(k)).join('')}</div>`;
-  ['m','j','f','k'].forEach(c=>{ h+=`<h3 class="sec">${CG[c].t}</h3><div class="gallery">${Object.keys(CHALLENGES).filter(k=>CHALLENGES[k].cat===c && !CHALLENGES[k].pack).map(k=>challengeCard(k)).join('')}</div>`; });
-  h+=`<h3 class="sec">${CG.g.t}</h3><div class="gallery">${Object.keys(CHALLENGES).filter(k=>CHALLENGES[k].pack).map(k=>challengeCard(k)).join('')}</div>`;
-  h+=`<button class="btn" style="margin-top:16px;border:2px solid #f5c400" onclick="show('store')">${ic('lock')} الكروت الذهبية</button>`;
+  let h=`<div class="ctabs"><button class="${CTAB==='p'?'on':''}" onclick="CTAB='p';R.cards()">كروت القوة</button><button class="${CTAB==='c'?'on':''}" onclick="CTAB='c';R.cards()">كروت التحدي</button></div>`;
+  if(CTAB==='p'){
+    ['f','d','k'].forEach(g=>{ h+=`<h3 class="gsec">مجموعة ${PG[g].n} (${PG[g].c} نجوم)</h3><div class="tiles">${Object.keys(POWERS).filter(k=>POWERS[k].g===g).map(k=>tileHtml(k,1)).join('')}</div>`; });
+    h+=`<h3 class="gsec">${PG.g.t}</h3><div class="tiles">${Object.keys(POWERS).filter(k=>POWERS[k].g==='g').map(k=>tileHtml(k,1)).join('')}</div>`;
+  } else {
+    ['m','j','f','k'].forEach(c=>{ h+=`<h3 class="gsec">${CG[c].t}</h3><div class="tiles">${Object.keys(CHALLENGES).filter(k=>CHALLENGES[k].cat===c && !CHALLENGES[k].pack).map(k=>tileHtml(k,0)).join('')}</div>`; });
+    h+=`<h3 class="gsec">${CG.g.t}</h3><div class="tiles">${Object.keys(CHALLENGES).filter(k=>CHALLENGES[k].pack).map(k=>tileHtml(k,0)).join('')}</div>`;
+  }
+  h+=`<button class="btn light" style="margin-top:16px" onclick="show('store')">${ic('lock')} الكروت الذهبية</button>`;
   $('#cards-body').innerHTML=h;
 };
 R.store = () => {
@@ -2244,25 +2727,24 @@ R.store = () => {
 function togglePack(id){ const i=DB.unlocked.indexOf(id); if(i>=0) DB.unlocked.splice(i,1); else DB.unlocked.push(id); save(); R.store(); toast(i>=0?'اتقفل':'اتفتح للتجربة'); }
 
 /* ================== الإعدادات ================== */
+let SET_FROM='home', HOW_FROM='home';
+function settingsBack(){ show(SET_FROM==='play'&&DB.game?'play':'home'); SET_FROM='home'; }
 function setSet(k,v){ DB.settings[k]=v; save(); if(k==='theme') applyTheme(); R.settings(); }
 R.settings = () => {
   const s=DB.settings, cnt=n=>allQ().filter(q=>q.level===n).length;
   $('#settings-body').innerHTML = `
-  <div class="panel">
-    <div class="set-row"><span class="lb" style="margin:0">المؤثرات الصوتية</span><button class="switch ${s.sound?'on':''}" role="switch" aria-checked="${s.sound}" aria-label="المؤثرات الصوتية" onclick="setSet('sound',${!s.sound})"></button></div>
-    <div style="height:8px"></div>
-    <div class="field"><span class="lb">وقت الإجابة الافتراضي</span>${chips('setSet','timer',[[0,'بدون وقت'],[20,'20 ثانية'],[30,'30 ثانية'],[45,'45 ثانية']],s.timer)}</div>
-    <div class="field"><span class="lb">كارت التحدي مسموح كل</span>${chips('setSet','cooldown',[[3,'3 أدوار'],[5,'5 أدوار']],s.cooldown)}</div>
-  </div>
-  <button class="btn" style="margin-top:14px;border:2px solid #f5c400" onclick="show('store')">${ic('lock')} الكروت الذهبية</button>
-  <h3 class="sec">بنك الأسئلة</h3>
-  <div class="panel">
+  <div class="sbox"><span class="lb">نهاية اللعبة</span>${chips('setSet','endMode',[['rounds','بعد عدد جولات'],['target','بعد عدد نقاط']],s.endMode)}<div style="height:8px"></div>
+    ${s.endMode==='rounds'?chips('setSet','rounds',[[5,'5'],[10,'10'],[15,'15'],[20,'20'],[30,'30']],s.rounds):chips('setSet','target',[[25,'25'],[40,'40'],[60,'60'],[100,'100']],s.target)}</div>
+  <div class="sbox"><span class="lb">وقت الإجابة</span>${chips('setSet','timer',[[0,'بدون'],[20,'20 ث'],[30,'30 ث'],[45,'45 ث']],s.timer)}</div>
+  <div class="sbox"><span class="lb">كارت التحدي كل</span>${chips('setSet','cooldown',[[3,'3 أدوار'],[5,'5 أدوار']],s.cooldown)}</div>
+  <div class="sbox set-row"><span class="lb" style="margin:0">الأصوات</span><button class="switch ${s.sound?'on':''}" role="switch" aria-checked="${s.sound}" aria-label="الأصوات" onclick="setSet('sound',${!s.sound})"></button></div>
+  <details class="rsets"><summary>أكتر: الكروت الذهبية، وبنك الأسئلة، والبيانات</summary>
+    <button class="btn" style="margin:10px 0" onclick="show('store')">${ic('lock')} الكروت الذهبية</button>
     <div class="counts"><span class="qtag easy">سهل: ${cnt(1)}</span><span class="qtag mid">متوسط: ${cnt(2)}</span><span class="qtag hard">صعب: ${cnt(3)}</span></div>
-    <button class="btn violet" onclick="openAddQ()">${ic('plus')} إضافة سؤال جديد</button>
-    ${DB.custom.length ? `<h4 class="lb" style="margin:16px 0 4px">أسئلتك (${DB.custom.length})</h4>` + DB.custom.map(q=>`<div class="cq"><span class="qtag ${LEVELS[q.level].cls}">${LEVELS[q.level].name}</span><div class="t">${esc(q.q)}<div class="a">${esc(q.a[0])}</div></div><button class="icon-btn" onclick="delQ('${q.id}')" aria-label="حذف السؤال">${ic('trash')}</button></div>`).join('') : `<p class="muted" style="margin-top:10px">الأسئلة اللي تضيفها بتظهر في اللعب مع باقي الأسئلة.</p>`}
-  </div>
-  <h3 class="sec">البيانات</h3>
-  <div class="panel"><p class="muted" style="margin-bottom:12px">اللعبة والأسئلة والإعدادات بتتحفظ على الجهاز ده. عدد الألعاب اللي خلصت: ${DB.stats.games||0}</p><button class="btn ghost danger" onclick="confirmReset()">مسح كل البيانات</button></div>`;
+    <button class="btn" onclick="openAddQ()">${ic('plus')} إضافة سؤال جديد</button>
+    ${DB.custom.length ? `<h4 class="lb" style="margin:16px 0 4px">أسئلتك (${DB.custom.length})</h4>` + DB.custom.map(q=>`<div class="cq"><span class="qtag ${LEVELS[q.level].cls}">${LEVELS[q.level].name}</span><div class="t">${esc(q.q)}<div class="a">${esc(q.a[0])}</div></div><button class="icon-btn" onclick="delQ('${q.id}')" aria-label="حذف السؤال">${ic('trash')}</button></div>`).join('') : ''}
+    <p class="muted" style="margin:12px 0">اللعبة والأسئلة والإعدادات بتتحفظ على الجهاز ده. عدد الألعاب اللي خلصت: ${DB.stats.games||0}</p><button class="btn ghost danger" onclick="confirmReset()">مسح كل البيانات</button>
+  </details>`;
 };
 let AQ={level:1};
 function openAddQ(){
@@ -2294,14 +2776,8 @@ function confirmReset(){
 
 /* ================== طريقة اللعب ================== */
 R.howto = () => {
-  $('#howto-body').innerHTML = `
-  <div class="how-item" style="--c:var(--gold)"><h3>الهدف</h3><p>اجمع أكبر عدد من النقاط. النقاط بتيجي من الأسئلة والتحديات، وهي اللي بتحدد الفايز، ومبتنزلش تحت الصفر. النجوم بتيجي من الأسئلة وبتدفعها في شراء كروت القوة.</p></div>
-  <div class="how-item" style="--c:#2340d8"><h3>دورك</h3><ul><li>الأسئلة مخفية. بتختار المستوى بس: سهل (نقطة ونجمة)، أو متوسط (نقطتين و3 نجوم)، أو صعب (3 نقاط و5 نجوم).</li><li>مينفعش تلعب نفس المستوى دورين ورا بعض.</li><li>أحيانًا السؤال بيطلع «من أنا؟» أو «الكلمة الناقصة»، وبيدّي نفس نقاط ونجوم المستوى.</li><li>الغلط أو خلصان الوقت: مفيش نقاط ولا نجوم.</li></ul></div>
-  <div class="how-item" style="--c:#9147f2"><h3>كروت القوة</h3><ul><li>بتشتري كارت بعد ما دورك يخلص، من 3 مجموعات: الفرصة 5، والدفاع 10، والهجوم 20.</li><li>لازم يكون معاك من النقاط والنجوم عدد المجموعة، والنجوم بس هي اللي بتتخصم.</li><li>الكارت بيطلع عشوائي وبيفضل سر، وبتستخدمه مرة واحدة من «كروتي».</li><li>كارت قوة واحد بس في الدور، ووقت السؤال بيقف وانت بتختار كارت قوة أو تحدي.</li></ul></div>
-  <div class="how-item" style="--c:#7a4a25"><h3>كروت التحدي</h3><ul><li>محتاج ${CH_MIN_PTS} نقاط على الأقل، والعقبة ${OBST_MIN_PTS} نقطة. ده شرط بس، مبيتخصمش.</li><li>كارت واحد في الدور، وكل ${DB.settings.cooldown} أدوار، وانت اللي بتختار الكارت.</li><li>قبل ما تختار المستوى: مواجهة أو جماعي أو فردي، وتحدد الشخص والصعوبة.</li><li>بعد ما تشوف السؤال وقبل ما تجاوب: مواجهة أو جماعي على نفس السؤال.</li><li>بعد ما تجاوب: مواجهة أو جماعي لو جاوبت صح، أو عقبة على لاعب لسه دوره جاي في الجولة.</li><li>قيمة التحدي نجوم المستوى (1 أو 3 أو 5): الكسبان نقاطه تزيد والخسران نقاطه تقل. وممنوع تتحدى نفس اللاعب 3 مرات ورا بعض.</li><li>لما تختار تحدي، دورك بيخلص بالتحدي، ومن غير شراء كارت قوة.</li><li>كل التحديات ليها وقت. وتحدي «الحرف» في الغرفة الأونلاين بس.</li></ul></div>
-  <div class="how-item" style="--c:#FFC83D"><h3>Bot</h3><p>تقدر تضيف Bot سهل أو صعب من شاشة اللاعبين، وبيلعب دوره لوحده.</p></div>
-  <div class="how-item" style="--c:#f5c400"><h3>الكروت الذهبية</h3><p>فيه 5 كروت قوة و5 كروت تحدي ذهبية، بتتباع كارتين مع بعض أو كارت لوحده. تقدر تشوفها كلها من شاشة «الكروت».</p></div>
-  <div class="how-item" style="--c:var(--hard)"><h3>نهاية اللعبة</h3><p>اللعبة بتخلص بعد عدد الجولات أو لما حد يوصل للنقاط المطلوبة. الفايز صاحب أكتر نقاط، ولو فيه تعادل يكسب صاحب النجوم الأكتر.</p></div>`;
+  const st=[['#E3A92B','كل دور تختار مستوى: سهل أو متوسط أو صعب.'],['#1F6F6A','الكارت يتقلب ويطلعلك سؤال واحد.'],['#8DB8D8','الإجابة الصح بتجيب نقاط ونجوم.'],['#F4E7C9','بالنجوم تشتري كروت قوة تساعدك.'],['#D9773A','كل كام دور ينفع تتحدى لاعب تاني.'],['#E3A92B','الفايز صاحب أعلى نقاط في الآخر.']];
+  $('#howto-body').innerHTML = `<div class="how2">${st.map((x,i)=>`<div class="hstep"><b style="background:${x[0]};${x[0]==='#1F6F6A'?'color:#fff':''}">${i+1}</b><span>${x[1]}</span></div>`).join('')}</div>`;
 };
 
 /* ================== احتفال ================== */
@@ -2622,8 +3098,8 @@ function actorIds(){
   if(T.phase==='ch'){
     const ch=T.ch, st=ch.steps[ch.idx]; if(!st) return [ch.drawer];
     const judges=()=>g.players.filter(x=>x.id!==ch.drawer && x.id!==ch.target && !x.bot).map(x=>x.id);
-    if(st.kind==='gplay'){ const j=judges(); return j.length?j:[ch.drawer,ch.target]; }
-    if(st.kind==='letter'){ if(st.state==='judge'){ const j=judges(); return j.length?j:[st.by===ch.drawer?ch.target:ch.drawer]; } if(st.state==='timeout') return [ch.drawer]; return [ch.drawer,ch.target]; }
+    if(st.kind==='gplay') return [ch.drawer,ch.target];
+    if(st.kind==='letter') return [ch.drawer,ch.target];
     if(!isPid(st.pid)) return [ch.drawer];
     return [st.pid];
   }
@@ -2637,28 +3113,48 @@ function snatchMe(){
 }
 let SNATCH_TRY=0;
 function snatchOnce(){ if(SNATCH_TRY++<1) snatchMe(); else SNATCH_TRY=0; }
+/* شاشة المتفرج في تحدي بين اتنين: حالة كل واحد، واللي بيعمله دلوقتي */
+function chSpectate(ch,st,html,names){
+  const C=CHALLENGES[ch.key], ids=[ch.drawer,ch.target], act=actorIds();
+  const stat=id=>{ const rs=ch.res.filter(r=>r.pid===id && r.kind==='q'); const ok=rs.filter(r=>r.ok).length;
+    const now=act.includes(id) ? (T.sub==='handoff'?'بيجهز':'بيلعب دلوقتي') : (ch.steps.slice(ch.idx).some(x=>x.pid===id)?'مستني دوره':'خلص');
+    const extra = st && st.kind==='bid' ? '' : (rs.length?` · ${ok} صح من ${rs.length}`:'');
+    return `<span class="${id===ch.drawer?'a':'b'}" style="display:flex;flex-direction:column;gap:2px"><span>${esc(pById(id).name)}</span><small style="font-weight:600;font-size:12px">${now}${extra}</small></span>`; };
+  const head=`<div class="waitc pop" style="padding:16px"><div class="ws">${ch.ctx==='obst'?'عقبة':'تحدي'} «${C.name}»</div><div class="vs">${stat(ids[0])}<i>${ic('bolt')}</i>${stat(ids[1])}</div><div class="ws" style="font-size:14px">انت بتتفرج. الاتنين مش شايفين بعض.</div></div>`;
+  const hide = !st || T.sub==='handoff' || ['bid','gsee','reveal'].includes(st.kind);
+  const me=pById(ME_PID);
+  return head + (hide?`<div class="watchbar" style="margin-top:12px"><span class="wb">${ic('hourglass')}</span><span>${names}</span><small>${T.sub==='handoff'?'بيجهز':'بيختار'}</small></div>`:`<div class="watchbar" style="margin:12px 0"><span class="wb">${ic('eye')}</span><span>${names}</span><small>بيلعب دلوقتي</small></div><div class="watch">${html}</div>`)
+    + `<div style="display:grid;gap:8px;margin-top:12px"><button class="btn light" onclick="openMyCards()">${ic('cards')} كروتي (${me?me.hand.length:0})</button></div>`;
+}
 function watchView(p,html){
   const names=actorIds().map(id=>pById(id)).filter(Boolean).map(x=>esc(x.name)).join(' و');
-  let msg='', show=false;
+  let sub='', show=false, vs='';
   switch(T.phase){
-    case 'draw': msg=`${names} بيختار المستوى`; break;
-    case 'answer': msg=`${names} بيجاوب`; show=true; break;
-    case 'handq': msg=`${names} هيجاوب`; break;
-    case 'chSetup': msg=`${names} بيجهّز ${CHALLENGES[T.key].cat==='k'?'عقبة':'تحدي'} «${CHALLENGES[T.key].name}»`; break;
-    case 'buy': msg=`${names} بيفكر يشتري كارت قوة`; break;
-    case 'bought': msg=`${names} اشترى كارت قوة`; break;
-    case 'obst': msg=`على ${names} عقبة «${CHALLENGES[p.obst[0].key].name}»`; break;
-    case 'skip': msg=`${names} في استراحة`; break;
-    case 'chResult': msg=`مستنيين ${names} يكمّل`; show=true; break;
-    case 'ch': { const st=T.ch.steps[T.ch.idx];
+    case 'draw': sub='بيختار المستوى'; break;
+    case 'answer': sub='بيجاوب'; show=true; break;
+    case 'handq': sub='هيجاوب'; break;
+    case 'chSetup': sub=`بيجهّز ${CHALLENGES[T.key].cat==='k'?'عقبة':'تحدي'} «${CHALLENGES[T.key].name}»`; break;
+    case 'buy': sub='بيختار كارت قوة'; break;
+    case 'bought': sub='اشترى كارت قوة'; break;
+    case 'obst': sub=`عليه عقبة «${CHALLENGES[p.obst[0].key].name}»`; break;
+    case 'skip': sub='في استراحة'; break;
+    case 'chResult': sub='بيشوف النتيجة'; show=true; break;
+    case 'ch': { const ch=T.ch, st=ch.steps[ch.idx];
       if(st && (st.kind==='gplay' || st.kind==='letter')) return html;
-      if(st && st.kind==='q' && !st.private && T.sub==='do'){ msg=`${names} بيجاوب`; show=true; }
-      else msg=`${names} بيلعب دوره في ${T.ch.ctx==='obst'?'العقبة':'التحدي'} «${CHALLENGES[T.ch.key].name}»`;
+      const a=pById(ch.drawer), t=ch.target&&pById(ch.target), CN=CHALLENGES[ch.key].name;
+      if(a && t) vs=`<div class="vs"><span class="a">${esc(a.name)}</span><i>${ic('bolt')}</i><span class="b">${esc(t.name)}</span></div>`;
+      const part = a && t && (ME_PID===a.id || ME_PID===t.id);
+      sub=`بيلعب ${ch.ctx==='obst'?'العقبة':'التحدي'} «${CN}»`;
+      /* الاتنين المتحديين ما يشوفوش بعض. الباقيين يشوفوا الاتنين بيعملوا إيه */
+      if(a && t && !part) return chSpectate(ch,st,html,names);
+      if(!a || !t){ if(st && st.kind==='q' && !st.private && T.sub==='do'){ sub='بيجاوب'; show=true; } }
       break; }
   }
   const me=pById(ME_PID);
-  const sn = (T.phase==='answer' && T.mode==='normal' && QS && !QS.answered && me && me.id!==T.ans && me.hand.includes('snatch') && !isFrozen(me) && !usedPower(me)) ? `<button class="btn orange" onclick="snatchMe()">${ic('grab')} اقتنص السؤال</button>` : '';
-  return `<div class="watchbar pop"><span class="wdot"></span><span>${msg}</span></div>${show?`<div class="watch">${html}</div>`:''}${sn}<button class="btn" onclick="openMyCards()">${ic('cards')} كروتي (${me?me.hand.length:0})</button>`;
+  const sn = (T.phase==='answer' && T.mode==='normal' && QS && !QS.answered && me && me.id!==T.ans && me.hand.includes('snatch') && !isFrozen(me) && !usedPower(me)) ? `<button class="btn snatchb" onclick="snatchMe()">${ic('grab')} اقتنص السؤال</button>` : '';
+  const big = show ? `<div class="watchbar"><span class="wb">${ic('eye')}</span><span>الدور على ${names}</span><small>${sub}</small></div>${html}`
+    : `<div class="waitc pop"><span class="wi" style="background:var(--GD);color:var(--NB)">${ic('hourglass')}</span><div class="ws">الدور على</div><div class="wt">${names}</div><div class="ws">${sub}</div><div class="dots" aria-hidden="true"><i></i><i></i><i></i></div>${vs}</div>`;
+  return `${big}<div style="display:grid;gap:8px;margin-top:12px">${sn}<button class="btn light" onclick="openMyCards()">${ic('cards')} كروتي (${me?me.hand.length:0})</button></div>`;
 }
 /* شغل صاحب الغرفة: اللي يقفل يدخل مكانه Bot، واللي يرجع ياخد مكانه */
 function roomLoop(){
@@ -2700,7 +3196,7 @@ async function claimHost(old){
 /* ================== تشغيل ================== */
 document.querySelectorAll('[data-ic]').forEach(el=>{ el.innerHTML=ic(el.dataset.ic); });
 applyTheme();
-R.home();
+show('splash'); setTimeout(()=>{ if(document.querySelector('#s-splash.active')) show('home'); },1600);
 setInterval(clockTick,200);
 
 </script>
