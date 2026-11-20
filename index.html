@@ -9,7 +9,7 @@
 <title>كروت المعرفة</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@500;600;700;800&family=Aref+Ruqaa:wght@700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@500;600;700;800&family=Aref+Ruqaa:wght@700&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
 <style>
 :root{
   --bg:#eceefb; --surface:#ffffff; --surface2:#f3f4fd; --text:#1b1650; --muted:#5f5c88; --line:#dadef3;
@@ -817,6 +817,86 @@ h1,h2,h3,.hdr h2,.title,.sec,.verdict,.win-title,.handoff h2,.fb-title,.deck-txt
 .typed svg{width:20px;height:20px;margin-inline-start:auto}
 .typed.ok{background:var(--TL);color:#fff}.typed.bad{background:var(--OR);color:var(--NB)}.typed.right{background:transparent;border:1.5px solid var(--TL);color:#9fe0d4;font-size:14px}
 .misstxt{margin:8px 0 0}
+.pwbox{display:flex;flex-direction:column;align-items:center;gap:10px;margin:6px 0 4px}
+.pwrow{display:flex;gap:9px;flex-wrap:wrap;justify-content:center}
+.pwt{width:34px;height:38px;border-radius:9px;background:var(--CR);color:var(--NB);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:19px;transform:rotate(var(--r));box-shadow:0 2px 0 rgba(0,0,0,.25)}
+.pwsep{display:block;width:70%;border-top:2px dashed var(--GD);opacity:.8}
+.hintbtn{display:flex;align-items:center;gap:6px;margin:10px auto 0;border:0;border-radius:10px;background:var(--NB);color:var(--CR);font:inherit;font-weight:700;padding:8px 14px}
+.hintbtn svg{width:16px;height:16px}.hintbtn span{background:var(--OR);color:var(--NB);border-radius:6px;padding:1px 6px;font-size:12px}
+.wsq{font-weight:700;font-size:14px;color:var(--LG);text-align:center;margin-bottom:6px}
+.wsb{font-family:Amiri,serif;color:#C9A16A;font-size:15px;text-align:center}
+.wsl{display:block;border-top:1.5px dashed var(--GD);opacity:.7;margin:6px 20%}
+.wst{font-family:Amiri,serif;font-weight:700;line-height:1.9;text-align:center;color:var(--CR);padding:4px 6px}
+.wst b{color:var(--GD);font-size:1.5em;font-family:Amiri,serif;vertical-align:-.15em;margin:0 4px}
+.erbox{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin:8px 0}
+.erw{border:1.5px solid var(--DK);background:var(--CH);color:var(--CR);border-radius:9px;padding:7px 10px;font:inherit;font-weight:700;font-size:16px}
+.erw.sel{background:var(--NB);border-color:var(--NB)}.erw.bad{background:var(--OR);color:var(--NB);border-color:var(--OR)}
+.erw.fix{background:var(--TL);color:#fff;border-color:var(--TL)}.erw.real{border:2px dashed #7fd6c8}
+.erch{display:grid;gap:8px;margin-top:8px}.erch .ob2{min-height:52px}
+.chdesc{display:grid;gap:2px;background:var(--NB);color:var(--CR);border-radius:12px;padding:9px 12px;margin:0 0 10px;font-size:13px}
+.chdesc b{font-size:14px;color:var(--GD)}.chdesc small{color:var(--LG);font-size:11.5px}
+.grpbox{display:grid;gap:6px;background:var(--GR);border-radius:14px;padding:14px;text-align:center}.grpbox b{font-size:16px}.grpbox span{font-size:13px;color:var(--LG);line-height:1.6}
+.grplist{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin:10px 0}
+.grplist div{display:flex;align-items:center;gap:5px;background:var(--GR);border-radius:10px;padding:6px 10px;font-size:13px;font-weight:700;color:var(--LG)}
+.grplist div.on{background:var(--TL);color:#fff}.grplist svg{width:14px;height:14px}
+.grpcount{display:flex;flex-direction:column;align-items:center;gap:6px;margin:40px 0}.grpcount b{font-size:96px;line-height:1;color:var(--GD)}.grpcount small{color:var(--LG)}
+.grprev{display:grid;grid-template-columns:auto 1fr auto 20px;gap:8px;align-items:center;border-radius:12px;padding:9px 12px;font-size:14px}
+.grprev.ok{background:var(--TL);color:#fff}.grprev.bad{background:var(--GR);color:var(--CR)}.grprev svg{width:18px;height:18px}.grprev small{opacity:.8}
+.flgrp{text-align:center;font-size:13px;color:var(--LG);font-weight:700;margin-top:-4px}
+.flrow{display:flex;gap:6px;justify-content:center}
+.flsep{display:block;border-top:1.5px dashed rgba(244,231,201,.25);margin:2px 8px}
+.flc{position:relative;width:58px;height:86px;border-radius:10px;padding:4px;display:flex;align-items:center;justify-content:center;text-align:center;font:700 11.5px/1.35 inherit;font-family:inherit;cursor:pointer;border:1.5px solid rgba(227,169,43,.55);color:var(--CR);transition:transform .25s}
+.flc.fa{background:#4B5527 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24'%3E%3Cpath d='M12 3L21 12L12 21L3 12Z' fill='none' stroke='%23E3A92B' stroke-opacity='.28' stroke-width='1'/%3E%3C/svg%3E")}
+.flc.fb{background:#6E4520 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24'%3E%3Cpath d='M12 3L21 12L12 21L3 12Z' fill='none' stroke='%23E3A92B' stroke-opacity='.28' stroke-width='1'/%3E%3C/svg%3E")}
+.flc.open{background:#FFF9EA;color:var(--NB);border:2px solid #4B5527;animation:flipIn .3s ease both}.flc.fb.open{border-color:#6E4520}
+.flc.ok{background:var(--TL);color:#fff;border:2px solid var(--TL)}
+.flc.bad{background:#FFF9EA;color:var(--NB);border:2.5px solid var(--OR)}
+.flc.late{opacity:.75}
+.flc em{position:absolute;top:-7px;left:-7px;width:20px;height:20px;border-radius:50%;background:#fff;color:var(--TL);font-style:normal;font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 2px var(--CH)}
+.flc em.x{background:var(--OR);color:#fff}
+.flbar{display:flex;align-items:center;justify-content:space-between;background:var(--NB);color:var(--CR);border-radius:12px;padding:9px 12px;font-size:13px;font-weight:700;margin-top:4px}
+.dots5{display:flex;gap:5px}.dots5 i{width:10px;height:10px;border-radius:50%;background:rgba(244,231,201,.25)}.dots5 i.on{background:#3fae6a}
+.bubarea{position:relative;height:300px;border-radius:16px;overflow:hidden;background:#2f3519 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Cpath d='M20 4L36 20L20 36L4 20Z' fill='none' stroke='%23E3A92B' stroke-opacity='.12' stroke-width='1'/%3E%3C/svg%3E")}
+.bub{position:absolute;transform:translate(-50%,-50%);border-radius:50%;border:1.5px solid rgba(255,255,255,.75);background:radial-gradient(circle at 32% 28%,rgba(255,255,255,.55) 0 9%,rgba(255,255,255,.08) 22%,rgba(255,255,255,.05) 60%,rgba(255,255,255,.18) 100%);color:var(--CR);font:800 13.5px/1.3 inherit;font-family:inherit;padding:8px;display:flex;align-items:center;justify-content:center;text-align:center;cursor:pointer;animation:bubLife 3s linear both}
+.bub span{max-width:100%}
+@keyframes bubLife{0%{transform:translate(-50%,-50%) scale(.3);opacity:0}10%{transform:translate(-50%,-50%) scale(1);opacity:1}66%{transform:translate(-50%,-50%) scale(1);opacity:1}100%{transform:translate(-50%,-50%) scale(.82);opacity:.08}}
+.bub.ok,.bub.bad,.bub.right,.bub.gone{animation:none}
+.bub.ok{background:var(--TL);border-color:var(--TL);color:#fff;transform:translate(-50%,-50%) scale(1.12);flex-direction:column;gap:2px}.bub.ok svg{width:20px;height:20px}
+.bub.bad{background:var(--OR);border-color:var(--OR);color:#fff;flex-direction:column;gap:2px}.bub .x{font-size:20px;line-height:1}
+.bub.right{border:2.5px dashed #3fae6a}
+.bub.gone{opacity:0}
+.rdscr{display:flex;flex-direction:column;gap:14px;min-height:62vh}
+.rdtop{text-align:center;display:flex;flex-direction:column;align-items:center}.rdtop small{font-size:15px;font-weight:700;color:var(--GD)}.rdtop b{font-size:56px;font-weight:800;line-height:1.15}.rdtop span{font-size:19px;font-weight:700;color:#D9CFB4}
+.rdlist{display:flex;flex-direction:column;gap:9px}.rdh{font-size:14px;font-weight:700;color:var(--LG)}
+.rdrow{height:56px;border-radius:13px;background:var(--GR);color:var(--CR);display:flex;align-items:center;gap:12px;padding:0 12px}
+.rdrow.first{background:var(--GD);color:var(--NB)}
+.rdrow .n{width:32px;height:32px;border-radius:9px;background:#2E3036;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:800}.rdrow.first .n{background:rgba(0,0,0,.12)}
+.rdrow .nm{flex:1;font-size:17px;font-weight:800}.rdrow .sc{text-align:left;display:flex;flex-direction:column}.rdrow .sc b{font-size:15px}.rdrow .sc small{font-size:11px;font-weight:700;opacity:.8}
+.rdfoot{margin-top:auto;display:flex;flex-direction:column;gap:10px}.rdnext{text-align:center;font-size:13px;color:var(--LG)}
+.rdwait{height:56px;border-radius:14px;border:1.5px dashed rgba(244,231,201,.3);display:flex;align-items:center;justify-content:center;gap:8px;color:var(--LG);font-size:14px;font-weight:700;text-align:center;padding:0 10px}
+.dotb{color:var(--GD);animation:dt 1.2s infinite}@keyframes dt{50%{opacity:.2}}
+.spdcard{background:#33363C;border:2px solid #D9773A;border-radius:18px;padding:14px;display:flex;flex-direction:column;gap:12px;color:var(--CR)}
+.spdh{display:flex;align-items:center;gap:8px}.spdi{width:34px;height:34px;border-radius:10px;background:#D9773A;color:#fff;display:flex;align-items:center;justify-content:center}.spdi svg{width:20px;height:20px}.spdh b{font-size:17px;flex:1}.spdr{font-size:12px;font-weight:700;color:#D9773A;background:rgba(217,119,58,.14);padding:5px 10px;border-radius:9px}
+.spdbox{display:grid;grid-template-columns:1fr 1fr;gap:8px}.spdbox div{background:rgba(0,0,0,.2);border-radius:11px;padding:8px 10px;font-size:12px;line-height:1.5}.spdbox b{color:#D9773A}
+.spdq{font-size:18px;font-weight:800;line-height:1.6;text-align:center}
+.spdhint{text-align:center;font-size:13px;color:var(--LG);margin:0}
+.spdbtnw{position:relative;width:150px;height:150px;margin:2px auto 0}.spdring{position:absolute;inset:0;width:100%;height:100%;transform:rotate(-90deg)}.spdring circle{fill:none;stroke:rgba(217,119,58,.18);stroke-width:5}.spdring circle.fg{stroke:#D9773A;stroke-dasharray:289;stroke-linecap:round;transition:stroke-dashoffset .2s linear}
+.spdbtn{position:absolute;inset:14px;border-radius:50%;border:none;background:#D9773A;color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;font-family:inherit;cursor:pointer;animation:pulse 1.1s ease-in-out infinite;box-shadow:0 0 0 6px rgba(217,119,58,.18)}
+.spdbtn svg{width:34px;height:34px}.spdbtn b{font-size:20px}.spdbtn:disabled{background:transparent;border:2px dashed rgba(217,119,58,.5);color:rgba(244,231,201,.5);animation:none;box-shadow:none}
+@keyframes pulse{50%{transform:scale(1.06)}}
+.spdbtnw.off{width:110px;height:110px}.spdbtnw.off .spdbtn{inset:0}
+.spdsub{text-align:center;font-size:12.5px;color:var(--LG);margin:0}
+.spdmsg{display:flex;flex-direction:column;gap:4px;text-align:center;background:rgba(0,0,0,.2);border-radius:12px;padding:10px}.spdmsg b{font-size:17px}.spdmsg span{font-size:13px;color:var(--LG);line-height:1.6}
+.spdmsg.good b{color:#5fd39a}.spdmsg.bad b{color:#D9773A}
+.spdopts{display:grid;gap:8px}.spdo{min-height:48px;border-radius:12px;background:#FFF9EA;color:var(--NB);border:1.5px solid #E6D6B0;font:700 15px inherit;font-family:inherit;display:flex;align-items:center;justify-content:center;padding:6px 10px;text-align:center;cursor:pointer}
+.spdo.right{background:var(--TL);color:#fff;border-color:var(--TL)}.spdo.wrong{background:#D9773A;color:#fff;border-color:#D9773A}.spdo.dim{opacity:.45}
+.spdprize{display:grid;gap:10px}.spdprize button{min-height:76px;border-radius:14px;border:2px solid #D9773A;background:rgba(217,119,58,.12);color:var(--CR);font-family:inherit;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;cursor:pointer}.spdprize b{font-size:18px}.spdprize small{font-size:12px;color:var(--LG)}
+.spdsteps{display:flex;gap:6px}.spdsteps span{flex:1;text-align:center;font-size:12.5px;font-weight:700;padding:7px;border-radius:10px;background:rgba(0,0,0,.2);color:var(--LG)}.spdsteps span.on{background:#D9773A;color:#fff}.spdsteps span.done{color:#5fd39a}
+.spdgh{font-size:13px;font-weight:800;margin-top:4px}
+.spdgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+.spdk{min-height:52px;border-radius:11px;border:2px solid transparent;background:var(--a);color:var(--t);font:700 12px/1.35 inherit;font-family:inherit;padding:6px 4px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;cursor:pointer}
+.spdk.sel{background:var(--GD);color:var(--NB);border-color:#fff}.spdk svg{width:14px;height:14px}
+.frch{display:grid;gap:8px;margin-bottom:10px}.frch>b{font-size:13px;color:var(--GD)}
 .retry button{border:0;border-radius:10px;background:var(--TL);color:#fff;font-family:inherit;font-weight:700;font-size:13px;padding:8px 12px;cursor:pointer}
 .clues{display:grid;gap:8px}
 .clue{background:var(--CH);border:0;border-radius:12px;color:var(--CR);font-family:inherit}
@@ -1217,7 +1297,7 @@ const LEVELS = {1:{name:'سهل',cls:'easy',col:'#1F6F6A'},2:{name:'متوسط',
 const NCOL={f:['#1F6F6A','#fff'],d:['#8DB8D8','#1B2A4A'],k:['#7A4A6E','#F4E7C9'],g:['#E3A92B','#1B2A4A']};
 const CCOL={m:['#8DB8D8','#1B2A4A'],j:['#1F6F6A','#fff'],f:['#E3A92B','#1B2A4A'],k:['#D9773A','#1B2A4A'],g:['#E3A92B','#1B2A4A']};
 /* النقاط 1/2/3 والنجوم 1/3/5 */
-const LSTARS = {1:1,2:3,3:5};
+const LSTARS = {1:1,2:2,3:3};
 
 /* ===== أسئلة «الرقم الأقرب» ===== */
 const NUMQ = [
@@ -1507,7 +1587,7 @@ const Q148 = [
 {n:59,lv:3,q:'ما اسم السورة التي ذُكرت فيها آية «الشيطان يعدكم الفقر»؟',a:['سورة البقرة','سورة آل عمران','سورة النساء','سورة التوبة']},
 {n:60,lv:2,q:'في أي سورة الآية التي فيها «ولم أك بغيًّا»؟',a:['سورة مريم','سورة آل عمران','سورة يوسف','سورة النور']},
 {n:61,lv:1,q:'من المقصود بالأعمى في سورة عبس؟',a:['عبد الله بن أم مكتوم','بلال بن رباح','عمار بن ياسر','أبو هريرة']},
-{n:62,lv:3,q:'نبي وأبوه نبي وجده نبي وجد أبيه نبي',a:['يوسف بن يعقوب بن إسحاق بن إبراهيم','سليمان بن داود','يحيى بن زكريا','إسماعيل بن إبراهيم']},
+{n:62,lv:3,q:'نبي وأبوه نبي وجده نبي وجد أبيه نبي، مين هو؟',a:['يوسف','سليمان','يحيى','إسماعيل']},
 {n:63,lv:2,alts:[{q:'«وتفقد الطير فقال ما لي لا أرى الهدهد»: في أي سورة؟',a:['النمل','سبأ','ص','الأنبياء']},{q:'أكمل: «وتفقد الطير فقال ما لي لا أرى ___»',a:['الهدهد','الغراب','النملة','الحوت']}],q:'',a:[]},
 {n:64,lv:3,q:'السورة التي فيها ذكر صحف إبراهيم وموسى',a:['الأعلى','الشرح','الغاشية','البلد']},
 {n:65,lv:2,q:'من هم أهل الله وخاصته؟',a:['أهل القرآن','أهل الحديث','أهل بدر','أهل الصفة']},
@@ -1567,7 +1647,7 @@ const Q148 = [
 {n:118,lv:1,q:'أكمل: «من صام رمضان إيمانًا واحتسابًا…»',a:['غفر له ما تقدم من ذنبه','دخل الجنة من باب الريان','كتب له أجر سنة','أعتقه الله من النار']},
 {n:119,lv:1,q:'من قال لقومه «أنا ربكم الأعلى»؟',a:['فرعون','النمرود','قارون','هامان']},
 {n:120,lv:3,q:'كم سجدة في جزء عمّ؟',a:['اتنين: في الانشقاق والعلق','واحدة: في العلق','اتنين: في النجم والعلق','تلاتة: في الانشقاق والعلق والنجم']},
-{n:121,lv:3,q:'كم عدد أصحاب الكهف؟',a:['الله أعلم بعددهم','ثلاثة رابعهم كلبهم','خمسة سادسهم كلبهم','سبعة وثامنهم كلبهم']},
+{n:121,lv:3,q:'كم عدد أصحاب الكهف؟',a:['الله أعلم بعددهم','٣','٥','١٠']},
 {n:122,lv:3,q:'كم سجدة في القرآن؟',a:['١٥ سجدة','١٤ سجدة','١٠ سجدات','١٢ سجدة']},
 {n:123,lv:1,q:'أول زوجة تزوجها النبي ﷺ',a:['خديجة بنت خويلد','عائشة بنت أبي بكر','سودة بنت زمعة','حفصة بنت عمر']},
 {n:124,lv:1,q:'زوجة النبي ﷺ ابنة أبي بكر',a:['عائشة','حفصة','أسماء','أم سلمة']},
@@ -1646,19 +1726,42 @@ const SP_INFO = {
   all:{n:'اختار كل الصح',ic:'circlecheck',r:['علّم على كل الاختيارات الصح.','لازم تعلّم الصح كله ومتعلّمش ولا غلط.','غلطة واحدة تخسّرك النقاط.']},
   order:{n:'رتّبهم',ic:'listnum',r:['هيطلعلك كام حاجة، رتّبهم من الأول للآخر.','دوس عليهم بالترتيب، وتقدر تشيل أي واحد وترتّب تاني.','كلهم صح تكسب. أي غلطة يبقى صفر.']},
   match:{n:'وصّل',ic:'link',r:['دوس على حاجة من اليمين، وبعدين اللي تناسبها من الشمال.','تقدر تفك أي توصيلة بالضغط عليها.','كلهم صح تكسب. أي غلطة يبقى صفر.']},
+  pw:{n:'كلمة السر',sub:'سؤال نوعه مختلف',ic:'lock',r:['قدامك حروف متلخبطة. رتّبها في دماغك واعرف الاسم.','كل كلمة في سطر لوحدها، وبالترتيب.','اكتب الاسم. معاك {t} ثانية، ولو احتجت تلميح بيخصم نقطة.']},
+  er:{n:'كشف الغلط',sub:'سؤال نوعه مختلف',ic:'eye',r:['قدامك جملة فيها كلمة واحدة غلط.','دوس على الكلمة اللي شايفها غلط.','بعدها اختار الكلمة الصح من 3 اختيارات.']},
+  ws:{n:'مين قال',sub:'سؤال نوعه مختلف',ic:'chat',r:['قدامك كلام قاله حد، أغلبه من القرآن.','اعرف مين اللي قال الكلام ده.','اكتب اسمه. معاك {t} ثانية.']},
   odd:{n:'مين المختلف؟',ic:'shuffle',r:['هيظهرلك 4 حاجات، 3 منهم بيجمعهم حاجة واحدة.','اختار الحاجة المختلفة عنهم.','بعد ما تجاوب هيظهرلك السبب.']},
   miss:{n:'ناقص واحد',ic:'chat',r:['هيظهرلك مجموعة أو جملة ناقصها حاجة واحدة.','اكتب الناقص بنفسك، مفيش اختيارات.','معاك 10 ثواني زيادة على الوقت العادي.']},
   pic:{n:'خمّن من الصورة',sub:'سؤال نوعه مختلف',ic:'eye',r:['هيظهرلك صورتين أو تلاتة. اربطهم ببعض.','اكتب الإجابة بنفسك، مفيش اختيارات.','معاك {t} ثانية، وفيه تلميح بنوع الإجابة.']},
-  tf:{n:'صح أم خطأ',ic:'stopwatch',r:['هتطلعلك جمل ورا بعض، قول صح ولا خطأ.','لازم توصل لعدد إجابات صح قبل ما الوقت يخلص.','الغلط مش بيتحسب، بس بيضيّع وقت. ولو ما وصلتش مش بيتخصم منك.']}
+  tf:{n:'صح أم خطأ',ic:'stopwatch',r:['هتطلعلك جمل ورا بعض، قول صح ولا خطأ.','لازم توصل لعدد إجابات صح قبل ما الوقت يخلص.','الغلط مش بيتحسب، بس بيضيّع وقت. ولو ما وصلتش مش بيتخصم منك.']},
+  flip:{n:'اقلب وطابق',sub:'سؤال نوعه مختلف',ic:'cards',r:['فوق أسماء، وتحت أوصاف، وكلهم مقلوبين.','اقلب كارت من فوق وكارت من تحت. لو متطابقين بيثبتوا، ولو لأ بيتقلبوا تاني.','طابق الـ5 كلهم قبل ما الوقت يخلص. القلبة الغلط مالهاش خصم.']},
+  bub:{n:'الفقاعات',sub:'سؤال نوعه مختلف',ic:'circlecheck',r:['هيظهرلك سؤال، والإجابات فقاعات بتظهر وتختفي.','في كل مرة فيه فقاعة واحدة صح. دوس عليها.','لو دوست على فقاعة غلط السؤال بيخلص غلط. خد وقتك، الفقاعات بتتجدد.']}
 };
 const pickN=(arr,n)=>shuffle(arr.slice()).slice(0,n);
 const surahNames = () => WORDS.surah.w.split('،').map(x=>x.split('/')[0].trim());
+/* الأنواع الجديدة */
+function buildPW(x){ return {sp:'pw',id:'pw'+x[0],words:x[2],q:'',ans:[x[3]],hint:x[4],a:[x[3]],level:x[1],free:x[1]===1}; }
+function buildER(x){ return {sp:'er',id:'er'+x[0],pre:x[2],bad:x[3],post:x[4],right:x[5],ch:shuffle([x[5],x[6],x[7]]),q:'',a:[x[5]],level:x[1]}; }
+function buildWS(x){ return {sp:'ws',id:'ws'+x[0],txt:x[2],ayah:!!x[5],q:'',ans:[x[3]].concat(x[4]?x[4].split(';'):[]),a:[x[3]],level:x[1]}; }
+function buildFL(x){ const pairs=x[3].split('|').map(p=>p.split('=')); return {sp:'flip',id:'fl'+x[0],q:'طابق كل اسم بوصفه',grp:x[2],pairs,a:[pairs.map(p=>p[0]+' ← '+p[1]).join('، ')],level:x[1]}; }
+function buildBU(x){ return {sp:'bub',id:'bu'+x[0],q:x[2],right:x[3],wrong:x[4].split('،'),a:[x[3]],level:x[1]}; }
+const BUB_N={1:2,2:3,3:4}, BUB_MS=3000;
+/* أماكن الفقاعات جوه المساحة (نسبة مئوية لنص الفقاعة) */
+const BUB_POS={2:[[[28,32],[70,66]],[[72,30],[30,70]],[[30,62],[68,34]]],3:[[[25,28],[72,40],[40,74]],[[70,24],[28,50],[66,76]],[[50,24],[24,68],[76,64]]],4:[[[26,26],[72,30],[30,72],[72,74]],[[50,20],[22,52],[78,50],[50,80]],[[30,24],[74,36],[24,66],[68,78]]]};
+function bubGroups(q){ const n=BUB_N[q.level]||3, G=[]; let pool=[];
+  for(let i=0;i<60;i++){ if(pool.length<n-1) pool=pool.concat(shuffle(q.wrong.slice())); const w=[]; while(w.length<n-1){ const x=pool.shift(); if(!w.includes(x)) w.push(x); else pool.push(x); }
+    const o=shuffle([q.right].concat(w)); G.push({o,r:o.indexOf(q.right),p:rint(0,2)}); }
+  return G; }
+/* ترتيب الأوصاف: متلخبط ومفيش وصف تحت اسمه على طول */
+function flOrders(){ const T=shuffle([0,1,2,3,4]); let B; do{ B=shuffle([0,1,2,3,4]); } while(B.some((b,i)=>b===T[i])); return {T,B}; }
 /* «مين المختلف؟» */
 function makeOddQ(level){ const pool=ODD.map((x,i)=>({x,i})).filter(o=>o.x[0]===level); if(!pool.length) return null; const {x,i}=pickX('odd'+level,pool);
   const items=x[1].split('،'); return {id:'o'+i,q:'مين المختلف؟',a:[x[2],...items.filter(t=>t!==x[2])],special:'odd',why:x[3],level}; }
 /* بيعمل سؤال خاص جديد للمستوى، أو null لو مفيش */
 function makeSpQ(kind,level){
   if(kind==='odd') return makeOddQ(level);
+  if(kind==='pw'){ const pool=PW.filter(x=>x[1]===level); return pool.length?buildPW(pickX('pw'+level,pool)):null; }
+  if(kind==='er'){ const pool=ER.filter(x=>x[1]===level); return pool.length?buildER(pickX('er'+level,pool)):null; }
+  if(kind==='ws'){ const pool=WS.filter(x=>x[1]===level); return pool.length?buildWS(pickX('ws'+level,pool)):null; }
   if(kind==='miss'){ const pool=MISS.map((x,i)=>({x,i})).filter(o=>o.x[0]===level); if(!pool.length) return null; const {x,i}=pickX('miss'+level,pool);
     return {sp:'miss',id:'m'+i,q:x[1],ans:[x[2]].concat(x[3]?x[3].split('/'):[]),kw:x[4]||'',a:[x[2]],level}; }
   if(kind==='pic'){ const pool=PICQ.filter(x=>x[1]===level); if(!pool.length) return null; const x=pickX('pic'+level,pool);
@@ -1683,10 +1786,14 @@ function spInit(q){
   if(q.sp==='order') return {show:shuffle(q.items.map((_,i)=>i)),sel:[]};
   if(q.sp==='match') return {L:shuffle(q.pairs.map((_,i)=>i)),R:shuffle(q.pairs.map((_,i)=>i)),pick:null,link:{}};
   if(q.sp==='tf') return {i:0,right:0,wrong:[]};
-  if(q.sp==='pic' || q.sp==='miss') return {val:'',live:''};
+  if(q.sp==='pic' || q.sp==='miss' || q.sp==='ws') return {val:'',live:''};
+  if(q.sp==='pw') return {val:'',live:'',hint:!!q.free};
+  if(q.sp==='er') return {pick:null,choice:null};
+  if(q.sp==='flip'){ const o=flOrders(); return {T:o.T,B:o.B,a:null,b:null,done:[],miss:null}; }
+  if(q.sp==='bub') return {G:bubGroups(q),pick:null};
   return {};
 }
-function spStart(){ if(blocked()) return; if(!QS || !QS.intro) return; QS.intro=0; QS.t0=NOW(); sfx('tap'); save(); renderPlay(); }
+function spStart(){ if(blocked()) return; { const k=QS&&(QS.q.sp||QS.q.special), g=DB.game, pid=T.ans; if(k&&g&&pid){ g.seenSp=g.seenSp||{}; g.seenSp[pid]=(g.seenSp[pid]||[]).concat([k]); } } if(!QS || !QS.intro) return; QS.intro=0; QS.t0=NOW(); sfx('tap'); save(); renderPlay(); }
 function spDone(ok){ if(!QS || QS.answered) return; answer(ok?-2:-3); }
 /* اكتب */
 function writeMatchCount(vals){ const ents=QS.q.ans.map(e=>e.split('/').map(normN).filter(Boolean)); const idx=assignEntries(vals.filter(v=>normN(v)),ents); return {idx,n:new Set(idx.filter(i=>i>=0)).size}; }
@@ -1718,6 +1825,33 @@ function spTF(v){ if(blocked()) return; if(QS.answered||QS.intro) return; const 
 function typedOk(val,q){ const w=normN(val); if(!w) return false; if(findEntry(val,[q.ans.map(normN).filter(Boolean)])===0) return true; return !!(q.kw && w.includes(normN(q.kw))); }
 function picSvg(n,i){ const s=PIC_SVG[n+'_'+i]; if(!s) return ''; const u='q'+n+'_'+i+'_'; return s.replace('@D@',PIC_DEFS).split('@U@').join(u); }
 let TYPE_T=null;
+/* «كلمة السر»: التلميح بيخصم نقطة من مكسب السؤال (الحد الأدنى صفر) */
+function pwHint(){ if(blocked()) return; if(!QS || QS.answered || QS.q.sp!=='pw' || QS.sp.hint) return; QS.sp.hint=1; QS.hintCost=1; sfx('tap'); save(); renderPlay(); }
+/* «كشف الغلط» */
+function erPick(i){ if(blocked()) return; if(!QS || QS.answered || QS.intro || QS.q.sp!=='er') return; QS.sp.pick=i; sfx('tap'); save(); renderPlay(); }
+function erChoose(j){ if(blocked()) return; if(!QS || QS.answered || QS.q.sp!=='er' || QS.sp.pick==null) return; QS.sp.choice=j; const q=QS.q; spDone(QS.sp.pick===-1 && q.ch[j]===q.right); }
+function joinSaw(a){ const o=[]; a.forEach(w=>{ if(w==='ﷺ' && o.length) o[o.length-1]+=' ﷺ'; else o.push(w); }); return o; }
+function erWords(q){ const pre=joinSaw(q.pre.split(' ').filter(Boolean)), post=joinSaw(q.post.split(' ').filter(Boolean));
+  let pfx=''; if(q.pre && !/\s$/.test(q.pre)) pfx=pre.pop()||''; let sfx2=''; if(q.post && !/^\s/.test(q.post)) sfx2=post.shift()||'';
+  return {pre,post,pfx,sfx:sfx2}; }
+function spErHtml(q,t,done){
+  const W=erWords(q), pick=t.pick, chip=(txt,i,cls)=>`<button class="erw ${cls||''}" onclick="erPick(${i})" ${done?'disabled':''}>${esc(txt)}</button>`;
+  let k=0; const parts=[];
+  W.pre.forEach(w=>{ const i=k++; parts.push(chip(w,i, done&&pick===i?'bad':pick===i?'sel':'')); });
+  const badTxt=W.pfx+(done&&QS.ok?q.right:q.bad)+W.sfx;
+  parts.push(chip(badTxt,-1, done ? (QS.ok?'fix':(pick===-1?'':'real')) : (pick===-1?'sel':'')));
+  W.post.forEach(w=>{ const i=k++; parts.push(chip(w,i, done&&pick===i?'bad':pick===i?'sel':'')); });
+  let h=`<div class="erbox">${parts.join('')}</div>`;
+  if(!done){
+    if(pick==null) return h+`<p class="note">لسه ما اخترتش كلمة</p>`;
+    const chosen = pick===-1 ? q.bad : [...W.pre,...W.post][pick];
+    return h+`<p class="note" style="color:var(--CR)">اختار الكلمة الصح بدل «${esc(chosen)}»</p><div class="erch">${q.ch.map((c,j)=>`<button class="ob2 o${j}" onclick="erChoose(${j})"><span class="t">${esc(c)}</span></button>`).join('')}</div>`;
+  }
+  if(QS.ok) return h+`<div class="erch">${q.ch.map(c=>`<div class="ob2 ${c===q.right?'right':'dim'}"><span class="t">${esc(c)}</span></div>`).join('')}</div>`;
+  if(pick!==-1) return h+`<div class="typed right">الغلط كان في «${esc(q.bad)}»، والصح: ${esc(q.right)}</div>`;
+  return h+`<div class="erch">${q.ch.map((c,j)=>`<div class="ob2 ${c===q.right?'right':j===t.choice?'wrong':'dim'}"><span class="t">${esc(c)}</span></div>`).join('')}</div>`;
+}
+
 function spTyping(el){ if(!QS || QS.answered) return; QS.sp.live=el.value; clearTimeout(TYPE_T); TYPE_T=setTimeout(()=>{ if(QS && !QS.answered && ONLINE) save(); },700); }
 function spTypeDone(){ if(blocked()) return; if(!QS || QS.answered || QS.intro) return; const el=document.getElementById('spone'); const v=(el?el.value:QS.sp.live||'').trim(); if(!v) return toast('اكتب إجابتك الأول'); QS.sp.val=v; QS.sp.live=v; spDone(typedOk(v,QS.q)); }
 function spTypeHtml(q,t,done){
@@ -1725,12 +1859,62 @@ function spTypeHtml(q,t,done){
   if(q.sp==='pic'){ const n=q.pn, c=q.cnt, sz=c>2?100:152;
     top=`<div class="picrow">${Array.from({length:c},(_,i)=>(i?'<span class="picplus">+</span>':'')+`<div class="picbox" style="width:${sz}px;height:${sz}px">${picSvg(n,i+1)}</div>`).join('')}</div><div class="pichint">تلميح: ${esc(q.hint)}</div>`; }
 
+  if(q.sp==='pw'){
+    top=`<div class="pwbox">${q.words.map((w,wi)=>(wi?'<i class="pwsep"></i>':'')+`<div class="pwrow">${w.map((c,ci)=>`<span class="pwt" style="--r:${((wi*3+ci)%5-2)*4}deg">${esc(c)}</span>`).join('')}</div>`).join('')}</div>`;
+    if(t.hint) top+=`<div class="pichint">تلميح: ${esc(q.hint)}${q.free?'':' <small style="color:var(--OR)">· اتخصمت نقطة</small>'}</div>`;
+    else if(!done) top+=`<button class="hintbtn" onclick="pwHint()">${ic('bulb')} تلميح <span>− نقطة</span></button>`;
+  }
+  if(q.sp==='ws'){
+    const L=q.txt.length, fs=L<=28?27:L<=60?23:19;
+    top=`<div class="wsq">مين اللي قال الكلام ده؟</div>`+(q.ayah?`<div class="wsb">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</div><i class="wsl"></i>`:'')+`<div class="wst" style="font-size:${fs}px"><b>«</b>${esc(q.txt)}<b>»</b></div>`+(q.ayah?`<i class="wsl"></i><div class="wsb">صَدَقَ اللَّهُ الْعَظِيمُ</div>`:'');
+  }
   if(done){ const v=t.val||'';
     if(QS.ok) return top+`<div class="typed ok"><span>${esc(v)}</span>${ic('check')}</div>`;
     return top+(v?`<div class="typed bad"><span>${esc(v)}</span>${ic('x')}</div>`:'')+`<div class="typed right">الإجابة الصح: ${esc(q.a[0])}</div>`; }
   return top+`<div class="typerow"><input class="inp spone" id="spone" maxlength="40" autocomplete="off" placeholder="اكتب الإجابة هنا" aria-label="اكتب الإجابة هنا" value="${esc(t.live||'')}" oninput="spTyping(this)" onkeydown="if(event.key==='Enter')spTypeDone()"><button class="okbtn" onclick="spTypeDone()" aria-label="تأكيد">${ic('check')}</button></div>`;
 }
 const MCOL=['#1F6F6A','#E3A92B','#8DB8D8','#D9773A','#7A4A6E'], MTXT=['#fff','#1B2A4A','#1B2A4A','#1B2A4A','#F4E7C9'];
+/* ===== اقلب وطابق ===== */
+function flBusy(){ return !QS || QS.answered || QS.intro || !QS.sp || QS.sp.miss; }
+function flTap(row,i){ if(blocked()) return; if(flBusy()) return; const t=QS.sp;
+  const pair = row==='a' ? t.T[i] : t.B[i]; if(t.done.includes(pair)) return;
+  t[row]=i; sfx('flip');
+  if(t.a!=null && t.b!=null){
+    if(t.T[t.a]===t.B[t.b]){ t.done.push(t.T[t.a]); t.a=null; t.b=null; if(t.done.length===QS.q.pairs.length){ save(); return spDone(true); } }
+    else t.miss={a:t.a,b:t.b,at:NOW()};
+  }
+  save(); renderPlay(); }
+function flUnmiss(){ const t=QS&&QS.sp; if(!t || !t.miss) return; t.miss=null; t.a=null; t.b=null; save(); renderPlay(); }
+function flHtml(q,t,done){
+  const num=pi=>t.done.indexOf(pi)+1;
+  const card=(row,i)=>{ const pi=row==='a'?t.T[i]:t.B[i], txt=q.pairs[pi][row==='a'?0:1], isDone=t.done.includes(pi);
+    const open = isDone || t[row]===i || (t.miss && t.miss[row]===i) || done;
+    let cls='flc '+(row==='a'?'fa':'fb');
+    if(isDone) cls+=' ok'; else if(t.miss && t.miss[row]===i) cls+=' bad'; else if(open) cls+=' open';
+    if(done && !isDone) cls+=' late';
+    const badge = isDone ? `<em>${num(pi)}</em>` : (t.miss && t.miss[row]===i) ? `<em class="x">×</em>` : '';
+    return `<button class="${cls}" onclick="flTap('${row}',${i})" ${done||isDone?'disabled':''} aria-label="${open?esc(txt):'كارت مقلوب'}">${open?`<span>${esc(txt)}</span>`:''}${badge}</button>`; };
+  const left=q.pairs.length-t.done.length;
+  let h=`<div class="flgrp">${esc(q.grp)}</div><div class="flrow">${[0,1,2,3,4].map(i=>card('a',i)).join('')}</div><i class="flsep"></i><div class="flrow">${[0,1,2,3,4].map(i=>card('b',i)).join('')}</div>`;
+  if(t.miss && !done) h+=`<p class="note" style="color:var(--OR)">مش متطابقين، هيتقلبوا تاني</p>`;
+  h+=`<div class="flbar"><span>${left?`فاضل ${left} ${left===1?'زوج':left===2?'زوجين':'أزواج'}`:'طابقت الـ5 كلهم'}</span><span class="dots5">${q.pairs.map((_,k)=>`<i class="${k<t.done.length?'on':''}"></i>`).join('')}</span></div>`;
+  return h; }
+/* ===== الفقاعات ===== */
+let BUB_SHOWN=-1;
+function bubIdx(){ if(!QS || !QS.sp || !QS.sp.G) return 0; const el=((QS.paused||NOW())-QS.t0); return Math.floor(Math.max(0,el)/BUB_MS)%QS.sp.G.length; }
+function bubTap(gi,j){ if(blocked()) return; if(!QS || QS.answered || QS.intro) return; if(gi!==bubIdx()) return; const t=QS.sp; t.pick={gi,j}; sfx('tap'); spDone(t.G[gi].r===j); }
+function bubArea(q,t,done){
+  const gi = done && t.pick ? t.pick.gi : bubIdx(), g=t.G[gi], n=g.o.length, pos=BUB_POS[n][g.p], sz={2:118,3:110,4:100}[n]||110;
+  const el=((QS.paused||NOW())-QS.t0)%BUB_MS;
+  return g.o.map((o,j)=>{ let cls='bub'; let mark='';
+    if(done){ if(t.pick && t.pick.j===j) { cls+= QS.ok?' ok':' bad'; mark=QS.ok?ic('check'):'<b class="x">×</b>'; } else if(!QS.ok && j===g.r) cls+=' right'; else cls+=' gone'; }
+    const st=`left:${pos[j][0]}%;top:${pos[j][1]}%;width:${sz}px;height:${sz}px;${done?'':`animation-delay:-${el}ms;`}`;
+    return `<button class="${cls}" style="${st}" onclick="bubTap(${gi},${j})" ${done?'disabled':''}><span>${esc(o)}</span>${mark}</button>`; }).join(''); }
+function buHtml(q,t,done){
+  BUB_SHOWN=done?-1:bubIdx();
+  let h=`<div class="bubarea" id="bubarea">${bubArea(q,t,done)}</div>`;
+  if(done && !QS.ok) h+=`<div class="typed right">الإجابة الصح كانت: ${esc(q.right)}</div>`;
+  return h; }
 function spHtml(){
   const q=QS.q, t=QS.sp, done=QS.answered, I=SP_INFO[q.sp];
   if(QS.intro) return spIntro();
@@ -1741,7 +1925,10 @@ function spIntro(){
   return `<div class="spintro pop"><span class="sic">${ic(I.ic)}</span><span class="qkind2" style="align-self:center">${I.sub||'سؤال خاص'}</span><h3>${I.n}</h3><div class="rules">${I.r.map((r,i)=>`<div><b>${i+1}</b><span>${r.replace('{t}',tt||'')}</span></div>`).join('')}</div><p class="note">${QS.limit?`الوقت ${QS.limit+QS.extra} ثانية، وبيبدأ لما تدوس «ابدأ».`:'مفيش وقت.'}</p><button class="btn primary big" onclick="spStart()">ابدأ</button></div>`;
 }
 function spBody(q,t,done){
-  if(q.sp==='pic' || q.sp==='miss') return spTypeHtml(q,t,done);
+  if(q.sp==='flip') return flHtml(q,t,done);
+  if(q.sp==='bub') return buHtml(q,t,done);
+  if(q.sp==='pic' || q.sp==='miss' || q.sp==='ws' || q.sp==='pw') return spTypeHtml(q,t,done);
+  if(q.sp==='er') return spErHtml(q,t,done);
   if(q.sp==='write'){
     if(done) return `<div class="chips">${q.ans.slice(0,Math.max(q.need,4)).map(a=>`<span class="chip">${esc(a.split('/')[0])}</span>`).join('')}</div>`;
     return `${Array.from({length:q.need},(_,i)=>`<input class="inp spw" maxlength="30" autocomplete="off" placeholder="الاسم ${i+1}" aria-label="الاسم ${i+1}" value="${esc((t.live||[])[i]||'')}" oninput="spWriteInput()">`).join('')}<p class="note" id="spwc">0 من ${q.need}</p><button class="btn primary big" onclick="spWriteDone()">خلصت</button>`;
@@ -1938,8 +2125,209 @@ const PIC_SVG={"1_1": "<svg viewBox=\"0 0 100 100\" preserveAspectRatio=\"xMidYM
 /* «خمّن من الصورة»: [الرقم، المستوى، عدد الصور، الإجابة، إجابات مقبولة كمان، التلميح] — الصور في PIC_SVG */
 const PICQ=[[1, 1, 2, "صالح", "النبي صالح", "نبي"], [2, 1, 2, "نوح", "", "نبي"], [3, 1, 2, "يونس", "ذو النون", "نبي"], [4, 1, 2, "موسى", "", "نبي"], [5, 1, 2, "الفيل", "سورة الفيل، أصحاب الفيل", "سورة"], [6, 1, 2, "الكهف", "سورة الكهف، أصحاب الكهف", "سورة"], [7, 1, 2, "النحل", "سورة النحل", "سورة"], [8, 1, 2, "التين", "سورة التين، التين والزيتون", "سورة"], [9, 1, 2, "الكعبة", "الكعبة المشرفة، البيت الحرام", "مكان"], [10, 1, 2, "جبل الرماة", "الرماة", "مكان"], [11, 1, 2, "العصر", "سورة العصر", "سورة"], [12, 1, 2, "المدينة المنورة", "المدينة، طيبة، طابة", "مدينة"], [13, 1, 2, "الكوثر", "سورة الكوثر", "سورة"], [14, 1, 2, "البقرة", "سورة البقرة", "سورة"], [15, 1, 2, "العنكبوت", "سورة العنكبوت", "سورة"], [16, 1, 2, "الرعد", "سورة الرعد", "سورة"], [17, 1, 2, "رمضان", "شهر رمضان", "شهر"], [18, 1, 3, "الأنعام", "سورة الأنعام", "سورة"], [19, 2, 2, "إبراهيم", "", "نبي"], [20, 2, 3, "يوسف", "", "نبي"], [21, 2, 3, "سليمان", "", "نبي"], [22, 2, 2, "مريم", "سورة مريم", "سورة"], [23, 2, 3, "الخندق", "غزوة الخندق، الأحزاب", "غزوة"], [24, 2, 3, "بدر", "غزوة بدر", "غزوة"], [25, 2, 3, "تبوك", "غزوة تبوك، جيش العسرة", "غزوة"], [26, 2, 3, "غار ثور", "ثور", "مكان"], [27, 2, 3, "غار حراء", "حراء، جبل النور", "مكان"], [28, 2, 2, "الصفا والمروة", "الصفا، المروة", "مكان"], [29, 2, 2, "القلم", "سورة القلم", "سورة"], [30, 2, 3, "ليلة القدر", "القدر", "ليلة"], [31, 2, 3, "الإسراء والمعراج", "المعراج، الإسراء", "حدث"], [32, 2, 2, "عاد", "قوم عاد", "قوم"], [33, 2, 2, "آدم", "", "نبي"], [34, 2, 3, "المسد", "سورة المسد، تبت", "سورة"], [35, 2, 2, "الحجر الأسود", "", "مكان أو شيء"], [36, 2, 2, "عرفات", "عرفة، جبل عرفات", "مكان"], [37, 2, 3, "يوم القيامة", "القيامة، الآخرة", "يوم"], [38, 2, 2, "عيسى", "", "نبي"], [39, 2, 3, "فتح مكة", "الفتح", "حدث"], [40, 2, 2, "القمر", "سورة القمر", "سورة"], [41, 3, 2, "خالد بن الوليد", "خالد، سيف الله", "صحابي"], [42, 3, 2, "بلال", "بلال بن رباح", "صحابي"], [43, 3, 2, "أبو هريرة", "أبو هريره", "صحابي"], [44, 3, 3, "الخضر", "العبد الصالح", "شخصية"], [45, 3, 2, "ذو القرنين", "", "شخصية"], [46, 3, 2, "قوم لوط", "لوط", "قوم أو نبي"], [47, 3, 3, "زكريا", "", "نبي"], [48, 3, 3, "فرعون", "", "ملك"], [49, 3, 3, "شعيب", "", "نبي"], [50, 3, 3, "الحديبية", "صلح الحديبية", "صلح أو مكان"]];
 
+/* ===== الأنواع الجديدة 18/11 =====
+   PW كلمة السر: [رقم، مستوى، حروف كل كلمة، الإجابة، التلميح]
+   ER كشف الغلط: [رقم، مستوى، قبل، الكلمة الغلط، بعد، الصح، غلط1، غلط2]
+   WS مين قال: [رقم، مستوى، العبارة، القائل، بدائل بينها «;»، آية؟] */
+const PW=[[1, 1, [["م", "م", "ل", "ز", "ا", "ل"]], "المزمل", "سورة"], [2, 1, [["م", "ر", "ا", "ث", "د", "ل"]], "المدثر", "سورة"], [3, 1, [["س", "ا", "ا", "ل", "ن", "ن", "إ"]], "الإنسان", "سورة"], [4, 1, [["ب", "أ", "ا", "ل", "ن"]], "النبأ", "سورة"], [5, 1, [["ر", "ا", "ا", "ط", "ق", "ل"]], "الطارق", "سورة"], [6, 2, [["ا", "و", "ب", "ل", "ر", "ج"]], "البروج", "سورة"], [7, 1, [["م", "ز", "ل", "ة", "ا", "ه"]], "الهمزة", "سورة"], [8, 3, [["ا", "ل", "ع", "م", "ا", "و", "ن"]], "الماعون", "سورة"], [9, 1, [["ل", "ا", "ل", "ل", "ز", "ز", "ة"]], "الزلزلة", "سورة"], [10, 2, [["ت", "ا", "ا", "ل", "ر", "ج", "ح"]], "الحجرات", "سورة"], [11, 3, [["ا", "م", "ا", "ل", "ة", "د", "ل", "ج"]], "المجادلة", "سورة"], [12, 3, [["ا", "ن", "م", "م", "ت", "ة", "ح", "ل"]], "الممتحنة", "سورة"], [13, 2, [["م", "ا", "ق", "ف", "ل", "ن", "ا", "و", "ن"]], "المنافقون", "سورة"], [14, 2, [["ل", "ا", "ط", "ق", "ل", "ا"]], "الطلاق", "سورة"], [15, 2, [["م", "ت", "ر", "ا", "ح", "ي", "ل"]], "التحريم", "سورة"], [16, 3, [["ا", "أ", "ق", "ل", "ا", "ف", "ح"]], "الأحقاف", "سورة"], [17, 2, [["ا", "ن", "ا", "خ", "د", "ل"]], "الدخان", "سورة"], [18, 2, [["ع", "ء", "ا", "ر", "ا", "ش", "ل"]], "الشعراء", "سورة"], [19, 2, [["ن", "ف", "م", "ي", "ل", "ط", "ف", "ا"]], "المطففين", "سورة"], [20, 1, [["ل", "ح", "ش", "ر", "ا"]], "الشرح", "سورة"], [21, 1, [["س", "ي", "د", "ر", "إ"]], "إدريس", "نبي"], [22, 3, [["ي", "إ", "ل", "س", "ا"]], "إلياس", "نبي"], [23, 3, [["ي", "س", "ا", "ع", "ل"]], "اليسع", "نبي"], [24, 3, [["و", "ذ"], ["ل", "ل", "ف", "ك", "ا"]], "ذو الكفل", "نبي"], [25, 1, [["ر", "ة", "س", "ا"]], "سارة", "شخصية"], [26, 1, [["ي", "س", "ق", "ل", "ب"]], "بلقيس", "شخصية"], [27, 3, [["ر", "ز", "آ"]], "آزر", "شخصية"], [28, 3, [["ة", "ر", "ق", "و"], ["ن", "ب"], ["ل", "ن", "و", "ف"]], "ورقة بن نوفل", "شخصية"], [29, 1, [["ا", "ي", "ج", "ل", "ش", "ن", "ا"]], "النجاشي", "شخصية"], [30, 1, [["ب", "أ", "ر", "ه", "ة"]], "أبرهة", "شخصية"], [31, 1, [["أ", "و", "ب"], ["ن", "ا", "ف", "ي", "س"]], "أبو سفيان", "شخصية"], [32, 1, [["ق", "ر", "ل", "ه"]], "هرقل", "شخصية"], [33, 1, [["ر", "ك", "ى", "س"]], "كسرى", "شخصية"], [34, 2, [["م", "ل", "و", "ا", "ق", "س", "ق"]], "المقوقس", "شخصية"], [35, 2, [["ب", "ع", "د"], ["ه", "ا", "ل", "ل"], ["ن", "ب"], ["م", "ع", "ر"]], "عبد الله بن عمر", "صحابي"], [36, 1, [["و", "ب", "أ"], ["ا", "د", "ل", "ا", "ر", "د", "ء"]], "أبو الدرداء", "صحابي"], [37, 3, [["و", "أ", "ب"], ["ى", "م", "س", "و"], ["ل", "ر", "ع", "أ", "ش", "ي", "ا"]], "أبو موسى الأشعري", "صحابي"], [38, 3, [["ب", "أ", "و"], ["ع", "د", "س", "ي"], ["ي", "د", "ا", "خ", "ل", "ر"]], "أبو سعيد الخدري", "صحابي"], [39, 2, [["ج", "ر", "ب", "ا"], ["ن", "ب"], ["ب", "ع", "د"], ["ه", "ا", "ل", "ل"]], "جابر بن عبد الله", "صحابي"], [40, 3, [["ا", "ء", "ب", "ل", "ا", "ر"], ["ن", "ب"], ["ا", "ع", "ب", "ز"]], "البراء بن عازب", "صحابي"], [41, 2, [["ح", "ي", "ذ", "ف", "ة"], ["ن", "ب"], ["م", "ي", "ا", "ن", "ا", "ل"]], "حذيفة بن اليمان", "صحابي"], [42, 2, [["ب", "ب", "خ", "ا"], ["ن", "ب"], ["أ", "ر", "ا", "ل", "ت"]], "خباب بن الأرت", "صحابي"], [43, 2, [["ي", "ص", "ب", "ه"], ["ل", "ر", "ا", "م", "و", "ي"]], "صهيب الرومي", "صحابي"], [44, 3, [["ا", "ا", "ل", "د", "م", "ق", "د"], ["ن", "ب"], ["ا", "د", "و", "أ", "س", "ل"]], "المقداد بن الأسود", "صحابي"], [45, 3, [["د", "ة", "ع", "ب", "ا"], ["ن", "ب"], ["ت", "ص", "ل", "م", "ا", "ا"]], "عبادة بن الصامت", "صحابي"], [46, 3, [["ي", "أ", "ب"], ["ن", "ب"], ["ب", "ع", "ك"]], "أبي بن كعب", "صحابي"], [47, 3, [["ث", "ب", "ت", "ا"], ["ن", "ب"], ["ق", "س", "ي"]], "ثابت بن قيس", "صحابي"], [48, 1, [["ي", "د", "أ", "س"], ["ن", "ب"], ["ر", "ي", "ح", "ض"]], "أسيد بن حضير", "صحابي"], [49, 3, [["د", "س", "ع"], ["ن", "ب"], ["ا", "ب", "د", "ع", "ة"]], "سعد بن عبادة", "صحابي"], [50, 3, [["ن", "م", "ا", "ع", "ث"], ["ن", "ب"], ["م", "ن", "ظ", "ع", "و"]], "عثمان بن مظعون", "صحابي"], [51, 2, [["ب", "ة", "س", "ن", "ي"]], "نسيبة", "صحابية"], [52, 2, [["م", "أ"], ["س", "ي", "م", "ل"]], "أم سليم", "صحابية"], [53, 2, [["س", "ي", "ة", "م"]], "سمية", "صحابية"], [54, 3, [["ر", "ة", "ع", "م", "ك"]], "عكرمة", "صحابي"], [55, 3, [["ع", "د", "ب"], ["ا", "ه", "ل", "ل"], ["ن", "ب"], ["ش", "ج", "ح"]], "عبد الله بن جحش", "صحابي"], [56, 2, [["ي", "ز", "د"], ["ن", "ب"], ["ث", "ا", "ر", "ح", "ة"]], "زيد بن حارثة", "صحابي"], [57, 2, [["ا", "ة", "س", "م", "أ"], ["ن", "ب"], ["ز", "د", "ي"]], "أسامة بن زيد", "صحابي"], [58, 3, [["ل", "ط", "ف", "ا", "ل", "ي"], ["ن", "ب"], ["م", "و", "ع", "ر"]], "الطفيل بن عمرو", "صحابي"], [59, 3, [["م", "م", "ض", "ا"], ["ن", "ب"], ["ة", "ع", "ث", "ب", "ل"]], "ضمام بن ثعلبة", "صحابي"], [60, 3, [["ة", "س", "ل", "م"], ["ن", "ب"], ["ك", "و", "ا", "ع", "ل", "أ"]], "سلمة بن الأكوع", "صحابي"], [61, 3, [["ي", "ع", "د"], ["ن", "ب"], ["م", "ت", "ا", "ح"]], "عدي بن حاتم", "صحابي"], [62, 2, [["ع", "د", "ب"], ["ه", "ا", "ل", "ل"], ["ن", "ب"], ["م", "ا", "س", "ل"]], "عبد الله بن سلام", "صحابي"], [63, 1, [["ب", "و", "أ"], ["ر", "ذ"]], "أبو ذر", "صحابي"], [64, 1, [["ذ", "م", "ا", "ع"], ["ن", "ب"], ["ل", "ج", "ب"]], "معاذ بن جبل", "صحابي"], [65, 1, [["س", "أ", "ن"], ["ن", "ب"], ["ل", "ك", "ا", "م"]], "أنس بن مالك", "صحابي"], [66, 1, [["ر", "ي", "ب", "خ"]], "خيبر", "غزوة"], [67, 2, [["ي", "ا", "د", "ل", "ة", "س", "ا", "ق"]], "القادسية", "معركة"], [68, 3, [["ن", "ب", "ي"], ["ر", "ي", "ظ", "ة", "ق"]], "بني قريظة", "غزوة"], [69, 3, [["ب", "ي", "ن"], ["ل", "ا", "ي", "ض", "ر", "ن"]], "بني النضير", "غزوة"], [70, 3, [["ذ", "ت", "ا"], ["ع", "ل", "ق", "ا", "ا", "ر"]], "ذات الرقاع", "غزوة"], [71, 2, [["ا", "ت", "ذ"], ["ل", "ل", "ا", "ل", "ا", "س", "س"]], "ذات السلاسل", "سرية"], [72, 3, [["ا", "ج", "ل", "ة", "ع", "ن", "ر", "ا"]], "الجعرانة", "مكان"], [73, 3, [["ل", "ي", "ت", "ن", "ع", "ا", "م"]], "التنعيم", "مكان"], [74, 3, [["ف", "س", "ة", "ق", "ي"], ["ي", "ب", "ن"], ["د", "ا", "س", "ع", "ة"]], "سقيفة بني ساعدة", "مكان"], [75, 2, [["ا", "ر", "د"], ["م", "ا", "أ", "ق", "ر", "ل"]], "دار الأرقم", "مكان"], [76, 3, [["ع", "ش", "ب"], ["ي", "ب", "أ"], ["ب", "ط", "ا", "ل"]], "شعب أبي طالب", "مكان"], [77, 3, [["ر", "ب", "ئ"], ["م", "ن", "ة", "ع", "و"]], "بئر معونة", "حدث"], [78, 3, [["ب", "ر", "ئ"], ["ر", "م", "ة", "و"]], "بئر رومة", "بئر"], [79, 3, [["ي", "ب", "ع", "ق"], ["ا", "د", "ر", "ق", "ل", "غ"]], "بقيع الغرقد", "مكان"], [80, 2, [["د", "ج", "ا", "ل", "س", "م"], ["ل", "ب", "ن", "و", "ا", "ي"]], "المسجد النبوي", "مسجد"], [81, 3, [["ج", "س", "م", "د"], ["ي", "ن", "ا", "ق", "ل", "ب", "ت", "ل"]], "مسجد القبلتين", "مسجد"], [82, 1, [["م", "م", "ي", "ل", "ت", "ا"]], "التيمم", "عبادة"], [83, 2, [["ع", "ا", "ا", "ا", "ت", "ف", "ك", "ل"]], "الاعتكاف", "عبادة"], [84, 3, [["ي", "ق", "ل", "ة", "ق", "ا", "ع"]], "العقيقة", "عبادة"], [85, 1, [["ة", "ح", "ا", "ي", "أ", "ل", "ض"]], "الأضحية", "عبادة"], [86, 1, [["ا", "و", "ت", "ل", "ح", "ر", "ي", "ا"]], "التراويح", "عبادة"], [87, 2, [["ا", "س", "ر", "ل", "ا", "ة", "خ", "ا", "ت"]], "الاستخارة", "عبادة"], [88, 1, [["ا", "ة", "ل", "ت", "ب", "ل", "ي"]], "التلبية", "عبادة"], [89, 3, [["ا", "س", "ا", "ت", "ء", "ل", "س", "ق", "ا"]], "الاستسقاء", "عبادة"], [90, 3, [["س", "ف", "ك", "ل", "ا", "و"]], "الكسوف", "عبادة"], [91, 3, [["ل", "ج", "ا", "س", "ا", "ا", "ء", "ت", "ن"]], "الاستنجاء", "عبادة"], [92, 1, [["ن", "م", "ب", "ر", "ا", "ل"]], "المنبر", "مكان في المسجد"], [93, 3, [["ة", "ر", "ط", "ا", "ل", "ف"]], "الفطرة", "عبادة"], [94, 2, [["ف", "ة", "ا", "د", "ي", "ل"]], "الفدية", "عبادة"], [95, 2, [["ن", "ذ", "ر", "ل", "ا"]], "النذر", "عبادة"], [96, 2, [["ن", "ل", "ئ", "ا", "ا", "س", "ي"]], "النسائي", "كتاب حديث"], [97, 3, [["م", "ر", "ي", "د", "ل", "ا", "ا"]], "الدارمي", "كتاب حديث"], [98, 2, [["و", "أ", "ب"], ["د", "د", "و", "ا"]], "أبو داود", "كتاب حديث"], [99, 3, [["ا", "ن", "ب"], ["م", "ج", "ا", "ه"]], "ابن ماجه", "كتاب حديث"], [100, 2, [["ي", "ض", "ر", "ا"], ["ن", "ح", "ص", "ي", "ا", "ل", "ا", "ل"]], "رياض الصالحين", "كتاب"]];
+const ER=[[1, 1, "صلاة الفجر ", "ثلاث", " ركعات", "ركعتان", "أربع", "ركعة واحدة"], [2, 1, "صلاة المغرب ", "أربع", " ركعات", "ثلاث", "ركعتان", "خمس"], [3, 1, "صلاة العشاء ", "ثلاث", " ركعات", "أربع", "ركعتان", "ست"], [4, 1, "صلاة الظهر ", "ركعتان", " في اليوم العادي", "أربع", "ثلاث", "ست"], [5, 1, "صلاة العصر ", "ثلاث", " ركعات", "أربع", "ركعتان", "خمس"], [6, 1, "عدد الصلوات المفروضة في اليوم والليلة ", "ست", "", "خمس", "أربع", "ثلاث"], [7, 1, "تُصلى صلاة التراويح في شهر ", "شعبان", "", "رمضان", "رجب", "شوال"], [8, 1, "يرمي الحاج الجمرات في ", "عرفة", "", "منى", "مزدلفة", "مكة"], [9, 1, "يطوف الحاج حول الكعبة ", "ثمانية", " أشواط", "سبعة", "خمسة", "عشرة"], [10, 1, "يسعى الحاج بين الصفا والمروة ", "عشرة", " أشواط", "سبعة", "خمسة", "ثلاثة"], [11, 1, "أركان الإسلام ", "ستة", "", "خمسة", "أربعة", "سبعة"], [12, 1, "أركان الإيمان ", "خمسة", "", "ستة", "أربعة", "سبعة"], [13, 1, "نزل القرآن الكريم بلغة ", "الفارسية", "", "العربية", "العبرية", "السريانية"], [14, 1, "أول شهر في التقويم الهجري شهر ", "صفر", "", "محرم", "رجب", "رمضان"], [15, 1, "إذا عطس المسلم قال ", "سبحان الله", "", "الحمد لله", "الله أكبر", "بسم الله"], [16, 1, "المسجد الأقصى في مدينة ", "مكة", "", "القدس", "المدينة", "دمشق"], [17, 1, "وُلد النبي ﷺ في مدينة ", "المدينة", "", "مكة", "الطائف", "الحبشة"], [18, 1, "والد النبي ﷺ هو ", "أبو طالب", "", "عبد الله", "عبد المطلب", "أبو لهب"], [19, 1, "إذا لم يجد المسلم ماءً تيمم بـ", "الذهب", "", "التراب", "الخشب", "الورق"], [20, 1, "يتجه المسلمون في صلاتهم نحو ", "الأقصى", "", "الكعبة", "الطائف", "المدينة"], [21, 1, "أبو البشر هو ", "نوح", " عليه السلام", "آدم", "إدريس", "إبراهيم"], [22, 1, "صنع نوح عليه السلام ", "بيتًا", " للنجاة من الطوفان", "سفينة", "حصنًا", "جسرًا"], [23, 1, "سخّر الله الريح لنبيه ", "داود", " عليه السلام", "سليمان", "موسى", "يوسف"], [24, 1, "ألان الله الحديد لنبيه ", "سليمان", " عليه السلام", "داود", "أيوب", "يونس"], [25, 1, "ضرب موسى عليه السلام بعصاه ", "الجبل", " فانفلق", "البحر", "الأرض", "الشجر"], [26, 1, "خاتم الأنبياء والمرسلين ", "عيسى", " عليه السلام", "محمد ﷺ", "موسى", "إبراهيم"], [27, 1, "وُلد عيسى عليه السلام من غير ", "أم", "", "أب", "جد", "عم"], [28, 2, "أول من آمن بالنبي ﷺ من النساء ", "عائشة", "", "خديجة", "فاطمة", "حفصة"], [29, 2, "كتب النبي ﷺ إلى ملك الفرس ", "هرقل", "", "كسرى", "النجاشي", "المقوقس"], [30, 2, "ملك الحبشة الذي أحسن استقبال المسلمين هو ", "هرقل", "", "النجاشي", "كسرى", "المقوقس"], [31, 2, "أبو الحسن كنية ", "عثمان", " بن عفان", "علي بن أبي طالب", "عمر بن الخطاب", "أبو بكر"], [32, 2, "أكثر الصحابة رواية للحديث ", "ابن عمر", "", "أبو هريرة", "أنس بن مالك", "جابر بن عبد الله"], [33, 2, "أول شهيدة في الإسلام ", "خديجة", "", "سمية بنت خياط", "أم سلمة", "عائشة"], [34, 2, "زوجة النبي ﷺ الأولى ", "عائشة", "", "خديجة", "حفصة", "سودة"], [35, 2, "بُعث النبي ﷺ وعمره ", "ثلاثون", " سنة", "أربعون", "خمسون", "عشرون"], [36, 2, "نزل الوحي على النبي ﷺ أول مرة في غار ", "ثور", "", "حراء", "رومة", "الأبواء"], [37, 2, "اختبأ النبي ﷺ وأبو بكر أثناء الهجرة في غار ", "حراء", "", "ثور", "الأبواء", "التنعيم"], [38, 2, "توفي النبي ﷺ في ", "مكة", "", "المدينة المنورة", "الطائف", "القدس"], [39, 2, "عاش النبي ﷺ ", "سبعين", " سنة تقريبًا", "ثلاثًا وستين", "خمسين", "ثمانين"], [40, 2, "شُرع الأذان في ", "مكة", " قبل الهجرة", "المدينة", "الحبشة", "الطائف"], [41, 2, "أول ما يُحاسب عليه العبد يوم القيامة من أعماله ", "الزكاة", "", "الصلاة", "الصيام", "الحج"], [42, 2, "عُرج بالنبي ﷺ من المسجد الأقصى إلى ", "الأرض", "", "السماء", "الطائف", "المدينة"], [43, 2, "فُرضت الصلاة في رحلة ", "الهجرة", "", "الإسراء والمعراج", "بدر", "الحديبية"], [44, 2, "فُرضت الصلاة أولًا ", "ثلاثين", " صلاة ثم خُففت إلى خمس", "خمسين", "أربعين", "مائة"], [45, 2, "سورة الكهف تُقرأ يوم ", "الخميس", " من كل أسبوع", "الجمعة", "السبت", "الاثنين"], [46, 2, "أولو العزم من الرسل ", "ثلاثة", "", "خمسة", "سبعة", "عشرة"], [47, 2, "خليل الله ", "موسى", " عليه السلام", "إبراهيم", "عيسى", "نوح"], [48, 2, "كليم الله ", "إبراهيم", " عليه السلام", "موسى", "عيسى", "محمد ﷺ"], [49, 2, "ذو النون لقب ", "موسى", " عليه السلام", "يونس", "يوسف", "يحيى"], [50, 2, "ابتُلي ", "يوسف", " عليه السلام بالمرض فصبر", "أيوب", "يعقوب", "يحيى"], [51, 2, "زوجة فرعون المؤمنة ", "سارة", "", "آسية", "هاجر", "مريم"], [52, 2, "ألقت أم موسى وليدها في ", "النار", "", "اليم", "البئر", "الصحراء"], [53, 2, "أول جريمة قتل في الأرض قتل فيها ", "هابيل", " أخاه", "قابيل", "آدم", "هارون"], [54, 2, "طلب ", "داود", " عليه السلام ملكًا لا ينبغي لأحد من بعده", "سليمان", "يوسف", "موسى"], [55, 2, "بلقيس ملكة ", "مصر", "", "سبأ", "الشام", "الحبشة"], [56, 2, "بنى ذو القرنين ", "جسرًا", " بين جبلين", "سدًّا", "قصرًا", "مسجدًا"], [57, 2, "أصحاب الكهف لبثوا في كهفهم ", "ثلاثين", " سنة", "ثلاثمائة وتسع", "مائة", "ألفًا"], [58, 2, "كان صلح الحديبية في السنة ", "الثامنة", " للهجرة", "السادسة", "الرابعة", "الثانية"], [59, 2, "معركة اليرموك كانت ضد ", "الفرس", "", "الروم", "التتار", "الصليبيين"], [60, 2, "معركة القادسية كانت ضد ", "الروم", "", "الفرس", "التتار", "الأحباش"], [61, 2, "فتح مصر بقيادة ", "خالد بن الوليد", "", "عمرو بن العاص", "سعد بن أبي وقاص", "أبو عبيدة"], [62, 2, "فتح الأندلس بقيادة ", "عمرو بن العاص", "", "طارق بن زياد", "قتيبة بن مسلم", "محمد بن القاسم"], [63, 2, "معركة حطين بقيادة ", "قطز", "", "صلاح الدين الأيوبي", "بيبرس", "نور الدين زنكي"], [64, 2, "معركة عين جالوت بقيادة ", "صلاح الدين", "", "قطز", "نور الدين زنكي", "طارق بن زياد"], [65, 2, "فتح القسطنطينية بقيادة ", "صلاح الدين", "", "محمد الفاتح", "طارق بن زياد", "قطز"], [66, 2, "وُحّدت المصاحف على مصحف واحد في عهد ", "أبي بكر", "", "عثمان بن عفان", "عمر", "علي"], [67, 2, "إنما الأعمال بـ", "الأقوال", "", "النيات", "العلم", "الظاهر"], [68, 2, "الدين ", "الصلاة", "", "النصيحة", "الزكاة", "الصدق"], [69, 2, "الحياء شعبة من ", "الدنيا", "", "الإيمان", "الخلق", "الدين"], [70, 2, "تبسمك في وجه أخيك ", "ذنب", "", "صدقة", "عبادة", "دين"], [71, 2, "اليد العليا خير من اليد ", "اليمنى", "", "السفلى", "اليسرى", "الضعيفة"], [72, 2, "الطهور شطر ", "الصلاة", "", "الإيمان", "الدين", "الإسلام"], [73, 2, "رأس الأمر الإسلام وعموده ", "الصيام", "", "الصلاة", "الزكاة", "الحج"], [74, 3, "ذروة سنام الإسلام ", "الحج", "", "الجهاد", "الصيام", "الزكاة"], [75, 3, "الصدقة تطفئ الخطيئة كما يطفئ ", "الهواء", " النار", "الماء", "الريح", "التراب"], [76, 3, "تُصلى صلاة العيد ", "بأذان وإقامة", "", "بغير أذان ولا إقامة", "بأذان فقط", "بإقامة فقط"], [77, 3, "تحية المسجد ", "ثلاث", " ركعات", "ركعتان", "أربع", "ركعة"], [78, 3, "ماتت أم النبي ﷺ في ", "مكة", "", "الأبواء", "الطائف", "المدينة"], [79, 3, "كفل النبي ﷺ بعد جده ", "أبو لهب", "", "أبو طالب", "حمزة", "العباس"], [80, 3, "شُرع الصيام في السنة ", "الأولى", " للهجرة", "الثانية", "الثالثة", "الخامسة"], [81, 3, "لبث النبي ﷺ في مكة بعد البعثة ", "عشر", " سنين", "ثلاث عشرة", "ثماني", "عشرين"], [82, 1, "يسلّم المصلي في آخر الصلاة عن يمينه ثم عن ", "أمامه", "", "يساره", "خلفه", "فوقه"], [83, 1, "يبدأ المسلم الصلاة بقول ", "بسم الله", "", "الله أكبر", "الحمد لله", "سبحان الله"], [84, 2, "يقول المصلي في الركوع سبحان ربي ", "الأعلى", "", "العظيم", "الأكبر", "الأجل"], [85, 2, "يقول المصلي في السجود سبحان ربي ", "العظيم", "", "الأعلى", "الأكبر", "الأجل"], [86, 1, "في كل ركعة ", "ثلاث", " سجدات", "سجدتان", "سجدة واحدة", "أربع سجدات"], [87, 1, "في كل ركعة ", "ركوعان", "", "ركوع واحد", "ثلاثة ركوعات", "أربعة ركوعات"], [88, 2, "يدخل المسلم المسجد بقدمه ", "اليسرى", "", "اليمنى", "الأمامية", "الخلفية"], [89, 2, "يدخل المسلم الخلاء بقدمه ", "اليمنى", "", "اليسرى", "الأمامية", "الخلفية"], [90, 1, "يأكل المسلم بيده ", "اليسرى", "", "اليمنى", "المتعبة", "الضعيفة"], [91, 1, "يبدأ المسلم الأكل بقول ", "الحمد لله", "", "بسم الله", "الله أكبر", "سبحان الله"], [92, 1, "تُذبح الأضحية في عيد ", "الفطر", "", "الأضحى", "المولد", "الهجرة"], [93, 2, "أرسل الله موسى إلى فرعون ومعه أخوه ", "يوسف", "", "هارون", "إسحاق", "لوط"], [94, 2, "أرسل الله شعيبًا عليه السلام إلى أهل ", "سبأ", "", "مدين", "ثمود", "عاد"], [95, 2, "ولد إسماعيل عليه السلام لإبراهيم من زوجته ", "سارة", "", "هاجر", "آسية", "مريم"], [96, 2, "نام ", "عمر", " في فراش النبي ﷺ ليلة الهجرة", "علي بن أبي طالب", "أبو بكر الصديق", "بلال بن رباح"], [97, 2, "غزوة تبوك كانت ضد ", "الفرس", "", "الروم", "قريش", "اليهود"], [98, 2, "غزوة خيبر كانت ضد ", "قريش", "", "اليهود", "الروم", "الفرس"], [99, 3, "قال النبي ﷺ عن ", "أبي هريرة", ": من أراد أن ينظر إلى شهيد يمشي على الأرض فلينظر إليه", "طلحة بن عبيد الله", "سعد بن أبي وقاص", "الزبير بن العوام"], [100, 3, "لبث نوح عليه السلام في قومه ", "عشر", " سنوات يدعوهم", "ألف سنة إلا خمسين عامًا", "ثلاثمائة سنة", "مائة سنة"]];
+const WS=[[1, 2, "رَبِّ إِنِّي وَضَعْتُهَا أُنثَىٰ", "امرأة عمران", "حنة;أم مريم", 1], [2, 1, "رَبِّ اشْرَحْ لِي صَدْرِي وَيَسِّرْ لِي أَمْرِي", "موسى", "موسى عليه السلام", 1], [3, 2, "إِنِّي وَجَدتُّ امْرَأَةً تَمْلِكُهُمْ", "الهدهد", "", 1], [4, 1, "يَا أَيُّهَا النَّمْلُ ادْخُلُوا مَسَاكِنَكُمْ", "النملة", "نملة", 1], [5, 1, "أَنَا خَيْرٌ مِّنْهُ خَلَقْتَنِي مِن نَّارٍ", "إبليس", "الشيطان", 1], [6, 2, "مَا هَٰذَا بَشَرًا إِنْ هَٰذَا إِلَّا مَلَكٌ كَرِيمٌ", "النسوة", "نسوة المدينة;النساء;نساء المدينة", 1], [7, 2, "رَبَّنَا ظَلَمْنَا أَنفُسَنَا وَإِن لَّمْ تَغْفِرْ لَنَا وَتَرْحَمْنَا لَنَكُونَنَّ مِنَ الْخَاسِرِينَ", "آدم وحواء", "آدم", 1], [8, 1, "لَا تَثْرِيبَ عَلَيْكُمُ الْيَوْمَ يَغْفِرُ اللَّهُ لَكُمْ", "يوسف", "يوسف عليه السلام", 1], [9, 1, "إِنِّي لَأَجِدُ رِيحَ يُوسُفَ", "يعقوب", "يعقوب عليه السلام", 1], [10, 1, "فَصَبْرٌ جَمِيلٌ", "يعقوب", "", 1], [11, 1, "يَا بُنَيَّ لَا تُشْرِكْ بِاللَّهِ", "لقمان", "لقمان الحكيم", 1], [12, 1, "أَنِّي مَسَّنِيَ الضُّرُّ وَأَنتَ أَرْحَمُ الرَّاحِمِينَ", "أيوب", "أيوب عليه السلام", 1], [13, 1, "لَّا إِلَٰهَ إِلَّا أَنتَ سُبْحَانَكَ إِنِّي كُنتُ مِنَ الظَّالِمِينَ", "يونس", "ذو النون", 1], [14, 2, "رَبِّ إِنِّي لِمَا أَنزَلْتَ إِلَيَّ مِنْ خَيْرٍ فَقِيرٌ", "موسى", "", 1], [15, 1, "هَٰذَا رَبِّي", "إبراهيم", "إبراهيم عليه السلام", 1], [16, 1, "يَا لَيْتَنِي مِتُّ قَبْلَ هَٰذَا وَكُنتُ نَسْيًا مَّنسِيًّا", "مريم", "مريم عليها السلام;السيدة مريم", 1], [17, 1, "إِنِّي عَبْدُ اللَّهِ آتَانِيَ الْكِتَابَ وَجَعَلَنِي نَبِيًّا", "عيسى", "عيسى عليه السلام;المسيح", 1], [18, 2, "رَبَّنَا أَنزِلْ عَلَيْنَا مَائِدَةً مِّنَ السَّمَاءِ", "عيسى", "عيسى عليه السلام", 1], [19, 1, "مَنْ أَنصَارِي إِلَى اللَّهِ", "عيسى", "", 1], [20, 3, "وَأُفَوِّضُ أَمْرِي إِلَى اللَّهِ إِنَّ اللَّهَ بَصِيرٌ بِالْعِبَادِ", "مؤمن آل فرعون", "الرجل المؤمن;رجل مؤمن من آل فرعون", 1], [21, 2, "مَا كُنتُ قَاطِعَةً أَمْرًا حَتَّىٰ تَشْهَدُونِ", "بلقيس", "ملكة سبأ", 1], [22, 2, "إِنِّي أَحْبَبْتُ حُبَّ الْخَيْرِ عَن ذِكْرِ رَبِّي حَتَّىٰ تَوَارَتْ بِالْحِجَابِ", "سليمان", "سليمان عليه السلام", 1], [23, 2, "رَبِّ أَوْزِعْنِي أَنْ أَشْكُرَ نِعْمَتَكَ الَّتِي أَنْعَمْتَ عَلَيَّ", "سليمان", "", 1], [24, 2, "رَبِّ لَا تَذَرْنِي فَرْدًا وَأَنتَ خَيْرُ الْوَارِثِينَ", "زكريا", "زكريا عليه السلام", 1], [25, 2, "رَبِّ إِنِّي وَهَنَ الْعَظْمُ مِنِّي وَاشْتَعَلَ الرَّأْسُ شَيْبًا", "زكريا", "", 1], [26, 2, "رَّبِّ لَا تَذَرْ عَلَى الْأَرْضِ مِنَ الْكَافِرِينَ دَيَّارًا", "نوح", "", 1], [27, 2, "رَبِّ إِنَّ ابْنِي مِنْ أَهْلِي", "نوح", "", 1], [28, 2, "سَآوِي إِلَىٰ جَبَلٍ يَعْصِمُنِي مِنَ الْمَاءِ", "ابن نوح", "ولد نوح;كنعان", 1], [29, 2, "هَلْ أَتَّبِعُكَ عَلَىٰ أَن تُعَلِّمَنِ مِمَّا عُلِّمْتَ رُشْدًا", "موسى", "", 1], [30, 2, "إِنَّكَ لَن تَسْتَطِيعَ مَعِيَ صَبْرًا", "الخضر", "الخضر عليه السلام", 1], [31, 2, "آتُونِي زُبَرَ الْحَدِيدِ", "ذو القرنين", "", 1], [32, 2, "هَٰذَا رَحْمَةٌ مِّن رَّبِّي فَإِذَا جَاءَ وَعْدُ رَبِّي جَعَلَهُ دَكَّاءَ", "ذو القرنين", "", 1], [33, 2, "مَا مَكَّنِّي فِيهِ رَبِّي خَيْرٌ فَأَعِينُونِي بِقُوَّةٍ", "ذو القرنين", "", 1], [34, 2, "رَبَّنَا آتِنَا مِن لَّدُنكَ رَحْمَةً وَهَيِّئْ لَنَا مِنْ أَمْرِنَا رَشَدًا", "أصحاب الكهف", "الفتية;فتية الكهف", 1], [35, 1, "لَبِثْنَا يَوْمًا أَوْ بَعْضَ يَوْمٍ", "أصحاب الكهف", "الفتية;أحد أصحاب الكهف", 1], [36, 2, "إِنَّمَا أَشْكُو بَثِّي وَحُزْنِي إِلَى اللَّهِ", "يعقوب", "", 1], [37, 2, "يَا بُنَيَّ لَا تَقْصُصْ رُؤْيَاكَ عَلَىٰ إِخْوَتِكَ", "يعقوب", "", 1], [38, 2, "اجْعَلْنِي عَلَىٰ خَزَائِنِ الْأَرْضِ إِنِّي حَفِيظٌ عَلِيمٌ", "يوسف", "", 1], [39, 2, "الْآنَ حَصْحَصَ الْحَقُّ", "امرأة العزيز", "زليخة", 1], [40, 3, "أَنَا رَاوَدتُّهُ عَن نَّفْسِهِ وَإِنَّهُ لَمِنَ الصَّادِقِينَ", "امرأة العزيز", "زليخة", 1], [41, 1, "رَبِّ أَرِنِي كَيْفَ تُحْيِي الْمَوْتَىٰ", "إبراهيم", "", 1], [42, 2, "وَلَٰكِن لِّيَطْمَئِنَّ قَلْبِي", "إبراهيم", "", 1], [43, 1, "رَبَّنَا تَقَبَّلْ مِنَّا إِنَّكَ أَنتَ السَّمِيعُ الْعَلِيمُ", "إبراهيم وإسماعيل", "إبراهيم", 1], [44, 2, "يَا أَبَتِ افْعَلْ مَا تُؤْمَرُ", "إسماعيل", "إسماعيل عليه السلام", 1], [45, 2, "يَا أَبَتِ لِمَ تَعْبُدُ مَا لَا يَسْمَعُ وَلَا يُبْصِرُ", "إبراهيم", "", 1], [46, 2, "أَرَاغِبٌ أَنتَ عَنْ آلِهَتِي يَا إِبْرَاهِيمُ", "آزر", "أبو إبراهيم;والد إبراهيم", 1], [47, 1, "بَلْ فَعَلَهُ كَبِيرُهُمْ هَٰذَا", "إبراهيم", "", 1], [48, 2, "كَلَّا إِنَّ مَعِيَ رَبِّي سَيَهْدِينِ", "موسى", "", 1], [49, 2, "آمَنَّا بِرَبِّ هَارُونَ وَمُوسَىٰ", "سحرة فرعون", "السحرة", 1], [50, 2, "لَن نُّؤْثِرَكَ عَلَىٰ مَا جَاءَنَا مِنَ الْبَيِّنَاتِ", "سحرة فرعون", "السحرة", 1], [51, 3, "يَا لَيْتَ قَوْمِي يَعْلَمُونَ بِمَا غَفَرَ لِي رَبِّي", "صاحب يس", "الرجل المؤمن;رجل من أقصى المدينة", 1], [52, 1, "يَا أَيُّهَا الْمَلَأُ إِنِّي أُلْقِيَ إِلَيَّ كِتَابٌ كَرِيمٌ", "بلقيس", "ملكة سبأ", 1], [53, 1, "مَا لِيَ لَا أَرَى الْهُدْهُدَ", "سليمان", "", 1], [54, 2, "أَحَطتُ بِمَا لَمْ تُحِطْ بِهِ", "الهدهد", "", 1], [55, 1, "رَبِّ ابْنِ لِي عِندَكَ بَيْتًا فِي الْجَنَّةِ", "امرأة فرعون", "آسية;آسية بنت مزاحم", 1], [56, 3, "إِنَّ أَبِي يَدْعُوكَ لِيَجْزِيَكَ أَجْرَ مَا سَقَيْتَ لَنَا", "ابنة الشيخ", "إحدى ابنتي الشيخ;ابنة شعيب", 1], [57, 3, "يَا أَبَتِ اسْتَأْجِرْهُ إِنَّ خَيْرَ مَنِ اسْتَأْجَرْتَ الْقَوِيُّ الْأَمِينُ", "ابنة الشيخ", "إحدى ابنتي الشيخ;ابنة شعيب", 1], [58, 2, "إِنِّي أُرِيدُ أَنْ أُنكِحَكَ إِحْدَى ابْنَتَيَّ هَاتَيْنِ", "الشيخ الكبير", "شعيب;أبو الفتاتين", 1], [59, 2, "وَيَا قَوْمِ أَوْفُوا الْمِكْيَالَ وَالْمِيزَانَ بِالْقِسْطِ", "شعيب", "شعيب عليه السلام", 1], [60, 2, "أَلَيْسَ مِنكُمْ رَجُلٌ رَّشِيدٌ", "لوط", "لوط عليه السلام", 1], [61, 2, "هَٰؤُلَاءِ بَنَاتِي هُنَّ أَطْهَرُ لَكُمْ", "لوط", "", 1], [62, 1, "لَوْ أَنَّ لِي بِكُمْ قُوَّةً أَوْ آوِي إِلَىٰ رُكْنٍ شَدِيدٍ", "لوط", "", 1], [63, 2, "أَخْرِجُوا آلَ لُوطٍ مِّن قَرْيَتِكُمْ", "قوم لوط", "", 1], [64, 3, "أَنَا أَكْثَرُ مِنكَ مَالًا وَأَعَزُّ نَفَرًا", "صاحب الجنتين", "صاحب الجنة;الرجل الكافر", 1], [65, 1, "لَا أَبْرَحُ حَتَّىٰ أَبْلُغَ مَجْمَعَ الْبَحْرَيْنِ", "موسى", "", 1], [66, 3, "أَرَأَيْتَ إِذْ أَوَيْنَا إِلَى الصَّخْرَةِ فَإِنِّي نَسِيتُ الْحُوتَ", "فتى موسى", "يوشع;يوشع بن نون", 1], [67, 2, "إِنَّمَا أُوتِيتُهُ عَلَىٰ عِلْمٍ عِندِي", "قارون", "", 1], [68, 3, "يَا لَيْتَ لَنَا مِثْلَ مَا أُوتِيَ قَارُونُ", "الذين يريدون الحياة الدنيا", "قوم قارون", 1], [69, 2, "اجْعَل لَّنَا إِلَٰهًا كَمَا لَهُمْ آلِهَةٌ", "بنو إسرائيل", "قوم موسى", 1], [70, 2, "أَتَتَّخِذُنَا هُزُوًا", "قوم موسى", "بنو إسرائيل", 1], [71, 3, "أَنَا أُنَبِّئُكُم بِتَأْوِيلِهِ فَأَرْسِلُونِ", "الذي نجا من صاحبي السجن", "صاحب يوسف في السجن;الساقي", 1], [72, 3, "إِنِّي أَرَانِي أَعْصِرُ خَمْرًا", "صاحب يوسف في السجن", "الساقي;أحد صاحبي السجن", 1], [73, 3, "إِنِّي أَرَىٰ سَبْعَ بَقَرَاتٍ سِمَانٍ يَأْكُلُهُنَّ سَبْعٌ عِجَافٌ", "ملك مصر", "الملك", 1], [74, 3, "يَا أَبَانَا مَا لَكَ لَا تَأْمَنَّا عَلَىٰ يُوسُفَ", "إخوة يوسف", "أبناء يعقوب", 1], [75, 3, "أَكْرِمِي مَثْوَاهُ عَسَىٰ أَن يَنفَعَنَا", "العزيز", "عزيز مصر;زوج امرأة العزيز", 1], [76, 2, "أَنتَ وَلِيِّي فِي الدُّنْيَا وَالْآخِرَةِ تَوَفَّنِي مُسْلِمًا وَأَلْحِقْنِي بِالصَّالِحِينَ", "يوسف", "", 1], [77, 3, "نَعْبُدُ إِلَٰهَكَ وَإِلَٰهَ آبَائِكَ إِبْرَاهِيمَ وَإِسْمَاعِيلَ وَإِسْحَاقَ", "أبناء يعقوب", "بنو يعقوب", 1], [78, 2, "وَاللَّهِ لَا يُخْزِيكَ اللَّهُ أَبَدًا إِنَّكَ لَتَصِلُ الرَّحِمَ", "خديجة", "خديجة بنت خويلد;أم المؤمنين خديجة", 0], [79, 3, "هَٰذَا النَّامُوسُ الَّذِي نَزَّلَ اللَّهُ عَلَىٰ مُوسَىٰ", "ورقة بن نوفل", "ورقة", 0], [80, 2, "أَبْقَيْتُ لَهُمُ اللَّهَ وَرَسُولَهُ", "أبو بكر", "أبو بكر الصديق;الصديق", 0], [81, 2, "مَن كَانَ يَعْبُدُ مُحَمَّدًا فَإِنَّ مُحَمَّدًا قَدْ مَاتَ", "أبو بكر", "أبو بكر الصديق;الصديق", 0], [82, 3, "وَاللَّهِ لَوْ مَنَعُونِي عِقَالًا كَانُوا يُؤَدُّونَهُ إِلَىٰ رَسُولِ اللَّهِ لَقَاتَلْتُهُمْ عَلَيْهِ", "أبو بكر", "أبو بكر الصديق;الصديق", 0], [83, 3, "لَا نُورَثُ مَا تَرَكْنَا صَدَقَةٌ", "أبو بكر", "أبو بكر الصديق;الصديق", 0], [84, 3, "لَا نَقُولُ لَكَ كَمَا قَالَتْ بَنُو إِسْرَائِيلَ اذْهَبْ أَنتَ وَرَبُّكَ فَقَاتِلَا", "المقداد بن الأسود", "المقداد", 0], [85, 3, "إِنِّي لَأَجِدُ رِيحَ الْجَنَّةِ دُونَ أُحُدٍ", "أنس بن النضر", "", 0], [86, 3, "فُزْتُ وَرَبِّ الْكَعْبَةِ", "حرام بن ملحان", "حرام بن ملحان خال أنس", 0], [87, 1, "أَحَدٌ أَحَدٌ", "بلال بن رباح", "بلال", 0], [88, 2, "إِنِّي لَأَعْلَمُ أَنَّكَ حَجَرٌ لَا تَضُرُّ وَلَا تَنفَعُ", "عمر بن الخطاب", "عمر;الفاروق", 0], [89, 3, "أَنَا الَّذِي سَمَّتْنِي أُمِّي حَيْدَرَةً", "علي بن أبي طالب", "علي", 0], [90, 3, "مَا عَدَا عِيسَى ابْنُ مَرْيَمَ مَا قُلْتَ قَدْرَ هَٰذَا الْعُودِ", "النجاشي", "ملك الحبشة", 0], [91, 1, "كَانَ خُلُقُهُ الْقُرْآنَ", "عائشة", "عائشة بنت أبي بكر;أم المؤمنين عائشة", 0], [92, 3, "خَدَمْتُ النَّبِيَّ عَشْرَ سِنِينَ فَمَا قَالَ لِي أُفٍّ قَطُّ", "أنس بن مالك", "أنس", 0], [93, 3, "وَاللَّهِ مَا نَزَلَتْ سُورَةٌ مِنْ كِتَابِ اللَّهِ إِلَّا وَأَنَا أَعْلَمُ أَيْنَ نَزَلَتْ", "عبد الله بن مسعود", "ابن مسعود", 0], [94, 3, "إِنَّكُمْ تَقُولُونَ أَكْثَرَ أَبُو هُرَيْرَةَ", "أبو هريرة", "", 0], [95, 1, "يَا بِلَالُ أَرِحْنَا بِالصَّلَاةِ", "النبي ﷺ", "محمد;الرسول;رسول الله;النبي محمد", 0], [96, 1, "أَنَا سَيِّدُ وَلَدِ آدَمَ وَلَا فَخْرَ", "النبي ﷺ", "محمد;الرسول;رسول الله;النبي محمد", 0], [97, 1, "مَا ظَنُّكَ بِاثْنَيْنِ اللَّهُ ثَالِثُهُمَا", "النبي ﷺ", "محمد;الرسول;رسول الله;النبي محمد", 0], [98, 3, "يَا رَسُولَ اللَّهِ لَأَنْتَ أَحَبُّ إِلَيَّ مِنْ كُلِّ شَيْءٍ إِلَّا مِنْ نَفْسِي", "عمر بن الخطاب", "عمر;الفاروق", 0], [99, 3, "اللَّهُمَّ إِنَّا كُنَّا نَتَوَسَّلُ إِلَيْكَ بِنَبِيِّنَا فَتَسْقِينَا وَإِنَّا نَتَوَسَّلُ إِلَيْكَ بِعَمِّ نَبِيِّنَا فَاسْقِنَا", "عمر بن الخطاب", "عمر;الفاروق", 0], [100, 3, "لَا يَنْبَغِي لِي أَنْ أَتَزَوَّجَ مُشْرِكًا وَلَا آخُذُ مِنْكَ صَدَاقًا غَيْرَ الْإِسْلَامِ", "أم سليم", "أم سليم بنت ملحان;الرميصاء", 0]];
+
+/* فوازير زي «الصبح إذا تنفس»: سؤال بصيغة فزورة، والإجابة من المصحف من غير كتابة الآية */
+/* ===== اقلب وطابق (50) — من «أنواع تفاعلية: اقلب وطابق والفقاعات» ===== [رقم، مستوى، اسم المجموعة، "اسم=وصف|..."] */
+const FLIP=[
+[1,1,'أنبياء ومعجزات','موسى=العصا|سليمان=منطق الطير|عيسى=إبراء الأكمه|نوح=السفينة|صالح=الناقة'],
+[2,1,'أركان الإسلام','الشهادتان=أول الأركان|الصلاة=خمس في اليوم|الزكاة=حق المال|الصيام=رمضان|الحج=البيت الحرام'],
+[3,1,'ألقاب الصحابة','أبو بكر=الصديق|عمر=الفاروق|عثمان=ذو النورين|علي=أبو تراب|حمزة=أسد الله'],
+[4,1,'سور وموضوعها','الكهف=الفتية|يوسف=أحسن القصص|مريم=ولادة عيسى|النمل=سليمان والنملة|الإسراء=رحلة النبي'],
+[5,1,'الملائكة','جبريل=الوحي|ميكائيل=المطر|إسرافيل=النفخ في الصور|ملك الموت=قبض الأرواح|مالك=خازن النار'],
+[6,1,'أقوام الأنبياء','هود=عاد|شعيب=مدين|لوط=سدوم|يونس=الحوت|أيوب=الصبر'],
+[7,1,'الكتب السماوية','التوراة=موسى|الإنجيل=عيسى|الزبور=داود|القرآن=محمد ﷺ|الصحف=إبراهيم'],
+[8,1,'الصلوات','الفجر=ركعتان|المغرب=ثلاث|الجمعة=خطبتان|العيد=تكبيرات زائدة|التراويح=رمضان'],
+[9,1,'الشهور','رمضان=الصيام|شوال=عيد الفطر|ذو الحجة=الحج|محرم=عاشوراء|شعبان=قبل رمضان'],
+[10,1,'الأماكن','الكعبة=مكة|المسجد النبوي=المدينة|الأقصى=القدس|قباء=أول مسجد|عرفة=الوقوف'],
+[11,1,'المناسك','الطواف=حول الكعبة|السعي=الصفا والمروة|الإحرام=نية النسك|الرمي=الجمرات|الحلق=التحلل'],
+[12,1,'حيوانات في القرآن','الهدهد=سليمان|الكلب=أصحاب الكهف|الفيل=أبرهة|الغراب=دفن الأخ|البقرة=بنو إسرائيل'],
+[13,1,'ألقاب الأنبياء','آدم=أبو البشر|نوح=أول الرسل|إبراهيم=خليل الله|موسى=كليم الله|عيسى=كلمة الله'],
+[14,1,'غزوات','بدر=رمضان|أحد=الرماة|الخندق=سلمان|حنين=هوازن|تبوك=الروم'],
+[15,1,'صحابة وصفاتهم','بلال=المؤذن|أبو هريرة=كثرة الرواية|سلمان=الفارسي|مصعب=سفير المدينة|ابن مسعود=القرآن'],
+[16,1,'نساء القرآن','مريم=عيسى|آسية=فرعون|بلقيس=سبأ|امرأة العزيز=يوسف|أم موسى=اليم'],
+[17,1,'الصلاة والطهارة','الأذان=الإعلام بالوقت|الإقامة=قبل الصلاة|القبلة=الكعبة|التيمم=التراب|الوضوء=الطهارة'],
+[18,2,'الصحابة وفتوحهم','جعفر=مؤتة|خالد=اليرموك|سعد=القادسية|عمرو=مصر|أبو عبيدة=الشام'],
+[19,2,'أبناء الأنبياء','إسماعيل=هاجر|إسحاق=سارة|يوسف=يعقوب|سليمان=داود|يحيى=زكريا'],
+[20,2,'السور','الفاتحة=أم الكتاب|الإخلاص=التوحيد|الكوثر=أقصر سورة|البقرة=أطول سورة|الناس=آخر سورة'],
+[21,2,'أنبياء وأشخاص ارتبطوا بهم','موسى=هارون|نوح=ابنه|إبراهيم=آزر|يعقوب=إسرائيل|عيسى=الحواريون'],
+[22,2,'الأذكار','سبحان الله=التنزيه|الحمد لله=الثناء|الله أكبر=التكبير|لا إله إلا الله=التوحيد|أستغفر الله=طلب المغفرة'],
+[23,2,'أسماء الله الحسنى','الرحمن=الرحمة|الغفور=المغفرة|الرزاق=الرزق|الخالق=الخلق|السميع=السمع'],
+[24,2,'يوم القيامة','الصراط=جسر على جهنم|الميزان=الأعمال|الحوض=النبي ﷺ|الجنة=ثمانية أبواب|الحساب=الكتاب'],
+[25,2,'علوم القرآن','المكي=قبل الهجرة|المدني=بعد الهجرة|التجويد=إتقان التلاوة|التفسير=شرح المعاني|الناسخ=رافع الحكم'],
+[26,2,'رجال الهجرة','أبو بكر=الصاحب في الغار|علي=المبيت في الفراش|عبد الله بن أريقط=الدليل|أسماء=ذات النطاقين|عامر بن فهيرة=الراعي'],
+[27,2,'أسباب الغزوات','بدر=العير|أحد=الثأر|الخندق=الأحزاب|الحديبية=العمرة|فتح مكة=نقض العهد'],
+[28,2,'بلاد وأشخاص','الحبشة=النجاشي|الطائف=ثقيف|مؤتة=الروم|خيبر=اليهود|الشام=هرقل'],
+[29,2,'أيام الحج','يوم التروية=الثامن|عرفة=التاسع|النحر=العاشر|التشريق=بعد العيد|مزدلفة=المبيت'],
+[30,2,'الصدقات','الفطرة=رمضان|الأضحية=عيد الأضحى|العقيقة=المولود|الكفارة=اليمين|الفدية=الصيام لمن لا يطيق'],
+[31,2,'زوجات النبي','خديجة=الأولى|عائشة=بنت الصديق|حفصة=بنت عمر|سودة=بنت زمعة|أم سلمة=هند'],
+[32,2,'سور وحيوانات','العاديات=الخيل|النحل=العسل|العنكبوت=البيت|النمل=الوادي|الغاشية=الإبل'],
+[33,2,'شخصيات القرآن','ذو القرنين=السد|قارون=الكنز|لقمان=الحكمة|الخضر=العلم|طالوت=الملك'],
+[34,2,'أجزاء المسجد','المحراب=الإمام|المنبر=الخطيب|الصف=المصلون|القبلة=الاتجاه|المئذنة=الأذان'],
+[35,2,'الطهارة','الوضوء=الحدث الأصغر|الغسل=الحدث الأكبر|التيمم=فقد الماء|الاستنجاء=قضاء الحاجة|السواك=الفم'],
+[36,2,'أنواع الصيام','الفريضة=رمضان|عاشوراء=محرم|عرفة=ذو الحجة|الاثنين والخميس=سنة أسبوعية|الست=بعد العيد'],
+[37,2,'جبال ومواقع','حراء=غار|الطور=موسى|الجودي=سفينة نوح|ثور=الهجرة|أحد=يحبنا ونحبه'],
+[38,3,'السنوات الهجرية','بدر=٢هـ|أحد=٣هـ|الخندق=٥هـ|الحديبية=٦هـ|فتح مكة=٨هـ'],
+[39,3,'قادة الفتوح','عقبة=القيروان|طارق=الأندلس|صلاح الدين=حطين|قطز=عين جالوت|محمد الفاتح=القسطنطينية'],
+[40,3,'ألقاب','أبو عبيدة=أمين الأمة|حذيفة=صاحب السر|الزبير=حواري النبي|سعد=مستجاب الدعوة|ابن عباس=حبر الأمة'],
+[41,3,'الكتب والمؤلفون','البخاري=الجامع الصحيح|مالك=الموطأ|أحمد=المسند|النووي=رياض الصالحين|ابن كثير=تفسير القرآن العظيم'],
+[42,3,'معجزات أخرى','داود=تليين الحديد|سليمان=تسخير الريح|إبراهيم=برد النار|موسى=انفلاق البحر|عيسى=المائدة'],
+[43,3,'أماكن وأحداث','غار ثور=الهجرة|غار حراء=الوحي|شعب أبي طالب=الحصار|بئر معونة=القراء|دار الأرقم=الدعوة سرًّا'],
+[44,3,'رجال المدينة','أبو أيوب=المضيف|سعد بن معاذ=بنو قريظة|سلمان=الخندق|ابن أم مكتوم=المؤذن الأعمى|أبو طلحة=الرمي'],
+[45,3,'أحكام الطهارة','الغسل=الجنابة|المسح=الخفين|الوتر=الليل|الاستسقاء=المطر|الكسوف=الشمس'],
+[46,3,'عدد آيات السور','الفاتحة=سبع|الإخلاص=أربع|الفلق=خمس|الناس=ست|النصر=ثلاث'],
+[47,3,'ملوك ومعاصرون','ورقة=الناموس|النجاشي=الحبشة|هرقل=الروم|كسرى=الفرس|المقوقس=مصر'],
+[48,3,'أمهات المؤمنين','صفية=بنت حيي|جويرية=بنو المصطلق|ميمونة=خالة ابن عباس|أم حبيبة=بنت أبي سفيان|زينب بنت جحش=بنت عمة النبي'],
+[49,3,'قصص وسورها','أصحاب الأخدود=البروج|أصحاب الفيل=الفيل|أصحاب الكهف=الكهف|أصحاب الجنة=القلم|أصحاب السبت=الأعراف'],
+[50,3,'مواقيت الصلاة','الفجر=الصبح|الظهر=الزوال|العصر=ظل المثل|المغرب=الغروب|العشاء=الشفق']
+];
+/* ===== الفقاعات (50) ===== [رقم، مستوى، السؤال، الصح، "غلط،غلط،..."] */
+const BUB=[
+[1,1,'مين النبي اللي ابتلعه الحوت؟','يونس','يوسف،أيوب،موسى،نوح،هود،لوط'],
+[2,1,'عدد الصلوات المفروضة في اليوم','خمس','ثلاث،أربع،ست،سبع،عشر،اثنتان'],
+[3,1,'مين الصحابي المؤذن؟','بلال','حمزة،عمار،سلمان،خباب،أنس،مصعب'],
+[4,1,'الشهر اللي نزل فيه القرآن','رمضان','شعبان،رجب،محرم،شوال،ذو الحجة،صفر'],
+[5,1,'مين النبي اللي بنى السفينة؟','نوح','هود،صالح،لوط،إدريس،يونس،موسى'],
+[6,1,'أول سورة في المصحف','الفاتحة','البقرة،الناس،الإخلاص،يس،الكهف،العلق'],
+[7,1,'كتاب سيدنا موسى','التوراة','الإنجيل،الزبور،القرآن،الصحف،الفرقان،الموطأ'],
+[8,1,'الملك اللي هينفخ في الصور','إسرافيل','جبريل،ميكائيل،مالك،رضوان،منكر،نكير'],
+[9,1,'النبي اللي رفعه الله مكانًا عليًّا','إدريس','يونس،إلياس،هود،لوط،يحيى،زكريا'],
+[10,1,'الغزوة اللي اتحفر فيها الخندق','الأحزاب','بدر،أحد،حنين،تبوك،مؤتة،خيبر'],
+[11,1,'الخليفة الراشد الرابع','علي','عثمان،عمر،أبو بكر،معاوية،الحسن،الزبير،طلحة'],
+[12,1,'الكتاب اللي نزل على سيدنا عيسى','الإنجيل','التوراة،الزبور،القرآن،الصحف،الفرقان،الموطأ'],
+[13,1,'الصحابي اللي لقبه الفاروق','عمر بن الخطاب','أبو بكر،عثمان،علي،حمزة،بلال،خالد'],
+[14,1,'النبي اللي بقت النار عليه بردًا وسلامًا','إبراهيم','موسى،نوح،يونس،هود،لوط،صالح'],
+[15,1,'الجبل اللي كلّم الله عليه موسى','الطور','حراء،ثور،أحد،الجودي،عرفة،النور'],
+[16,1,'البئر اللي نبعت لإسماعيل وهو رضيع','زمزم','بدر،رومة،بضاعة،معونة،ذروان،الحج'],
+[17,1,'النبي اللي كان بيصنع الدروع','داود','سليمان،يحيى،زكريا،إدريس،أيوب،موسى'],
+[18,2,'الصحابي اللي اتسمى ذا النورين','عثمان','علي،عمر،أبو بكر،الزبير،طلحة،سعد،عمرو'],
+[19,2,'السورة اللي بتبدأ بـ«ألهاكم»','التكاثر','العصر،الهمزة،الماعون،قريش،الفيل،القارعة،الكوثر'],
+[20,2,'قائد المسلمين في معركة اليرموك','خالد بن الوليد','سعد بن أبي وقاص،عمر،الزبير،طارق بن زياد،صلاح الدين،قطز،عقبة بن نافع'],
+[21,2,'الصحابي اللي اقترح حفر الخندق','سلمان الفارسي','بلال،عمار،صهيب،خباب،أبو ذر،المقداد،مصعب'],
+[22,2,'أول من أسلم من الصبيان','علي بن أبي طالب','الزبير،أنس،ابن عباس،أسامة،ابن عمر،زيد،الحسن'],
+[23,2,'الصحابي اللي اتسمى حبر الأمة','ابن عباس','ابن عمر،ابن مسعود،أبو هريرة،أنس،جابر،علي،معاذ'],
+[24,2,'المسجد اللي اتحولت فيه القبلة','مسجد القبلتين','قباء،النبوي،الأقصى،الحرام،الخيف،نمرة،الجمعة'],
+[25,2,'اسم زوجة إبراهيم أم إسماعيل','هاجر','سارة،مريم،آسية،خديجة،حواء،بلقيس،حنة'],
+[26,2,'ملكة سبأ','بلقيس','آسية،سارة،هاجر،مريم،حواء،زليخة،حنة'],
+[27,2,'الصحابي حواري النبي ﷺ','الزبير بن العوام','طلحة،سعد،سعيد،عبد الرحمن،أبو عبيدة،علي،عثمان'],
+[28,2,'مولى النبي ﷺ اللي كان بيحبه جدًّا','زيد بن حارثة','أسامة،بلال،أنس،ثوبان،أبو رافع،سلمان،عمار'],
+[29,2,'النبي اللي أُرسل لقوم ثمود','صالح','هود،شعيب،لوط،إدريس،إلياس،هارون،يونس'],
+[30,2,'عاصمة الخلافة في عهد الخلفاء الراشدين','المدينة المنورة','دمشق،بغداد،مكة،القاهرة،البصرة،القدس'],
+[31,2,'الخليفة اللي جمع الناس على مصحف واحد','عثمان','أبو بكر،عمر،علي،معاوية،عمر بن عبد العزيز،الحسن،عبد الملك'],
+[32,2,'الخليفة اللي اتفتحت القدس في عهده','عمر بن الخطاب','أبو بكر،عثمان،علي،معاوية،عمر بن عبد العزيز،هارون الرشيد،صلاح الدين'],
+[33,2,'الصحابي اللي كلفه أبو بكر بجمع القرآن','زيد بن ثابت','حسان،كعب،ثابت بن قيس،أنس،أبو ذر،أسيد،عمر'],
+[34,2,'ملك الحبشة اللي أحسن استقبال المسلمين','النجاشي','هرقل،كسرى،المقوقس،أبرهة،النمرود،فرعون،قيصر'],
+[35,2,'الصحابي الأعمى اللي كان مؤذنًا','ابن أم مكتوم','بلال،أبو محذورة،سعد القرظ،أنس،عمرو،حسان،عمار'],
+[36,2,'الصحابي اللي اشترى بئر رومة للمسلمين','عثمان بن عفان','عمر،علي،أبو بكر،الزبير،طلحة،سعد'],
+[37,2,'الغزوة اللي نزل فيها «ويوم حنين إذ أعجبتكم كثرتكم»','حنين','بدر،أحد،تبوك،مؤتة،خيبر،الخندق'],
+[38,3,'عدد الأشهر الحرم','أربعة','ثلاثة،خمسة،ستة،اثنا عشر،سبعة،اثنان،ثمانية'],
+[39,3,'عدد أبواب الجنة','ثمانية','سبعة،خمسة،تسعة،عشرة،ستة،أربعة،اثنا عشر'],
+[40,3,'عدد أبواب جهنم','سبعة','ثمانية،خمسة،ستة،تسعة،عشرة،أربعة،ثلاثة'],
+[41,3,'عدد الأنبياء المذكورين في القرآن','خمسة وعشرون','عشرة،ثلاثون،مائة،أربعة وعشرون،عشرون،خمسة عشر،ثلاثة عشر'],
+[42,3,'السورة اللي اتسمت الفاضحة','التوبة','الأنفال،المنافقون،المجادلة،الأحزاب،النور،الحشر،الماعون'],
+[43,3,'سيد القراء من الصحابة','أبي بن كعب','معاذ،ابن مسعود،زيد،أبو موسى،أبو الدرداء،عثمان،علي'],
+[44,3,'أعلم الصحابة بالحلال والحرام','معاذ بن جبل','زيد،علي،ابن مسعود،أبو بكر،عمر،عثمان،أبو ذر'],
+[45,3,'أصدق الصحابة لهجة','أبو ذر','أبو بكر،سلمان،عمار،حذيفة،بلال،أنس،أبو هريرة'],
+[46,3,'الصحابي اللي رأى الأذان في المنام','عبد الله بن زيد','بلال،عمر،أبو بكر،أنس،ابن عمر،سعد،زيد'],
+[47,3,'مكان دفن النبي ﷺ','حجرة عائشة','البقيع،أحد،قباء،مكة،المسجد الحرام،الطائف،غار حراء'],
+[48,3,'أول خليفة في الدولة الأموية','معاوية','يزيد،عبد الملك،مروان،عمر بن عبد العزيز،الوليد،هشام،السفاح'],
+[49,3,'الدولة اللي جات بعد الدولة الأموية','العباسية','الفاطمية،الأيوبية،المملوكية،العثمانية،الأندلسية،المرابطين،الموحدين'],
+[50,3,'أول من رمى بسهم في سبيل الله','سعد بن أبي وقاص','الزبير،حمزة،طلحة،أبو عبيدة،علي،خالد،عمر']
+];
+/* ===== كارت السرعة (50) ===== كتابة: [رقم،'w'،السؤال،الإجابة،"بدائل،..."] / اختيارات: [رقم،'c'،السؤال،الصح،"غلط،غلط،غلط"] */
+const SPD=[
+[1,'w','اسم المرضعة اللي أرضعت النبي ﷺ في بادية بني سعد؟','حليمة السعدية','حليمة،السعدية'],
+[2,'w','على أي جبل استوت سفينة نوح؟','الجودي','جبل الجودي'],
+[3,'w','الصحابي اللي قَبِل النبي ﷺ شهادته وحده بشهادة رجلين؟','خزيمة بن ثابت','خزيمة'],
+[4,'w','مين أول شهيدة في الإسلام؟','سمية بنت خياط','سمية'],
+[5,'w','إيه اسم ناقة النبي ﷺ المشهورة؟','القصواء','ناقة القصواء'],
+[6,'w','إيه اسم البغلة البيضاء المشهورة للنبي ﷺ؟','دلدل','بغلة دلدل'],
+[7,'w','مين الصحابي اللي لقبه «حِبّ رسول الله»؟','أسامة بن زيد','أسامة'],
+[8,'w','الصحابي اللي غسلته الملائكة بعد استشهاده في أحد؟','حنظلة بن أبي عامر','حنظلة،غسيل الملائكة'],
+[9,'w','الصحابي اللي حمت جسده الدبر (النحل) من المشركين بعد استشهاده؟','عاصم بن ثابت','عاصم،حمي الدبر'],
+[10,'w','الصحابي اللي لقبه «ذو الجناحين»؟','جعفر بن أبي طالب','جعفر،جعفر الطيار'],
+[11,'w','مين أعلم أحبار اليهود في المدينة اللي أسلم؟','عبد الله بن سلام','ابن سلام'],
+[12,'w','الصحابي اللي دُفن عند أسوار القسطنطينية؟','أبو أيوب الأنصاري','أبو أيوب'],
+[13,'w','أكتر نبي اتذكر اسمه في القرآن؟','موسى','سيدنا موسى'],
+[14,'w','السورة اللي اتذكر فيها اسم «أحمد»؟','الصف','سورة الصف'],
+[15,'w','مين الصحابي الوحيد اللي اتذكر اسمه صراحة في القرآن؟','زيد بن حارثة','زيد'],
+[16,'w','إيه اسم أبو إبراهيم عليه السلام في القرآن؟','آزر','ازر'],
+[17,'w','أول مولود للمسلمين في المدينة بعد الهجرة؟','عبد الله بن الزبير','ابن الزبير'],
+[18,'w','مين أول من لُقّب بأمير المؤمنين؟','عمر بن الخطاب','عمر'],
+[19,'w','كام سنة قعد النبي ﷺ في مكة بعد البعثة؟','١٣','13،ثلاثة عشر،ثلاث عشرة'],
+[20,'w','كام سنة كان عمر النبي ﷺ لما توفي؟','٦٣','63،ثلاث وستون،ثلاثة وستون'],
+[21,'w','السورة اللي بتتسمى «عروس القرآن»؟','الرحمن','سورة الرحمن'],
+[22,'w','السورة اللي بتتسمى «قلب القرآن»؟','يس','سورة يس،ياسين'],
+[23,'w','آخر سورة نزلت كاملة؟','النصر','سورة النصر'],
+[24,'w','إيه اسم الوادي المقدس اللي كلّم الله فيه موسى؟','طوى','وادي طوى'],
+[25,'w','مين الصحابي اللي أرسله النبي ﷺ لقريش للتفاوض في الحديبية؟','عثمان بن عفان','عثمان'],
+[26,'c','أي غزوة بتتسمى «غزوة العسرة»؟','تبوك','حنين،مؤتة،خيبر'],
+[27,'c','مين من دول مكانش من العشرة المبشرين بالجنة؟','زيد بن حارثة','سعد بن أبي وقاص،الزبير بن العوام،أبو عبيدة بن الجراح'],
+[28,'c','أول سورة نزلت في المدينة؟','البقرة','الأنفال،آل عمران،النساء'],
+[29,'c','السورة اللي وصفها النبي ﷺ بأنها «المانعة المنجية» (تمنع من عذاب القبر)؟','الملك','الكهف،الرحمن،الفاتحة'],
+[30,'c','أي غزوة بتتسمى «يوم الفرقان»؟','بدر','أحد،الخندق،حنين'],
+[31,'c','مين أول من دوّن الدواوين في الإسلام؟','عمر بن الخطاب','أبو بكر الصديق،عثمان بن عفان،علي بن أبي طالب'],
+[32,'c','مين أول من ضرب العملة الإسلامية الخاصة بالدولة؟','عبد الملك بن مروان','معاوية بن أبي سفيان،عمر بن عبد العزيز،هارون الرشيد'],
+[33,'c','كام نبي اتذكروا بالاسم في سورة الأنعام؟','١٨','١٢،٢٥،٣٠'],
+[34,'c','مين قائد معركة ذات الصواري البحرية؟','عبد الله بن سعد بن أبي سرح','عمرو بن العاص،سعد بن أبي وقاص،أبو عبيدة بن الجراح'],
+[35,'c','في أنهي سنة هجرية كانت معركة حطين؟','٥٨٣هـ','٤٩٢هـ،٦٢٠هـ،٧٥٠هـ'],
+[36,'c','في أنهي سنة هجرية كانت معركة عين جالوت؟','٦٥٨هـ','٦٠٠هـ،٧١٢هـ،٤٥٠هـ'],
+[37,'c','في أنهي سنة هجرية كانت معركة اليرموك؟','١٥هـ','٥هـ،٢٥هـ،٣٥هـ'],
+[38,'c','في أنهي سنة هجرية كانت غزوة تبوك؟','٩هـ','٦هـ،٨هـ،١٠هـ'],
+[39,'c','كام رجل حضروا بيعة العقبة الثانية (غير امرأتين)؟','٧٣','٤٠،١٠٠،١٢'],
+[40,'c','كام شهيد من الصحابة استشهدوا في أحد تقريبًا؟','٧٠','٣٠،١٠٠،١٤٠'],
+[41,'c','في أنهي سنة هجرية توفي النبي ﷺ؟','١١هـ','٩هـ،١٠هـ،١٢هـ'],
+[42,'c','في أنهي سنة هجرية كانت غزوة أحد؟','٣هـ','٢هـ،٤هـ،٥هـ'],
+[43,'c','مسجد الضرار اتبنى قرب أنهي مسجد؟','قباء','بدر،الجحفة،تبوك'],
+[44,'c','الصحابي اللي اتلقب «ترجمان القرآن»؟','ابن عباس','ابن عمر،ابن مسعود،أبو هريرة'],
+[45,'c','غزوة المريسيع اسمها التاني إيه؟','بني المصطلق','بني قريظة،بني النضير،بني قينقاع'],
+[46,'c','أي قبيلة يهودية اتوجه لها النبي ﷺ بعد غزوة الخندق مباشرة؟','بنو قريظة','بنو النضير،بنو قينقاع،خيبر'],
+[47,'c','أي قبيلة يهودية أجلاها النبي ﷺ ونزلت فيها سورة الحشر؟','بنو النضير','بنو قريظة،بنو قينقاع،خيبر'],
+[48,'c','السورة اللي كان ابن عباس بيسميها «سورة بدر»؟','الأنفال','التوبة،الحشر،الأحزاب'],
+[49,'c','السورة المسماة «سورة براءة»؟','التوبة','الأنفال،الحشر،الفتح'],
+[50,'c','السورة اللي نزلت بعد صلح الحديبية؟','الفتح','النصر،الحجرات،محمد']
+];
+/* ===== الأئمة الأربعة والعبادلة الأربعة (10) ===== */
+const IMAM_MC=[
+{id:'im2',level:2,q:'مين اللي مش من الأئمة الأربعة؟',a:['الليث بن سعد','أبو حنيفة','مالك','أحمد بن حنبل']},
+{id:'im7',level:1,q:'كام عدد العبادلة؟',a:['٤','٣','٥','٧']},
+{id:'im8',level:3,q:'مين اللي مش من العبادلة الأربعة؟',a:['عبد الله بن مسعود','عبد الله بن عباس','عبد الله بن عمر','عبد الله بن الزبير']},
+{id:'im9',level:2,q:'مين من العبادلة الأربعة اتولى الخلافة في الحجاز؟',a:['عبد الله بن الزبير','عبد الله بن عباس','عبد الله بن عمر','عبد الله بن عمرو بن العاص']},
+{id:'im10',level:3,q:'مين من العبادلة الأربعة اشتهر بصحيفته المكتوبة اللي سماها «الصادقة»؟',a:['عبد الله بن عمرو بن العاص','عبد الله بن عباس','عبد الله بن عمر','عبد الله بن الزبير']}
+];
+const IMAM_SP=[
+{n:'i1',lv:2,type:'write',q:'اكتب الأئمة الأربعة',need:4,ans:['أبو حنيفة/الإمام أبو حنيفة/النعمان','مالك/مالك بن أنس','الشافعي/محمد بن إدريس','أحمد/ابن حنبل/أحمد بن حنبل']},
+{n:'i5',lv:2,type:'all',q:'مين من دول من الأئمة الأربعة؟',ok:['أبو حنيفة','مالك','الشافعي','أحمد بن حنبل'],no:['البخاري','الأوزاعي','ابن تيمية']},
+{n:'i6',lv:3,type:'write',q:'اكتب العبادلة الأربعة',need:4,ans:['ابن عباس/عبد الله بن عباس','ابن عمر/عبد الله بن عمر','ابن الزبير/عبد الله بن الزبير','ابن عمرو بن العاص/عبد الله بن عمرو/ابن عمرو/ابن العاص/عبد الله بن عمرو بن العاص']}
+];
+const IMAM_ORDER={id:'im3',t:'رتّب الأئمة الأربعة بحسب سنة الميلاد (من الأقدم للأحدث)',items:['أبو حنيفة','مالك','الشافعي','أحمد'],lv:{3:4}};
+const IMAM_MATCH={id:'im4',t:'وصّل كل إمام بالمدينة المرتبطة به',lv:3,pairs:[['أبو حنيفة','الكوفة'],['مالك','المدينة المنورة'],['الشافعي','مصر'],['أحمد بن حنبل','بغداد']]};
+
+Q148.push(...IMAM_SP); ORDER_SETS.push(IMAM_ORDER); MATCH_SETS.push(IMAM_MATCH);
+const RIDDLES = [
+  {id:'z1',level:1,q:'فزورة: حيوان صغير حذّر قومه وقال لهم ادخلوا بيوتكم، مين هو؟',a:['النملة','النحلة','الهدهد','العنكبوت']},
+  {id:'z2',level:1,q:'فزورة: طائر شال رسالة من نبي لملكة، مين هو؟',a:['الهدهد','الغراب','الحمامة','الطير الأبابيل']},
+  {id:'z3',level:1,q:'فزورة: طائر علّم إنسان إزاي يدفن أخوه، مين هو؟',a:['الغراب','الهدهد','الصقر','الحمامة']},
+  {id:'z4',level:2,q:'فزورة: ميت أحيا ميت بإذن الله، إيه هو؟',a:['بقرة بني إسرائيل','ناقة صالح','حوت يونس','كلب أهل الكهف']},
+  {id:'z5',level:2,q:'فزورة: قبر مشي بصاحبه وهو حي، إيه هو؟',a:['الحوت','السفينة','الكهف','التابوت']},
+  {id:'z6',level:1,q:'فزورة: حيوان خرج من صخرة آية لقوم، إيه هو؟',a:['ناقة صالح','بقرة بني إسرائيل','كبش إسماعيل','حمار عزير']},
+  {id:'z7',level:2,q:'فزورة: حيوان نام مع ناس صالحين سنين طويلة، مين هو؟',a:['كلب أهل الكهف','ناقة صالح','هدهد سليمان','حوت يونس']},
+  {id:'z8',level:2,q:'فزورة: حاجة اتضربت بعصا فخرج منها 12 عين مية، إيه هي؟',a:['الحجر','البحر','الجبل','الأرض']},
+  {id:'z9',level:2,q:'فزورة: حاجة أقسم الله بيها وهي «بتعسعس»، إيه هي؟',a:['الليل','الصبح','الفجر','الضحى']},
+  {id:'z10',level:2,q:'فزورة: حاجة أقسم الله بيها وهي «بتتجلّى»، إيه هي؟',a:['النهار','الليل','القمر','العصر']},
+  {id:'z11',level:3,q:'فزورة: حاجة أقسم الله بيها لما «اتّسق» نورها واكتمل، إيه هي؟',a:['القمر','الشمس','النجم','الفجر']},
+  {id:'z12',level:2,q:'فزورة: جيش من الطير مالوش سلاح غير حجارة صغيرة، إيه هو؟',a:['الطير الأبابيل','الهدهد','الغربان','الحمام']},
+  {id:'z13',level:3,q:'فزورة: مين مات وهو متكّي على عصاه، والجن فضلوا شغالين ومش عارفين؟',a:['سليمان','داود','موسى','يوسف']},
+  {id:'z14',level:3,q:'فزورة: دابة صغيرة أكلت عصا نبي فعرفوا إنه مات، إيه هي؟',a:['دابة الأرض','النملة','الفأر','الدودة']}
+];
 const NEWQ = Q148.filter(x=>!x.type || x.type==='which').map(x=>({id:'n'+x.n,level:x.lv,q:x.q,a:x.a,alts:x.alts||null,which:x.type==='which'}));
-const allQ = () => QUESTIONS.concat(NEWQ, DB.custom);
+const allQ = () => QUESTIONS.concat(NEWQ, RIDDLES, IMAM_MC, DB.custom);
 
 /* ================== الأيقونات ================== */
 const ICON = {
@@ -2053,9 +2441,10 @@ function show(id){
   if(R[id]) R[id]();
 }
 function modal(html){ $('#sheet').innerHTML=html; $('#modal').classList.add('open'); }
-function closeModal(){ $('#modal').classList.remove('open'); if(typeof resumeQ==='function') resumeQ(); }
+function closeModal(){ $('#modal').classList.remove('open'); if(typeof resumeQ==='function') resumeQ();
+  if(T && T.phase==='answer' && QS && QS.answered && QS.ok && QS.autoStop && QS.autoAt){ QS.autoStop=0; QS.autoAt=NOW()+AUTO_MS; save(); renderPlay(); } }
 let TOAST_T=null;
-function toast(msg){ const t=$('#toast'); t.textContent=msg; t.classList.add('show'); clearTimeout(TOAST_T); TOAST_T=setTimeout(()=>t.classList.remove('show'),2600); }
+function toast(msg,ms){ const t=$('#toast'); t.textContent=msg; t.classList.add('show'); clearTimeout(TOAST_T); TOAST_T=setTimeout(()=>t.classList.remove('show'),ms||2600); }
 let CONFIRM_FN=null;
 function confirmModal(text,label,fn){
   CONFIRM_FN=fn;
@@ -2191,9 +2580,10 @@ function stopTimer(){ if(TIMER){ clearInterval(TIMER); TIMER=null; } }
 function pickQ(level){
   const g=DB.game; const bank=allQ().filter(q=>q.level===level);
   if(!g.used[level]) g.used[level]=[];
-  let avail=bank.filter(q=>!g.used[level].includes(q.id));
+  g.usedK=g.usedK||[];
+  let avail=bank.filter(q=>!g.used[level].includes(q.id) && !g.usedK.includes('r:'+q.id));
   if(!avail.length){ g.used[level]=[]; avail=bank; }
-  const q=rnd(avail); g.used[level].push(q.id); return q;
+  const q=rnd(avail); g.used[level].push(q.id); g.usedK.push('r:'+q.id); return q;
 }
 function pickX(name,arr){
   const g=DB.game; if(!g.usedX[name]) g.usedX[name]=[];
@@ -2203,7 +2593,8 @@ function pickX(name,arr){
 }
 
 /* ===== المؤقت والسؤال ===== */
-function makeQS(q,o){ if(q.special==='odd' && T.phase!=='ch'){ o=Object.assign({intro:1},o||{}); } if(q.alts){ const v=rnd(q.alts); q=Object.assign({},q,{q:v.q,a:v.a,alts:null}); } if(q.sp){ const r=Object.assign({q,opts:[],sp:spInit(q),intro:1,removed:[],answered:false,choice:null,ok:null,limit:0,extra:0,t0:0,usedP:{},double:false,hideAfter:0,hidden:false,reverse:false,flip:true},o||{}); if(q.sp==='tf') r.limit=q.sec; else if(['write','miss','pic'].includes(q.sp) && r.limit) r.extra=10; if(T.phase==='ch') r.intro=0; return r; }
+function makeQS(q,o){ if(q.special==='odd' && T.phase!=='ch'){ o=Object.assign({intro:1},o||{}); }
+  { const k=q.sp||q.special, g=DB.game, pid=T.ans||(cur()&&cur().id); if(k && g && pid){ g.seenSp=g.seenSp||{}; const seen=g.seenSp[pid]||[]; if(seen.includes(k)) o=Object.assign({},o||{},{intro:0,noIntro:1}); } } if(q.alts){ const v=rnd(q.alts); q=Object.assign({},q,{q:v.q,a:v.a,alts:null}); } if(q.sp){ const r=Object.assign({q,opts:[],sp:spInit(q),intro:1,removed:[],answered:false,choice:null,ok:null,limit:0,extra:0,t0:0,usedP:{},double:false,hideAfter:0,hidden:false,reverse:false,flip:true},o||{}); if(q.sp==='tf') r.limit=q.sec; else if(['write','miss','pic','pw','ws'].includes(q.sp) && r.limit) r.extra=10; if(T.phase==='ch' || (o&&o.noIntro)) r.intro=0; return r; }
   return Object.assign({q,opts:shuffle(q.a.map((t,i)=>({t,ok:i===0}))),removed:[],answered:false,choice:null,ok:null,limit:0,extra:0,t0:0,usedP:{},double:false,hideAfter:0,hidden:false,reverse:false,flip:true},o||{}); }
 function startQS(qs){
   QS=qs; stopTimer(); qs.t0=NOW();
@@ -2219,6 +2610,9 @@ const cdPill = () => `<div class="cdpill"><span id="cd">${cdLeft()}</span> ثا�
 /* الساعة: بتحدّث العدادات على كل الأجهزة، وانتهاء الوقت بيتحسم على جهاز واحد (صاحب الغرفة في الأونلاين) */
 const clockOwner = () => !ONLINE || IS_HOST;
 function clockTick(){
+  if(DB.game && T.phase==='speed'){ spdTick(); return; }
+  if(DB.game && QS && QS.q && QS.q.sp==='bub' && !QS.answered && !QS.intro){ const gi=bubIdx(); if(gi!==BUB_SHOWN){ const a=document.getElementById('bubarea'); if(a){ a.innerHTML=bubArea(QS.q,QS.sp,false); BUB_SHOWN=gi; } } }
+  if(DB.game && QS && QS.sp && QS.sp.miss && !QS.answered && NOW()-QS.sp.miss.at>900 && (!ONLINE || canAct())){ flUnmiss(); }
   if(!DB.game || !QS && !curStep()) return;
   if(QS && QS.limit && !QS.answered && !QS.autoAt && !QS.intro){
     const left=timeLeft(), b=document.getElementById('tsegs'), n=document.getElementById('tnum');
@@ -2227,14 +2621,16 @@ function clockTick(){
   }
   if(autoOn()){
     const ab=document.getElementById('autob'); if(ab) ab.style.width=autoPct()+'%';
-    if(clockOwner() && NOW()>=QS.autoAt && !$('#modal').classList.contains('open')){ QS.autoStop=1; AUTO++; try{ finishTurn(); } finally{ AUTO--; } return; }
+    if((clockOwner() || (NOW()-QS.autoAt>4000 && canAct())) && NOW()>=QS.autoAt && !$('#modal').classList.contains('open')){ QS.autoStop=1; AUTO++; try{ finishTurn(); } finally{ AUTO--; } return; }
   }
   const st=curStep(), cd=document.getElementById('cd');
   if(cd && st && st.dl) cd.textContent=cdLeft();
-  if(!clockOwner()) return;
+  const own=clockOwner();
+  if(st && st.kind==='grp'){ const g0=document.getElementById('grpcd'); if(g0 && st.go) g0.textContent=Math.max(1,Math.ceil((st.go-NOW())/1000));
+    if(own || (canAct() && grpLate(st))){ AUTO++; try{ if(grpCheck(st)){ save(); renderPlay(); } } finally{ AUTO--; } } return; }
   const qLive = T.phase==='answer' || (st && st.kind==='q');
-  if(QS && qLive && QS.limit && !QS.answered && !QS.paused && !QS.intro && timeLeft()<=0){ answer(-1); return; }
-  if(st && st.dl && NOW()>=st.dl){ st.dl=0; AUTO++; try{ stepTimeout(st); } finally{ AUTO--; } }
+  if(QS && qLive && QS.limit && !QS.answered && !QS.paused && !QS.intro && timeLeft()<=(own?0:-4) && (own||canAct())){ answer(-1); return; }
+  if(st && st.dl && NOW()>=st.dl+(own?0:4000) && (own||canAct())){ st.dl=0; AUTO++; try{ stepTimeout(st); } finally{ AUTO--; } }
 }
 let CD=null;
 function countdown(sec,onEnd){
@@ -2274,15 +2670,128 @@ function endTurn(){
     g.turn=0; g.round++;
     g.players.forEach(x=>{ x.obst=[]; });
     if(g.pendingSwap){ const [a,b]=g.pendingSwap.map(id=>g.players.findIndex(x=>x.id===id)); if(a>=0&&b>=0){ [g.players[a],g.players[b]]=[g.players[b],g.players[a]]; } g.pendingSwap=null; }
-    if(g.endMode==='rounds' && g.round>g.rounds) return finish();
+    const over = g.endMode==='rounds' && g.round>g.rounds, doneR=g.round-1;
+    if(ONLINE && doneR%5===0 && spdEligible().length) return startSpeed(doneR,over);
+    if(over) return finish();
+    T={phase:'between',from:doneR}; QS=null; save(); sfx('tap'); renderPlay(); window.scrollTo(0,0); return;
   }
   save(); beginTurn(); sfx('tap'); renderPlay(); window.scrollTo(0,0);
+}
+/* ===== شاشة بين الجولات ===== */
+function hostPid(){ const g=DB.game; if(!ONLINE || !g) return null; const h=g.host && pById(g.host); return h && !h.away ? h.id : null; }
+function betweenGo(){ if(blocked()) return; if(T.phase!=='between') return; beginTurn(); sfx('tap'); save(); renderPlay(); window.scrollTo(0,0); }
+function waitHostHtml(){ const h=hostPid()&&pById(hostPid()); return `<div class="rdwait"><span class="dotb">●</span> مستنيين ${esc(h?h.name:'')} (صاحب الغرفة) يكمل</div>`; }
+function stageBetween(){
+  const g=DB.game, p=cur(), R=rank(g.players), canGo = !ONLINE || !hostPid() || hostPid()===ME_PID;
+  const big = g.endMode==='rounds' ? `<b>الجولة ${g.round}</b><span>من ${g.rounds}</span>` : `<b>الجولة ${g.round}</b><span>الهدف ${g.target} ${ptsWord(g.target)}</span>`;
+  return `<div class="rdscr pop"><div class="rdtop"><small>خلصت الجولة ${T.from}</small>${big}</div>
+    <div class="rdlist"><div class="rdh">الترتيب لحد دلوقتي</div>${R.map((x,i)=>`<div class="rdrow${i===0?' first':''}"><span class="n">${i+1}</span><span class="nm">${esc(x.name)}</span><span class="sc"><b>${x.points} ${ptsWord(x.points)}</b><small>${x.stars} ${starWord(x.stars)}</small></span></div>`).join('')}</div>
+    <div class="rdfoot"><div class="rdnext">${esc(p.name)} هيبدأ الجولة دي.</div>${canGo?`<button class="btn primary big" onclick="betweenGo()">كمل</button>`:waitHostHtml()}</div></div>`;
+}
+/* ===== كارت السرعة (أونلاين بس، في آخر الجولة 5 و10 و15...) ===== */
+const spdEligible = () => DB.game.players.filter(p=>!p.bot && !p.away);
+function spdSecs(s){ return (DB.game.timer||30) + (s.kind==='w'?10:0); }
+function startSpeed(doneR,over){
+  const x=pickX('spd',SPD), kind=x[1];
+  const s={n:x[0],kind,q:x[2],right:x[3],alts:kind==='w'?x[4].split('،'):[],opts:kind==='c'?shuffle([x[3]].concat(x[4].split('،'))):null,state:'press',t0:NOW(),who:null,out:[],tries:[],from:doneR,over,res:null};
+  T={phase:'speed',s}; QS=null; save(); sfx('flip'); renderPlay(); window.scrollTo(0,0);
+}
+function spdPress(){ const go=()=>{ const s=T.s; if(T.phase!=='speed' || s.state!=='press') return; const me=pById(ONLINE?ME_PID:null); if(!me || me.bot || s.out.includes(me.id)) return;
+  s.state='ans'; s.who=me.id; s.ta=NOW(); s.dl=s.ta+spdSecs(s)*1000; s.live=''; sfx('tap'); save(); renderPlay(); }; PUB_RETRY=go; go(); }
+function spdAnswer(v){ const s=T.s; if(T.phase!=='speed' || s.state!=='ans' || s.who!==ME_PID) return;
+  let ok;
+  if(s.kind==='c'){ v=s.opts[v]; ok = v===s.right; }
+  else { v=String(v||'').trim(); if(!v) return toast('اكتب إجابتك الأول'); ok=typedOk(v,{ans:[s.right].concat(s.alts)}); }
+  spdResolve(ok,v); }
+function spdType(){ const el=document.getElementById('spdin'); spdAnswer(el?el.value:''); }
+function spdResolve(ok,v){ const s=T.s, p=pById(s.who);
+  s.tries.push({pid:p.id,v:v==null?null:v,ok});
+  if(ok){ s.state='prize'; sfx('star'); save(); renderPlay(); return; }
+  p.points=Math.max(0,p.points-5); p.stars=Math.max(0,p.stars-5); s.out.push(p.id); sfx('bad');
+  notice(`كارت السرعة خد من ${p.name} 5 نقط و5 نجوم`,{[p.id]:'كارت السرعة خد منك 5 نقط و5 نجوم'});
+  if(s.out.length>=2 || !spdEligible().some(x=>!s.out.includes(x.id))){ s.state='end'; s.res='both'; }
+  else { s.state='press'; s.t0=NOW(); s.who=null; }
+  save(); renderPlay(); }
+function spdPrize(kind){ const s=T.s; if(T.phase!=='speed' || s.state!=='prize' || s.who!==ME_PID) return; const p=pById(s.who);
+  if(kind==='pts'){ p.points+=10; p.stars+=10; s.state='end'; s.res='won'; s.prize='pts'; notice(`${p.name} كسب كارت السرعة وخد 10 نقط و10 نجوم`,{[p.id]:'كسبت كارت السرعة: +10 نقط و10 نجوم'}); }
+  else { s.state='pickP'; s.pk=null; s.pc=null; }
+  sfx('tap'); save(); renderPlay(); }
+function spdPick(t,k){ const s=T.s; if(T.phase!=='speed' || s.who!==ME_PID) return; if(t==='p' && s.state==='pickP') s.pk=k; if(t==='c' && s.state==='pickC') s.pc=k; sfx('tap'); save(); renderPlay(); }
+function spdNext(){ const s=T.s; if(T.phase!=='speed' || s.who!==ME_PID) return; const p=pById(s.who);
+  if(s.state==='pickP' && s.pk){ s.state='pickC'; }
+  else if(s.state==='pickC' && s.pc){ p.hand.push(s.pk); p.got=(p.got||[]).concat([s.pk]); p.chFree=(p.chFree||[]).concat([s.pc]); s.state='end'; s.res='won'; s.prize='cards';
+    notice(`${p.name} كسب كارت السرعة وخد كارت قوة وكارت تحدي`,{[p.id]:'كسبت كارت السرعة: الكارتين في «كروتي»'}); }
+  sfx('tap'); save(); renderPlay(); }
+function spdGo(){ if(blocked()) return; const s=T.s; if(T.phase!=='speed' || s.state!=='end') return; if(s.over) return finish(); T={phase:'between',from:s.from}; save(); sfx('tap'); renderPlay(); window.scrollTo(0,0); }
+/* الوقت في كارت السرعة: صاحب الغرفة هو اللي بيحسبه */
+function spdTick(){ const s=T.s; if(!s) return;
+  const ring=document.getElementById('spdring'), sec=document.getElementById('spdsec');
+  if(s.state==='press'){ const left=Math.max(0,15000-(NOW()-s.t0)); if(ring) ring.style.strokeDashoffset=(1-left/15000)*289; if(sec) sec.textContent=Math.ceil(left/1000);
+    if(NOW()-s.t0>=15000 && (clockOwner() || (canAct() && NOW()-s.t0>19000))){ AUTO++; try{ s.state='end'; s.res=s.out.length?'nosecond':'none'; save(); renderPlay(); } finally{ AUTO--; } } }
+  if(s.state==='ans'){ const left=Math.max(0,s.dl-NOW()); const n=document.getElementById('spdt'); if(n) n.textContent=Math.ceil(left/1000)+' ث';
+    if(NOW()>=s.dl && (clockOwner() || (canAct() && NOW()-s.dl>4000))){ AUTO++; try{ spdResolve(false,null); } finally{ AUTO--; } } }
+}
+function spdHead(s,right){ return `<div class="spdh"><span class="spdi">${ic('bolt')}</span><b>كارت السرعة</b><span class="spdr">${right}</span></div>`; }
+function spdQ(s,mark){ /* mark: {sel:index/val, bad:true, showRight:true} */
+  let h=`<div class="spdq">${esc(s.q)}</div>`;
+  if(s.kind==='c') h+=`<div class="spdopts">${s.opts.map((o,i)=>{ let c='spdo'; if(mark){ if(mark.showRight && o===s.right) c+=' right'; else if(mark.sel===i) c+=' wrong'; else c+=' dim'; } return `<div class="${c}">${esc(o)}</div>`; }).join('')}</div>`;
+  else if(mark && mark.showRight) h+=`<div class="typed right">الإجابة الصح: ${esc(s.right)}</div>`;
+  return h; }
+function stageSpeed(){
+  const s=T.s, me=ONLINE?pById(ME_PID):null, who=s.who&&pById(s.who), nm=x=>esc(x.name);
+  const isHost = !ONLINE || !hostPid() || hostPid()===ME_PID;
+  const last = s.tries.length ? s.tries[s.tries.length-1] : null, firstOut = s.out.length ? pById(s.out[0]) : null;
+  const meOut = me && s.out.includes(me.id), myTry = me && s.tries.find(t=>t.pid===me.id);
+  let body='';
+  if(s.state==='press'){
+    const second = s.out.length>0;
+    if(meOut){ body=`<div class="spdmsg bad"><b>إجابة غلط</b><span>اتخصم منك 5 نقط و5 نجوم. انت بره الكارت دلوقتي، بس تقدر تتفرج على السؤال.</span></div>`+spdQ(s,{sel: s.kind==='c'?s.opts.indexOf(myTry&&myTry.v):-1})+(s.kind==='w'&&myTry&&myTry.v?`<div class="typed bad"><span>${esc(myTry.v)}</span>${ic('x')}</div>`:'')+`<p class="note">لو حد تاني داس هياخد المحاولة التانية</p>`; }
+    else {
+      body = (second ? `<div class="spdmsg"><b>${nm(firstOut)} ${firstOut.name?'غلط':''}. فاضل محاولة واحدة</b><span>أسرع واحد يدوس دلوقتي ياخد المحاولة التانية</span></div>`
+                     : `<div class="spdbox"><div><b>صح:</b> 10 نقط و10 نجوم، أو كارت قوة وكارت تحدي</div><div><b>غلط:</b> يتخصم 5 نقط و5 نجوم</div></div>`)
+        + spdQ(s) + `<p class="spdhint">أسرع واحد يدوس هو اللي يجاوب</p>`
+        + `<div class="spdbtnw"><svg class="spdring" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="46"/><circle id="spdring" class="fg" cx="50" cy="50" r="46" style="stroke-dashoffset:${(NOW()-s.t0)/15000*289}"/></svg><button class="spdbtn" ${me&&!me.bot?'':'disabled'} onclick="spdPress()">${ic('bolt')}<b>سرعة</b></button></div><p class="spdsub"><span id="spdsec">${Math.max(0,Math.ceil((15000-(NOW()-s.t0))/1000))}</span> ث وبعدها السؤال يخلص</p>`;
+    }
+    return `<div class="spdcard">${spdHead(s,'صعب جدًا')}${body}</div>`;
+  }
+  if(s.state==='ans'){
+    const tleft=`<span id="spdt">${Math.max(0,Math.ceil((s.dl-NOW())/1000))} ث</span>`;
+    if(me && me.id===s.who){
+      body=`<div class="spdmsg good"><b>إنت الأسرع!</b><span>دورك تجاوب، ووقتك بدأ دلوقتي. لو جاوبت غلط هيتخصم منك 5 نقط و5 نجوم.</span></div><div class="spdq">${esc(s.q)}</div>`;
+      if(s.kind==='c') body+=`<div class="spdopts">${s.opts.map((o,i)=>`<button class="spdo" onclick="spdAnswer(${i})">${esc(o)}</button>`).join('')}</div>`;
+      else body+=`<p class="note">سؤال كتابة: الوقت العادي + 10 ثواني</p><div class="typerow"><input class="inp spone" id="spdin" maxlength="40" autocomplete="off" placeholder="اكتب الإجابة هنا" aria-label="اكتب الإجابة هنا" onkeydown="if(event.key==='Enter')spdType()"><button class="okb" onclick="spdType()" aria-label="تأكيد">${ic('check')}</button></div>`;
+    } else {
+      body=`<div class="spdmsg"><b>${nm(who)} داس الأول وبيجاوب دلوقتي</b></div>`+spdQ(s)+(meOut?`<p class="note">انت بره الكارت، بس بتتفرج</p>`:`<p class="spdhint">استنى… لو ${nm(who)} غلط، هتبقى في محاولة تانية</p><div class="spdbtnw off"><button class="spdbtn" disabled>${ic('bolt')}<b>سرعة</b></button></div>`);
+    }
+    return `<div class="spdcard">${spdHead(s,tleft)}${body}</div>`;
+  }
+  if(s.state==='prize' || s.state==='pickP' || s.state==='pickC'){
+    if(!(me && me.id===s.who)){ return `<div class="spdcard">${spdHead(s,'صعب جدًا')}<div class="spdmsg good"><b>${nm(who)} جاوب صح</b><span>${s.state==='prize'?'بيختار جايزته دلوقتي':'بيختار الكارتين دلوقتي'}</span></div>${spdQ(s,{showRight:true})}</div>`; }
+    if(s.state==='prize') return `<div class="spdcard">${spdHead(s,'صعب جدًا')}<div class="spdmsg good"><b>برافو يا ${nm(who)}!</b><span>اختار جايزتك</span></div><div class="spdprize"><button onclick="spdPrize('pts')"><b>10 نقط و10 نجوم</b></button><button onclick="spdPrize('cards')"><b>كارت قوة وكارت تحدي</b><small>تختارهم بنفسك</small></button></div></div>`;
+    const steps=`<div class="spdsteps"><span class="${s.state==='pickP'?'on':'done'}">١ كارت القوة</span><span class="${s.state==='pickC'?'on':''}">٢ كارت التحدي</span></div>`;
+    if(s.state==='pickP'){
+      const grp=['f','d','k'].map(gk=>{ const ks=Object.keys(POWERS).filter(k=>POWERS[k].g===gk && !POWERS[k].pack); return `<div class="spdgh" style="color:${NCOL[gk][0]}">${PG[gk].n}</div><div class="spdgrid">${ks.map(k=>`<button class="spdk${s.pk===k?' sel':''}" style="--a:${NCOL[gk][0]};--t:${NCOL[gk][1]}" onclick="spdPick('p','${k}')">${s.pk===k?ic('check'):''}<b>${POWERS[k].name}</b></button>`).join('')}</div>`; }).join('');
+      return `<div class="spdcard">${spdHead(s,'الجايزة')}${steps}${grp}<button class="btn primary big" style="margin-top:12px" ${s.pk?'':'disabled'} onclick="spdNext()">التالي: كارت التحدي</button></div>`;
+    }
+    const grp=['m','j','f','k'].map(c=>{ const ks=Object.keys(CHALLENGES).filter(k=>CHALLENGES[k].cat===c && !CHALLENGES[k].pack && (!CHALLENGES[k].online||ONLINE)); if(!ks.length) return ''; return `<div class="spdgh" style="color:${CG[c].a}">${CG[c].n}</div><div class="spdgrid">${ks.map(k=>`<button class="spdk${s.pc===k?' sel':''}" style="--a:${CG[c].a};--t:#fff" onclick="spdPick('c','${k}')">${s.pc===k?ic('check'):''}<b>${CHALLENGES[k].name}</b></button>`).join('')}</div>`; }).join('');
+    return `<div class="spdcard">${spdHead(s,'الجايزة')}${steps}${grp}<button class="btn primary big" style="margin-top:12px" ${s.pc?'':'disabled'} onclick="spdNext()">خلاص، خدت الكارتين</button></div>`;
+  }
+  /* end */
+  let msg='';
+  const wonT = s.tries.find(t=>t.ok), lastC = s.kind==='c' && s.tries.length ? s.opts.indexOf(s.tries[s.tries.length-1].v) : -1;
+  if(s.res==='won'){ const w=pById(wonT.pid); msg=`<div class="spdmsg good"><b>${nm(w)} كسب كارت السرعة</b><span>${s.prize==='pts'?'إجابة صح · +10 نقط و10 نجوم':'إجابة صح · خد كارت قوة وكارت تحدي (في «كروتي»)'}</span></div>`+spdQ(s,{showRight:true}); }
+  else if(s.res==='both'){ const a=s.out.map(id=>nm(pById(id))); msg=`<div class="spdmsg bad"><b>${a.length>1?'الاتنين غلطوا':'إجابة غلط'}</b><span>${a.join(' و')} اتخصم من ${a.length>1?'كل واحد':''} 5 نقط و5 نجوم. باقي اللاعبين ما كسبوش ولا خسروا.</span></div>`+spdQ(s,{showRight:true,sel:lastC}); }
+  else if(s.res==='nosecond'){ msg=`<div class="spdmsg"><b>محدش داس في المحاولة التانية</b><span>السؤال خلص. ${nm(pById(s.out[0]))} اتخصم منه 5 نقط و5 نجوم، والباقيين ما كسبوش ولا خسروا.</span></div>`+spdQ(s,{showRight:true}); }
+  else { msg=`<div class="spdmsg"><b>محدش داس!</b><span>السؤال خلص من غير جايزة ولا خصم</span></div>`+spdQ(s,{showRight:true}); }
+  return `<div class="spdcard">${spdHead(s,'صعب جدًا')}${msg}</div><div style="margin-top:12px">${isHost?`<button class="btn primary big" onclick="spdGo()">كمل</button>`:waitHostHtml()}</div>`;
 }
 /* شراء كارت القوة */
 function buyFrom(gk){
   if(blocked()) return;
   const p=cur(), g=DB.game; if(g.tf.power || !canBuy(p,gk)) return;
-  const k=rnd(powerGroupPool(gk)); p.hand.push(k); p.stars-=PG[gk].c; g.tf.power=true;
+  const pool=powerGroupPool(gk); p.got=p.got||[];
+  let av=pool.filter(k=>!p.hand.includes(k) && !p.got.includes(k)); if(!av.length) av=pool.filter(k=>!p.hand.includes(k)); if(!av.length) av=pool;
+  const k=rnd(av); p.got.push(k); p.hand.push(k); p.stars-=PG[gk].c; g.tf.power=true;
   T={phase:'bought',k,g:gk}; sfx('draw'); save(); renderPlay(); window.scrollTo(0,0);
 }
 function rank(ps){ return ps.slice().sort((a,b)=>b.points-a.points || b.stars-a.stars || b.correct-a.correct); }
@@ -2296,6 +2805,66 @@ function finish(){
 
 /* ===== سحب الكروت ===== */
 /* «من أنا؟» و«الكلمة الناقصة» بيظهروا بدل السؤال العادي أحيانًا */
+/* كل الأسئلة (العادية والخاصة) في كيس واحد لكل مستوى، والسؤال ما يتكررش جوه اللعبة لحد ما الكيس يخلص */
+function poolKeys(level,mcOnly){
+  const k=[];
+  allQ().filter(q=>q.level===level).forEach(q=>k.push('r:'+q.id));
+  WHO.forEach((w,i)=>{ if(w.level===level) k.push('who:'+i); });
+  BLANKS.forEach((b,i)=>{ if(b.level===level) k.push('bl:'+i); });
+  ODD.forEach((x,i)=>{ if(x[0]===level) k.push('o:'+i); });
+  if(mcOnly) return k;
+  MISS.forEach((x,i)=>{ if(x[0]===level) k.push('m:'+i); });
+  PICQ.forEach(x=>{ if(x[1]===level) k.push('p:'+x[0]); });
+  PW.forEach(x=>{ if(x[1]===level) k.push('pw:'+x[0]); });
+  ER.forEach(x=>{ if(x[1]===level) k.push('er:'+x[0]); });
+  WS.forEach(x=>{ if(x[1]===level) k.push('ws:'+x[0]); });
+  FLIP.forEach(x=>{ if(x[1]===level) k.push('fl:'+x[0]); });
+  BUB.forEach(x=>{ if(x[1]===level) k.push('bu:'+x[0]); });
+  Q148.forEach(x=>{ if((x.type==='write'||x.type==='all') && x.lv===level) k.push(x.type[0]+':'+x.n); });
+  ORDER_SETS.filter(o=>o.lv[level]).forEach((o,i)=>k.push('or:'+o.id));
+  MATCH_SETS.filter(m=>m.lv===level).forEach(m=>k.push('ma:'+m.id));
+  const tfn=Math.floor(TF.filter(t=>t[2]===level).length/TF_RULE[level].need); for(let i=0;i<tfn;i++) k.push('tf:'+level+':'+i);
+  return k;
+}
+function buildKey(key,level){
+  const [t,v]=[key.slice(0,key.indexOf(':')), key.slice(key.indexOf(':')+1)];
+  if(t==='r') return allQ().find(q=>String(q.id)===v);
+  if(t==='who'){ const w=WHO[+v]; return {q:'من أنا؟',a:[w.a,...w.o],who:w.c,special:'who'}; }
+  if(t==='bl'){ const b=BLANKS[+v]; return {q:b.q,a:b.a,special:'blank'}; }
+  if(t==='o'){ const x=ODD[+v], items=x[1].split('،'); return {id:'o'+v,q:'مين المختلف؟',a:[x[2],...items.filter(i=>i!==x[2])],special:'odd',why:x[3],level}; }
+  if(t==='m'){ const x=MISS[+v]; return {sp:'miss',id:'m'+v,q:x[1],ans:[x[2]].concat(x[3]?x[3].split('/'):[]),kw:x[4]||'',a:[x[2]],level}; }
+  if(t==='p'){ const x=PICQ.find(y=>String(y[0])===v); return {sp:'pic',id:'p'+x[0],pn:x[0],cnt:x[2],q:'',ans:[x[3]].concat(x[4]?x[4].split('، '):[]),hint:x[5],a:[x[3]],level}; }
+  if(t==='pw') return buildPW(PW.find(y=>String(y[0])===v));
+  if(t==='er') return buildER(ER.find(y=>String(y[0])===v));
+  if(t==='ws') return buildWS(WS.find(y=>String(y[0])===v));
+  if(t==='fl') return buildFL(FLIP.find(y=>String(y[0])===v));
+  if(t==='bu') return buildBU(BUB.find(y=>String(y[0])===v));
+  if(t==='w'||t==='a'){ const x=Q148.find(y=>String(y.n)===v);
+    if(t==='w') return {sp:'write',id:'n'+x.n,q:x.q,ans:x.ans,need:x.need,a:[x.ans.slice(0,Math.max(x.need,4)).map(a=>a.split('/')[0]).join('، ')]};
+    return {sp:'all',id:'n'+x.n,q:x.q,ok:x.ok,no:x.no,a:[x.ok.join('، ')]}; }
+  if(t==='or'||t==='ma'||t==='tf'){ const kind={or:'order',ma:'match',tf:'tf'}[t];
+    if(t==='or'){ const o=ORDER_SETS.find(y=>y.id===v), n=o.lv[level]; const all=o.items==='*'?surahNames():o.items; const idx=pickN(all.map((_,i)=>i),n).sort((a,b)=>a-b); const items=idx.map(i=>all[i]); return {sp:'order',q:o.t,items,a:[items.join('، ثم ')]}; }
+    if(t==='ma'){ const m=MATCH_SETS.find(y=>y.id===v); const pr=[]; shuffle(m.pairs.slice()).forEach(p=>{ if(pr.length<MATCH_N[level] && !pr.some(x=>x[0]===p[0]||x[1]===p[1])) pr.push(p); }); return {sp:'match',q:m.t,pairs:pr,a:[pr.map(p=>p[0]+' ← '+p[1]).join('، ')]}; }
+    return makeSpQ(kind,level); }
+  return null;
+}
+/* أسئلة قريبة من بعض ما تطلعش ورا بعض */
+const SIB=[['r:n11','a:i5','w:i1']];
+function picFromPool(level){ const g=DB.game; g.usedK=g.usedK||[]; const av=PICQ.filter(x=>x[1]===level).map(x=>'p:'+x[0]).filter(k=>!g.usedK.includes(k)); if(!av.length) return null; const k=rnd(av); g.usedK.push(k); return buildKey(k,level); }
+function pickAny(level,mcOnly){
+  const g=DB.game; g.usedK=g.usedK||[];
+  const all=poolKeys(level,mcOnly);
+  let av=all.filter(k=>!g.usedK.includes(k));
+  if(!av.length){ g.usedK=g.usedK.filter(k=>!all.includes(k)); av=all; }
+  for(let tries=0; tries<6 && av.length; tries++){
+    const sib=k=>{ const s=SIB.find(x=>x.includes(k)); return s?s:[]; };
+    const near=av.filter(k=>!(g.lastK||[]).some(l=>l!==k && sib(k).includes(l)));
+    const key=rnd(near.length?near:av); g.usedK.push(key); g.lastK=(g.lastK||[]).concat([key]).slice(-6);
+    const q=buildKey(key,level); if(q) return q;
+    av=av.filter(k=>k!==key);
+  }
+  return pickQ(level);
+}
 function specialQ(level){
   /* كل 3 أسئلة عادية يطلع سؤال بطريقة خاصة (التالت) */
   const g=DB.game; g.nq=(g.nq||0)+1;
@@ -2317,7 +2886,7 @@ function pickLevel(n){
   if(blocked()) return;
   const p=cur(); if(T.phase!=='draw') return;
   if(p.lastLvl===n) return toast('لعبت المستوى ده الدور اللي فات، اختار مستوى تاني');
-  p.lastLvl=n; sfx('flip'); startNormalQ(n,specialQ(n));
+  p.lastLvl=n; sfx('flip'); startNormalQ(n,pickAny(n,!!p.bot));
 }
 function startNormalQ(level,q,keep){
   const prev=T;
@@ -2340,15 +2909,14 @@ function answer(i){
   if(T.phase==='ch') return chAnswered();
   const p=pById(T.ans), lvl=T.level;
   if(ok){
-    const pts=lvl*(QS.double?2:1), st=LSTARS[lvl];
+    const pts=Math.max(0,lvl*(QS.double?2:1)-(QS.hintCost||0)), st=LSTARS[lvl];
     p.points+=pts; p.stars+=st; p.correct++;
     T.gain={pts,st};
     if(T.friend && T.mode==='normal'){ const f=pById(T.friend); f.points+=1; T.gain.friend=f.name; }
-    if(!p.bot) QS.autoAt=NOW()+AUTO_MS;
+    if(!p.bot || !ONLINE) QS.autoAt=NOW()+AUTO_MS;
     sfx('star');
   } else {
     p.wrong++;
-    if(QS.q.sp==='pic' && !p.bot && T.mode==='normal' && !p.hand.includes('retry')) QS.autoAt=NOW()+AUTO_MS;
     if(T.mode==='pass'){ p.points=Math.max(0,p.points-1); T.lost=1; }
     sfx('bad'); buzz();
   }
@@ -2408,6 +2976,8 @@ function canUseNow(p,k){
 function openMyCards(pid){
   stopAuto();
   const p=pById(pid||(ONLINE?ME_PID:cur().id)); if(!p) return; pauseQ();
+  const frc=(p.chFree||[]).length ? `<div class="frch" style="margin-top:12px"><b>كروت تحدي ببلاش (من كارت السرعة)</b>${p.chFree.map(k=>`<div class="chrow" style="--a:${CG[CHALLENGES[k].cat].a}"><b>${CHALLENGES[k].name}</b><span>${CHALLENGES[k].desc}. بتلعبه من زرار «التحدي» في دورك.</span></div>`).join('')}</div>` : '';
+  if(!p.hand.length && frc) return modal(`<h3>كروتي</h3>${frc}<button class="btn" style="margin-top:12px" onclick="closeModal()">رجوع</button>`);
   if(!p.hand.length) return modal(`<h3>كروت ${esc(p.name)}</h3><p>مفيش كروت قوة لسه. بتشتري كارت بعد ما دورك يخلص.</p><button class="btn" onclick="closeModal()">رجوع</button>`);
   modal(`<h3>كروتي</h3><p>الكروت دي سرية، ومحدش شايفها غير ${esc(p.name)}. الكارت بيتستخدم مرة واحدة بس.</p><div style="display:grid;gap:8px">${p.hand.map(k=>{ const c=canUseNow(p,k), P=POWERS[k], gk=P.pack?'g':P.g, col=NCOL[gk]||NCOL.g;
     const extra = c.mirror ? ` («${POWERS[c.mirror].name}»)` : '';
@@ -2464,7 +3034,7 @@ function applyTurnEffect(k,p){
 }
 function applyTargetEffect(k,p,t){
   const g=DB.game;
-  if(k==='starswap'){ if(t.stars>0){ t.stars--; p.stars++; notice(`${p.name} خد نجمة من ${t.name}. ${p.name} بقى معاه ${p.stars} ${starWord(p.stars)}، و${t.name} معاه ${t.stars} ${starWord(t.stars)}`,{[p.id]:`خدت نجمة من ${t.name}. بقى معاك ${p.stars} ${starWord(p.stars)}`,[t.id]:`${p.name} خد منك نجمة. بقى معاك ${t.stars} ${starWord(t.stars)}`}); } else toast(`${t.name} معهوش نجوم`); }
+  if(k==='starswap'){ if(t.stars>0){ t.stars--; p.stars++; notice(`${p.name} خد من ${t.name} نجمة`,{[p.id]:`خدت نجمة من ${t.name}. بقى معاك ${p.stars} ${starWord(p.stars)}`,[t.id]:`${p.name} خد منك نجمة. بقى معاك ${t.stars} ${starWord(t.stars)}`}); } else toast(`${t.name} معهوش نجوم`); }
   if(k==='rest'){ t.fl.skip=true; toast(`${t.name} هيفوّت دوره الجاي`); }
   if(k==='freeze'){ t.fl.frozen=true; toast(`${t.name} مش هيقدر يستخدم كروت القوة في دوره الجاي`); }
   if(k==='swaprole'){ g.pendingSwap=[p.id,t.id]; toast(`من الجولة الجاية هتبدّل مكانك في الترتيب مع ${t.name}`); }
@@ -2515,6 +3085,17 @@ function useRetry(){
 
 /* ================== كروت التحدي: الاختيار ================== */
 function chCooldownLeft(p){ return DB.game.cooldown-(p.turns-p.lastCh); }
+/* كارت التحدي اللي اتكسب من كارت السرعة: ببلاش، من غير شرط النقط ولا الأدوار */
+function chAvailFree(p){
+  const g=DB.game; if(g.tf.ch || !(p.chFree||[]).length) return {cats:[]};
+  const normalQ = T.phase==='answer' && T.mode==='normal' && QS && !QS.q.sp;
+  if(T.phase==='draw') return {cats:['m','j','f'],ctx:'pre'};
+  if(!normalQ) return {cats:[]};
+  if(!QS.answered) return QS.q.special ? {cats:[]} : {cats:['m','j'],ctx:'open'};
+  const c = QS.ok ? ['m','j'] : []; if(obstTargets(p).length) c.push('k');
+  return {cats:c,ctx:'after'};
+}
+function freeChList(p){ const fa=chAvailFree(p); return (p.chFree||[]).filter(k=>fa.cats.includes(CHALLENGES[k].cat)); }
 function chAvail(p){
   const g=DB.game;
   if(g.tf.ch) return {cats:[],why:'استخدمت كارت تحدي في الدور ده.'};
@@ -2534,22 +3115,25 @@ let CH_TAB=null;
 function openChSheet(tab){
   stopAuto();
   const p=cur(), a=chAvail(p); pauseQ();
+  const fr=freeChList(p), frH = fr.length ? `<div class="frch"><b>كروت ببلاش من كارت السرعة</b>${[...new Set(fr)].map(k=>{ const C=CHALLENGES[k]; return `<button class="chrow" style="--a:${CG[C.cat].a}" onclick="pickChCard('${k}',1)"><b>${C.name}</b><span>${C.desc}</span></button>`; }).join('')}</div>` : '';
+  if(!a.cats.length && fr.length) return modal(`<h3>كروت التحدي</h3>${frH}<button class="btn" style="margin-top:12px" onclick="closeModal()">رجوع</button>`);
   if(!a.cats.length) return modal(`<h3>كروت التحدي</h3><p>${a.why}</p><p>الشرط ${CH_MIN_PTS} نقاط، والعقبة ${OBST_MIN_PTS} نقطة. ده شرط بس، مبيتخصمش.</p><button class="btn" onclick="closeModal()">رجوع</button>`);
   const c = a.cats.includes(tab) ? tab : (a.cats.includes(CH_TAB) ? CH_TAB : a.cats[0]); CH_TAB=c;
   const note = a.ctx==='open' ? 'التحدي هيبقى على السؤال اللي قدامك، وقيمته نجوم مستواه.' : c==='k' ? 'العقبة بتتفعل على اللاعب لما ييجي دوره في الجولة دي.' : 'هتحدد الصعوبة بعد ما تختار الكارت، والتحدي بنجوم مستواها.';
   const cards = Object.keys(CHALLENGES).filter(k=>CHALLENGES[k].cat===c && isUnlocked(k) && (!CHALLENGES[k].online || ONLINE));
-  modal(`<h3>اختار كارت التحدي</h3><p>${note}</p><div class="tabs">${['m','j','f','k'].map(x=>{ const on=a.cats.includes(x);
+  modal(`<h3>اختار كارت التحدي</h3>${frH}<p>${note}</p><div class="tabs">${['m','j','f','k'].map(x=>{ const on=a.cats.includes(x);
     return `<button class="tab ${x===c?'on':''}" ${on?'':'disabled'} onclick="openChSheet('${x}')">${CG[x].n}</button>`; }).join('')}</div>
     <div class="mgrid">${cards.map(k=>{ const C=CHALLENGES[k];
       return `<button class="chrow" style="--a:${CG[c].a}" onclick="pickChCard('${k}')"><b>${C.name}</b><span>${C.desc}</span></button>`; }).join('')}</div>
     <button class="btn" style="margin-top:12px" onclick="closeModal()">رجوع</button>`);
 }
-function pickChCard(k){
-  const p=cur(), a=chAvail(p), C=CHALLENGES[k]; if(!C || !a.cats.includes(C.cat) || (C.online && !ONLINE)) return;
+function pickChCard(k,free){
+  const p=cur(), a=free?chAvailFree(p):chAvail(p), C=CHALLENGES[k]; if(!C || !a.cats.includes(C.cat) || (C.online && !ONLINE)) return;
+  if(free && !(p.chFree||[]).includes(k)) return;
   const prev=T, open=a.ctx==='open';
   if(open) pauseQ();
   const L = C.cat==='k' ? (k==='hard'?3:prev.level) : open ? prev.level : (k==='surp'?1:(k==='hard'?3:null));
-  T={phase:'chSetup',key:k,ctx:a.ctx,L,S:L?LSTARS[L]:null,tgt:null,q0:open?QS.q:null,ctxQ:open?{[prev.level]:QS.q}:null,prev,level:prev.level||null};
+  T={phase:'chSetup',free:free?1:0,key:k,ctx:a.ctx,L,S:L?LSTARS[L]:null,tgt:null,q0:open?QS.q:null,ctxQ:open?{[prev.level]:QS.q}:null,prev,level:prev.level||null};
   closeModal(); sfx('flip'); save(); renderPlay(); window.scrollTo(0,0);
 }
 function chSetupBack(){ if(T.prev){ T=T.prev; save(); renderPlay(); resumeQ(); } }
@@ -2563,6 +3147,7 @@ function confirmChSetup(){
   if(T.phase!=='chSetup' || !chSetupReady()) return;
   const p=cur(), C=CHALLENGES[T.key], g=DB.game;
   g.tf.ch=true; p.lastCh=p.turns;
+  if(T.free && p.chFree){ const i=p.chFree.indexOf(T.key); if(i>=0) p.chFree.splice(i,1); }
   if(C.cat==='k') return placeObstacle();
   if(C.tg==='foe'){ p.tgt.push(T.tgt); if(p.tgt.length>2) p.tgt.shift(); }
   startCh(T.tgt);
@@ -2600,15 +3185,68 @@ function afterCh(){
   endTurn();
 }
 
-const qStep = (pid,q,o) => { if(q && isPid(pid) && pById(pid) && !pById(pid).bot && !(o&&(o.hideAfter||o.private||o.reverse)) && Math.random()<0.2){ const pq=makeSpQ('pic',q.level||2); if(pq) q=pq; } return Object.assign({kind:'q',pid,q},o||{}); };
+const qStep = (pid,q,o) => { if(q && isPid(pid) && pById(pid) && !pById(pid).bot && !(o&&(o.hideAfter||o.private||o.reverse)) && Math.random()<0.2){ const pq=picFromPool(q.level||2); if(pq) q=pq; } return Object.assign({kind:'q',pid,q},o||{}); };
 function turnOrder(from){ const g=DB.game,n=g.players.length,s=g.players.findIndex(p=>p.id===from),ids=[]; for(let i=0;i<n;i++) ids.push(g.players[(s+i)%n].id); return ids; }
+/* خطوة جماعية: «أنا جاهز» للكل، وبعدين 3 2 1، والكل يجاوب نفس السؤال في نفس الوقت، والإجابات تبان مع بعض */
+function grpStep(ids,q,o){ const opts = q && Array.isArray(q.a) ? shuffle(q.a.map((t,i)=>({t,ok:i===0}))) : null; return Object.assign({kind:'grp',pid:null,ids,q,opts,state:'ready',ready:{},ans:{},tk:Math.random().toString(36).slice(2,8)},o||{}); }
+const grpActive = st => st.ids.filter(id=>{ const p=pById(id); return p && !p.away; });
+function grpLate(st){ const t = st.state==='count'?st.go : st.state==='run'?st.dl : st.state==='reveal'?st.rv : 0; return !!t && NOW()-t>4000; }
+function grpCheck(st){
+  const ids=grpActive(st); let ch=false;
+  if(st.state==='ready'){ ids.forEach(id=>{ const p=pById(id); if(p.bot && !st.ready[id]){ st.ready[id]=1; ch=true; } });
+    if(ids.every(id=>st.ready[id])){ st.state='count'; st.go=NOW()+3000; ch=true; } }
+  if(st.state==='count' && NOW()>=st.go){ st.state='run'; st.t0=st.go; st.dl=st.go+(st.num?40:(DB.game.timer||30))*1000; st.bt={}; ids.forEach(id=>{ if(pById(id).bot) st.bt[id]=st.t0+rint(2,9)*1000; }); ch=true; }
+  if(st.state==='run'){
+    ids.forEach(id=>{ const p=pById(id); if(p.bot && !st.ans[id] && NOW()>=st.bt[id]){ const t=(st.bt[id]-st.t0)/1000;
+      if(st.num){ const a=st.q.a, err=p.bot==='easy'?0.3:0.08; st.ans[id]={v:Math.round(a*(1+(Math.random()*2-1)*err)),t}; }
+      else { const good=Math.random()<BOT_ACC[p.bot], oi=st.opts.findIndex(o=>o.ok); st.ans[id]={i: good?oi:rnd(st.opts.map((_,j)=>j).filter(j=>j!==oi)),t}; }
+      ch=true; } });
+    if(ids.every(id=>st.ans[id]) || NOW()>=st.dl){ st.state='reveal'; st.rv=NOW()+5000; st.dl=0; ch=true; }
+  }
+  if(st.state==='reveal' && NOW()>=st.rv){
+    const c=T.ch; st.ids.forEach(id=>{ const a=st.ans[id];
+      if(st.num) c.res.push({kind:'num',pid:id,val:a?a.v:null,time:a?a.t:999});
+      else c.res.push({kind:'q',pid:id,ok:!!(a && st.opts[a.i] && st.opts[a.i].ok),time:a?a.t:99,cycle:st.cycle,q:st.q}); });
+    st.state='done'; chNext(); return false; }
+  return ch;
+}
+function grpReady(){ const go=()=>{ const st=curStep(); if(!st || st.kind!=='grp' || st.state!=='ready' || !st.ids.includes(ME_PID)) return; st.ready[ME_PID]=1; grpCheck(st); sfx('tap'); save(); renderPlay(); }; PUB_RETRY=go; go(); }
+function grpAnswer(i,tk){ const go=()=>{ const st=curStep(); if(!st || st.kind!=='grp' || st.state!=='run' || st.ans[ME_PID] || !st.ids.includes(ME_PID)) return; if((tk && st.tk && tk!==st.tk) || !st.opts || !st.opts[i]) return; st.ans[ME_PID]={i,t:(NOW()-st.t0)/1000}; sfx('tap'); grpCheck(st); save(); renderPlay(); }; PUB_RETRY=go; go(); }
+function grpNum(){ const v=($('#grpnum')||{}).value; const n=Number(String(v||'').trim()); if(v==null || String(v).trim()==='' || !isFinite(n)) return toast('اكتب رقم الأول');
+  const go=()=>{ const st=curStep(); if(!st || st.kind!=='grp' || st.state!=='run' || st.ans[ME_PID]) return; st.ans[ME_PID]={v:n,t:(NOW()-st.t0)/1000}; sfx('tap'); grpCheck(st); save(); renderPlay(); }; PUB_RETRY=go; go(); }
+function stageGrp(ch,st){
+  const me=ME_PID, inMe=st.ids.includes(me), ids=st.ids, P=id=>esc(pById(id).name);
+  if(st.state==='ready'){
+    return `<div class="grpbox"><b>كلكم هتلعبوا مع بعض في نفس الوقت، ونفس السؤال${ch.key==='survive'&&st.cycle>1?` (الجولة ${st.cycle})`:''}</b><span>لما الكل يدوس «أنا جاهز» هيبدأ عد تنازلي، وبعدين السؤال يظهر للكل، والإجابات تبان مع بعض في الآخر.</span></div>
+      <div class="grplist">${ids.map(id=>`<div class="${st.ready[id]?'on':''}">${st.ready[id]?ic('check'):ic('hourglass')}<span>${P(id)}${pById(id).away?' (خرج)':''}</span></div>`).join('')}</div>
+      ${inMe && !st.ready[me] ? `<button class="btn primary big" data-free onclick="grpReady()">أنا جاهز</button>` : `<p class="note">مستنيين الباقيين...</p>`}`;
+  }
+  if(st.state==='count') return `<div class="grpcount pop"><small>استعدوا</small><b id="grpcd">${Math.max(1,Math.ceil((st.go-NOW())/1000))}</b></div>`;
+  const qt = st.num ? esc(st.q.q) : esc(st.q.q);
+  if(st.state==='run'){
+    const mine=st.ans[me];
+    let body;
+    if(!inMe) body=`<p class="note">الكل بيجاوب دلوقتي</p>`;
+    else if(mine) body=`<div class="notice-bar"><i>${ic('check')}</i><span>جاوبت. مستنيين الباقيين، والإجابات هتبان مع بعض.</span></div>`;
+    else if(st.num) body=`<input class="inp" id="grpnum" type="number" inputmode="numeric" data-free placeholder="اكتب الرقم"><button class="btn primary big" data-free onclick="grpNum()">تأكيد</button>`;
+    else body=`<div class="ogrid">${st.opts.map((o,j)=>`<button class="ob2 o${j%4}" data-free onclick="grpAnswer(${j},'${st.tk||''}')"><span class="k"></span><span class="t">${esc(o.t)}</span></button>`).join('')}</div>`;
+    return `${cdPill()}<div class="qcard"><div class="qtxt">${qt}</div></div>${body}<div class="grplist">${ids.map(id=>`<div class="${st.ans[id]?'on':''}">${st.ans[id]?ic('check'):ic('hourglass')}<span>${P(id)}</span></div>`).join('')}</div>`;
+  }
+  // reveal
+  const right = st.num ? st.q.a : st.opts.find(o=>o.ok).t;
+  const rows = ids.map(id=>{ const a=st.ans[id]; let txt, ok;
+    if(st.num){ txt = a? String(a.v) : 'ما كتبش'; ok = a && Math.abs(a.v-st.q.a)===Math.min(...ids.map(x=>st.ans[x]?Math.abs(st.ans[x].v-st.q.a):Infinity)); }
+    else { txt = a && st.opts[a.i] ? st.opts[a.i].t : 'ما جاوبش'; ok = !!(a && st.opts[a.i] && st.opts[a.i].ok); }
+    return `<div class="grprev ${ok?'ok':'bad'}"><b>${P(id)}</b><span>${esc(txt)}</span><small>${a?a.t.toFixed(1)+' ث':''}</small>${ok?ic('check'):ic('x')}</div>`; }).join('');
+  return `<div class="qcard"><div class="qtxt">${qt}</div></div><div class="notice-bar"><i>${ic('bulb')}</i><span>الإجابة الصح: ${esc(String(right))}</span></div><div style="display:grid;gap:6px;margin-top:8px">${rows}</div>`;
+}
 const BUILD = {
   duel: ch=>{ const q=ch.q0||pickQ(ch.L); ch.steps=[qStep(ch.drawer,q,{private:1}),qStep(ch.target,q,{private:1})]; },
   chain: ch=>{ const qs=ch.qs3||[ch.q0||pickQ(ch.L),pickQ(ch.L),pickQ(ch.L)]; ch.qs3=qs; ch.steps=[...qs.map(q=>qStep(ch.drawer,q,{private:1})),...qs.map(q=>qStep(ch.target,q,{private:1}))]; },
-  all: ch=>{ const q=ch.q0||pickQ(ch.L); ch.steps=turnOrder(ch.drawer).map(id=>qStep(id,q,{private:1})); },
-  fastest: ch=>{ const q=ch.q0||pickQ(ch.L); ch.steps=turnOrder(ch.drawer).map(id=>qStep(id,q,{private:1})); },
-  closest: ch=>{ const q=pickX('num',NUMQ); ch.meta.nq=q; ch.steps=turnOrder(ch.drawer).map(id=>({kind:'num',pid:id,q,private:1})); },
-  survive: ch=>{ ch.meta.alive=turnOrder(ch.drawer); ch.meta.out=[]; ch.meta.cycle=1; ch.steps=ch.meta.alive.map(id=>qStep(id,ch.q0||pickQ(ch.L),{private:1,cycle:1})); },
+  all: ch=>{ const q=ch.q0||pickQ(ch.L); ch.steps = ONLINE ? [grpStep(turnOrder(ch.drawer),q)] : turnOrder(ch.drawer).map(id=>qStep(id,q,{private:1})); },
+  fastest: ch=>{ const q=ch.q0||pickQ(ch.L); ch.steps = ONLINE ? [grpStep(turnOrder(ch.drawer),q)] : turnOrder(ch.drawer).map(id=>qStep(id,q,{private:1})); },
+  closest: ch=>{ const q=pickX('num',NUMQ); ch.meta.nq=q; ch.steps = ONLINE ? [Object.assign(grpStep(turnOrder(ch.drawer),q),{num:1,opts:null})] : turnOrder(ch.drawer).map(id=>({kind:'num',pid:id,q,private:1})); },
+  survive: ch=>{ ch.meta.alive=turnOrder(ch.drawer); ch.meta.out=[]; ch.meta.cycle=1; ch.steps = ONLINE ? [grpStep(ch.meta.alive,ch.q0||pickQ(ch.L),{cycle:1})] : ch.meta.alive.map(id=>qStep(id,ch.q0||pickQ(ch.L),{private:1,cycle:1})); },
   team: ch=>{ ch.steps=[qStep('all',ch.q0||pickQ(ch.L),{limit:30})]; },
   guess: ch=>{ const a=pickX('guess',GUESS); let b=pickX('guess',GUESS); if(b===a) b=pickX('guess',GUESS);
     ch.meta.items={[ch.drawer]:a,[ch.target]:b};
@@ -2635,7 +3273,7 @@ const HOOK = {
   survive: ch=>{
     const m=ch.meta, cyc=ch.res.filter(r=>r.cycle===m.cycle), wrong=cyc.filter(r=>!r.ok).map(r=>r.pid);
     if(wrong.length && wrong.length<m.alive.length){ m.alive=m.alive.filter(id=>!wrong.includes(id)); m.out.push(...wrong); }
-    if(m.alive.length>1 && m.cycle<4){ m.cycle++; ch.steps.push(...m.alive.map(id=>qStep(id,pickQ(ch.L),{private:1,cycle:m.cycle}))); return true; }
+    if(m.alive.length>1 && m.cycle<4){ m.cycle++; if(ONLINE) ch.steps.push(grpStep(m.alive.slice(),pickQ(ch.L),{cycle:m.cycle})); else ch.steps.push(...m.alive.map(id=>qStep(id,pickQ(ch.L),{private:1,cycle:m.cycle}))); return true; }
     return false;
   }
 };
@@ -2681,6 +3319,7 @@ function stepTimeout(st){
   if(st.kind==='order' || st.kind==='pic'){ chRecord({ok:false,stage:3}); return chNext(); }
   if(st.kind==='bid'){ if(st.bid==null) st.bid=1; return bidConfirm(); }
   if(st.kind==='gplay') return guessWin(null,true);
+  if(st.kind==='grp'){ if(grpCheck(st)){ save(); renderPlay(); } return; }
   if(st.kind==='letter'){ if(st.state!=='run') return; st.state='done'; chRecord({winner:null,timeout:1}); return chNext(); }
 }
 function refuseCh(){
@@ -2780,7 +3419,7 @@ function resolveCh(){
       note=`${pById(a).name}: ${sa} من 3 صح في ${tm(a).toFixed(1)} ثانية، و${pById(b).name}: ${sb} من 3 صح في ${tm(b).toFixed(1)} ثانية. `;
       if(w){ add(w,S); add(l,-S); note += sa===sb ? `الاتنين جاوبوا نفس العدد، و${pById(w).name} كسب عشان كان أسرع.` : `${pById(w).name} كسب عشان جاوب صح أكتر.`; } else note += 'تعادل.'; break; }
     case 'all': qres.forEach(r=>add(r.pid,r.ok?S:-S)); break;
-    case 'fastest': { const oks=qres.filter(r=>r.ok); if(oks.length){ const f=oks.reduce((m,r)=>r.time<m.time?r:m); add(f.pid,S); note=`الأسرع: ${pById(f.pid).name}`; } qres.filter(r=>!r.ok).forEach(r=>add(r.pid,-S)); break; }
+    case 'fastest': { const oks=qres.filter(r=>r.ok); if(oks.length){ const f=oks.reduce((m,r)=>r.time<m.time?r:m); add(f.pid,S); note=`الأسرع: ${pById(f.pid).name} في ${f.time.toFixed(1)} ثانية. `+oks.map(r=>`${pById(r.pid).name} ${r.time.toFixed(1)} ث`).join('، '); } qres.filter(r=>!r.ok).forEach(r=>add(r.pid,-S)); break; }
     case 'closest': { const a=ch.meta.nq.a, ds=R.map(r=>({pid:r.pid,val:r.val,dist:r.val==null?Infinity:Math.abs(r.val-a)})); const mn=Math.min(...ds.map(x=>x.dist)), mx=Math.max(...ds.map(x=>x.dist));
       if(mn!==mx){ ds.filter(x=>x.dist===mn).forEach(x=>add(x.pid,S)); ds.filter(x=>x.dist===mx).forEach(x=>add(x.pid,-S)); }
       note=`الإجابة الصحيحة: ${a}. `+ds.map(x=>`${pById(x.pid).name}: ${x.val==null?'ما كتبش':x.val}`).join('، '); break; }
@@ -2847,8 +3486,8 @@ function renderPlay(){
   const slide = renderPlay._last!==p.id+':'+g.tc; renderPlay._last=p.id+':'+g.tc;
   $('#play-strip').innerHTML = `<div class="pstrip${slide?' slide':''}">${order.map(o=>{ const c=o.id===p.id, me=ONLINE&&o.id===ME_PID;
     return `<div class="pbox${c?' cur':''}${me?' me':''}" title="${esc(o.name)}: ${o.points} ${ptsWord(o.points)}، ${o.stars} ${starWord(o.stars)}"><b>${c?(me?'دورك':'دور '+esc(o.name)):esc(o.name)}</b><span>${o.points} ${ptsWord(o.points)}</span>${o.obst&&o.obst.length?'<i class="ob" aria-label="عليه عقبة">!</i>':''}</div>`; }).join('')}</div>${flagTags(p)}`;
-  const f = {skip:stageSkip,obst:stageObst,draw:stageDraw,answer:stageAnswer,handq:stageHandQ,chSetup:stageChSetup,ch:stageCh,chResult:stageChResult,buy:stageBuy,bought:stageBought}[T.phase] || stageDraw;
-  let html = (T.phase==='draw' && isLastRound()) ? stageLast(p) : f(p);
+  const f = {between:stageBetween,speed:stageSpeed,skip:stageSkip,obst:stageObst,draw:stageDraw,answer:stageAnswer,handq:stageHandQ,chSetup:stageChSetup,ch:stageCh,chResult:stageChResult,buy:stageBuy,bought:stageBought}[T.phase] || stageDraw;
+  let html = f(p);
   const watching = ONLINE && !canAct();
   if(watching) html=watchView(p,html);
   const keep=[...document.querySelectorAll('#play-stage input')].map((x,i)=>({k:x.className+'|'+i,v:x.value,f:x===document.activeElement,s:x.selectionStart}));
@@ -2856,7 +3495,7 @@ function renderPlay(){
   if(keep.length){ const now=[...document.querySelectorAll('#play-stage input')]; now.forEach((x,i)=>{ const o=keep.find(k=>k.k===x.className+'|'+i); if(o){ if(o.v && !x.value) x.value=o.v; if(o.f){ x.focus(); try{ x.setSelectionRange(o.s,o.s); }catch(e){} } } }); }
   const oh={draw:'228px',answer:'180px',handq:'180px',buy:'205px',bought:'205px'}[T.phase]||'150px';
   $('#s-play').style.setProperty('--oh',oh);
-  $('#play-hand').innerHTML = (!watching && !p.bot && !(T.phase==='draw'&&isLastRound()) && (T.phase==='draw' || (T.phase==='answer' && T.mode==='normal'))) ? deckRow(p) : '';
+  $('#play-hand').innerHTML = (!watching && !p.bot && (T.phase==='draw' || (T.phase==='answer' && T.mode==='normal'))) ? deckRow(p) : '';
   botSchedule();
 }
 R.play = renderPlay;
@@ -2868,6 +3507,7 @@ function stageLast(){ const g=DB.game; return `<div class="lastr pop"><small>آ�
 let BOT_T=null;
 function botActor(){
   const g=DB.game; if(!g) return null;
+  if(T.phase==='between' || T.phase==='speed') return null;
   const p=cur();
   switch(T.phase){
     case 'skip': case 'obst': case 'draw': case 'buy': return isAuto(p)?p:null;
@@ -2875,7 +3515,7 @@ function botActor(){
     case 'chSetup': return (isAuto(p) && T.ctx!=='obst') ? p : null;
     case 'answer': { const a=pById(T.ans); if(!a || !isAuto(a) || !QS) return null; if(!QS.answered) return a; if(T.mode==='normal' && a.id===p.id && (!T.botOb || ONLINE)) return a; return null; }
     case 'handq': { const a=pById(T.ans); return a&&isAuto(a)?a:null; }
-    case 'ch': { const st=T.ch.steps[T.ch.idx]; if(!st) return null; if(st.kind==='gplay' && !st.dl){ const w=[T.ch.drawer,T.ch.target].map(pById).find(x=>x && x.away && !(st.ready||{})[x.id]); return w||null; } const a=isPid(st.pid)?pById(st.pid):null; return a&&isAuto(a)?a:null; }
+    case 'ch': { const st=T.ch.steps[T.ch.idx]; if(!st) return null; if(st.kind==='grp') return null; if(st.kind==='gplay' && !st.dl){ const w=[T.ch.drawer,T.ch.target].map(pById).find(x=>x && x.away && !(st.ready||{})[x.id]); return w||null; } const a=isPid(st.pid)?pById(st.pid):null; return a&&isAuto(a)?a:null; }
   }
   return null;
 }
@@ -2971,8 +3611,8 @@ function deckRow(p){
   const ca=chAvail(p);
   return `<div class="dbar">
     <button class="dp" onclick="openPowerSheet()">${ic('diamond')}القوة</button>
-    <button class="dc ${ca.cats.length?'':'off'}" onclick="openChSheet()">${ca.cats.length?ic('bolt'):ic('lock')}التحدي</button>
-    <button class="dm" onclick="openMyCards()">${ic('cards')}كروتي<span class="n">${p.hand.length}</span></button>
+    <button class="dc ${ca.cats.length||freeChList(p).length?'':'off'}" onclick="openChSheet()">${ca.cats.length||freeChList(p).length?ic('bolt'):ic('lock')}التحدي</button>
+    <button class="dm" onclick="openMyCards()">${ic('cards')}كروتي<span class="n">${p.hand.length+(p.chFree||[]).length}</span></button>
   </div>`;
 }
 function stageSkip(p){
@@ -3049,7 +3689,7 @@ function qBlock(head, showTimer, inner){
   const left = Math.max(0,timeLeft()), tot = QS.limit+QS.extra;
   const segs = live ? `<div class="segs${left<=5?' low':''}" id="tsegs">${Array.from({length:10},(_,i)=>`<i class="${i<Math.ceil(left/tot*10)?'on':''}"></i>`).join('')}</div>` : '';
   const tnum = live ? `<span class="qsec"><span id="tnum">${Math.ceil(left)}</span> ث</span>` : '';
-  const sp = QS.q.sp ? `<span class="qkind2">${SP_INFO[QS.q.sp].n}</span>` : QS.q.which ? `<span class="qkind2">مين فيهم؟</span>` : QS.q.special==='who' ? `<span class="qkind2">من أنا؟</span>` : QS.q.special==='blank' ? `<span class="qkind2">الكلمة الناقصة</span>` : '';
+  const sp = QS.q.sp ? `<span class="qkind2">${SP_INFO[QS.q.sp].n}</span>` : (QS.q.special==='odd') ? `<span class="qkind2">مين المختلف؟</span>` : QS.q.which ? `<span class="qkind2">مين فيهم؟</span>` : QS.q.special==='who' ? `<span class="qkind2">من أنا؟</span>` : QS.q.special==='blank' ? `<span class="qkind2">الكلمة الناقصة</span>` : '';
   let qt = QS.q.q ? `<div class="qtxt">${QS.q.sp==='miss'?esc(QS.q.q).replace('___','<span class="blank">؟</span>'):esc(QS.q.q)}</div>` : '';
   if(QS.q.who){ const n=QS.answered?QS.q.who.length:QS.shown;
     qt = `<div class="clues">${QS.q.who.slice(0,n).map((c,i)=>`<div class="clue"><b>${i+1}</b>${esc(c)}</div>`).join('')}${n<QS.q.who.length?`<button class="clue more" onclick="whoMoreQ()"><b>${n+1}</b>دوس عشان تشوف التلميح ${n===1?'التاني':'التالت'}</button>`:''}</div>`; }
@@ -3069,11 +3709,11 @@ function optsHtml(revealNow){
     }
     const txt = (QS.hidden && !QS.answered) ? '؟؟؟' : esc(o.t);
     const mark = (QS.answered && revealNow) ? ((QS.reverse? (i===QS.choice&&isOk) : o.ok) ? ic('check') : (i===QS.choice ? ic('x') : '')) : '';
-    return `<button class="ob2 ${c}" onclick="answer(${i})" ${QS.answered||gone?'disabled':''}><span class="k"><span>${KEYS[i]}</span>${mark}</span><span class="t">${txt}</span></button>`;
+    return `<button class="ob2 ${c}" onclick="answer(${i})" ${QS.answered||gone?'disabled':''}><span class="k">${mark}</span><span class="t">${txt}</span></button>`;
   }).join('')}</div>`;
 }
 function stageAnswer(){
-  const p=pById(T.ans), L=LEVELS[T.level], pts=T.level*(QS.double?2:1);
+  const p=pById(T.ans), L=LEVELS[T.level], pts=Math.max(0,T.level*(QS.double?2:1)-(QS.hintCost||0));
   let head = `<span class="qlv ${L.cls}">${L.name}</span><span class="qgain"><span>${pts} ${ptsWord(pts)}${QS.double?' (مضاعفة)':''}</span><span>${LSTARS[T.level]} ${starWord(LSTARS[T.level])}</span></span>`;
   if(T.mode!=='normal') head += `<span class="qtag ch">${esc(p.name)} بيجاوب</span>`;
   const snb = (T.mode==='snatch' && T.snFrom) ? `<div class="notice-bar" style="margin:0 0 10px"><i>${ic('grab')}</i><span>${(ONLINE&&ME_PID===T.snFrom)?esc(p.name)+' خد سؤالك':esc(p.name)+' خد سؤال '+esc(pById(T.snFrom).name)}</span></div>` : '';
@@ -3089,9 +3729,9 @@ function stageAnswer(){
   if(QS.ok){
     extra += `<div class="res-ok"><div><b>${who}</b>${T.gain.friend?`<div class="fr">و${esc(T.gain.friend)} خد نقطة على الاستشارة</div>`:''}</div><div class="g"><span>+${T.gain.pts} ${ptsWord(T.gain.pts)}</span><span>+${T.gain.st} ${starWord(T.gain.st)}</span></div></div>`;
     if(autoOn()) extra += `<div class="auto" id="autobox"><span>الدور اللي بعده خلال 3 ثواني</span><i><b id="autob" style="width:${autoPct()}%"></b></i></div>`;
-    else extra += `<button class="btn primary big" onclick="finishTurn()">${p.bot?'الدور للي بعده':'كمّل'}</button>`;
+    else if(QS.autoStop && !p.bot) extra += `<div class="auto"><span>الدور اللي بعده هيكمّل لما تقفل كروتك</span></div>`;
   } else {
-    extra += `<div class="res-bad"><div><b>${QS.choice===-1?'الوقت خلص':'إجابة غلط'}</b>${['pic','miss'].includes(QS.q.sp)?'':`<span class="ans">الإجابة الصح: ${esc(QS.q.a[0])}</span>`}${T.lost?`<span>${esc(p.name)} خسر نقطة</span>`:''}</div></div>`;
+    extra += `<div class="res-bad"><div><b>${QS.choice===-1?'الوقت خلص':'إجابة غلط'}</b>${['pic','miss','ws','pw','er','flip','bub'].includes(QS.q.sp)?'':`<span class="ans">الإجابة الصح: ${esc(QS.q.a[0])}</span>`}${T.lost?`<span>${esc(p.name)} خسر نقطة</span>`:''}</div></div>`;
     const me=cur();
     if(T.mode==='normal' && !p.bot && p.hand.includes('retry') && !isFrozen(p) && !usedPower(p) && (!ONLINE||p.id===ME_PID)) extra += `<div class="retry"><span class="ri">${ic('refresh')}</span><span>معاك كارت «إعادة»</span><button onclick="useRetry()">استخدمه</button></div>`;
     if(autoOn()) extra += `<div class="auto" id="autobox"><span>الدور اللي بعده خلال 3 ثواني</span><i><b id="autob" style="width:${autoPct()}%"></b></i></div>`;
@@ -3102,12 +3742,14 @@ function stageAnswer(){
 }
 /* بعد الإجابة الصح الدور بيكمّل لوحده بعد 3 ثواني، إلا لو اللاعب فتح كروته أو التحدي */
 const AUTO_MS=3000;
-function autoOn(){ return T.phase==='answer' && QS && QS.answered && (QS.ok || QS.q.sp==='pic') && QS.autoAt && !QS.autoStop; }
+function autoOn(){ return T.phase==='answer' && QS && QS.answered && QS.ok && QS.autoAt && !QS.autoStop; }
 function autoPct(){ return QS&&QS.autoAt ? Math.max(0,Math.min(100,(QS.autoAt-NOW())/AUTO_MS*100)) : 0; }
 function stopAuto(){ if(T.phase==='answer' && QS && QS.answered && QS.autoAt && !QS.autoStop){ QS.autoStop=1; save(); } }
 function auctionBids(ch){ const b=ch.meta.bids||{}; if(ch.key!=='auction' || b[ch.drawer]==null || b[ch.target]==null) return '';
   return `<div class="notice-bar" style="margin:0 0 10px"><i>${ic('listnum')}</i><span>${esc(pById(ch.drawer).name)} طلب ${b[ch.drawer]} · ${esc(pById(ch.target).name)} طلب ${b[ch.target]}</span></div>`; }
-function stageCh(){
+function chDescBar(ch){ const C=CHALLENGES[ch.key]; return `<div class="chdesc"><b>${ch.ctx==='obst'?'عقبة':'تحدي'} «${C.name}»</b><span>${C.desc}</span><small>${C.w} · ${C.l}</small></div>`; }
+function stageCh(){ return chDescBar(T.ch)+stageCh0(); }
+function stageCh0(){
   const ch=T.ch, st=ch.steps[ch.idx], C=CHALLENGES[ch.key];
   if(T.sub==='handoff'){
     const p=pById(st.pid), canRef=ch.refusable && st.pid===ch.target && !ch.refAsked;
@@ -3119,6 +3761,7 @@ function stageCh(){
   const head = `<span class="qtag ch">${ic('bolt')} ${C.name}</span><span class="qtag x2">${who}</span>`;
   const last = ch.idx===ch.steps.length-1 && !(ch.key==='survive' && ch.meta.alive.length>1 && ch.meta.cycle<4);
   switch(st.kind){
+    case 'grp': return stageGrp(ch,st);
     case 'q': {
       let extra='';
       const ap = isPid(st.pid) ? pById(st.pid) : null;
@@ -3177,9 +3820,9 @@ function stageCh(){
     }
     case 'mem':
       if(st.state==='show') return `<p class="note">احفظ الكلمات دي!</p><div class="memgrid pop">${st.shown.map(w=>`<span>${esc(w)}</span>`).join('')}</div><div class="bigword"><span id="cd">5</span></div>`;
-      return `${cdPill()}<p class="note">أنهي كلمة من دول ماكانتش موجودة؟</p><div class="opts">${st.opts.map((o,i)=>`<button class="opt" onclick="memPick(${i})"><span class="k">${KEYS[i]}</span><span class="t">${esc(o)}</span></button>`).join('')}</div>`;
+      return `${cdPill()}<p class="note">أنهي كلمة من دول ماكانتش موجودة؟</p><div class="opts">${st.opts.map((o,i)=>`<button class="opt" onclick="memPick(${i})"><span class="k"></span><span class="t">${esc(o)}</span></button>`).join('')}</div>`;
     case 'pic':
-      return `${cdPill()}<p class="note">اعرف اسم السورة من الصورة. كل ما تعرف بدري أحسن.</p><div class="picbox" style="filter:blur(${[0,22,10,3][st.stage]}px)">${st.p.e}</div>${st.stage<3?`<button class="btn" onclick="picMore()">وضّح الصورة (${st.stage}/3)</button>`:''}<div class="opts">${st.opts.map((o,i)=>`<button class="opt" onclick="picPick(${i})"><span class="k">${KEYS[i]}</span><span class="t">سورة ${esc(o)}</span></button>`).join('')}</div>`;
+      return `${cdPill()}<p class="note">اعرف اسم السورة من الصورة. كل ما تعرف بدري أحسن.</p><div class="picbox" style="filter:blur(${[0,22,10,3][st.stage]}px)">${st.p.e}</div>${st.stage<3?`<button class="btn" onclick="picMore()">وضّح الصورة (${st.stage}/3)</button>`:''}<div class="opts">${st.opts.map((o,i)=>`<button class="opt" onclick="picPick(${i})"><span class="k"></span><span class="t">سورة ${esc(o)}</span></button>`).join('')}</div>`;
     case 'order':
       return `${cdPill()}<div class="bigword" style="font-size:22px">${esc(st.o.t)}</div><p class="note">اضغط عليهم بالترتيب.</p><div class="opts">${st.items.map((it,i)=>{ const pos=st.sel.indexOf(i); return `<button class="opt ordit ${pos>=0?'on':''}" onclick="orderTap(${i})"><span class="n">${pos>=0?pos+1:''}</span><span class="t">${esc(it)}</span></button>`; }).join('')}</div>
       <div class="grid2"><button class="btn" onclick="orderReset()">ابدأ من الأول</button><button class="btn dark" onclick="orderDone()" ${st.sel.length<4?'disabled':''}>تأكيد</button></div>`;
@@ -3604,7 +4247,7 @@ function startRoomGame(){
   if(keys.length<2) return toast('محتاجين لاعبين على الأقل');
   const S=Object.assign(roomSettings(),RM.settings||{});
   const players=shuffle(keys).map((k,i)=>({id:k,uid:ps[k].bot?null:k,name:ps[k].name,icon:ps[k].bot?'bot':(ps[k].icon||'star'),bot:ps[k].bot||null,color:COLORS[i%COLORS.length],points:0,stars:0,hand:[],correct:0,wrong:0,turns:0,lastCh:-999,lastLvl:null,obst:[],tgt:[],fl:{shield:false,immune:0,frozen:false,skip:false,chdouble:false}}));
-  DB.game={v:3,online:true,players,turn:0,round:1,endMode:S.endMode,rounds:S.rounds,target:S.target,timer:S.timer,cooldown:S.cooldown,used:{1:[],2:[],3:[]},usedX:{},lastPower:null,pendingSwap:null,tf:{power:false,ch:false},finished:false,started:NOW()};
+  DB.game={v:3,online:true,host:ME_UID,players,turn:0,round:1,endMode:S.endMode,rounds:S.rounds,target:S.target,timer:S.timer,cooldown:S.cooldown,used:{1:[],2:[],3:[]},usedX:{},lastPower:null,pendingSwap:null,tf:{power:false,ch:false},finished:false,started:NOW()};
   ONLINE=true; ME_PID=ME_UID; LV=0;
   notice('اللعبة بدأت. ترتيب اللعب: '+players.map(p=>p.name).join('، '));
   beginTurn();
@@ -3613,7 +4256,7 @@ function startRoomGame(){
 }
 
 /* ---------- مزامنة اللعبة ---------- */
-function notice(text,per){ if(!DB.game) return; DB.game.notice={id:Math.random().toString(36).slice(2,9),text,per:per||null}; LAST_NOTICE=DB.game.notice.id; toast(noticeFor(DB.game.notice)); }
+function notice(text,per){ if(!DB.game) return; DB.game.notice={id:Math.random().toString(36).slice(2,9),text,per:per||null}; LAST_NOTICE=DB.game.notice.id; toast(noticeFor(DB.game.notice),6500); }
 function noticeFor(n){ const me=ONLINE?ME_PID:null; return (n.per && me && n.per[me]) || n.text; }
 function queuePub(){ DIRTY=true; if(PUBBING) return; Promise.resolve().then(doPub); }
 async function doPub(){
@@ -3643,7 +4286,7 @@ function applyRemote(v,force){
       if(o.result){ show('results'); if(IS_HOST && RM.meta && RM.meta.status!=='ended'){ NET.update('rooms/'+ROOM+'/meta',{status:'ended',last:NOW()}); const rc=ROOM; setTimeout(()=>{ if(NET) NET.remove('rooms/'+rc); },120000); } }
       return;
     }
-    if(DB.game.notice && DB.game.notice.id!==LAST_NOTICE){ LAST_NOTICE=DB.game.notice.id; toast(noticeFor(DB.game.notice)); }
+    if(DB.game.notice && DB.game.notice.id!==LAST_NOTICE){ LAST_NOTICE=DB.game.notice.id; toast(noticeFor(DB.game.notice),6500); }
     const k=viewKey(); if(k!==VIEW_KEY && $('#modal').classList.contains('open') && !canAct()) closeModal(); VIEW_KEY=k;
     const scr=document.querySelector('.screen.active').id;
     if(scr==='s-scores') R.scores(); else if(scr!=='s-play') show('play'); else renderPlay();
@@ -3653,10 +4296,13 @@ function applyRemote(v,force){
 function actorIds(){
   const g=DB.game; if(!g) return [];
   const p=cur();
+  if(T.phase==='between'){ const h=hostPid(); return h ? [h] : g.players.filter(x=>!x.bot && !x.away).map(x=>x.id); }
+  if(T.phase==='speed'){ const s=T.s; if(s.state==='press') return spdEligible().filter(x=>!s.out.includes(x.id)).map(x=>x.id); if(s.state==='end'){ const h=hostPid(); return h?[h]:spdEligible().map(x=>x.id); } return [s.who]; }
   if(T.phase==='answer' || T.phase==='handq') return [T.ans];
   if(T.phase==='ch'){
     const ch=T.ch, st=ch.steps[ch.idx]; if(!st) return [ch.drawer];
     const judges=()=>g.players.filter(x=>x.id!==ch.drawer && x.id!==ch.target && !x.bot).map(x=>x.id);
+    if(st.kind==='grp') return st.ids;
     if(st.kind==='gplay') return [ch.drawer,ch.target];
     if(st.kind==='letter') return [ch.drawer,ch.target];
     if(!isPid(st.pid)) return [ch.drawer];
@@ -3665,6 +4311,12 @@ function actorIds(){
   return [p.id];
 }
 let AUTO=0;
+document.addEventListener('click',e=>{
+  if(!ONLINE || !DB.game || canAct()) return;
+  const el=e.target.closest && e.target.closest('#play-stage button, #play-stage input, #play-hand button, #play-stage .lvb');
+  if(!el || el.closest('[data-free]')) return;
+  e.stopPropagation(); e.preventDefault();
+},true);
 function blocked(){ return ONLINE && !AUTO && !canAct(); }
 function canAct(){ if(!ONLINE) return true; if(!DB.game) return false; return actorIds().includes(ME_PID); }
 function snatchMe(){
@@ -3681,13 +4333,14 @@ function chSpectate(ch,st,html,names){
     const now=act.includes(id) ? (T.sub==='handoff'?'بيجهز':'بيلعب دلوقتي') : (ch.steps.slice(ch.idx).some(x=>x.pid===id)?'مستني دوره':'خلص');
     const extra = st && st.kind==='bid' ? '' : (rs.length?` · ${ok} صح من ${rs.length}`:'');
     return `<span class="${id===ch.drawer?'a':'b'}" style="display:flex;flex-direction:column;gap:2px"><span>${esc(pById(id).name)}</span><small style="font-weight:600;font-size:12px">${now}${extra}</small></span>`; };
-  const head=`<div class="waitc pop" style="padding:16px"><div class="ws">${ch.ctx==='obst'?'عقبة':'تحدي'} «${C.name}»</div><div class="vs">${stat(ids[0])}<i>${ic('bolt')}</i>${stat(ids[1])}</div><div class="ws" style="font-size:14px">انت بتتفرج. الاتنين مش شايفين بعض.</div></div>`;
-  const hide = !st || T.sub==='handoff' || ['bid','gsee','reveal'].includes(st.kind);
+  const head=chDescBar(ch)+`<div class="waitc pop" style="padding:16px"><div class="ws">${ch.ctx==='obst'?'عقبة':'تحدي'} «${C.name}»</div><div class="vs">${stat(ids[0])}<i>${ic('bolt')}</i>${stat(ids[1])}</div><div class="ws" style="font-size:14px">انت بتتفرج. الاتنين مش شايفين بعض.</div></div>`;
+  const hide = !st || T.sub==='handoff' || ['bid','gsee'].includes(st.kind);
   const me=pById(ME_PID);
   return head + (hide?`<div class="watchbar" style="margin-top:12px"><span class="wb">${ic('hourglass')}</span><span>${names}</span><small>${T.sub==='handoff'?'بيجهز':'بيختار'}</small></div>`:`<div class="watchbar" style="margin:12px 0"><span class="wb">${ic('eye')}</span><span>${names}</span><small>بيلعب دلوقتي</small></div><div class="watch">${html}</div>`)
-    + `<div style="display:grid;gap:8px;margin-top:12px"><button class="btn light" onclick="openMyCards()">${ic('cards')} كروتي (${me?me.hand.length:0})</button></div>`;
+    + `<div style="display:grid;gap:8px;margin-top:12px"><button class="btn light" data-free onclick="openMyCards()">${ic('cards')} كروتي (${me?me.hand.length:0})</button></div>`;
 }
 function watchView(p,html){
+  if(T.phase==='between' || T.phase==='speed') return html;
   const names=actorIds().map(id=>pById(id)).filter(Boolean).map(x=>esc(x.name)).join(' و');
   let sub='', show=false, vs='';
   switch(T.phase){
@@ -3707,15 +4360,16 @@ function watchView(p,html){
       const part = a && t && (ME_PID===a.id || ME_PID===t.id);
       sub=`بيلعب ${ch.ctx==='obst'?'العقبة':'التحدي'} «${CN}»`;
       /* الاتنين المتحديين ما يشوفوش بعض. الباقيين يشوفوا الاتنين بيعملوا إيه */
+      if(st && st.kind==='grp') return html;
       if(a && t && !part) return chSpectate(ch,st,html,names);
-      if(!a || !t){ if(st && st.kind==='q' && !st.private && T.sub==='do'){ sub='بيجاوب'; show=true; } }
+      if(!(part && CHALLENGES[ch.key].cat==='m') && T.sub==='do'){ sub='بيلعب دلوقتي'; show=true; }
       break; }
   }
   const me=pById(ME_PID);
-  const sn = (T.phase==='answer' && T.mode==='normal' && QS && !QS.answered && me && me.id!==T.ans && me.hand.includes('snatch') && !isFrozen(me) && !usedPower(me)) ? `<button class="btn snatchb" onclick="snatchMe()">${ic('grab')} اقتنص السؤال</button>` : '';
-  const big = show ? `<div class="watchbar"><span class="wb">${ic('eye')}</span><span>الدور على ${names}</span><small>${sub}</small></div><div class="watch">${html}</div>`
+  const sn = (T.phase==='answer' && T.mode==='normal' && QS && !QS.answered && me && me.id!==T.ans && me.hand.includes('snatch') && !isFrozen(me) && !usedPower(me)) ? `<button class="btn snatchb" data-free onclick="snatchMe()">${ic('grab')} اقتنص السؤال</button>` : '';
+  const big = show ? (T.phase==='ch'?chDescBar(T.ch):'')+`<div class="watchbar"><span class="wb">${ic('eye')}</span><span>الدور على ${names}</span><small>${sub}</small></div><div class="watch">${html}</div>`
     : `<div class="waitc pop"><span class="wi" style="background:var(--GD);color:var(--NB)">${ic('hourglass')}</span><div class="ws">الدور على</div><div class="wt">${names}</div><div class="ws">${sub}</div><div class="dots" aria-hidden="true"><i></i><i></i><i></i></div>${vs}</div>`;
-  return `${big}<div style="display:grid;gap:8px;margin-top:12px">${sn}<button class="btn light" onclick="openMyCards()">${ic('cards')} كروتي (${me?me.hand.length:0})</button></div>`;
+  return `${big}<div style="display:grid;gap:8px;margin-top:12px">${sn}<button class="btn light" data-free onclick="openMyCards()">${ic('cards')} كروتي (${me?me.hand.length:0})</button></div>`;
 }
 /* شغل صاحب الغرفة: اللي يقفل يدخل مكانه Bot، واللي يرجع ياخد مكانه */
 function roomLoop(){
