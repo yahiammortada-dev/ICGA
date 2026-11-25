@@ -614,6 +614,7 @@ html{background:var(--CH)}
 body{background:var(--CH);font-family:var(--font);color:var(--CR);font-size:16px}
 #app{position:relative}
 .screen{position:relative;isolation:isolate;padding:24px 22px 22px;background:transparent}
+body.th-green{--OL:#4B5527}body.th-blue{--OL:#1A3F5E}
 .screen::before{content:"";position:absolute;left:0;right:0;top:0;height:var(--oh,130px);z-index:-1;background:var(--OL) var(--diam);border-radius:0 0 44px 44px;transition:height .35s ease}
 #frame{position:fixed;top:10px;bottom:10px;left:50%;width:min(calc(100vw - 20px),500px);transform:translateX(-50%);border:1.5px solid var(--GD);border-radius:28px;opacity:.55;pointer-events:none;z-index:40}
 #s-home{--oh:500px;padding:0}#s-splash{--oh:630px}#s-play{--oh:150px}#s-results{--oh:192px}#s-settings{--oh:160px}#s-setup{--oh:160px}
@@ -712,6 +713,26 @@ h1,h2,h3,.hdr h2,.title,.sec,.verdict,.win-title,.handoff h2,.fb-title,.deck-txt
 @keyframes pslide{from{transform:translateX(-40px);opacity:.3}to{transform:none;opacity:1}}
 @keyframes pgrow{from{transform:translateX(-60px) scale(.85);opacity:.4}to{transform:none;opacity:1}}
 .flags{margin-top:8px}
+.erw.off{opacity:.3}
+.throw{display:flex;gap:8px}.thb{flex:1;height:52px;border-radius:12px;border:2px solid transparent;background:var(--GR);color:var(--CR);font:700 15px inherit;font-family:inherit;display:flex;align-items:center;justify-content:center;gap:8px;cursor:pointer}.thb.on{border-color:var(--GD)}.thb i{width:22px;height:22px;border-radius:6px;display:inline-block}
+.rnd2{flex:1;display:flex;align-items:center;gap:8px;min-width:0}
+.rnd2 .rn{display:flex;align-items:baseline;gap:5px;white-space:nowrap}.rnd2 .rn small{font-size:13px;color:var(--LG)}.rnd2 .rn small:last-child{font-size:14px}.rnd2 .rn b{font-size:30px;font-weight:800;line-height:1}
+.lvbadge{height:26px;padding:0 10px;border-radius:8px;color:var(--NB);display:flex;align-items:center;font-size:13px;font-weight:800;white-space:nowrap}
+.lvps{display:flex;flex-direction:column;font-size:11px;font-weight:700;color:#D9CFB4;line-height:1.35;white-space:nowrap}
+.pstrip2{position:relative;height:58px;margin-top:12px}
+.psw{position:absolute;inset:0;overflow:hidden}.psw.many{-webkit-mask-image:linear-gradient(to left,#000 88%,transparent);mask-image:linear-gradient(to left,#000 88%,transparent)}
+.psr{position:absolute;top:0;right:124px;display:flex;gap:6px}
+.psr.move{animation:psl calc(var(--n) * 3s) ease-in-out infinite}
+@keyframes psl{0%,12%{transform:translateX(0)}45%,58%{transform:translateX(calc((var(--n) - 3) * 77px + 30px))}90%,100%{transform:translateX(0)}}
+.pbx{flex:none;width:71px;height:58px;box-sizing:border-box;border-radius:12px;background:var(--GR);color:var(--CR);padding:7px 9px;border:1.5px solid var(--GD);display:flex;flex-direction:column;justify-content:space-between;position:relative}
+.pbx b{font-size:12px;font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.pbx span{font-size:12px;font-weight:600;white-space:nowrap}
+.pbx.me{box-shadow:inset 0 0 0 2px var(--GD)}
+.pcur{position:absolute;top:0;right:0;z-index:3;width:118px;height:58px;box-sizing:border-box;border-radius:12px;background:var(--GD);color:var(--NB);padding:8px 10px;display:flex;flex-direction:column;justify-content:space-between;box-shadow:-8px 0 12px -4px rgba(0,0,0,.45)}
+.pcur b{font-size:15px;font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.pcur span{font-size:13px;font-weight:700;white-space:nowrap}
+.pbx .ob,.pcur .ob{position:absolute;top:-5px;left:-5px;width:18px;height:18px;border-radius:5px;background:var(--OR);color:var(--NB);font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:center;font-style:normal}
+.pstrip2.slide .pcur{animation:pgrow .55s cubic-bezier(.2,.8,.2,1) both}
+.turngo{display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center;margin-top:40px;background:var(--GR);border-radius:18px;padding:26px 18px}
+.turngo small{font-size:13px;color:var(--LG);font-weight:700}.turngo b{font-size:28px;font-weight:800}.turngo span{font-size:13px;color:var(--LG);line-height:1.6}.turngo .btn{width:100%;margin-top:6px}
 .stage{display:flex;flex-direction:column;gap:12px;padding-top:12px;flex:1}
 .hand{margin-top:auto;padding-top:14px}
 .dbar{display:flex;gap:8px}
@@ -846,9 +867,9 @@ h1,h2,h3,.hdr h2,.title,.sec,.verdict,.win-title,.handoff h2,.fb-title,.deck-txt
 .flrow{display:flex;gap:6px;justify-content:center}
 .flsep{display:block;border-top:1.5px dashed rgba(244,231,201,.25);margin:2px 8px}
 .flc{position:relative;width:58px;height:86px;border-radius:10px;padding:4px;display:flex;align-items:center;justify-content:center;text-align:center;font:700 11.5px/1.35 inherit;font-family:inherit;cursor:pointer;border:1.5px solid rgba(227,169,43,.55);color:var(--CR);transition:transform .25s}
-.flc.fa{background:#4B5527 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24'%3E%3Cpath d='M12 3L21 12L12 21L3 12Z' fill='none' stroke='%23E3A92B' stroke-opacity='.28' stroke-width='1'/%3E%3C/svg%3E")}
+.flc.fa{background:var(--OL) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24'%3E%3Cpath d='M12 3L21 12L12 21L3 12Z' fill='none' stroke='%23E3A92B' stroke-opacity='.28' stroke-width='1'/%3E%3C/svg%3E")}
 .flc.fb{background:#6E4520 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24'%3E%3Cpath d='M12 3L21 12L12 21L3 12Z' fill='none' stroke='%23E3A92B' stroke-opacity='.28' stroke-width='1'/%3E%3C/svg%3E")}
-.flc.open{background:#FFF9EA;color:var(--NB);border:2px solid #4B5527;animation:flipIn .3s ease both}.flc.fb.open{border-color:#6E4520}
+.flc.open{background:#FFF9EA;color:var(--NB);border:2px solid var(--OL);animation:flipIn .3s ease both}.flc.fb.open{border-color:#6E4520}
 .flc.ok{background:var(--TL);color:#fff;border:2px solid var(--TL)}
 .flc.bad{background:#FFF9EA;color:var(--NB);border:2.5px solid var(--OR)}
 .flc.late{opacity:.75}
@@ -1310,11 +1331,11 @@ const NUMQ = [
   {q:'كم سنة لبث أصحاب الكهف في كهفهم؟',a:309},
   {q:'كم سنة دعا نوح عليه السلام قومه؟',a:950},
   {q:'كم عدد ركعات الصلوات المفروضة في اليوم والليلة؟',a:17},
-  {q:'كم عدد عظام جسم الإنسان البالغ؟',a:206},
+  {q:'كم سنة دامت الدعوة في مكة بعد البعثة؟',a:13},
   {q:'كم عدد الأنبياء والرسل المذكورين بأسمائهم في القرآن؟',a:25},
   {q:'كم سنة استمر نزول القرآن الكريم تقريبًا؟',a:23},
   {q:'في أي سنة هجرية كان فتح مكة؟',a:8},
-  {q:'كم يبلغ ارتفاع جبل إيفرست بالمتر تقريبًا؟',a:8849},
+  {q:'في أي سنة هجرية توفي النبي ﷺ؟',a:11},
   {q:'كم يومًا تقريبًا في السنة الهجرية؟',a:354},
   {q:'كم عدد الصحابة العشرة المبشرين بالجنة؟',a:10}
 ];
@@ -1352,9 +1373,9 @@ const WORDS = {
   prophet:{t:'أنبياء يبدأ اسمهم بحرف', w:'آدم، إدريس، نوح، هود، صالح، إبراهيم/ابرهيم، لوط، إسماعيل، إسحاق، يعقوب/إسرائيل، يوسف، أيوب، شعيب، موسى، هارون، ذو الكفل/ذا الكفل، داود/داوود، سليمان، إلياس، اليسع/أليسع، يونس/ذو النون/ذا النون، زكريا/زكرياء، يحيى، عيسى/المسيح، محمد/أحمد'},
   surah:{t:'سور (من غير «ال») تبدأ بحرف', w:'الفاتحة، البقرة، آل عمران، النساء، المائدة، الأنعام، الأعراف، الأنفال، التوبة/براءة، يونس، هود، يوسف، الرعد، إبراهيم، الحجر، النحل، الإسراء/بني إسرائيل، الكهف، مريم، طه، الأنبياء، الحج، المؤمنون/المؤمنين، النور، الفرقان، الشعراء، النمل، القصص، العنكبوت، الروم، لقمان، السجدة، الأحزاب، سبأ، فاطر، يس/ياسين، الصافات، ص/صاد، الزمر، غافر، فصلت، الشورى، الزخرف، الدخان، الجاثية، الأحقاف، محمد، الفتح، الحجرات، ق/قاف، الذاريات، الطور، النجم، القمر، الرحمن، الواقعة، الحديد، المجادلة، الحشر، الممتحنة، الصف، الجمعة، المنافقون/المنافقين، التغابن، الطلاق، التحريم، الملك/تبارك، القلم/ن، الحاقة، المعارج، نوح، الجن، المزمل، المدثر، القيامة، الإنسان/الدهر، المرسلات، النبأ، النازعات، عبس، التكوير، الانفطار، المطففين، الانشقاق، البروج، الطارق، الأعلى، الغاشية، الفجر، البلد، الشمس، الليل، الضحى، الشرح/الانشراح، التين، العلق، القدر، البينة، الزلزلة، العاديات، القارعة، التكاثر، العصر، الهمزة، الفيل، قريش، الماعون، الكوثر، الكافرون/الكافرين، النصر، المسد/تبت، الإخلاص، الفلق، الناس'},
   sahabi:{t:'صحابة يبدأ اسمهم بحرف', w:'أبو بكر/أبو بكر الصديق/الصديق، عمر/عمر بن الخطاب/الفاروق، عثمان/عثمان بن عفان، علي/علي بن أبي طالب، طلحة/طلحة بن عبيد الله، الزبير/الزبير بن العوام، عبد الرحمن بن عوف/عبدالرحمن بن عوف، سعد بن أبي وقاص/سعد، سعيد بن زيد، أبو عبيدة/أبو عبيدة بن الجراح، بلال/بلال بن رباح، عمار/عمار بن ياسر، ياسر، سمية، خالد/خالد بن الوليد، حمزة/حمزة بن عبد المطلب، العباس/العباس بن عبد المطلب، عبد الله بن عباس/ابن عباس، عبد الله بن عمر/ابن عمر، عبد الله بن مسعود/ابن مسعود، عبد الله بن الزبير/ابن الزبير، عبد الله بن رواحة، عبد الله بن عمرو، عمرو بن العاص، عكرمة/عكرمة بن أبي جهل، عقبة بن نافع، عقبة بن عامر، عبادة بن الصامت، عمير بن سعد، عمير بن وهب، عثمان بن مظعون، عائشة، أسماء/أسماء بنت أبي بكر، أم سلمة، أم كلثوم، أم أيمن، أم عمارة/نسيبة، أم حرام، أبو هريرة، أبو ذر/أبو ذر الغفاري، أبو الدرداء، أبو أيوب/أبو أيوب الأنصاري، أبو طلحة، أبو موسى/أبو موسى الأشعري، أبو سفيان، أبي بن كعب، أسامة/أسامة بن زيد، أنس/أنس بن مالك، الأرقم/الأرقم بن أبي الأرقم، أسعد بن زرارة، البراء/البراء بن مالك، البراء بن عازب، جعفر/جعفر بن أبي طالب، جابر/جابر بن عبد الله، جرير/جرير بن عبد الله، جليبيب، حذيفة/حذيفة بن اليمان، حسان/حسان بن ثابت، الحسن/الحسن بن علي، الحسين/الحسين بن علي، حفصة، حليمة/حليمة السعدية، حكيم بن حزام، حارثة، حنظلة، خديجة/خديجة بنت خويلد، خباب/خباب بن الأرت، خبيب/خبيب بن عدي، خولة/خولة بنت الأزور، زيد/زيد بن حارثة، زيد بن ثابت، زينب، زيد بن أرقم، سلمان/سلمان الفارسي، سهيل بن عمرو، سعد بن معاذ، سعد بن عبادة، سالم/سالم مولى أبي حذيفة، سودة، سراقة/سراقة بن مالك، سفينة، صهيب/صهيب الرومي، صفية، صفوان بن أمية، ضرار/ضرار بن الأزور، طفيل/الطفيل بن عمرو، عاصم/عاصم بن ثابت، فاطمة/فاطمة الزهراء، فضالة بن عبيد، قيس بن سعد، قتادة/قتادة بن النعمان، كعب بن مالك، كعب بن زهير، معاذ/معاذ بن جبل، مصعب/مصعب بن عمير، معاوية/معاوية بن أبي سفيان، المقداد/المقداد بن الأسود، المغيرة/المغيرة بن شعبة، ميمونة، مارية/مارية القبطية، نعيم بن مسعود، النعمان بن بشير، نسيبة بنت كعب، هند/هند بنت عتبة، هشام بن حكيم، وحشي/وحشي بن حرب، واثلة بن الأسقع، الوليد بن الوليد، يزيد بن أبي سفيان'},
-  fruit:{t:'فواكه تبدأ بحرف', w:'تفاح/تفاحة، تين/تينة، تمر/تمرة/بلح، توت، تين شوكي، تمر هندي، ترنج، برتقال/برتقالة، بطيخ/بطيخة، برقوق، بابايا، باشن فروت، بوملي، بشملة/بشمله/أكي دنيا، جوافة، جريب فروت، جوز هند، خوخ/خوخة، رمان/رمانة، ريد كرنت، زبيب، زيتون، شمام/شمّام، عنب/عنبة، عنب بري، فراولة/فراوله/توت أرضي، فاكهة التنين/دراجون فروت، فيجوا، كمثرى/كمترى، كيوي، كريز/كرز، كاكا/كاكي، كانتلوب/كنتالوب، كمكوات، ليمون/ليمونة، لارنج، ليتشي، مانجو/مانجة، موز/موزة، مشمش/مشمشة، مندرين/يوسفي/يوسفية، نبق، نارنج، نكتارين، أناناس، أفوكادو، إجاص، أكي دنيا، أترج، توت شامي، توت بري'},
-  animal:{t:'حيوانات تبدأ بحرف', w:'أسد، أرنب، أفعى، أخطبوط، أيل، أوز/أوزة/إوز/وز/وزة، ببغاء/ببغان، بطة/بط، بقرة، بغل، بومة، باندا، بطريق، برغوث، بعوضة/ناموسة، بجعة، تمساح، ثعلب، ثعبان، ثور، جمل، جاموس/جاموسة، جراد/جرادة، جرو، حمار، حصان، حوت، حمامة/حمام، حرباء، حلزون، حية، خروف، خنزير، خفاش، خنفساء، خرتيت/وحيد القرن، دب، دجاجة/فرخة، ديك، دلفين/دولفين، دودة، دبور، ذئب، ذبابة/دبانة، زرافة، زرزور، زنبور، سمكة/سمك، سنجاب، سلحفاة/سلحفاه/زلحفة، سنونو، سحلية، سرطان/كابوريا، صقر، صرصور، ضفدع، ضبع، ضب، طاووس/طاوس، طائر، عصفور، عنكبوت، عقرب، عنزة/معزة/ماعز، عجل، غزال/غزالة، غراب، غوريلا، غنم، فيل، فهد، فأر/فار، فراشة، فرس، فقمة، فلامنجو/فلامينجو، قرد، قط/قطة/بسة، قنفذ، قرش/سمك القرش، قندس، كلب، كنغر/كنجارو، كوالا، كركدن، لقلق، لاما، ليث، لبؤة، ماعز، نمر، نحلة، نملة، نسر، نعامة، نورس، هدهد، هر/هرة، هامستر، وطواط، وعل، يمامة، يربوع، يعسوب'},
-  country:{t:'دول تبدأ بحرف', w:'مصر، السعودية، الإمارات، الكويت، قطر، البحرين، عمان/سلطنة عمان، اليمن، العراق، سوريا، لبنان، الأردن، فلسطين، ليبيا، تونس، الجزائر، المغرب، موريتانيا، السودان، جنوب السودان، الصومال، جيبوتي، جزر القمر، تركيا، إيران، باكستان، أفغانستان، الهند، بنغلاديش، الصين، اليابان، كوريا، إندونيسيا، ماليزيا، تايلاند، الفلبين، فيتنام، سنغافورة، سريلانكا، نيبال، بوتان، ميانمار، كمبوديا، لاوس، منغوليا، كازاخستان، أوزبكستان، تركمانستان، طاجيكستان، قيرغيزستان، أذربيجان، أرمينيا، جورجيا، روسيا، أوكرانيا، بيلاروسيا، بولندا، ألمانيا، فرنسا، إيطاليا، إسبانيا، البرتغال، إنجلترا/بريطانيا/المملكة المتحدة، أيرلندا، هولندا، بلجيكا، لوكسمبورغ/لوكسمبورج، سويسرا، النمسا، التشيك، سلوفاكيا، المجر، رومانيا، بلغاريا، اليونان، ألبانيا، صربيا، كرواتيا، البوسنة، سلوفينيا، مقدونيا، الجبل الأسود، كوسوفو، قبرص، مالطا، الدنمارك، السويد، النرويج، فنلندا، أيسلندا، إستونيا، لاتفيا، ليتوانيا، مولدوفا، موناكو، أندورا، الفاتيكان، أمريكا/الولايات المتحدة، كندا، المكسيك، البرازيل، الأرجنتين، تشيلي، بيرو، كولومبيا، فنزويلا، الإكوادور، بوليفيا، باراغواي/باراجواي، الأوروغواي، كوبا، جامايكا، هايتي، بنما، كوستاريكا، نيكاراغوا، هندوراس، غواتيمالا، السلفادور، أستراليا، نيوزيلندا، فيجي، نيجيريا، النيجر، مالي، السنغال، غانا، غينيا، غامبيا، ساحل العاج، الكاميرون، تشاد، إثيوبيا، إريتريا، كينيا، أوغندا، تنزانيا، رواندا، بوروندي، الكونغو، الجابون/الغابون، أنغولا، زامبيا، زيمبابوي، موزمبيق، مدغشقر، ملاوي، ناميبيا، بوتسوانا، جنوب أفريقيا، ليسوتو، ليبيريا، سيراليون، توجو، بنين، بوركينا فاسو، الرأس الأخضر، سيشل، موريشيوس، المالديف، بروناي، تيمور الشرقية، بابوا غينيا الجديدة، ليختنشتاين، سان مارينو'}
+  asma:{t:'أسماء الله الحسنى تبدأ بحرف', w:'الرحمن، الرحيم، الملك، القدوس، السلام، المؤمن، المهيمن، العزيز، الجبار، المتكبر، الخالق، البارئ، المصور، الغفار، القهار، الوهاب، الرزاق، الفتاح، العليم، القابض، الباسط، الخافض، الرافع، المعز، المذل، السميع، البصير، الحكم، العدل، اللطيف، الخبير، الحليم، العظيم، الغفور، الشكور، العلي، الكبير، الحفيظ، المقيت، الحسيب، الجليل، الكريم، الرقيب، المجيب، الواسع، الحكيم، الودود، المجيد، الباعث، الشهيد، الحق، الوكيل، القوي، المتين، الولي، الحميد، المحصي، المبدئ، المعيد، المحيي، المميت، الحي، القيوم، الواجد، الماجد، الواحد، الأحد، الصمد، القادر، المقتدر، المقدم، المؤخر، الأول، الآخر، الظاهر، الباطن، الوالي، المتعالي، البر، التواب، المنتقم، العفو، الرؤوف، مالك الملك، ذو الجلال والإكرام، المقسط، الجامع، الغني، المغني، المانع، الضار، النافع، النور، الهادي، البديع، الباقي، الوارث، الرشيد، الصبور'},
+  places:{t:'أماكن من القرآن والسيرة تبدأ بحرف', w:'مكة/مكه المكرمة/بكة، المدينة/المدينة المنورة/يثرب/طيبة، منى، مزدلفة/المشعر الحرام، المروة، الصفا، مدين، مصر، مؤتة، المسجد الحرام، المسجد الأقصى، المسجد النبوي، مسجد قباء، مقام إبراهيم، المشعر الحرام، بدر، بئر رومة، بئر بضاعة، بيت المقدس/القدس، البقيع، حراء/غار حراء، حنين، الحديبية، الحجر، الحجون، عرفة/عرفات/جبل عرفات، العقبة، عسفان، عكاظ، عين جالوت، قباء، القادسية، الطائف، الطور/طور سيناء، طوى، ثور/غار ثور، أحد/جبل أحد، الكعبة/البيت الحرام، زمزم/بئر زمزم، خيبر، الخندق، تبوك، اليرموك، الجودي، سبأ، سدوم، الأيكة، الأحقاف'},
+  gazwat:{t:'غزوات وسرايا تبدأ بحرف', w:'بدر/غزوة بدر، بواط، بنو قريظة/بني قريظة، بنو النضير/بني النضير، بنو المصطلق/بني المصطلق، بنو قينقاع/بني قينقاع، بدر الموعد، ذات الرقاع، ذات السلاسل، ذو قرد، ذو العشيرة، ذو أمر، حنين/غزوة حنين، حمراء الأسد، الحديبية، حصار الطائف، أحد/غزوة أحد، الأحزاب/الخندق، خيبر، مؤتة، تبوك، فتح مكة، الأبواء/ودان، السويق'},
 };
 
 /* المقارنة: من غير تشكيل، و«ال» و«عليه السلام» و«رضي الله عنه» مش بيفرقوا، والأخطاء الصغيرة في الحروف بتتقبل */
@@ -1414,7 +1435,7 @@ const ORDERS = [
   {t:'رتّب السور كما في المصحف',a:['الفاتحة','البقرة','آل عمران','النساء']},
   {t:'رتّب السور كما في المصحف',a:['الكهف','مريم','طه','الأنبياء']},
   {t:'رتّب صلوات اليوم من أوله',a:['الفجر','الظهر','العصر','المغرب']},
-  {t:'رتّب الكواكب من الأقرب للشمس',a:['عطارد','الزهرة','الأرض','المريخ']},
+  {t:'رتّب الغزوات من الأقدم للأحدث',a:['بدر','أحد','الخندق','تبوك']},
   {t:'رتّب الشهور الهجرية',a:['محرم','صفر','ربيع الأول','ربيع الآخر']},
   {t:'رتّب الشهور الهجرية',a:['رجب','شعبان','رمضان','شوال']}
 ];
@@ -1828,14 +1849,14 @@ let TYPE_T=null;
 /* «كلمة السر»: التلميح بيخصم نقطة من مكسب السؤال (الحد الأدنى صفر) */
 function pwHint(){ if(blocked()) return; if(!QS || QS.answered || QS.q.sp!=='pw' || QS.sp.hint) return; QS.sp.hint=1; QS.hintCost=1; sfx('tap'); save(); renderPlay(); }
 /* «كشف الغلط» */
-function erPick(i){ if(blocked()) return; if(!QS || QS.answered || QS.intro || QS.q.sp!=='er') return; QS.sp.pick=i; sfx('tap'); save(); renderPlay(); }
+function erPick(i){ if(blocked()) return; if(!QS || QS.answered || QS.intro || QS.q.sp!=='er') return; if((QS.sp.off||[]).includes(i)) return; QS.sp.pick=i; sfx('tap'); save(); renderPlay(); }
 function erChoose(j){ if(blocked()) return; if(!QS || QS.answered || QS.q.sp!=='er' || QS.sp.pick==null) return; QS.sp.choice=j; const q=QS.q; spDone(QS.sp.pick===-1 && q.ch[j]===q.right); }
 function joinSaw(a){ const o=[]; a.forEach(w=>{ if(w==='ﷺ' && o.length) o[o.length-1]+=' ﷺ'; else o.push(w); }); return o; }
 function erWords(q){ const pre=joinSaw(q.pre.split(' ').filter(Boolean)), post=joinSaw(q.post.split(' ').filter(Boolean));
   let pfx=''; if(q.pre && !/\s$/.test(q.pre)) pfx=pre.pop()||''; let sfx2=''; if(q.post && !/^\s/.test(q.post)) sfx2=post.shift()||'';
   return {pre,post,pfx,sfx:sfx2}; }
 function spErHtml(q,t,done){
-  const W=erWords(q), pick=t.pick, chip=(txt,i,cls)=>`<button class="erw ${cls||''}" onclick="erPick(${i})" ${done?'disabled':''}>${esc(txt)}</button>`;
+  const W=erWords(q), pick=t.pick, off=t.off||[], chip=(txt,i,cls)=>`<button class="erw ${cls||''}${!done&&off.includes(i)?' off':''}" onclick="erPick(${i})" ${done||off.includes(i)?'disabled':''}>${esc(txt)}</button>`;
   let k=0; const parts=[];
   W.pre.forEach(w=>{ const i=k++; parts.push(chip(w,i, done&&pick===i?'bad':pick===i?'sel':'')); });
   const badTxt=W.pfx+(done&&QS.ok?q.right:q.bad)+W.sfx;
@@ -1925,6 +1946,10 @@ function spIntro(){
   return `<div class="spintro pop"><span class="sic">${ic(I.ic)}</span><span class="qkind2" style="align-self:center">${I.sub||'سؤال خاص'}</span><h3>${I.n}</h3><div class="rules">${I.r.map((r,i)=>`<div><b>${i+1}</b><span>${r.replace('{t}',tt||'')}</span></div>`).join('')}</div><p class="note">${QS.limit?`الوقت ${QS.limit+QS.extra} ثانية، وبيبدأ لما تدوس «ابدأ».`:'مفيش وقت.'}</p><button class="btn primary big" onclick="spStart()">ابدأ</button></div>`;
 }
 function spBody(q,t,done){
+  if(t && t.help && !done && !t.helpShown) return `<div class="pichint">${ic('bulb')}<span>${esc(t.help)}</span></div>`+spBody0(q,t,done);
+  return spBody0(q,t,done);
+}
+function spBody0(q,t,done){
   if(q.sp==='flip') return flHtml(q,t,done);
   if(q.sp==='bub') return buHtml(q,t,done);
   if(q.sp==='pic' || q.sp==='miss' || q.sp==='ws' || q.sp==='pw') return spTypeHtml(q,t,done);
@@ -1934,7 +1959,7 @@ function spBody(q,t,done){
     return `${Array.from({length:q.need},(_,i)=>`<input class="inp spw" maxlength="30" autocomplete="off" placeholder="الاسم ${i+1}" aria-label="الاسم ${i+1}" value="${esc((t.live||[])[i]||'')}" oninput="spWriteInput()">`).join('')}<p class="note" id="spwc">0 من ${q.need}</p><button class="btn primary big" onclick="spWriteDone()">خلصت</button>`;
   }
   if(q.sp==='all'){
-    return `<div class="grid2">${t.opts.map((o,i)=>{ const on=t.sel.includes(i); let c='tk'+(on?' on':'');
+    return `<div class="grid2">${t.opts.map((o,i)=>{ if(!done && (t.gone||[]).includes(i)) return ''; const on=t.sel.includes(i); let c='tk'+(on?' on':'');
       if(done) c = o.ok ? 'tk on'+(on?'':' miss') : (on?'tk bad':'tk dim');
       return `<button class="${c}" onclick="spAllTap(${i})" ${done?'disabled':''}>${on||done&&o.ok?`<small>${done&&o.ok&&!on?'نسيتها':done&&!o.ok&&on?'غلط':'معلَّم'}</small>`:''}${esc(o.t)}</button>`; }).join('')}</div>`
       + (done?'':`<p class="note">معلّم ${t.sel.length}</p><button class="btn primary big" onclick="spAllDone()" ${t.sel.length?'':'disabled'}>تأكيد</button>`);
@@ -2608,8 +2633,22 @@ const curStep = () => (T.phase==='ch' && T.ch && T.sub==='do') ? T.ch.steps[T.ch
 function cdLeft(){ const st=curStep(); return st && st.dl ? Math.max(0,Math.ceil((st.dl-NOW())/1000)) : 0; }
 const cdPill = () => `<div class="cdpill"><span id="cd">${cdLeft()}</span> ثانية</div>`;
 /* الساعة: بتحدّث العدادات على كل الأجهزة، وانتهاء الوقت بيتحسم على جهاز واحد (صاحب الغرفة في الأونلاين) */
-const clockOwner = () => !ONLINE || IS_HOST;
+let LAST_REMOTE=0, HOST_STALE=false, LAST_WD=0, RESYNCING=false;
+const clockOwner = () => !ONLINE || IS_HOST || HOST_STALE;
+/* اللاعب الاحتياطي: أول لاعب حقيقي موجود بعد صاحب الغرفة */
+function isBackup(){ const g=DB.game; if(!ONLINE || !g || IS_HOST) return false; const hid=RM.meta&&RM.meta.host; const P=RM.players||{};
+  const c=g.players.find(x=>!x.bot && !x.away && x.id!==hid && (!P[x.id] || P[x.id].online!==false)); return !!c && c.id===ME_PID; }
+/* هات آخر حالة من السيرفر وطبّقها */
+async function resyncNow(){ if(!ONLINE || !ROOM || !NET || RESYNCING) return; RESYNCING=true;
+  try{ const v=await NET.get('rooms/'+ROOM+'/state'); if(v && !PUBBING && !DIRTY) applyRemote(v,true); }
+  catch(e){ setTimeout(resyncNow,2000); }
+  finally{ RESYNCING=false; } }
 function clockTick(){
+  if(DB.game && T.phase==='between'){ const left=Math.max(0,Math.ceil((10000-(NOW()-(T.at||NOW())))/1000)); const el=document.getElementById('rdleft'); if(el) el.textContent=left;
+    if(T.at && NOW()-T.at>=10000 && clockOwner()){ AUTO++; try{ betweenGo(); } finally{ AUTO--; } } return; }
+  if(DB.game && T.phase==='speed' && T.s && T.s.state==='end'){ if(!T.s.endAt) T.s.endAt=NOW(); const el=document.getElementById('rdleft'); if(el) el.textContent=Math.max(0,Math.ceil((10000-(NOW()-T.s.endAt))/1000));
+    if(NOW()-T.s.endAt>=10000 && clockOwner()){ AUTO++; try{ spdGo(); } finally{ AUTO--; } } return; }
+  if(DB.game && ONLINE && T.phase==='draw' && !isAuto(cur()) && canAct()){ if(!clockTick._d) clockTick._d=NOW(); else if(NOW()-clockTick._d>1200){ clockTick._d=0; drawGo(); return; } } else clockTick._d=0;
   if(DB.game && T.phase==='speed'){ spdTick(); return; }
   if(DB.game && QS && QS.q && QS.q.sp==='bub' && !QS.answered && !QS.intro){ const gi=bubIdx(); if(gi!==BUB_SHOWN){ const a=document.getElementById('bubarea'); if(a){ a.innerHTML=bubArea(QS.q,QS.sp,false); BUB_SHOWN=gi; } } }
   if(DB.game && QS && QS.sp && QS.sp.miss && !QS.answered && NOW()-QS.sp.miss.at>900 && (!ONLINE || canAct())){ flUnmiss(); }
@@ -2639,13 +2678,19 @@ function countdown(sec,onEnd){
 }
 
 /* ===== بداية ونهاية الدور ===== */
+/* 25/11: كل جولة ليها مستوى واحد على الكل: 1 سهل، 2 متوسط، 3 صعب، وبيلف */
+const roundLevel = () => ((((DB.game&&DB.game.round)||1)-1)%3)+1;
+/* الدور بيبدأ: في الأونلاين السؤال بيظهر على طول، وعلى الموبايل الواحد فيه زرار «دورك يا فلان، ابدأ» */
+function drawGo(){ if(blocked()) return; if(T.phase!=='draw') return; const p=cur(), n=roundLevel(); p.lastLvl=n; sfx('flip'); startNormalQ(n,pickAny(n,!!p.bot)); }
+function toDraw(extra){ T=Object.assign({phase:'draw'},extra||{}); if(ONLINE && !isAuto(cur())){ AUTO++; try{ drawGo(); } finally{ AUTO--; } } }
 function beginTurn(){
   const g=DB.game; stopTimer(); QS=null;
   const p=cur();
   g.tf={power:false,ch:false};
   if(!p.obst) p.obst=[];
   if(p.fl.skip){ p.obst=[]; T={phase:'skip'}; }
-  else T = p.obst.length ? {phase:'obst'} : {phase:'draw'};
+  else if(p.obst.length) T={phase:'obst'};
+  else { toDraw(); if(T.phase!=='draw') return; }
   save();
 }
 /* آخر الدور: شراء كارت قوة لو ينفع، وبعدين الدور اللي بعده */
@@ -2673,12 +2718,12 @@ function endTurn(){
     const over = g.endMode==='rounds' && g.round>g.rounds, doneR=g.round-1;
     if(ONLINE && doneR%5===0 && spdEligible().length) return startSpeed(doneR,over);
     if(over) return finish();
-    T={phase:'between',from:doneR}; QS=null; save(); sfx('tap'); renderPlay(); window.scrollTo(0,0); return;
+    T={phase:'between',from:doneR,at:NOW()}; QS=null; save(); sfx('tap'); renderPlay(); window.scrollTo(0,0); return;
   }
   save(); beginTurn(); sfx('tap'); renderPlay(); window.scrollTo(0,0);
 }
 /* ===== شاشة بين الجولات ===== */
-function hostPid(){ const g=DB.game; if(!ONLINE || !g) return null; const h=g.host && pById(g.host); return h && !h.away ? h.id : null; }
+function hostPid(){ const g=DB.game; if(!ONLINE || !g) return null; const hid=(RM.meta&&RM.meta.host)||g.host, h=hid && pById(hid); return h && !h.away ? h.id : null; }
 function betweenGo(){ if(blocked()) return; if(T.phase!=='between') return; beginTurn(); sfx('tap'); save(); renderPlay(); window.scrollTo(0,0); }
 function waitHostHtml(){ const h=hostPid()&&pById(hostPid()); return `<div class="rdwait"><span class="dotb">●</span> مستنيين ${esc(h?h.name:'')} (صاحب الغرفة) يكمل</div>`; }
 function stageBetween(){
@@ -2686,7 +2731,7 @@ function stageBetween(){
   const big = g.endMode==='rounds' ? `<b>الجولة ${g.round}</b><span>من ${g.rounds}</span>` : `<b>الجولة ${g.round}</b><span>الهدف ${g.target} ${ptsWord(g.target)}</span>`;
   return `<div class="rdscr pop"><div class="rdtop"><small>خلصت الجولة ${T.from}</small>${big}</div>
     <div class="rdlist"><div class="rdh">الترتيب لحد دلوقتي</div>${R.map((x,i)=>`<div class="rdrow${i===0?' first':''}"><span class="n">${i+1}</span><span class="nm">${esc(x.name)}</span><span class="sc"><b>${x.points} ${ptsWord(x.points)}</b><small>${x.stars} ${starWord(x.stars)}</small></span></div>`).join('')}</div>
-    <div class="rdfoot"><div class="rdnext">${esc(p.name)} هيبدأ الجولة دي.</div>${canGo?`<button class="btn primary big" onclick="betweenGo()">كمل</button>`:waitHostHtml()}</div></div>`;
+    <div class="rdfoot"><div class="rdnext">${esc(p.name)} هيبدأ الجولة دي.</div>${canGo?`<button class="btn primary big" onclick="betweenGo()">كمل</button>`:waitHostHtml()}<div class="rdnext">الجولة بتبدأ لوحدها خلال <span id="rdleft">${Math.max(0,Math.ceil((10000-(NOW()-(T.at||NOW())))/1000))}</span> ثواني</div></div></div>`;
 }
 /* ===== كارت السرعة (أونلاين بس، في آخر الجولة 5 و10 و15...) ===== */
 const spdEligible = () => DB.game.players.filter(p=>!p.bot && !p.away);
@@ -2704,30 +2749,30 @@ function spdAnswer(v){ const s=T.s; if(T.phase!=='speed' || s.state!=='ans' || s
   else { v=String(v||'').trim(); if(!v) return toast('اكتب إجابتك الأول'); ok=typedOk(v,{ans:[s.right].concat(s.alts)}); }
   spdResolve(ok,v); }
 function spdType(){ const el=document.getElementById('spdin'); spdAnswer(el?el.value:''); }
-function spdResolve(ok,v){ const s=T.s, p=pById(s.who);
+function spdResolve(ok,v){ const s=T.s, p=pById(s.who); s.endAt=0;
   s.tries.push({pid:p.id,v:v==null?null:v,ok});
   if(ok){ s.state='prize'; sfx('star'); save(); renderPlay(); return; }
   p.points=Math.max(0,p.points-5); p.stars=Math.max(0,p.stars-5); s.out.push(p.id); sfx('bad');
   notice(`كارت السرعة خد من ${p.name} 5 نقط و5 نجوم`,{[p.id]:'كارت السرعة خد منك 5 نقط و5 نجوم'});
-  if(s.out.length>=2 || !spdEligible().some(x=>!s.out.includes(x.id))){ s.state='end'; s.res='both'; }
+  if(s.out.length>=2 || !spdEligible().some(x=>!s.out.includes(x.id))){ s.state='end'; s.res='both'; s.endAt=NOW(); }
   else { s.state='press'; s.t0=NOW(); s.who=null; }
   save(); renderPlay(); }
 function spdPrize(kind){ const s=T.s; if(T.phase!=='speed' || s.state!=='prize' || s.who!==ME_PID) return; const p=pById(s.who);
-  if(kind==='pts'){ p.points+=10; p.stars+=10; s.state='end'; s.res='won'; s.prize='pts'; notice(`${p.name} كسب كارت السرعة وخد 10 نقط و10 نجوم`,{[p.id]:'كسبت كارت السرعة: +10 نقط و10 نجوم'}); }
+  if(kind==='pts'){ p.points+=10; p.stars+=10; s.state='end'; s.res='won'; s.prize='pts'; s.endAt=NOW(); notice(`${p.name} كسب كارت السرعة وخد 10 نقط و10 نجوم`,{[p.id]:'كسبت كارت السرعة: +10 نقط و10 نجوم'}); }
   else { s.state='pickP'; s.pk=null; s.pc=null; }
   sfx('tap'); save(); renderPlay(); }
 function spdPick(t,k){ const s=T.s; if(T.phase!=='speed' || s.who!==ME_PID) return; if(t==='p' && s.state==='pickP') s.pk=k; if(t==='c' && s.state==='pickC') s.pc=k; sfx('tap'); save(); renderPlay(); }
 function spdNext(){ const s=T.s; if(T.phase!=='speed' || s.who!==ME_PID) return; const p=pById(s.who);
   if(s.state==='pickP' && s.pk){ s.state='pickC'; }
-  else if(s.state==='pickC' && s.pc){ p.hand.push(s.pk); p.got=(p.got||[]).concat([s.pk]); p.chFree=(p.chFree||[]).concat([s.pc]); s.state='end'; s.res='won'; s.prize='cards';
+  else if(s.state==='pickC' && s.pc){ p.hand.push(s.pk); p.got=(p.got||[]).concat([s.pk]); p.chFree=(p.chFree||[]).concat([s.pc]); s.state='end'; s.res='won'; s.prize='cards'; s.endAt=NOW();
     notice(`${p.name} كسب كارت السرعة وخد كارت قوة وكارت تحدي`,{[p.id]:'كسبت كارت السرعة: الكارتين في «كروتي»'}); }
   sfx('tap'); save(); renderPlay(); }
-function spdGo(){ if(blocked()) return; const s=T.s; if(T.phase!=='speed' || s.state!=='end') return; if(s.over) return finish(); T={phase:'between',from:s.from}; save(); sfx('tap'); renderPlay(); window.scrollTo(0,0); }
+function spdGo(){ if(blocked()) return; const s=T.s; if(T.phase!=='speed' || s.state!=='end') return; if(s.over) return finish(); T={phase:'between',from:s.from,at:NOW()}; save(); sfx('tap'); renderPlay(); window.scrollTo(0,0); }
 /* الوقت في كارت السرعة: صاحب الغرفة هو اللي بيحسبه */
 function spdTick(){ const s=T.s; if(!s) return;
   const ring=document.getElementById('spdring'), sec=document.getElementById('spdsec');
   if(s.state==='press'){ const left=Math.max(0,15000-(NOW()-s.t0)); if(ring) ring.style.strokeDashoffset=(1-left/15000)*289; if(sec) sec.textContent=Math.ceil(left/1000);
-    if(NOW()-s.t0>=15000 && (clockOwner() || (canAct() && NOW()-s.t0>19000))){ AUTO++; try{ s.state='end'; s.res=s.out.length?'nosecond':'none'; save(); renderPlay(); } finally{ AUTO--; } } }
+    if(NOW()-s.t0>=15000 && (clockOwner() || (canAct() && NOW()-s.t0>19000))){ AUTO++; try{ s.state='end'; s.res=s.out.length?'nosecond':'none'; s.endAt=NOW(); save(); renderPlay(); } finally{ AUTO--; } } }
   if(s.state==='ans'){ const left=Math.max(0,s.dl-NOW()); const n=document.getElementById('spdt'); if(n) n.textContent=Math.ceil(left/1000)+' ث';
     if(NOW()>=s.dl && (clockOwner() || (canAct() && NOW()-s.dl>4000))){ AUTO++; try{ spdResolve(false,null); } finally{ AUTO--; } } }
 }
@@ -2783,7 +2828,7 @@ function stageSpeed(){
   else if(s.res==='both'){ const a=s.out.map(id=>nm(pById(id))); msg=`<div class="spdmsg bad"><b>${a.length>1?'الاتنين غلطوا':'إجابة غلط'}</b><span>${a.join(' و')} اتخصم من ${a.length>1?'كل واحد':''} 5 نقط و5 نجوم. باقي اللاعبين ما كسبوش ولا خسروا.</span></div>`+spdQ(s,{showRight:true,sel:lastC}); }
   else if(s.res==='nosecond'){ msg=`<div class="spdmsg"><b>محدش داس في المحاولة التانية</b><span>السؤال خلص. ${nm(pById(s.out[0]))} اتخصم منه 5 نقط و5 نجوم، والباقيين ما كسبوش ولا خسروا.</span></div>`+spdQ(s,{showRight:true}); }
   else { msg=`<div class="spdmsg"><b>محدش داس!</b><span>السؤال خلص من غير جايزة ولا خصم</span></div>`+spdQ(s,{showRight:true}); }
-  return `<div class="spdcard">${spdHead(s,'صعب جدًا')}${msg}</div><div style="margin-top:12px">${isHost?`<button class="btn primary big" onclick="spdGo()">كمل</button>`:waitHostHtml()}</div>`;
+  return `<div class="spdcard">${spdHead(s,'صعب جدًا')}${msg}</div><div style="margin-top:12px">${isHost?`<button class="btn primary big" onclick="spdGo()">كمل</button>`:waitHostHtml()}<p class="rdnext" style="text-align:center">بنكمّل لوحدنا خلال <span id="rdleft">10</span> ثواني</p></div>`;
 }
 /* شراء كارت القوة */
 function buyFrom(gk){
@@ -2851,6 +2896,9 @@ function buildKey(key,level){
 /* أسئلة قريبة من بعض ما تطلعش ورا بعض */
 const SIB=[['r:n11','a:i5','w:i1']];
 function picFromPool(level){ const g=DB.game; g.usedK=g.usedK||[]; const av=PICQ.filter(x=>x[1]===level).map(x=>'p:'+x[0]).filter(k=>!g.usedK.includes(k)); if(!av.length) return null; const k=rnd(av); g.usedK.push(k); return buildKey(k,level); }
+/* سؤال تاني من نفس النوع (لكارت تبديل السؤال) */
+function sameKindQ(q,level){ const g=DB.game; g.usedK=g.usedK||[]; const pre=q.key?q.key.slice(0,q.key.indexOf(':')):null; if(!pre) return null;
+  const av=poolKeys(level,false).filter(k=>k.startsWith(pre+':') && !g.usedK.includes(k)); if(!av.length) return null; const k=rnd(av); g.usedK.push(k); const nq=buildKey(k,level); return nq?Object.assign({},nq,{key:k}):null; }
 function pickAny(level,mcOnly){
   const g=DB.game; g.usedK=g.usedK||[];
   const all=poolKeys(level,mcOnly);
@@ -2860,7 +2908,7 @@ function pickAny(level,mcOnly){
     const sib=k=>{ const s=SIB.find(x=>x.includes(k)); return s?s:[]; };
     const near=av.filter(k=>!(g.lastK||[]).some(l=>l!==k && sib(k).includes(l)));
     const key=rnd(near.length?near:av); g.usedK.push(key); g.lastK=(g.lastK||[]).concat([key]).slice(-6);
-    const q=buildKey(key,level); if(q) return q;
+    const q=buildKey(key,level); if(q) return Object.assign({},q,{key});
     av=av.filter(k=>k!==key);
   }
   return pickQ(level);
@@ -2962,7 +3010,7 @@ function canUseNow(p,k){
   if(P.when==='wrong') return (ctx==='after' && !QS.ok) ? {ok:true} : {ok:false,why:'بتستخدمه بعد ما تجاوب غلط'};
   if(k==='mirror'){ const m=mirrorTarget(ctx,p); return m ? {ok:true,mirror:m} : {ok:false,why:'مفيش كارت ينفع تنسخه دلوقتي'}; }
   if(P.when==='q'){
-    if(ctx==='q' && QS && QS.q.sp) return {ok:false,why:'ما ينفعش في السؤال الخاص ده'};
+    if(ctx==='q' && QS && QS.q.sp && (QS.intro || (QS.q.sp==='flip' && QS.sp && QS.sp.done.length>=4))) return {ok:false,why:'مش وقته في السؤال ده'};
     if(ctx==='q'){ if(QS.usedP[k]) return {ok:false,why:'استخدمت كارت زيه في السؤال ده'}; return {ok:true}; }
     if(ctx==='chq'){ if(!['fifty','swap'].includes(k) || T.ch.key==='nohelp' || T.ch.meta.blocked===k) return {ok:false,why:'ممنوع في التحدي ده'}; if(QS.usedP[k]) return {ok:false,why:'استخدمته خلاص'}; return {ok:true}; }
     return {ok:false,why:'بتستخدمه وانت بتجاوب السؤال'};
@@ -3052,13 +3100,28 @@ function useQPower(p,k){
   }
   payFor(p,k); applyQEffect(p,k);
 }
+/* «حذف إجابتين» في الأسئلة الخاصة: بيسهّل السؤال بأقرب شكل */
+const firstLetter = a => { const w=String(a).replace(/^ال(?=..)/,''); return w.charAt(0); };
+function spHelp(){
+  const q=QS.q, t=QS.sp, k=q.sp;
+  if(['pic','miss','ws','pw'].includes(k)){ const a=(q.ans&&q.ans[0])||q.a[0]; t.help=`أول حرف في الإجابة: «${firstLetter(a)}»`+(k==='pw'?'':''); if(k==='pw') t.hint=true; toast('اتكشف أول حرف من الإجابة'); }
+  else if(k==='write'){ const ents=q.ans.map(e=>e.split('/')[0]); const live=t.live||[]; const have=new Set(live.map(normN)); const pick=ents.find(e=>!have.has(normN(e))); if(pick){ const i=live.findIndex(v=>!v); const L=live.slice(); while(L.length<q.need) L.push(''); L[i>=0?i:L.findIndex(v=>!v)]=pick; t.live=L; } toast('اتكتب اسم من الأسامي'); }
+  else if(k==='all'){ const w=t.opts.map((o,i)=>i).filter(i=>!t.opts[i].ok && !(t.gone||[]).includes(i)); t.gone=(t.gone||[]).concat(shuffle(w).slice(0,2)); t.sel=t.sel.filter(i=>!t.gone.includes(i)); toast('اتشالت إجابتين غلط'); }
+  else if(k==='order'){ const need=t.sel.findIndex((v,i)=>v!==i); const at = need<0 ? t.sel.length : need; t.sel=t.sel.slice(0,at).concat([at]); toast('اتحط واحد في مكانه الصح'); }
+  else if(k==='match'){ const li=q.pairs.map((_,i)=>i).find(i=>t.link[i]!==i); if(li!=null){ Object.keys(t.link).forEach(x=>{ if(t.link[x]===li) delete t.link[x]; }); t.link[li]=li; } toast('اتوصّل زوج صح'); }
+  else if(k==='tf'){ t.right=Math.min(q.need-1, t.right+2); toast('اتحسبلك جملتين صح'); }
+  else if(k==='er'){ const W=erWords(q), n=W.pre.length+W.post.length, idx=Array.from({length:n},(_,i)=>i); t.off=shuffle(idx).slice(0,Math.floor(n/2)); if(t.pick!=null && t.off.includes(t.pick)) t.pick=null; toast('اتقفل نص الكلمات اللي مش غلط'); }
+  else if(k==='flip'){ const pi=[0,1,2,3,4].find(x=>!t.done.includes(x)); if(pi!=null){ t.done.push(pi); t.a=null; t.b=null; t.miss=null; } toast('اتطابق زوج لوحده'); }
+  else if(k==='bub' && (BUB_N[q.level]||3)<=2){ QS.extra=(QS.extra||0)+10; toast('اتزود 10 ثواني'); }
+  else if(k==='bub'){ t.G=t.G.map(g=>{ if(g.o.length<=2) return g; const w=g.o.map((o,i)=>i).filter(i=>i!==g.r); const keep=rnd(w); const o=[g.o[g.r],g.o[keep]]; const o2=Math.random()<.5?o:[o[1],o[0]]; return {o:o2,r:o2.indexOf(g.o[g.r]),p:rint(0,2)}; }); BUB_SHOWN=-1; toast('بقى في كل مرة فقاعتين بس'); }
+}
 function applyQEffect(p,k){
   QS.usedP[k]=true;
-  if(k==='fifty'){ const wrong=QS.opts.map((o,i)=>i).filter(i=>!QS.opts[i].ok && !QS.removed.includes(i)); QS.removed.push(...shuffle(wrong).slice(0,2)); toast('اتشالت إجابتين غلط'); }
+  if(k==='fifty'){ if(QS.q.sp) spHelp(); else { const wrong=QS.opts.map((o,i)=>i).filter(i=>!QS.opts[i].ok && !QS.removed.includes(i)); QS.removed.push(...shuffle(wrong).slice(0,2)); toast('اتشالت إجابتين غلط'); } }
   if(k==='double'){ QS.double=true; toast('نقاط السؤال اتضاعفت'); }
   if(k==='swap'){
     const lvl = T.phase==='ch' ? (T.ch.key==='hard'?3:T.ch.L) : T.level;
-    const nq=pickQ(lvl), keep={usedP:QS.usedP,double:QS.double,limit:QS.limit,level:QS.level,hideAfter:QS.hideAfter,reverse:QS.reverse};
+    const nq=(T.phase!=='ch' && (QS.q.sp||QS.q.special)) ? (sameKindQ(QS.q,lvl)||pickQ(lvl)) : pickQ(lvl), keep={usedP:QS.usedP,double:QS.double,limit:QS.limit,level:QS.level,hideAfter:QS.hideAfter,reverse:QS.reverse,noIntro:1};
     if(T.phase==='ch') T.ch.steps[T.ch.idx].q=nq;
     startQS(makeQS(nq,keep)); toast('اتبدل السؤال');
   }
@@ -3089,9 +3152,9 @@ function chCooldownLeft(p){ return DB.game.cooldown-(p.turns-p.lastCh); }
 function chAvailFree(p){
   const g=DB.game; if(g.tf.ch || !(p.chFree||[]).length) return {cats:[]};
   const normalQ = T.phase==='answer' && T.mode==='normal' && QS && !QS.q.sp;
-  if(T.phase==='draw') return {cats:['m','j','f'],ctx:'pre'};
+  if(T.phase==='draw') return {cats:[]};
   if(!normalQ) return {cats:[]};
-  if(!QS.answered) return QS.q.special ? {cats:[]} : {cats:['m','j'],ctx:'open'};
+  if(!QS.answered) return QS.q.special ? {cats:[]} : {cats:['m','j','f'],ctx:'open'};
   const c = QS.ok ? ['m','j'] : []; if(obstTargets(p).length) c.push('k');
   return {cats:c,ctx:'after'};
 }
@@ -3104,8 +3167,8 @@ function chAvail(p){
   if(p.points<CH_MIN_PTS) return {cats:[],why:`محتاج ${CH_MIN_PTS} نقاط على الأقل (معاك ${p.points}).`};
   const left=chCooldownLeft(p);
   if(left>0) return {cats:[],why:`تقدر تستخدم كارت تحدي ${left===1?'في دورك الجاي':left===2?'بعد دورين':'بعد '+left+' أدوار'}.`};
-  if(T.phase==='draw') return {cats:['m','j','f'],ctx:'pre'};
-  if(!QS.answered){ if(QS.q.special) return {cats:[],why:'مفيش تحدي على السؤال ده.'}; return {cats:['m','j'],ctx:'open'}; }
+  if(T.phase==='draw') return {cats:[],why:'التحدي بيتسحب وانت شايف السؤال.'};
+  if(!QS.answered){ if(QS.q.special) return {cats:[],why:'مفيش تحدي على السؤال ده.'}; return {cats:['m','j','f'],ctx:'open'}; }
   const c = QS.ok ? ['m','j'] : [];
   if(p.points>=OBST_MIN_PTS && obstTargets(p).length) c.push('k');
   if(c.length) return {cats:c,ctx:'after'};
@@ -3132,8 +3195,8 @@ function pickChCard(k,free){
   if(free && !(p.chFree||[]).includes(k)) return;
   const prev=T, open=a.ctx==='open';
   if(open) pauseQ();
-  const L = C.cat==='k' ? (k==='hard'?3:prev.level) : open ? prev.level : (k==='surp'?1:(k==='hard'?3:null));
-  T={phase:'chSetup',free:free?1:0,key:k,ctx:a.ctx,L,S:L?LSTARS[L]:null,tgt:null,q0:open?QS.q:null,ctxQ:open?{[prev.level]:QS.q}:null,prev,level:prev.level||null};
+  const L = C.cat==='k' ? (k==='hard'?3:prev.level) : k==='surp' ? 1 : open ? prev.level : (k==='hard'?3:null);
+  T={phase:'chSetup',free:free?1:0,key:k,ctx:a.ctx,L,S:L?LSTARS[L]:null,tgt:null,q0:open&&k!=='surp'?QS.q:null,ctxQ:open&&k!=='surp'?{[prev.level]:QS.q}:null,prev,level:prev.level||null};
   closeModal(); sfx('flip'); save(); renderPlay(); window.scrollTo(0,0);
 }
 function chSetupBack(){ if(T.prev){ T=T.prev; save(); renderPlay(); resumeQ(); } }
@@ -3172,16 +3235,16 @@ function placeObstacle(){
 }
 /* تفعيل العقبة في دور المستهدف */
 function startObstacle(){
-  const p=cur(); if(!p.obst || !p.obst.length){ T={phase:'draw'}; save(); return renderPlay(); }
+  const p=cur(); if(!p.obst || !p.obst.length){ toDraw(); save(); return renderPlay(); }
   const ob=p.obst.shift(), by=pById(ob.by);
   if(!by){ save(); return startObstacle(); }
-  if(p.fl.immune>0){ toast('العقبة اتلغت عشان معاك حصانة'); save(); T = p.obst.length?{phase:'obst'}:{phase:'draw'}; return renderPlay(); }
+  if(p.fl.immune>0){ toast('العقبة اتلغت عشان معاك حصانة'); if(p.obst.length) T={phase:'obst'}; else toDraw(); save(); return renderPlay(); }
   T={phase:'chSetup',key:ob.key,ctx:'obst',S:ob.S,L:ob.L||1,drawer:ob.by,q0:null,ctxQ:null};
   startCh(p.id);
 }
 function afterCh(){
   const ch=T.ch;
-  if(ch && ch.ctx==='obst'){ const p=cur(); T = (p.obst && p.obst.length) ? {phase:'obst'} : {phase:'draw'}; save(); renderPlay(); window.scrollTo(0,0); return; }
+  if(ch && ch.ctx==='obst'){ const p=cur(); if(p.obst && p.obst.length) T={phase:'obst'}; else toDraw(); save(); renderPlay(); window.scrollTo(0,0); return; }
   endTurn();
 }
 
@@ -3477,15 +3540,25 @@ function redoCh(){
 
 /* ================== عرض شاشة اللعب ================== */
 const isBusy = () => (T.phase==='answer' && QS && !QS.answered) || T.phase==='ch' || T.phase==='handq' || (T.phase==='chSetup' && T.ctx==='open');
+let RENDER_ERR_AT=0;
 function renderPlay(){
+  try{ return renderPlay0(); }
+  catch(e){ console.error('renderPlay',e); try{ const st=$('#play-stage'); if(st) st.innerHTML=`<div class="waitc pop" style="padding:16px"><div class="ws">ثانية واحدة...</div><button class="btn" onclick="resyncNow()">تحديث</button></div>`; }catch(x){}
+    if(ONLINE && NOW()-RENDER_ERR_AT>3000){ RENDER_ERR_AT=NOW(); setTimeout(resyncNow,500); } }
+}
+function renderPlay0(){
   const g=DB.game; if(!g) return show('home');
   const p=cur();
-  const rd = g.endMode==='rounds' ? `<div class="rnd"><small>الجولة</small><b>${Math.min(g.round,g.rounds)}</b><span>من ${g.rounds}</span></div>` : `<div class="rnd"><small>الهدف</small><b>${g.target}</b><span>نقطة</span></div>`;
-  $('#play-top').innerHTML = `${rd}<button class="icon-btn" onclick="goBack()" aria-label="رجوع" ${canBack()?'':'hidden'}>${ic('back')}</button><button class="icon-btn" onclick="show('scores')" aria-label="النقاط" ${isBusy()?'disabled':''}>${ic('trophy')}</button><button class="icon-btn" onclick="openMenu()" aria-label="القائمة">${ic('menu')}</button>`;
-  const i0=g.players.indexOf(p), order=g.players.slice(i0).concat(g.players.slice(0,i0));
+  const rl=roundLevel(), RL=LEVELS[rl];
+  const rnum = g.endMode==='rounds' ? `<span class="rn"><small>الجولة</small><b>${Math.min(g.round,g.rounds)}</b><small>من ${g.rounds}</small></span>` : `<span class="rn"><small>الجولة</small><b>${g.round}</b><small>الهدف ${g.target}</small></span>`;
+  const rd = `<div class="rnd2">${rnum}<span class="lvbadge" style="background:${RL.col}">${RL.name}</span><span class="lvps"><span>${rl} نقطة</span><span>${LSTARS[rl]} نجمة</span></span></div>`;
+  $('#play-top').innerHTML = `<button class="icon-btn" onclick="openMenu()" aria-label="القائمة">${ic('menu')}</button>${rd}<button class="icon-btn" onclick="goBack()" aria-label="رجوع" ${canBack()?'':'hidden'}>${ic('back')}</button><button class="icon-btn" onclick="show('scores')" aria-label="النقاط" ${isBusy()?'disabled':''}>${ic('trophy')}</button>`;
+  const i0=g.players.indexOf(p), order=g.players.slice(i0+1).concat(g.players.slice(0,i0));
   const slide = renderPlay._last!==p.id+':'+g.tc; renderPlay._last=p.id+':'+g.tc;
-  $('#play-strip').innerHTML = `<div class="pstrip${slide?' slide':''}">${order.map(o=>{ const c=o.id===p.id, me=ONLINE&&o.id===ME_PID;
-    return `<div class="pbox${c?' cur':''}${me?' me':''}" title="${esc(o.name)}: ${o.points} ${ptsWord(o.points)}، ${o.stars} ${starWord(o.stars)}"><b>${c?(me?'دورك':'دور '+esc(o.name)):esc(o.name)}</b><span>${o.points} ${ptsWord(o.points)}</span>${o.obst&&o.obst.length?'<i class="ob" aria-label="عليه عقبة">!</i>':''}</div>`; }).join('')}</div>${flagTags(p)}`;
+  const box=o=>`<div class="pbx${ONLINE&&o.id===ME_PID?' me':''}" title="${esc(o.name)}"><b>${esc(o.name)}</b><span>${o.points} نقطة</span>${o.obst&&o.obst.length?'<i class="ob" aria-label="عليه عقبة">!</i>':''}</div>`;
+  const many = order.length>3, meCur = ONLINE && p.id===ME_PID;
+  $('#play-strip').innerHTML = `<div class="pstrip2${slide?' slide':''}"><div class="psw${many?' many':''}"><div class="psr${many?' move':''}" style="--n:${order.length}">${order.map(box).join('')}${many?order.map(box).join(''):''}</div></div>
+    <div class="pcur"><b>${meCur?'دورك':'دور '+esc(p.name)}</b><span>${p.points} نقطة</span>${p.obst&&p.obst.length?'<i class="ob" aria-label="عليه عقبة">!</i>':''}</div></div>${flagTags(p)}`;
   const f = {between:stageBetween,speed:stageSpeed,skip:stageSkip,obst:stageObst,draw:stageDraw,answer:stageAnswer,handq:stageHandQ,chSetup:stageChSetup,ch:stageCh,chResult:stageChResult,buy:stageBuy,bought:stageBought}[T.phase] || stageDraw;
   let html = f(p);
   const watching = ONLINE && !canAct();
@@ -3521,11 +3594,11 @@ function botActor(){
 }
 function botSchedule(){
   clearTimeout(BOT_T); BOT_T=null;
-  if(!DB.game || !$('#s-play').classList.contains('active')) return;
-  if(ONLINE && !IS_HOST) return;
+  if(!DB.game || (!ONLINE && !$('#s-play').classList.contains('active'))) return;
+  if(ONLINE && !clockOwner()) return;
   const a=botActor(); if(!a) return;
   const delay = window.__FAST ? 120 : (a.away && !a.bot) ? 1500 : (T.phase==='answer' && QS && !QS.answered) ? 3200 : 2200;
-  BOT_T=setTimeout(()=>{ BOT_T=null; if(!DB.game || !$('#s-play').classList.contains('active')) return; const b=botActor(); if(!b || b.id!==a.id) return; AUTO++; try{ botAct(b); }catch(e){ console.error(e); } finally{ AUTO--; } }, delay);
+  BOT_T=setTimeout(()=>{ BOT_T=null; if(!DB.game || (!ONLINE && !$('#s-play').classList.contains('active'))) return; if(ONLINE && !clockOwner()) return; const b=botActor(); if(!b || b.id!==a.id) return; AUTO++; try{ botAct(b); }catch(e){ console.error(e); } finally{ AUTO--; } }, delay);
 }
 function botAnswerIdx(a){
   if(QS.q.sp) return Math.random()<BOT_ACC[a.bot] ? -2 : -3;
@@ -3557,17 +3630,19 @@ function botAct(a){
         if(ca.cats.length && Math.random()<0.35){ const ks=['duel','chain','auction','all','fastest','survive'].filter(k=>ca.cats.includes(CHALLENGES[k].cat) && isUnlocked(k));
           if(ks.length){ const k=rnd(ks); toast(`${a.name} اختار تحدي «${CHALLENGES[k].name}»`); return pickChCard(k); } }
       }
-      const lv=[1,2,3].filter(n=>n!==a.lastLvl); return pickLevel(rnd(lv));
+      return drawGo();
     }
     case 'chSetup': {
       const C=CHALLENGES[T.key];
-      if(C.tg && !T.tgt){ const ts=chTargets(a,C.tg,T.key); if(!ts.length){ T={phase:'draw',botCh:true,botPow:true}; return renderPlay(); } T.tgt=rnd(ts).id; }
+      if(C.tg && !T.tgt){ const ts=chTargets(a,C.tg,T.key); if(!ts.length){ toDraw({botCh:true,botPow:true}); return renderPlay(); } T.tgt=rnd(ts).id; }
       if(!T.S) setChSq(a.bot==='easy' ? rint(1,2) : rint(1,3));
       return confirmChSetup();
     }
     case 'answer': {
       if(!QS.answered){
         if(T.mode==='normal' && a.id===cur().id){
+          if(!T.botCh){ T.botCh=true; const ca=chAvail(a);
+            if(ca.ctx==='open' && Math.random()<0.3){ const ks=['duel','chain','auction','all','fastest','survive','surp'].filter(k=>ca.cats.includes(CHALLENGES[k].cat) && isUnlocked(k) && (!CHALLENGES[k].online||ONLINE)); if(ks.length){ const k=rnd(ks); toast(`${a.name} اختار تحدي «${CHALLENGES[k].name}»`); return pickChCard(k); } } }
           for(const k of ['fifty','double']){ if(a.hand.includes(k) && !QS.usedP[k] && canUseNow(a,k).ok && Math.random()<0.5){ toast(`${a.name} استخدم «${POWERS[k].name}»`); return usePower(a.id,k); } }
         }
         return answer(botAnswerIdx(a));
@@ -3619,6 +3694,12 @@ function stageSkip(p){
   return `<div class="handoff pop">${av(p,80)}<h2>${esc(p.name)} في استراحة</h2><p>حد استخدم عليه كارت «استراحة»، فهيفوّت الدور ده.</p><button class="btn primary big" onclick="endTurn()">الدور اللي بعده</button></div>`;
 }
 function stageDraw(p){
+  const n=roundLevel(), L=LEVELS[n];
+  if(ONLINE) return `<div class="phead"><b>${esc(p.name)} بيبدأ دوره</b></div>`;
+  return `<div class="turngo pop"><small>الجولة ${DB.game.round} · ${L.name}</small><b>دورك يا ${esc(p.name)}</b><span>السؤال هيظهر والوقت هيبدأ لما تدوس «ابدأ».</span>
+    <button class="btn primary big" onclick="drawGo()" ${p.bot?'disabled':''}>ابدأ</button></div>`;
+}
+function stageDrawOld(p){
   const lv=[1,2,3].map(n=>{ const L=LEVELS[n], off=p.lastLvl===n;
     return `<button class="lvb ${L.cls}" style="--c:${L.col}" onclick="pickLevelAnim(this,${n})" ${off||p.bot?'disabled':''} aria-label="${L.name}"><span class="ln">${L.name}</span><span class="bars">${[1,2,3].map(b=>`<i class="${b<=n?'on':''}"></i>`).join('')}</span><span class="gap"></span><span class="lp"><span>${n} ${ptsWord(n)}</span><span>${LSTARS[n]} ${starWord(LSTARS[n])}</span></span>${off?'<span class="lo">لعبته الدور اللي فات</span>':''}</button>`; }).join('');
   return `<div class="phead"><b>${p.bot?esc(p.name)+' بيختار':'اختار المستوى'}</b><small>الكارت هيتقلب ويطلعلك سؤال</small></div><div class="lvrow" style="margin-top:14px">${lv}</div>
@@ -3930,10 +4011,12 @@ function togglePack(id){ const i=DB.unlocked.indexOf(id); if(i>=0) DB.unlocked.s
 /* ================== الإعدادات ================== */
 let SET_FROM='home', HOW_FROM='home';
 function settingsBack(){ show(SET_FROM==='play'&&DB.game?'play':'home'); SET_FROM='home'; }
-function setSet(k,v){ DB.settings[k]=v; save(); if(k==='theme') applyTheme(); R.settings(); }
+function setSet(k,v){ DB.settings[k]=v; save(); if(k==='theme') applyTheme(); applySkin(); R.settings(); }
+function applySkin(){ const t=(DB.settings&&DB.settings.skin)||'blue'; document.body.classList.toggle('th-blue',t==='blue'); document.body.classList.toggle('th-green',t==='green'); }
+function setSkin(t){ DB.settings.skin=t; save(); applySkin(); R.settings(); }
 R.settings = () => {
   const s=DB.settings, cnt=n=>allQ().filter(q=>q.level===n).length;
-  $('#settings-body').innerHTML = `
+  $('#settings-body').innerHTML = `<div class="sbox"><span class="lb">شكل اللعبة</span><div class="throw">${[['blue','الأزرق','#1A3F5E'],['green','الأخضر','#4B5527']].map(([k,n,c])=>`<button class="thb ${(s.skin||'blue')===k?'on':''}" onclick="setSkin('${k}')"><i style="background:${c}"></i>${n}</button>`).join('')}</div></div>
   <div class="sbox"><span class="lb">نهاية اللعبة</span>${chips('setSet','endMode',[['rounds','بعد عدد جولات'],['target','بعد عدد نقاط']],s.endMode)}<div style="height:8px"></div>
     ${s.endMode==='rounds'?chips('setSet','rounds',[[5,'5'],[10,'10'],[15,'15'],[20,'20'],[30,'30']],s.rounds):chips('setSet','target',[[25,'25'],[40,'40'],[60,'60'],[100,'100']],s.target)}</div>
   <div class="sbox"><span class="lb">وقت الإجابة</span>${chips('setSet','timer',[[0,'بدون'],[20,'20 ث'],[30,'30 ث'],[45,'45 ث']],s.timer)}</div>
@@ -3971,7 +4054,7 @@ function confirmReset(){
   confirmModal('هيتمسح من الجهاز ده اللعبة المحفوظة والأسئلة اللي ضفتها والكروت المفتوحة والإعدادات.','امسح البيانات',()=>{
     try{ localStorage.removeItem(KEY); }catch(e){}
     DB={settings:Object.assign({},DEF_SETTINGS),custom:[],unlocked:[],game:null,stats:{games:0}};
-    applyTheme(); toast('البيانات اتمسحت'); show('home');
+    applyTheme(); applySkin(); toast('البيانات اتمسحت'); show('home');
   });
 }
 
@@ -4054,6 +4137,8 @@ async function netFirebase(){
 }
 function netMock(){
   const KM='mockfb', ch=new BroadcastChannel('mockfb');
+  /* للتجربة بس: ?lag=300 بيعمل تأخير عشوائي زي النت الحقيقي */
+  const LAG=+((location.search.match(/[?&]lag=(\d+)/)||[])[1]||0), nap=()=>LAG?new Promise(r=>setTimeout(r,Math.random()*LAG)):Promise.resolve();
   let uid=null; try{ uid=sessionStorage.getItem('mockuid'); }catch(e){}
   if(!uid){ uid='u'+Math.random().toString(36).slice(2,9); try{ sessionStorage.setItem('mockuid',uid); }catch(e){} }
   const load=()=>{ try{ return JSON.parse(localStorage.getItem(KM))||{}; }catch(e){ return {}; } };
@@ -4063,17 +4148,17 @@ function netMock(){
   const setAt=(t,p,v)=>{ const ks=parts(p); let o=t; for(let i=0;i<ks.length-1;i++){ if(o[ks[i]]==null||typeof o[ks[i]]!=='object') o[ks[i]]={}; o=o[ks[i]]; } const k=ks[ks.length-1]; if(v==null) delete o[k]; else o[k]=v; };
   const L=[];
   const fire=()=>{ const t=load(); L.forEach(l=>{ const v=getAt(t,l.p), j=JSON.stringify(v); if(j!==l.last){ l.last=j; l.cb(v==null?null:JSON.parse(j)); } }); };
-  ch.onmessage=()=>fire();
-  const write=f=>{ const t=load(); f(t); localStorage.setItem(KM,JSON.stringify(t)); ch.postMessage(1); setTimeout(fire,0); };
+  ch.onmessage=()=>setTimeout(fire,LAG?Math.random()*LAG:0);
+  const write=f=>{ const t=load(); f(t); localStorage.setItem(KM,JSON.stringify(t)); ch.postMessage(1); setTimeout(fire,LAG?Math.random()*LAG:0); };
   const disc=[];
   window.addEventListener('pagehide',()=>{ disc.forEach(d=>write(t=>Object.keys(d.v).forEach(k=>setAt(t,d.p+'/'+k,sv(d.v[k]))))); });
   return { uid, mock:true,
-    get: async p=>{ const v=getAt(load(),p); return v==null?null:JSON.parse(JSON.stringify(v)); },
-    set: async (p,v)=>write(t=>setAt(t,p,sv(v))),
-    update: async (p,v)=>write(t=>Object.keys(v).forEach(k=>setAt(t,p+'/'+k,sv(v[k])))),
+    get: async p=>{ await nap(); const v=getAt(load(),p); await nap(); return v==null?null:JSON.parse(JSON.stringify(v)); },
+    set: async (p,v)=>{ await nap(); write(t=>setAt(t,p,sv(v))); },
+    update: async (p,v)=>{ await nap(); write(t=>Object.keys(v).forEach(k=>setAt(t,p+'/'+k,sv(v[k])))); },
     remove: async p=>write(t=>setAt(t,p,null)),
     on: (p,cb)=>{ const l={p,cb,last:undefined}; L.push(l); setTimeout(fire,0); return ()=>{ const i=L.indexOf(l); if(i>=0) L.splice(i,1); }; },
-    tx: async (p,fn)=>{ let res; write(t=>{ const c=getAt(t,p); const nv=fn(c==null?null:JSON.parse(JSON.stringify(c))); if(nv===undefined) res={committed:false,value:c}; else { setAt(t,p,sv(nv)); res={committed:true,value:nv}; } }); return res; },
+    tx: async (p,fn)=>{ await nap(); let res; write(t=>{ const c=getAt(t,p); const nv=fn(c==null?null:JSON.parse(JSON.stringify(c))); if(nv===undefined) res={committed:false,value:c}; else { setAt(t,p,sv(nv)); res={committed:true,value:nv}; } }); await nap(); return res; },
     onDisc: (p,v)=>{ disc.push({p,v}); },
     onConn: cb=>setTimeout(()=>cb(true),0),
     ts: {'.sv':'timestamp'} };
@@ -4267,9 +4352,9 @@ async function doPub(){
   try{ r=await NET.tx('rooms/'+ROOM+'/state', c=>{ if(c && c.v!==base) return; if(!c && base>0) return; return {v:base+1,s,by:ME_UID,at:NOW()}; }); }
   catch(e){ r={committed:false}; }
   PUBBING=false;
-  if(r.committed){ LV=base+1; PUB_RETRY=null; SNATCH_TRY=0; if(DIRTY) doPub(); return; }
+  if(r.committed){ LV=Math.max(LV,base+1); LAST_REMOTE=NOW(); PUB_RETRY=null; SNATCH_TRY=0; if(DIRTY) doPub(); return; }
   DIRTY=false;
-  try{ const v=await NET.get('rooms/'+ROOM+'/state'); if(v) applyRemote(v,true); }catch(e){}
+  try{ const v=await NET.get('rooms/'+ROOM+'/state'); if(v) applyRemote(v,true); }catch(e){ setTimeout(resyncNow,1500); }
   const f=PUB_RETRY; PUB_RETRY=null; if(f) f();
 }
 function viewKey(){ if(!DB.game) return 'none'; const st=T.ch&&T.ch.steps?T.ch.steps[T.ch.idx]:null; return [DB.game.tc||0,T.phase,T.sub||'',T.ch?T.ch.idx:'',st&&st.state||'',QS&&QS.answered?1:0].join('|'); }
@@ -4278,7 +4363,7 @@ function applyRemote(v,force){
   let o; try{ o=JSON.parse(v.s); }catch(e){ return; }
   APPLYING=true;
   try{
-    LV=v.v; DB.game=o.game; T=o.T||{phase:'draw'}; QS=o.QS||null;
+    LV=v.v; LAST_REMOTE=NOW(); DB.game=o.game; T=o.T||{phase:'draw'}; QS=o.QS||null;
     if(o.result) DB.result=o.result;
     ONLINE=true; ME_PID=ME_UID;
     if(!DB.game){
@@ -4291,6 +4376,7 @@ function applyRemote(v,force){
     const scr=document.querySelector('.screen.active').id;
     if(scr==='s-scores') R.scores(); else if(scr!=='s-play') show('play'); else renderPlay();
   } finally { APPLYING=false; }
+  if(clockOwner()) botSchedule();
 }
 /* مين يقدر يدوس دلوقتي */
 function actorIds(){
@@ -4344,7 +4430,7 @@ function watchView(p,html){
   const names=actorIds().map(id=>pById(id)).filter(Boolean).map(x=>esc(x.name)).join(' و');
   let sub='', show=false, vs='';
   switch(T.phase){
-    case 'draw': sub='بيختار المستوى'; break;
+    case 'draw': sub='بيبدأ دوره'; break;
     case 'answer': sub='بيجاوب'; show=true; break;
     case 'handq': sub='هيجاوب'; break;
     case 'chSetup': sub=`بيجهّز ${CHALLENGES[T.key].cat==='k'?'عقبة':'تحدي'} «${CHALLENGES[T.key].name}»`; break;
@@ -4374,6 +4460,13 @@ function watchView(p,html){
 /* شغل صاحب الغرفة: اللي يقفل يدخل مكانه Bot، واللي يرجع ياخد مكانه */
 function roomLoop(){
   if(!RM.meta || !ROOM) return;
+  if(ONLINE && DB.game){
+    const quiet=NOW()-LAST_REMOTE;
+    HOST_STALE = !IS_HOST && quiet>12000 && isBackup();
+    if(clockOwner() && !BOT_T) botSchedule();
+    if(!PUBBING && !DIRTY && !RESYNCING && quiet>4000 && NOW()-LAST_WD>4000){ LAST_WD=NOW();
+      NET.get('rooms/'+ROOM+'/state/v').then(v=>{ if(v!=null && v!==LV && !PUBBING && !DIRTY) resyncNow(); }).catch(()=>{}); }
+  }
   const P=RM.players||{}, host=RM.meta.host, hp=P[host], st=RM.meta.status;
   const offFor=x=>(x && x.online===false) ? NOW()-(x.off||0) : 0;
   if(!IS_HOST && !CLAIMING && ((hp && hp.online===false && offFor(hp)>OFF_GRACE) || !hp)){
@@ -4411,7 +4504,7 @@ async function claimHost(old){
 
 /* ================== تشغيل ================== */
 document.querySelectorAll('[data-ic]').forEach(el=>{ el.innerHTML=ic(el.dataset.ic); });
-applyTheme();
+applyTheme(); applySkin();
 show('splash'); setTimeout(()=>{ if(document.querySelector('#s-splash.active')) show('home'); },1600);
 setInterval(clockTick,200);
 
